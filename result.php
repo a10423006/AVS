@@ -94,7 +94,7 @@
                     <fieldset>
                         <div><a href="createTea.php">問卷填寫</a></div><br/>
                         <div><a href="search_teacherData.php">搜尋教師資料</a></div><br/>
-                        <div><a href="admanage.php?op=courseset_form&set=stupload_form">修改教師資料</a></div><br/>
+                        <div><a href="">修改教師資料</a></div><br/>
                         <div><a href="depmanage.php?op=logout">登出</a></div><br/>
                     </fieldset>
                 </div>
@@ -107,7 +107,7 @@
                         <label>~</label>
                         <input name="searchYear2" type="date" value="<?php echo $today; ?>"/>
                         
-                        <input type="submit"  name="submit_Btn"  id="submit_Btn"  img  src="images/search.png"  onClick="document.form1.submit()">
+                        <input type="submit" name="submit_Btn"  id="submit_Btn"  img  src="images/search.png"  onClick="document.form1.submit()">
 					</form>
 					<?php
                         session_start();
