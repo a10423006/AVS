@@ -20,10 +20,6 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
         <link href="qa_layout.css" rel="stylesheet" type="text/css" />
 
-        <!--Importing Database Script-->
-        <?php 
-			include_once("connection.php");
-		?>
 		<style>/*回到頂部*/
 			/* Go Top 按鈕 */
 			#goTop {
@@ -85,13 +81,12 @@
 
 				  <div id="qaContent">
 	                    <!--個人資料-->
-							<form action="dataModify_teacher.php" name="form1" method="post">
+							<form action="dataCreate.php" name="form1" method="post">
 							<div style='text-align:right;'>
                                 <input type="submit" value='提交' name="submit_Btn1" id="submit_Btn1" style="width:70px;height:70px;font-size:50px;" onClick="document.form1.submit()">&nbsp;&nbsp;&nbsp;
                             </div>
 
 	                        <ul class="accordionPart">
-
 		                        <li>
                                     <div class="qa_title" style="text-decoration:none;">個人資料 ▾</div>
 									
@@ -282,9 +277,6 @@
 
                             <!--學年度授課-->
 							<form action="dataModify.php" name="form2" method="post">
-							<div style='text-align:right;'>
-                                <input type="submit" value='修改' name="submit_Btn2" id="submit_Btn2" style="width:70px;height:70px;font-size:50px;" onClick="document.form2.submit()">&nbsp;&nbsp;&nbsp;
-                            </div>
                             <ul class="accordionPart">
                                 <li>
                                     <div class="qa_title" style="text-decoration:none;">學年度授課 ▾</div>
@@ -341,9 +333,6 @@
                             </form>
                             <!--學術服務-->
 							<form action="dataModify.php" name="form3" method="post">
-							<div style='text-align:right;'>
-                                <input type="submit" value='修改' name="submit_Btn3" id="submit_Btn3" style="width:70px;height:70px;font-size:50px;" onClick="document.form3.submit()">&nbsp;&nbsp;&nbsp;
-                            </div>
                             <ul class="accordionPart">
                                 <li>
                                     <div class="qa_title" style="text-decoration:none;">學術服務 ▾</div>
@@ -396,9 +385,6 @@
 												
                                             <h4>Peer-reviewed Journals</h4> <!--小分類-->
 											<form action="dataModify.php" name="form4" method="post">
-											<div style='text-align:right;'>
-                                                <input type="submit" value='修改' name="submit_Btn4" id="submit_Btn4" style="width:70px;height:70px;font-size:50px;" onClick="document.form4.submit()">&nbsp;&nbsp;&nbsp;
-                                            </div>
                                             <table width="790" bgcolor="black" style="font-size:15px">
                                                 <tr>
 													<td colspan="1" bgcolor="#e3e3e3"><b>ID</b></td>
@@ -496,7 +482,6 @@
 												
                                             <h4>Research Monographs</h4> <!--小分類-->
 											<form action="dataModify.php" name="form5" method="post">
-											<input type="submit"  name="submit_Btn5"  id="submit_Btn5" onClick="document.form5.submit()">
                                             <table width="790" bgcolor="black" style="font-size:15px">
                                                 <tr>
                                                     <td colspan="1" bgcolor="#e3e3e3"><b>ID</b></td>
@@ -582,9 +567,6 @@
 												
                                             <h4>Academic Meeting Proceedings</h4> <!--小分類-->
 											<form action="dataModify.php" name="form6" method="post">
-											<div style='text-align:right;'>
-                                                <input type="submit" value='修改' name="submit_Btn6" id="submit_Btn6" style="width:70px;height:70px;font-size:50px;" onClick="document.form6.submit()">&nbsp;&nbsp;&nbsp;
-                                            </div>
                                             <table width="790" bgcolor="black" style="font-size:15px">
                                                 <tr>
 													<td colspan="1" bgcolor="#e3e3e3"><b>ID</b></td>
@@ -678,7 +660,6 @@
 											
                                             <h4>Textbooks/Chapters</h4> <!--小分類-->
 											<form action="dataModify.php" name="form8" method="post">
-											<input type="submit"  name="submit_Btn8"  id="submit_Btn8" onClick="document.form8.submit()">
                                             <table width="790" bgcolor="black" style="font-size:15px">
                                                 <tr>
 													<td colspan="1" bgcolor="#e3e3e3"><b>ID</b></td>
@@ -724,7 +705,6 @@
 
                                             <h4>Cases</h4> <!--小分類-->
 											<form action="dataModify.php" name="form9" method="post">
-											<input type="submit"  name="submit_Btn9"  id="submit_Btn9" onClick="document.form9.submit()">
                                             <table width="790" bgcolor="black" style="font-size:15px">
                                                 <tr>
 													<td colspan="1" bgcolor="#e3e3e3"><b>ID</b></td>
@@ -770,7 +750,6 @@
 
                                             <h4>Other Teaching Materials</h4> <!--小分類-->
 											<form action="dataModify.php" name="form10" method="post">
-											<input type="submit"  name="submit_Btn10"  id="submit_Btn10" onClick="document.form10.submit()">
                                             <table width="790" bgcolor="black" style="font-size:15px">
                                                 <tr>
 													<td colspan="1" bgcolor="#e3e3e3"><b>ID</b></td>
@@ -810,7 +789,6 @@
 
                                             <h4>Honors and Competitive Awards Received</h4> <!--小分類-->
 											<form action="dataModify.php" name="form11" method="post">
-											<input type="submit"  name="submit_Btn11"  id="submit_Btn11" onClick="document.form11.submit()">
                                             <table width="790" bgcolor="black" style="font-size:15px">
                                                 <tr>
 													<td colspan="1" bgcolor="#e3e3e3"><b>ID</b></td>
@@ -858,7 +836,6 @@
 									    <div class="qa_content">
                                             <h4>Professional History 業界經歷</h4> <!--小分類-->
 											<form action="dataModify.php" name="form12" method="post">
-											<input type="submit"  name="submit_Btn12"  id="submit_Btn12" onClick="document.form12.submit()">
                                             <table width="790" bgcolor="black" style="font-size:15px">
                                                 <tr>
 													<td colspan="1" bgcolor="#e3e3e3"><b>ID</b></td>
@@ -919,7 +896,6 @@
 
                                             <h4>Professional Development 業界發展</h4> <!--小分類-->
 											<form action="dataModify.php" name="form13" method="post">
-											<input type="submit"  name="submit_Btn13"  id="submit_Btn13" onClick="document.form13.submit()">
                                             <table width="790" bgcolor="black" style="font-size:15px">
                                                 <tr>
                                                     <td colspan="1" bgcolor="#e3e3e3"><b>ID</b></td>                                                   
@@ -965,7 +941,6 @@
 
                                             <h4>Professional History 業界團體</h4> <!--小分類-->
 											<form action="dataModify.php" name="form14" method="post">
-											<input type="submit"  name="submit_Btn14"  id="submit_Btn14" onClick="document.form14.submit()">
                                             <table width="790" bgcolor="black" style="font-size:15px">
                                                 <tr>
                                                     <td colspan="1" bgcolor="#e3e3e3"><b>ID</b></td>
@@ -1008,7 +983,6 @@
 
                             <!--影響力描述-->
 							<form action="dataModify.php" name="form15" method="post">
-							<input type="submit"  name="submit_Btn15"  id="submit_Btn15" onClick="document.form15.submit()">
                             <ul class="accordionPart">
                                 <li>
 									
@@ -1057,6 +1031,7 @@
                     </div>
 	            </div>
         </div>
+
         <div id="FOOTER"></div>
 		<img id="goTop" src="images/goTop.png" title="Back to Top"/>
 		<script> //回到頂部

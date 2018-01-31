@@ -1,7 +1,6 @@
 <?php
 	session_start();
 	
-	
 	//學年度授課
 	$course_id = $_POST['course_id'];
 	$program = $_POST['program'];
@@ -149,44 +148,33 @@
 	
 	$sql_Professor_Information_Impacts = "UPDATE Professor_Information SET Research_Impacts = '$Research_Impacts_description',Practice_Impacts = '$Practice_Impacts_description',Teaching__Impacts = '$Teaching_Impacts_description' WHERE Id = '$teacherID'";
 	
-	
 	//Sql_Update
-	
-	$con=mysqli_connect("212.1.212.1","bigcattl_test","s6951435","bigcattl_formal");
-	
-	
+	$conn = include_once("connection.php");
+		
 	// 檢測連接
 	if (mysqli_connect_errno())
 	{
 		echo "連接失敗: " . mysqli_connect_error();
 	}
-	mysqli_query($con, "set names utf8"); //utf8 設為對應的編碼  超級重要
+	mysqli_query($conn, "set names utf8"); //utf8 設為對應的編碼  超級重要
 	
+	mysqli_query($conn,$sql_Course_Taught);
+	mysqli_query($conn,$sql_Peer_reviewed_Journals);
+	mysqli_query($conn,$sql_Academic_Services);
+	mysqli_query($conn,$sql_Research_Monographs);
 	
-	mysqli_query($con,$sql_Course_Taught);
-	mysqli_query($con,$sql_Peer_reviewed_Journals);
-	mysqli_query($con,$sql_Academic_Services);
-	mysqli_query($con,$sql_Research_Monographs);
+	mysqli_query($conn,$sql_Meeting_Proceedings_And_Other);
+	mysqli_query($conn,$sql_Professional_Meeting_Proceedings);
 	
-	mysqli_query($con,$sql_Meeting_Proceedings_And_Other);
-	mysqli_query($con,$sql_Professional_Meeting_Proceedings);
+	mysqli_query($conn,$sql_Textbooks_Chapters);
+	mysqli_query($conn,$sql_Cases);
+	mysqli_query($conn,$sql_Other_Teaching_Materials);
+	mysqli_query($conn,$sql_Honors_Competitive_Awards_Received);
+	mysqli_query($conn,$sql_Professional_History);
+	mysqli_query($conn,$sql_Professional_Development);
+	mysqli_query($conn,$sql_Professional_Societies);
+	mysqli_query($conn,$sql_Professor_Information_Impacts);
 	
-	
-	mysqli_query($con,$sql_Textbooks_Chapters);
-	mysqli_query($con,$sql_Cases);
-	mysqli_query($con,$sql_Other_Teaching_Materials);
-	mysqli_query($con,$sql_Honors_Competitive_Awards_Received);
-	mysqli_query($con,$sql_Professional_History);
-	mysqli_query($con,$sql_Professional_Development);
-	mysqli_query($con,$sql_Professional_Societies);
-	mysqli_query($con,$sql_Professor_Information_Impacts);
-	
-	
-	
-	
-	
-
-
-	mysqli_close($con);
+	mysqli_close($conn);
 	header("location: result.php");
 ?>
