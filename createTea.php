@@ -24,21 +24,22 @@
         <?php 
 			include_once("connection.php");
 			session_start();
-                if($_POST['teacher_ID']!=null) {
-                $teacherID = $_POST['teacher_ID'];
-                $_SESSION['teacherID']=$teacherID;	
-                echo "not null";
+			if($_POST['teacher_ID']!=null) {
+			  $teacherID = $_POST['teacher_ID'];
+			  $_SESSION['teacherID']=$teacherID;	
+			  echo "not null";
 			}
 			else{
-                echo "null!";
-                echo $teacherID;
-                echo "null!";
-                echo $_SESSION['teacherID'];
-                $teacherID = $_SESSION['teacherID'];
-                echo "null!";
+			  echo "null!";
+			  echo $teacherID;
+			  echo "null!";
+			  echo $_SESSION['teacherID'];
+			  $teacherID = $_SESSION['teacherID'];
+			  echo "null!";
 			}
 
 			$today = date('Y-m-d') ;
+			
 		?>
 		<style>/*回到頂部*/
 			/* Go Top 按鈕 */
@@ -50,7 +51,7 @@
                 height: 40px; /* 按鈕原始高度 */
                 opacity: 0.4; /* 按鈕原始透明度 */
                 z-index: 10;
-                cursor: pointer;	
+                cursor: pointer;
 			}
 			#goTop:hover { /* 滑鼠經過按鈕時 */
                 opacity: 1; /* 透明度 */
@@ -60,10 +61,7 @@
 		</style>
     </head>
 
-    <script type="text/javascript">
-		//捉現在時間	
-        var Today=new Date();
-　	   document.write("今天日期是 " + Today.getFullYear()+ " 年 " + (Today.getMonth()+1) + " 月 " + Today.getDate() + " 日");
+    <script type="text/javascript">        
 		$(function(){
             // 伸縮效果
             // 幫 #qaContent 的 ul 子元素加上 .accordionPart
@@ -99,31 +97,6 @@
                     </fieldset>
                 </div>
                 <!--時間-->
-				<div>
-				    <br/>
-					<form action="searchYear.php" method="post">
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;輸入要搜尋的日期:
-                        <input name="searchYear1" type="date" value="<?php echo $today; ?>" />
-                        <label>~</label>
-                        <input name="searchYear2" type="date" value="<?php echo $today; ?>"/>
-                        
-                        <input type="submit"  name="submit_Btn"  id="submit_Btn"  img  src="images/search.png"  onClick="document.form1.submit()">
-					</form>
-					<?php
-                        session_start();
-                        $searchYear1 = $_SESSION['searchYear1'];
-                        $searchYear2 = $_SESSION['searchYear2'];
-                        
-                        echo'<br>';
-                        echo $_SESSION['yearWrong'];
-                        echo $_SESSION['teacherID'];
-                        echo'<br>';
-                    
-                        unset($_SESSION['yearWrong']);
-                        unset($_SESSION['$searchYear1']);
-                        unset($_SESSION['$searchYear2']);
-					?>
-				</div>
 				
 	            <div style="width:800px; height:100%; margin:0 auto 0 185px; text-align:center; line-height:50px;">
 
@@ -131,7 +104,7 @@
 	                    <!--個人資料-->
 							<form action="dataModify_teacher.php" name="form1" method="post">
 							<div style='text-align:right;'>
-                                <input type="submit" value='修改' name="submit_Btn1" id="submit_Btn1" style="width:70px;height:70px;font-size:50px;" onClick="document.form1.submit()">&nbsp;&nbsp;&nbsp;
+                                <input type="submit" value='提交' name="submit_Btn1" id="submit_Btn1" style="width:70px;height:70px;font-size:50px;" onClick="document.form1.submit()">&nbsp;&nbsp;&nbsp;
                             </div>
 
 	                        <ul class="accordionPart">
@@ -139,7 +112,6 @@
 		                        <li>
                                     <div class="qa_title" style="text-decoration:none;">個人資料 ▾</div>
 									
-                                    <?php $data = mysql_fetch_row(mysql_query("select * from Professor_Information where id='$teacherID'", $conn)); ?>
 			                        <div class="qa_content">
                                         <table width="790" bgcolor="black" style="font-size:15px">
                                             <tr>
@@ -333,7 +305,6 @@
                             <ul class="accordionPart">
                                 <li>
                                     <div class="qa_title" style="text-decoration:none;">學年度授課 ▾</div>
-                                    <?php $data = mysql_query("select * from Course_Taught where Professor_Id='$teacherID'", $conn); ?>
 									    <div class="qa_content">
                                             <table width="790" bgcolor="black" style="font-size:15px">
                                                 <tr>
