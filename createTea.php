@@ -23,23 +23,6 @@
         <!--Importing Database Script-->
         <?php 
 			include_once("connection.php");
-			session_start();
-			if($_POST['teacher_ID']!=null) {
-			  $teacherID = $_POST['teacher_ID'];
-			  $_SESSION['teacherID']=$teacherID;	
-			  echo "not null";
-			}
-			else{
-			  echo "null!";
-			  echo $teacherID;
-			  echo "null!";
-			  echo $_SESSION['teacherID'];
-			  $teacherID = $_SESSION['teacherID'];
-			  echo "null!";
-			}
-
-			$today = date('Y-m-d') ;
-			
 		?>
 		<style>/*回到頂部*/
 			/* Go Top 按鈕 */
