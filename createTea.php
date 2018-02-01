@@ -20,10 +20,6 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
         <link href="qa_layout.css" rel="stylesheet" type="text/css" />
 
-        <!--Importing Database Script-->
-        <?php 
-			include_once("connection.php");
-		?>
 		<style>/*回到頂部*/
 			/* Go Top 按鈕 */
 			#goTop {
@@ -79,984 +75,817 @@
                         <div><a href="depmanage.php?op=logout">登出</a></div><br/>
                     </fieldset>
                 </div>
-                <!--時間-->
 				
-	            <div style="width:800px; height:100%; margin:0 auto 0 185px; text-align:center; line-height:50px;">
+                <form action="dataCreate.php" name="form" method="post">
+                    <div style="width:800px; height:100%; margin:0 auto 0 185px; text-align:center; line-height:50px;">
 
-				  <div id="qaContent">
-	                    <!--個人資料-->
-							<form action="dataModify_teacher.php" name="form1" method="post">
-							<div style='text-align:right;'>
-                                <input type="submit" value='提交' name="submit_Btn1" id="submit_Btn1" style="width:70px;height:70px;font-size:50px;" onClick="document.form1.submit()">&nbsp;&nbsp;&nbsp;
-                            </div>
+                        <div id="qaContent">
+                            <!--個人資料-->
+                                <div style='text-align:right;'>
+                                    <input type="submit" value='提交' name="submit_Btn1" id="submit_Btn1" style="width:70px;height:70px;font-size:50px;" onClick="document.form1.submit()">&nbsp;&nbsp;&nbsp;
+                                </div>
 
-	                        <ul class="accordionPart">
-
-		                        <li>
-                                    <div class="qa_title" style="text-decoration:none;">個人資料 ▾</div>
-									
-			                        <div class="qa_content">
-                                        <table width="790" bgcolor="black" style="font-size:15px">
-                                            <tr>
-                                                <td colspan="4" bgcolor="#FFFFFF">
-                                                    <input type="text" name="name" value="<?php echo $data[1]; ?>"
-                                                        style="width:250px; font-size:15px; text-align:center; 
-                                                            text-overflow:ellipsis; overflow: hidden;"/>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td colspan="2" bgcolor="#e3e3e3"><b>Academic Title</b></td>
-                                                <td colspan="2" bgcolor="#e3e3e3"><b>Center</b></td>
-                                            </tr>
-                                            <tr>
-                                                <td colspan="2" bgcolor="#FFFFFF">
-                                                    <input type="text" name="academic_Title" value="<?php echo $data[2]; ?>"
-                                                        style="width:250px; font-size:15px; text-align:center; 
-                                                            text-overflow:ellipsis; overflow: hidden;"/>
-                                                    </td>
-                                                <td colspan="2" bgcolor="#FFFFFF">
-                                                    <input type="text" name="center" value="<?php echo $data[3]; ?>" 
-                                                        style="width:250px; font-size:15px; text-align:center; 
-                                                            text-overflow:ellipsis; overflow: hidden;"/>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td colspan="2" bgcolor="#e3e3e3"><b>Department 科系</b></td>
-                                                <td colspan="2" bgcolor="#FFFFFF">
-                                                    <input type="text" name="department" value="<?php echo $data[4]; ?>" 
-                                                        style="width:250px; font-size:15px; text-align:center; 
-                                                            text-overflow:ellipsis; overflow: hidden;"/>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td colspan="2" bgcolor="#e3e3e3"><b>College 學院</b></td>
-                                                <td colspan="2" bgcolor="#FFFFFF">
-                                                    <input type="text" name="college" value="<?php echo $data[5]; ?>" 
-                                                        style="width:250px; font-size:15px; text-align:center; 
-                                                            text-overflow:ellipsis; overflow: hidden;"/>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td colspan="4" bgcolor="#FFFFFF">National Chung Cheng University 國立中正大學</td>
-                                            </tr>
-                                            <tr>
-                                                <td colspan="1" bgcolor="#e3e3e3"><b>Phone 電話</b></td>
-                                                <td colspan="1" bgcolor="#FFFFFF">
-                                                    <input type="text" name="phone" value="<?php echo $data[7]; ?>" 
-                                                        style="width:200px; font-size:15px; text-align:center; 
-                                                            text-overflow:ellipsis; overflow: hidden;"/>
-                                                </td>
-                                                <td colspan="1" bgcolor="#e3e3e3"><b>Cell</b></td>
-                                                <td colspan="1" bgcolor="#FFFFFF">
-                                                    <input type="text" name="cell" value="<?php echo $data[8]; ?>" 
-                                                        style="width:200px; font-size:15px; text-align:center; 
-                                                            text-overflow:ellipsis; overflow: hidden;"/>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td colspan="1" bgcolor="#e3e3e3"><b>E-mail</b></td>
-                                                <td colspan="1" bgcolor="#FFFFFF">
-                                                    <input type="text" name="email" value="<?php echo $data[9]; ?>" 
-                                                        style="width:200px; font-size:15px; text-align:center; 
-                                                            text-overflow:ellipsis; overflow: hidden;"/>
-                                                </td>
-                                                <td colspan="1" bgcolor="#e3e3e3"><b>Website</b></td>
-                                                <td colspan="1" bgcolor="#FFFFFF">
-                                                    <input type="text" name="website" value="<?php echo $data[10]; ?>" 
-                                                        style="width:200px; font-size:15px; text-align:center; 
-                                                            text-overflow:ellipsis; overflow: hidden;"/>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td colspan="4" bgcolor="#e3e3e3"><b>Education (Highest Degree)</b></td>
-                                            </tr>
-                                            <tr>
-                                                <td colspan="1" bgcolor="#FFFFFF">
-                                                    <input type="text" name="edu_Degree" value="<?php echo $data[11]; ?>" 
-                                                        style="width:100px; font-size:15px; text-align:center; 
-                                                            text-overflow:ellipsis; overflow: hidden;"/>
-                                                </td>
-                                                <td colspan="1" bgcolor="#FFFFFF">
-                                                    <input type="text" name="edu_Year" value="<?php echo $data[12]; ?>" 
-                                                        style="width:100px; font-size:15px; text-align:center; 
-                                                            text-overflow:ellipsis; overflow: hidden;"/>
-                                                </td>
-                                                <td colspan="2" bgcolor="#FFFFFF">
-                                                    <textarea cols="40" rows="3" name="edu_department" style="font-size:15px; margin:15px auto 0px auto;"       text-overflow:ellipsis; overflow: hidden;>Major: <?php echo $data[13]; ?>
-                                                        Department: <?php echo $data[14]; ?>
-                                                        School: <?php echo $data[15]; ?>
-                                                    </textarea>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td colspan="4" bgcolor="#e3e3e3"><b>Faculty Responsibilities</b></td>
-                                            </tr>
-                                            <tr>
-                                                <td colspan="4" bgcolor="#FFFFFF"> <!--選取方塊未做-->
-                                                    <textarea cols="30" rows="3" name="faculty_responsibilities" 
-                                                        style="font-size:15px; margin:15px auto 0px auto;" text-overflow:ellipsis; overflow: hidden;>
-                                                        <?php echo $data[16]; ?>
-                                                    </textarea>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td colspan="2" bgcolor="#e3e3e3"><b>Faculty Sufficiency</b></td>
-                                                <td colspan="2" bgcolor="FFFFFF">
-                                                    <input type="text" name="faculty_sufficiency" value="<?php echo $data[17]; ?>" 
-                                                            style="width:200px; font-size:15px; text-align:center; 
-                                                                text-overflow:ellipsis; overflow: hidden;"/>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td colspan="2" bgcolor="#e3e3e3"><b>Time Devoted to Mission</b></td>
-                                                <td colspan="2" bgcolor="FFFFFF">
-                                                    <input type="text" name="time_devoted_mission" value="<?php echo $data[18]; ?>" 
-                                                            style="width:200px; font-size:15px; text-align:center; 
-                                                                text-overflow:ellipsis; overflow: hidden;"/>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td colspan="2" bgcolor="#e3e3e3"><b>Faculty Qualification</b></td>
-                                                <td colspan="2" bgcolor="FFFFFF">
-                                                    <input type="text" name="faculty_qualification" value="<?php echo $data[19]; ?>" 
-                                                            style="width:200px; font-size:15px; text-align:center; 
-                                                                text-overflow:ellipsis; overflow: hidden;"/>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td colspan="2" bgcolor="#e3e3e3"><b>Description</b></td>
-                                                <td colspan="2" bgcolor="FFFFFF">
-                                                    <textarea cols="30" rows="3" name="faculty_description" 
-                                                        style="font-size:15px; margin:15px auto 0px auto;" text-overflow:ellipsis; overflow: hidden;>
-                                                        <?php echo $data[20]; ?>
-                                                    </textarea>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td colspan="2" bgcolor="#e3e3e3"><b>Normal Professional Responsibilities</b></td>
-                                                <td colspan="2" bgcolor="FFFFFF">
-                                                    <input type="text" name="normal_professional_responsibilities" value="<?php echo $data[21]; ?>" 
-                                                            style="width:200px; font-size:15px; text-align:center; 
-                                                                text-overflow:ellipsis; overflow: hidden;"/>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td colspan="2" bgcolor="#e3e3e3"><b>Portfolio of Intellectual Contributions</b></td>
-                                                <td colspan="2" bgcolor="#e3e3e3"><b>Types of Intellectual Contributions</b></td>
-                                            </tr>
-                                            <tr> <!--細部分割表格未做-->
-                                                <td colspan="2" bgcolor="#e3e3e3"><b>BDS,    AIS, TLS</b></td>
-                                                <td colspan="2" bgcolor="#e3e3e3"><b>PRJs, RMs,	A/P, MPs,	CRARs,	TBs,	Cases,	Other TMs,	Other IC Type</b></td>
-                                            </tr>
-                                            <tr>
-                                                <td colspan="2" bgcolor="FFFFFF"> <!--細部分割表格未做-->
-                                                        <input type="text" name="portfolio_of_intellectual_contributions"
-                                                            value="<?php echo $data[22].", ".$data[23].", ".$data[24]; ?>" 
-                                                                style="width:200px; font-size:15px; text-align:center; 
-                                                                    text-overflow:ellipsis; overflow: hidden;"/>
-                                                </td>
-                                                <td colspan="2" bgcolor="FFFFFF"> <!--細部分割表格未做-->
-                                                        <input type="text" name="types_of_intellectual_contributions"
-                                                            value="<?php echo $data[25].", ".$data[26].", ".$data[27].", ".$data[28].", ".$data[29].", ".$data[30].", ".$data[31].", ".$data[32]; ?>" 
-                                                                style="width:200px; font-size:15px; text-align:center; 
-                                                                    text-overflow:ellipsis; overflow: hidden;"/>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td colspan="4" bgcolor="#e3e3e3"><b>Academic/Teaching Interests</b></td>
-                                            </tr>
-                                            <tr>
-                                                <td colspan="4" bgcolor="FFFFFF">
-                                                    <textarea cols="30" rows="3" name="teaching_interests" 
-                                                    style="font-size:15px; margin:15px auto 0px auto;" text-overflow:ellipsis; overflow: hidden;>
-                                                        <?php echo $data[33]; ?>
-                                                    </textarea>
-                                                </td>
-                                            </tr>
-                                        </table>
-                                    </div>
-		                        </li>
-								
-                            </ul>
-							</form>
-
-                            <!--學年度授課-->
-							<form action="dataModify.php" name="form2" method="post">
-							<div style='text-align:right;'>
-                                <input type="submit" value='修改' name="submit_Btn2" id="submit_Btn2" style="width:70px;height:70px;font-size:50px;" onClick="document.form2.submit()">&nbsp;&nbsp;&nbsp;
-                            </div>
-                            <ul class="accordionPart">
-                                <li>
-                                    <div class="qa_title" style="text-decoration:none;">學年度授課 ▾</div>
-									    <div class="qa_content">
+                                <ul class="accordionPart">
+                                    <li>
+                                        <div class="qa_title" style="text-decoration:none;">個人資料 ▾</div>
+                                        
+                                        <div class="qa_content">
                                             <table width="790" bgcolor="black" style="font-size:15px">
                                                 <tr>
-                                                    <td colspan="1" bgcolor="#e3e3e3"><b>ID</b></td>
-													<td colspan="1" bgcolor="#e3e3e3"><b>Program</b></td>
-                                                    <td colspan="1" bgcolor="#e3e3e3"><b>Academic Year</b></td>
-                                                    <td colspan="1" bgcolor="#e3e3e3"><b>Semester</b></td>
-                                                    <td colspan="1" bgcolor="#e3e3e3"><b>Course Title</b></td>
-                                                    <td colspan="1" bgcolor="#e3e3e3"><b>Credit hour</b></td>
+                                                    <td colspan="4" bgcolor="#FFFFFF">
+                                                        姓名: <input type="text" name="name"
+                                                            style="width:250px; font-size:15px; text-align:center; 
+                                                                text-overflow:ellipsis; overflow: hidden;"/>
+                                                    </td>
                                                 </tr>
-                                                <?php
-                                                    for($i=1; $i<=mysql_num_rows($data); $i++){ //把每一列的資料取出來
-                                                        $rs=mysql_fetch_row($data);
-                                                    ?><tr>
-														<td colspan="1" bgcolor="#FFFFFF">
-                                                        <input type="text" name="course_id" value="<?php echo $rs[0] ?>"
+                                                <tr>
+                                                    <td colspan="2" bgcolor="#e3e3e3"><b>Academic Title</b></td>
+                                                    <td colspan="2" bgcolor="#e3e3e3"><b>Center</b></td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="2" bgcolor="#FFFFFF">
+                                                        <input type="text" name="academic_Title"
+                                                            style="width:250px; font-size:15px; text-align:center; 
+                                                                text-overflow:ellipsis; overflow: hidden;"/>
+                                                        </td>
+                                                    <td colspan="2" bgcolor="#FFFFFF">
+                                                        <input type="text" name="center" 
+                                                            style="width:250px; font-size:15px; text-align:center; 
+                                                                text-overflow:ellipsis; overflow: hidden;"/>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="2" bgcolor="#e3e3e3"><b>Department 科系</b></td>
+                                                    <td colspan="2" bgcolor="#FFFFFF">
+                                                        <input type="text" name="department" 
+                                                            style="width:250px; font-size:15px; text-align:center; 
+                                                                text-overflow:ellipsis; overflow: hidden;"/>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="2" bgcolor="#e3e3e3"><b>College 學院</b></td>
+                                                    <td colspan="2" bgcolor="#FFFFFF">
+                                                        <input type="text" name="college" 
+                                                            style="width:250px; font-size:15px; text-align:center; 
+                                                                text-overflow:ellipsis; overflow: hidden;"/>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="4" bgcolor="#FFFFFF">National Chung Cheng University 國立中正大學</td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="1" bgcolor="#e3e3e3"><b>Phone 電話</b></td>
+                                                    <td colspan="1" bgcolor="#FFFFFF">
+                                                        <input type="text" name="phone" 
+                                                            style="width:200px; font-size:15px; text-align:center; 
+                                                                text-overflow:ellipsis; overflow: hidden;"/>
+                                                    </td>
+                                                    <td colspan="1" bgcolor="#e3e3e3"><b>Cell</b></td>
+                                                    <td colspan="1" bgcolor="#FFFFFF">
+                                                        <input type="text" name="cell" 
+                                                            style="width:200px; font-size:15px; text-align:center; 
+                                                                text-overflow:ellipsis; overflow: hidden;"/>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="1" bgcolor="#e3e3e3"><b>E-mail</b></td>
+                                                    <td colspan="1" bgcolor="#FFFFFF">
+                                                        <input type="text" name="email" 
+                                                            style="width:200px; font-size:15px; text-align:center; 
+                                                                text-overflow:ellipsis; overflow: hidden;"/>
+                                                    </td>
+                                                    <td colspan="1" bgcolor="#e3e3e3"><b>Website</b></td>
+                                                    <td colspan="1" bgcolor="#FFFFFF">
+                                                        <input type="text" name="website" 
+                                                            style="width:200px; font-size:15px; text-align:center; 
+                                                                text-overflow:ellipsis; overflow: hidden;"/>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="4" bgcolor="#e3e3e3"><b>Education (Highest Degree)</b></td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="1" bgcolor="#FFFFFF">
+                                                        學歷: <input type="text" name="edu_Degree" 
+                                                            style="width:100px; font-size:15px; text-align:center; 
+                                                                text-overflow:ellipsis; overflow: hidden;"/>
+                                                    </td>
+                                                    <td colspan="1" bgcolor="#FFFFFF">
+                                                        年份: <input type="text" name="edu_Year" 
+                                                            style="width:100px; font-size:15px; text-align:center; 
+                                                                text-overflow:ellipsis; overflow: hidden;"/>
+                                                    </td>
+                                                    <td colspan="2" bgcolor="#FFFFFF">
+                                                        Major: <input type="text" name="edu_Major" 
+                                                            style="width:100px; font-size:15px; text-align:center; 
+                                                                text-overflow:ellipsis; overflow: hidden;"/><p>
+                                                        Department: <input type="text" name="edu_Department" 
+                                                            style="width:100px; font-size:15px; text-align:center; 
+                                                                text-overflow:ellipsis; overflow: hidden;"/>&nbsp;
+                                                        School: <input type="text" name="edu_School" 
+                                                            style="width:100px; font-size:15px; text-align:center; 
+                                                                text-overflow:ellipsis; overflow: hidden;"/>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="4" bgcolor="#e3e3e3"><b>Faculty Responsibilities</b></td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="4" bgcolor="#FFFFFF">
+                                                        <textarea cols="30" rows="3" name="faculty_responsibilities" 
+                                                            style="font-size:15px; margin:15px auto 0px auto;" text-overflow:ellipsis; overflow: hidden;>
+                                                        </textarea>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="2" bgcolor="#e3e3e3"><b>Faculty Sufficiency</b></td>
+                                                    <td colspan="2" bgcolor="FFFFFF">
+                                                        <input type="text" name="faculty_sufficiency" 
+                                                                style="width:200px; font-size:15px; text-align:center; 
+                                                                    text-overflow:ellipsis; overflow: hidden;"/>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="2" bgcolor="#e3e3e3"><b>Time Devoted to Mission</b></td>
+                                                    <td colspan="2" bgcolor="FFFFFF">
+                                                        <input type="text" name="time_devoted_mission" 
+                                                                style="width:200px; font-size:15px; text-align:center; 
+                                                                    text-overflow:ellipsis; overflow: hidden;"/>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="2" bgcolor="#e3e3e3"><b>Faculty Qualification</b></td>
+                                                    <td colspan="2" bgcolor="FFFFFF">
+                                                        <input type="text" name="faculty_qualification" 
+                                                                style="width:200px; font-size:15px; text-align:center; 
+                                                                    text-overflow:ellipsis; overflow: hidden;"/>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="2" bgcolor="#e3e3e3"><b>Description</b></td>
+                                                    <td colspan="2" bgcolor="FFFFFF">
+                                                        <textarea cols="30" rows="3" name="faculty_description" 
+                                                            style="font-size:15px; margin:15px auto 0px auto;" text-overflow:ellipsis; overflow: hidden;>
+                                                        </textarea>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="2" bgcolor="#e3e3e3"><b>Normal Professional Responsibilities</b></td>
+                                                    <td colspan="2" bgcolor="FFFFFF">
+                                                        <input type="text" name="normal_professional_responsibilities" 
+                                                                style="width:200px; font-size:15px; text-align:center; 
+                                                                    text-overflow:ellipsis; overflow: hidden;"/>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="4" bgcolor="#e3e3e3"><b>Academic/Teaching Interests</b></td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="4" bgcolor="FFFFFF">
+                                                        <textarea cols="30" rows="3" name="teaching_interests" 
+                                                        style="font-size:15px; margin:15px auto 0px auto;" text-overflow:ellipsis; overflow: hidden;>
+                                                            <?php echo $data[33]; ?>
+                                                        </textarea>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </li>
+                                </ul>
+                                
+
+                                <!--學年度授課-->
+                                <ul class="accordionPart">
+                                    <li>
+                                        <div class="qa_title" style="text-decoration:none;">學年度授課 ▾</div>
+                                            <div class="qa_content">
+                                                <table width="790" bgcolor="black" style="font-size:15px">
+                                                    <tr>
+                                                        <td colspan="1" bgcolor="#e3e3e3"><b>ID</b></td>
+                                                        <td colspan="1" bgcolor="#e3e3e3"><b>Program</b></td>
+                                                        <td colspan="1" bgcolor="#e3e3e3"><b>Academic Year</b></td>
+                                                        <td colspan="1" bgcolor="#e3e3e3"><b>Semester</b></td>
+                                                        <td colspan="1" bgcolor="#e3e3e3"><b>Course Title</b></td>
+                                                        <td colspan="1" bgcolor="#e3e3e3"><b>Credit hour</b></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan="1" bgcolor="#FFFFFF">
+                                                        <input type="text" name="course_id"
                                                             style="width:100px; font-size:15px; text-align:center; 
                                                                 text-overflow:ellipsis; overflow: hidden;"/>
                                                         </td>
                                                         <td colspan="1" bgcolor="#FFFFFF">
-                                                        <input type="text" name="program" value="<?php echo $rs[1] ?>"
+                                                        <input type="text" name="program"
                                                             style="width:100px; font-size:15px; text-align:center; 
                                                                 text-overflow:ellipsis; overflow: hidden;"/>
                                                         </td>
                                                         <td colspan="1" bgcolor="#FFFFFF">
-                                                            <input type="text" name="academic_year" value="<?php echo $rs[2] ?>"
+                                                            <input type="text" name="academic_year"
                                                                 style="width:100px; font-size:15px; text-align:center; 
                                                                     text-overflow:ellipsis; overflow: hidden;"/>
                                                         </td>
                                                         <td colspan="1" bgcolor="#FFFFFF">
-                                                            <input type="text" name="semester" value="<?php echo $rs[3] ?>"
+                                                            <input type="text" name="semester"
                                                                 style="width:100px; font-size:15px; text-align:center; 
                                                                     text-overflow:ellipsis; overflow: hidden;"/>
                                                         </td>
                                                         <td colspan="1" bgcolor="#FFFFFF">
-                                                            <input type="text" name="course_title" value="<?php echo $rs[4] ?>"
+                                                            <input type="text" name="course_title"
                                                                 style="width:100px; font-size:15px; text-align:center; 
                                                                     text-overflow:ellipsis; overflow: hidden;"/>
                                                         </td>
                                                         <td colspan="1" bgcolor="#FFFFFF">
-                                                            <input type="text" name="credit_hour" value="<?php echo $rs[5] ?>"
+                                                            <input type="text" name="credit_hour"
                                                                 style="width:100px; font-size:15px; text-align:center; 
                                                                     text-overflow:ellipsis; overflow: hidden;"/>
                                                         </td>
                                                     </tr>
-                                                <?php }?>
-                                            </table>
-                                        </div>
-                                </li>
-                            </ul>
-                            </form>
-                            <!--學術服務-->
-							<form action="dataModify.php" name="form3" method="post">
-							<div style='text-align:right;'>
-                                <input type="submit" value='修改' name="submit_Btn3" id="submit_Btn3" style="width:70px;height:70px;font-size:50px;" onClick="document.form3.submit()">&nbsp;&nbsp;&nbsp;
-                            </div>
-                            <ul class="accordionPart">
-                                <li>
-                                    <div class="qa_title" style="text-decoration:none;">學術服務 ▾</div>
-                                    <?php $data = mysql_query("select * from Academic_Services where Professor_Id='$teacherID'", $conn); ?>
-									    <div class="qa_content">
-                                            <table width="790" bgcolor="black" style="font-size:15px">
-                                                <tr>
-                                                    <td colspan="1" bgcolor="#e3e3e3"><b>ID</b></td>
-													<td colspan="1" bgcolor="#e3e3e3"><b>Year</b></td>
-                                                    <td colspan="1" bgcolor="#e3e3e3"><b>Service Type</b></td>
-                                                    <td colspan="1" bgcolor="#e3e3e3"><b>Description (Title, Institute/Unit, etc.)</b></td>
-                                                </tr>
-                                                <?php
-                                                    for($i=1; $i<=mysql_num_rows($data); $i++){ //把每一列的資料取出來
-                                                        $rs=mysql_fetch_row($data);
-                                                    ?><tr>
-														<td colspan="1" bgcolor="#FFFFFF">
-                                                        <input type="text" name="service_ID" value="<?php echo $rs[0] ?>"
+                                                </table>
+                                            </div>
+                                    </li>
+                                </ul>
+
+                                <!--學術服務-->
+                                <ul class="accordionPart">
+                                    <li>
+                                        <div class="qa_title" style="text-decoration:none;">學術服務 ▾</div>
+                                            <div class="qa_content">
+                                                <table width="790" bgcolor="black" style="font-size:15px">
+                                                    <tr>
+                                                        <td colspan="1" bgcolor="#e3e3e3"><b>ID</b></td>
+                                                        <td colspan="1" bgcolor="#e3e3e3"><b>Year</b></td>
+                                                        <td colspan="1" bgcolor="#e3e3e3"><b>Service Type</b></td>
+                                                        <td colspan="1" bgcolor="#e3e3e3"><b>Description (Title, Institute/Unit, etc.)</b></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan="1" bgcolor="#FFFFFF">
+                                                        <input type="text" name="service_ID"
                                                             style="width:100px; font-size:15px; text-align:center; 
                                                                 text-overflow:ellipsis; overflow: hidden;"/>
                                                         </td>
                                                         <td colspan="1" bgcolor="#FFFFFF">
-                                                        <input type="text" name="service_Year" value="<?php echo $rs[1] ?>"
+                                                        <input type="text" name="service_Year"
                                                             style="width:100px; font-size:15px; text-align:center; 
                                                                 text-overflow:ellipsis; overflow: hidden;"/>
                                                         </td>
                                                         <td colspan="1" bgcolor="#FFFFFF">
-                                                            <input type="text" name="service_type" value="<?php echo $rs[2] ?>"
+                                                            <input type="text" name="service_type"
                                                                 style="width:100px; font-size:15px; text-align:center; 
                                                                     text-overflow:ellipsis; overflow: hidden;"/>
                                                         </td>
                                                         <td colspan="1" bgcolor="#FFFFFF">
                                                             <textarea cols="30" rows="3" name="service_description" style="font-size:15px; margin:15px auto 0px auto;" text-overflow:ellipsis; overflow: hidden;>
-                                                                <?php echo rtrim($rs[3]); ?>
                                                             </textarea>
                                                         </td>
                                                     </tr>
-                                                <?php }?>
-                                            </table>
-                                        </div>
-                                </li>
-                            </ul>
-							</form>
-
-                            <!--研究產出-->
-                            <ul class="accordionPart">
-                                <li>
-                                    <div class="qa_title" style="text-decoration:none;">研究產出 ▾</div>
-									    <div class="qa_content">
-												
-                                            <h4>Peer-reviewed Journals</h4> <!--小分類-->
-											<form action="dataModify.php" name="form4" method="post">
-											<div style='text-align:right;'>
-                                                <input type="submit" value='修改' name="submit_Btn4" id="submit_Btn4" style="width:70px;height:70px;font-size:50px;" onClick="document.form4.submit()">&nbsp;&nbsp;&nbsp;
+                                                </table>
                                             </div>
-                                            <table width="790" bgcolor="black" style="font-size:15px">
-                                                <tr>
-													<td colspan="1" bgcolor="#e3e3e3"><b>ID</b></td>
-                                                    <td colspan="1" bgcolor="#e3e3e3"><b>Year</b></td>
-                                                    <td colspan="1" bgcolor="#e3e3e3"><b>Topic</b></td>
-                                                    <td colspan="1" bgcolor="#e3e3e3"><b>Description(Title,Journal,etc.-APA format)</b></td>
-                                                    <td colspan="1" bgcolor="#e3e3e3"><b>Download Number</b></td>
-                                                    <td colspan="1" bgcolor="#e3e3e3"><b>Status</b></td>
-                                                </tr>
-                                                <?php
-                                                    $data = mysql_query("select * from Peer_reviewed_Journals where Professor_Id='$teacherID'", $conn);
-                                                    for($i=1; $i<=mysql_num_rows($data); $i++){ //把每一列的資料取出來
-                                                        $rs=mysql_fetch_row($data);
-                                                    ?><tr>
-														<td colspan="1" bgcolor="#FFFFFF">
-                                                        <input type="text" name="Peer_reviewed_id" value="<?php echo $rs[0] ?>"
+                                    </li>
+                                </ul>
+
+                                <!--研究產出-->
+                                <ul class="accordionPart">
+                                    <li>
+                                        <div class="qa_title" style="text-decoration:none;">研究產出 ▾</div>
+                                            <div class="qa_content">
+                                                    
+                                                <h4>Peer-reviewed Journals</h4> <!--小分類-->
+                                                <table width="790" bgcolor="black" style="font-size:15px">
+                                                    <tr>
+                                                        <td colspan="1" bgcolor="#e3e3e3"><b>ID</b></td>
+                                                        <td colspan="1" bgcolor="#e3e3e3"><b>Year</b></td>
+                                                        <td colspan="1" bgcolor="#e3e3e3"><b>Topic</b></td>
+                                                        <td colspan="1" bgcolor="#e3e3e3"><b>Description(Title,Journal,etc.-APA format)</b></td>
+                                                        <td colspan="1" bgcolor="#e3e3e3"><b>Download Number</b></td>
+                                                        <td colspan="1" bgcolor="#e3e3e3"><b>Status</b></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan="1" bgcolor="#FFFFFF">
+                                                        <input type="text" name="Peer_reviewed_id"
                                                             style="width:100px; font-size:15px; text-align:center; 
                                                                 text-overflow:ellipsis; overflow: hidden;"/>
                                                         </td>
                                                         <td colspan="1" bgcolor="#FFFFFF">
-                                                        <input type="text" name="Peer_reviewed_year" value="<?php echo $rs[1] ?>"
+                                                        <input type="text" name="Peer_reviewed_year"
                                                             style="width:100px; font-size:15px; text-align:center; 
                                                                 text-overflow:ellipsis; overflow: hidden;"/>
                                                         </td>
                                                         <td colspan="1" bgcolor="#FFFFFF">
-                                                            <input type="text" name="Peer_reviewed_topic" value="<?php echo $rs[2] ?>"
+                                                            <input type="text" name="Peer_reviewed_topic"
                                                                 style="width:100px; font-size:15px; text-align:center; 
                                                                     text-overflow:ellipsis; overflow: hidden;"/>
                                                         </td>
                                                         <td colspan="1" bgcolor="#FFFFFF">
                                                             <textarea cols="20" rows="5" name="Peer_reviewed_description" style="font-size:15px; margin:15px auto 0px auto;" text-overflow:ellipsis; overflow: hidden;>
-                                                                <?php echo rtrim($rs[3]); ?>
                                                             </textarea>
                                                         </td>
                                                         <td colspan="1" bgcolor="#FFFFFF">
-                                                            <input type="text" name="Peer_reviewed_download_number" value="<?php echo $rs[4] ?>"
+                                                            <input type="text" name="Peer_reviewed_download_number"
                                                                 style="width:100px; font-size:15px; text-align:center; 
                                                                     text-overflow:ellipsis; overflow: hidden;"/>
                                                         </td>
                                                         <td colspan="1" bgcolor="#FFFFFF">
-                                                            <input type="text" name="Peer_reviewed_status" value="<?php echo $rs[5] ?>"
+                                                            <input type="text" name="Peer_reviewed_status"
                                                                 style="width:50px; font-size:15px; text-align:center; 
                                                                     text-overflow:ellipsis; overflow: hidden;"/>
                                                         </td>
                                                     </tr>
-                                                <?php }?>
-                                                <tr>
-                                                    <td colspan="1" bgcolor="#e3e3e3"><b>MOST Rank</b></td>
-                                                    <td colspan="1" bgcolor="#e3e3e3"><b>Portfolio</b></td>
-                                                    <td colspan="1" bgcolor="#e3e3e3"><b>Citation Index</b></td>
-                                                    <td colspan="1" bgcolor="#e3e3e3"><b>Browses</b></td>
-                                                    <td colspan="1" bgcolor="#e3e3e3"><b>Supported by</b></td>
-													<td colspan="1" bgcolor="#e3e3e3"><b>Professor_Id</b></td>
-                                                </tr>
-                                                <?php
-                                                    $data = mysql_query("select * from Peer_reviewed_Journals where Professor_Id='$teacherID'", $conn);
-                                                    for($i=1; $i<=mysql_num_rows($data); $i++){ //把每一列的資料取出來
-                                                        $rs=mysql_fetch_row($data);
-                                                    ?><tr>
+                                                    <tr>
+                                                        <td colspan="1" bgcolor="#e3e3e3"><b>MOST Rank</b></td>
+                                                        <td colspan="1" bgcolor="#e3e3e3"><b>Portfolio</b></td>
+                                                        <td colspan="1" bgcolor="#e3e3e3"><b>Citation Index</b></td>
+                                                        <td colspan="1" bgcolor="#e3e3e3"><b>Browses</b></td>
+                                                        <td colspan="1" bgcolor="#e3e3e3"><b>Supported by</b></td>
+                                                        <td colspan="1" bgcolor="#e3e3e3"><b>Professor_Id</b></td>
+                                                    </tr>
+                                                    <tr>
                                                         <td colspan="1" bgcolor="#FFFFFF">
-                                                        <input type="text" name="most_rank" value="<?php echo $rs[6] ?>"
+                                                        <input type="text" name="most_rank"
                                                             style="width:100px; font-size:15px; text-align:center; 
                                                                 text-overflow:ellipsis; overflow: hidden;"/>
                                                         </td>
                                                         <td colspan="1" bgcolor="#FFFFFF">
-                                                            <input type="text" name="portfolio" value="<?php echo $rs[7] ?>"
+                                                            <input type="text" name="portfolio"
                                                                 style="width:100px; font-size:15px; text-align:center; 
                                                                     text-overflow:ellipsis; overflow: hidden;"/>
                                                         </td>
                                                         <td colspan="1" bgcolor="#FFFFFF">
-                                                            <input type="text" name="citation_index" value="<?php echo $rs[8] ?>"
+                                                            <input type="text" name="citation_index"
                                                             style="width:60px; font-size:15px; text-align:center; 
                                                                 text-overflow:ellipsis; overflow: hidden;"/>
                                                         </td>
                                                         <td colspan="1" bgcolor="#FFFFFF">
-                                                            <input type="text" name="browses" value="<?php echo $rs[9] ?>"
+                                                            <input type="text" name="browses"
                                                             style="width:100px; font-size:15px; text-align:center; 
                                                                 text-overflow:ellipsis; overflow: hidden;"/>
                                                         </td>
                                                         <td colspan="1" bgcolor="#FFFFFF">
-                                                            <input type="text" name="supported_by" value="<?php echo $rs[10] ?>"
+                                                            <input type="text" name="supported_by"
                                                             style="width:150px; font-size:15px; text-align:center; 
                                                                 text-overflow:ellipsis; overflow: hidden;"/>
                                                         </td>
-														<td colspan="1" bgcolor="#FFFFFF">
-                                                            <input type="text" name="Professor_Id" value="<?php echo $rs[11] ?>"
+                                                        <td colspan="1" bgcolor="#FFFFFF">
+                                                            <input type="text" name="Professor_Id"
                                                             style="width:50px; font-size:15px; text-align:center; 
                                                                 text-overflow:ellipsis; overflow: hidden;"/>
                                                         </td>
                                                     </tr>
-                                                <?php }?>	
-                                            </table>
-											</form>
-											
-												
-                                            <h4>Research Monographs</h4> <!--小分類-->
-											<form action="dataModify.php" name="form5" method="post">
-											<input type="submit"  name="submit_Btn5"  id="submit_Btn5" onClick="document.form5.submit()">
-                                            <table width="790" bgcolor="black" style="font-size:15px">
-                                                <tr>
-                                                    <td colspan="1" bgcolor="#e3e3e3"><b>ID</b></td>
-													<td colspan="1" bgcolor="#e3e3e3"><b>Year</b></td>
-                                                    <td colspan="1" bgcolor="#e3e3e3"><b>Type</b></td>
-                                                    <td colspan="1" bgcolor="#e3e3e3"><b>Topic</b></td>
-                                                    <td colspan="1" bgcolor="#e3e3e3"><b>Description(Title,sponsor,etc.)</b></td>
-                                                    <td colspan="1" bgcolor="#e3e3e3"><b>Download Number</b></td>
-                                                    <td colspan="1" bgcolor="#e3e3e3"><b>Status</b></td>
-                                                </tr>
-                                                <?php
-                                                    $data = mysql_query("select * from Research_Monographs where Professor_Id='$teacherID'", $conn);
-                                                    for($i=1; $i<=mysql_num_rows($data); $i++){ //把每一列的資料取出來
-                                                        $rs=mysql_fetch_row($data);
-                                                    ?><tr>
-														<td colspan="1" bgcolor="#FFFFFF">
-                                                        <input type="text" name="Research_Monographs_Id" value="<?php echo $rs[0] ?>"
+                                                </table>
+                                                
+                                                <h4>Research Monographs</h4> <!--小分類-->
+                                                <table width="790" bgcolor="black" style="font-size:15px">
+                                                    <tr>
+                                                        <td colspan="1" bgcolor="#e3e3e3"><b>ID</b></td>
+                                                        <td colspan="1" bgcolor="#e3e3e3"><b>Year</b></td>
+                                                        <td colspan="1" bgcolor="#e3e3e3"><b>Type</b></td>
+                                                        <td colspan="1" bgcolor="#e3e3e3"><b>Topic</b></td>
+                                                        <td colspan="1" bgcolor="#e3e3e3"><b>Description(Title,sponsor,etc.)</b></td>
+                                                        <td colspan="1" bgcolor="#e3e3e3"><b>Download Number</b></td>
+                                                        <td colspan="1" bgcolor="#e3e3e3"><b>Status</b></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan="1" bgcolor="#FFFFFF">
+                                                        <input type="text" name="Research_Monographs_Id"
                                                             style="width:100px; font-size:15px; text-align:center; 
                                                                 text-overflow:ellipsis; overflow: hidden;"/>
                                                         </td>
                                                         <td colspan="1" bgcolor="#FFFFFF">
-                                                        <input type="text" name="Research_Monographs_year" value="<?php echo $rs[1] ?>"
+                                                        <input type="text" name="Research_Monographs_year"
                                                             style="width:100px; font-size:15px; text-align:center; 
                                                                 text-overflow:ellipsis; overflow: hidden;"/>
                                                         </td>
                                                         <td colspan="1" bgcolor="#FFFFFF">
-                                                            <input type="text" name="Research_Monographs_type" value="<?php echo $rs[2] ?>"
+                                                            <input type="text" name="Research_Monographs_type"
                                                                 style="width:50px; font-size:15px; text-align:center; 
                                                                     text-overflow:ellipsis; overflow: hidden;"/>
                                                         </td>
                                                         <td colspan="1" bgcolor="#FFFFFF">
-                                                            <input type="text" name="Research_Monographs_topic" value="<?php echo $rs[3] ?>"
+                                                            <input type="text" name="Research_Monographs_topic"
                                                                 style="width:100px; font-size:15px; text-align:center; 
                                                                     text-overflow:ellipsis; overflow: hidden;"/>
                                                         </td>
                                                         <td colspan="1" bgcolor="#FFFFFF">
                                                             <textarea cols="20" rows="5" name="Research_Monographs_description" style="font-size:15px; margin:15px auto 0px auto;" text-overflow:ellipsis; overflow: hidden;>
-                                                                <?php echo rtrim($rs[4]); ?>
                                                             </textarea>
                                                         </td>
                                                         <td colspan="1" bgcolor="#FFFFFF">
-                                                            <input type="text" name="Research_Monographs_download_number" value="<?php echo $rs[5] ?>"
+                                                            <input type="text" name="Research_Monographs_download_number"
                                                                 style="width:50px; font-size:15px; text-align:center; 
                                                                     text-overflow:ellipsis; overflow: hidden;"/>
                                                         </td>
                                                         <td colspan="1" bgcolor="#FFFFFF">
-                                                            <input type="text" name="Research_Monographs_status" value="<?php echo $rs[6] ?>"
+                                                            <input type="text" name="Research_Monographs_status"
                                                                 style="width:100px; font-size:15px; text-align:center; 
                                                                     text-overflow:ellipsis; overflow: hidden;"/>
                                                         </td>
                                                     </tr>
-                                                <?php }?>
-                                                <tr>
-                                                    <td colspan="3" bgcolor="#e3e3e3"><b>Browses</b></td>
-                                                    <td colspan="3" bgcolor="#e3e3e3"><b>Supported by</b></td>
-													<td colspan="1" bgcolor="#e3e3e3"><b>Professor_Id</b></td>
-                                                </tr>
-                                                <?php
-                                                    $data = mysql_query("select * from Research_Monographs where Professor_Id='$teacherID'", $conn);
-                                                    for($i=1; $i<=mysql_num_rows($data); $i++){ //把每一列的資料取出來
-                                                        $rs=mysql_fetch_row($data);
-                                                    ?><tr>
+                                                    <tr>
+                                                        <td colspan="3" bgcolor="#e3e3e3"><b>Browses</b></td>
+                                                        <td colspan="3" bgcolor="#e3e3e3"><b>Supported by</b></td>
+                                                        <td colspan="1" bgcolor="#e3e3e3"><b>Professor_Id</b></td>
+                                                    </tr>
+                                                    <tr>
                                                         <td colspan="3" bgcolor="#FFFFFF">
-                                                        <input type="text" name="Research_Monographs_browses" value="<?php echo $rs[7] ?>"
+                                                        <input type="text" name="Research_Monographs_browses"
                                                             style="width:100px; font-size:15px; text-align:center; 
                                                                 text-overflow:ellipsis; overflow: hidden;"/>
                                                         </td>
                                                         <td colspan="3" bgcolor="#FFFFFF">
-                                                            <input type="text" name="Research_Monographs_supported_by" value="<?php echo $rs[8] ?>"
+                                                            <input type="text" name="Research_Monographs_supported_by"
                                                                 style="width:100px; font-size:15px; text-align:center; 
                                                                     text-overflow:ellipsis; overflow: hidden;"/>
                                                         </td>
-														<td colspan="3" bgcolor="#FFFFFF">
-                                                            <input type="text" name="Professor_Id" value="<?php echo $rs[9] ?>"
+                                                        <td colspan="3" bgcolor="#FFFFFF">
+                                                            <input type="text" name="Professor_Id"
                                                                 style="width:50px; font-size:15px; text-align:center; 
                                                                     text-overflow:ellipsis; overflow: hidden;"/>
                                                         </td>
                                                     </tr>
-                                                <?php }?>
-                                            </table>
-											</form>
-											
-												
-                                            <h4>Academic Meeting Proceedings</h4> <!--小分類-->
-											<form action="dataModify.php" name="form6" method="post">
-											<div style='text-align:right;'>
-                                                <input type="submit" value='修改' name="submit_Btn6" id="submit_Btn6" style="width:70px;height:70px;font-size:50px;" onClick="document.form6.submit()">&nbsp;&nbsp;&nbsp;
-                                            </div>
-                                            <table width="790" bgcolor="black" style="font-size:15px">
-                                                <tr>
-													<td colspan="1" bgcolor="#e3e3e3"><b>ID</b></td>
-                                                    <td colspan="1" bgcolor="#e3e3e3"><b>Year</b></td>
-                                                    <td colspan="1" bgcolor="#e3e3e3"><b>Type</b></td>
-                                                    <td colspan="1" bgcolor="#e3e3e3"><b>Topic</b></td>
-                                                    <td colspan="1" bgcolor="#e3e3e3"><b>Description(Title, Meeting, etc.)</b></td>
-                                                </tr>
-                                                <?php
-                                                    $data = mysql_query("select * from Meeting_Proceedings_And_Other where Professor_Id='$teacherID' && Meeting_Class = 'Academic Meeting Proceedings'", $conn);
-                                                    for($i=1; $i<=mysql_num_rows($data); $i++){ //把每一列的資料取出來
-                                                        $rs=mysql_fetch_row($data);
-                                                    ?><tr>
-														<td colspan="1" bgcolor="#FFFFFF">
-                                                        <input type="text" name="Meeting_Proceedings_And_Other_Id" value="<?php echo $rs[0] ?>"
+                                                </table>
+                                                
+                                                <h4>Academic Meeting Proceedings</h4> <!--小分類-->
+                                                <table width="790" bgcolor="black" style="font-size:15px">
+                                                    <tr>
+                                                        <td colspan="1" bgcolor="#e3e3e3"><b>ID</b></td>
+                                                        <td colspan="1" bgcolor="#e3e3e3"><b>Year</b></td>
+                                                        <td colspan="1" bgcolor="#e3e3e3"><b>Type</b></td>
+                                                        <td colspan="1" bgcolor="#e3e3e3"><b>Topic</b></td>
+                                                        <td colspan="1" bgcolor="#e3e3e3"><b>Description(Title, Meeting, etc.)</b></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan="1" bgcolor="#FFFFFF">
+                                                        <input type="text" name="Meeting_Proceedings_And_Other_Id"
                                                             style="width:100px; font-size:15px; text-align:center; 
                                                                 text-overflow:ellipsis; overflow: hidden;"/>
                                                         </td>
                                                         <td colspan="1" bgcolor="#FFFFFF">
-                                                        <input type="text" name="Meeting_Proceedings_And_Other_year" value="<?php echo $rs[1] ?>"
+                                                        <input type="text" name="Meeting_Proceedings_And_Other_year"
                                                             style="width:100px; font-size:15px; text-align:center; 
                                                                 text-overflow:ellipsis; overflow: hidden;"/>
                                                         </td>
                                                         <td colspan="1" bgcolor="#FFFFFF">
-                                                            <input type="text" name="Meeting_Proceedings_And_Other_type" value="<?php echo $rs[2] ?>"
+                                                            <input type="text" name="Meeting_Proceedings_And_Other_type"
                                                                 style="width:100px; font-size:15px; text-align:center; 
                                                                     text-overflow:ellipsis; overflow: hidden;"/>
                                                         </td>
                                                         <td colspan="1" bgcolor="#FFFFFF">
-                                                            <input type="text" name="Meeting_Proceedings_And_Other_topic" value="<?php echo $rs[3] ?>"
+                                                            <input type="text" name="Meeting_Proceedings_And_Other_topic"
                                                                 style="width:100px; font-size:15px; text-align:center; 
                                                                     text-overflow:ellipsis; overflow: hidden;"/>
                                                         </td>
                                                         <td colspan="1" bgcolor="#FFFFFF">
                                                             <textarea cols="20" rows="5" name="Meeting_Proceedings_And_Other_description" style="font-size:15px; margin:15px auto 0px auto;" text-overflow:ellipsis; overflow: hidden;>
-                                                                <?php echo rtrim($rs[4]); ?>
                                                             </textarea>
                                                         </td>
                                                     </tr>
-                                                <?php }?>
-                                            </table>
-											</form>
+                                                </table>
 
-                                            <h4>Professional Meeting Proceedings</h4> <!--小分類-->
-											<form action="dataModify.php" name="form7" method="post">
-											<div style='text-align:right;'>
-                                                <input type="submit" value='修改' name="submit_Btn7" id="submit_Btn7" style="width:70px;height:70px;font-size:50px;" onClick="document.form7.submit()">&nbsp;&nbsp;&nbsp;
-                                            </div>
-                                            <table width="790" bgcolor="black" style="font-size:15px">
-                                                <tr>
-													<td colspan="1" bgcolor="#e3e3e3"><b>ID</b></td>
-                                                    <td colspan="1" bgcolor="#e3e3e3"><b>Year</b></td>
-                                                    <td colspan="1" bgcolor="#e3e3e3"><b>Type</b></td>
-                                                    <td colspan="1" bgcolor="#e3e3e3"><b>Topic</b></td>
-                                                    <td colspan="1" bgcolor="#e3e3e3"><b>Description(Title, Meeting, etc.)</b></td>
-                                                </tr>
-                                                <?php
-                                                    $data = mysql_query("select * from Meeting_Proceedings_And_Other where Professor_Id='$teacherID' && Meeting_Class = 'Professional Meeting Proceedings'", $conn);
-                                                    for($i=1; $i<=mysql_num_rows($data); $i++){ //把每一列的資料取出來
-                                                        $rs=mysql_fetch_row($data);
-                                                    ?><tr>
-														<td colspan="1" bgcolor="#FFFFFF">
-                                                        <input type="text" name="Professional_Meeting_Proceedings_Id" value="<?php echo $rs[0] ?>"
+                                                <h4>Professional Meeting Proceedings</h4> <!--小分類-->
+                                                <table width="790" bgcolor="black" style="font-size:15px">
+                                                    <tr>
+                                                        <td colspan="1" bgcolor="#e3e3e3"><b>ID</b></td>
+                                                        <td colspan="1" bgcolor="#e3e3e3"><b>Year</b></td>
+                                                        <td colspan="1" bgcolor="#e3e3e3"><b>Type</b></td>
+                                                        <td colspan="1" bgcolor="#e3e3e3"><b>Topic</b></td>
+                                                        <td colspan="1" bgcolor="#e3e3e3"><b>Description(Title, Meeting, etc.)</b></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan="1" bgcolor="#FFFFFF">
+                                                        <input type="text" name="Professional_Meeting_Proceedings_Id"
                                                             style="width:100px; font-size:15px; text-align:center; 
                                                                 text-overflow:ellipsis; overflow: hidden;"/>
                                                         </td>
                                                         <td colspan="1" bgcolor="#FFFFFF">
-                                                        <input type="text" name="Professional_Meeting_Proceedings_year" value="<?php echo $rs[1] ?>"
+                                                        <input type="text" name="Professional_Meeting_Proceedings_year"
                                                             style="width:100px; font-size:15px; text-align:center; 
                                                                 text-overflow:ellipsis; overflow: hidden;"/>
                                                         </td>
                                                         <td colspan="1" bgcolor="#FFFFFF">
-                                                            <input type="text" name="Professional_Meeting_Proceedings_type" value="<?php echo $rs[2] ?>"
+                                                            <input type="text" name="Professional_Meeting_Proceedings_type"
                                                                 style="width:100px; font-size:15px; text-align:center; 
                                                                     text-overflow:ellipsis; overflow: hidden;"/>
                                                         </td>
                                                         <td colspan="1" bgcolor="#FFFFFF">
-                                                            <input type="text" name="Professional_Meeting_Proceedings_topic" value="<?php echo $rs[3] ?>"
+                                                            <input type="text" name="Professional_Meeting_Proceedings_topic"
                                                                 style="width:100px; font-size:15px; text-align:center; 
                                                                     text-overflow:ellipsis; overflow: hidden;"/>
                                                         </td>
                                                         <td colspan="1" bgcolor="#FFFFFF">
                                                             <textarea cols="20" rows="5" name="Professional_Meeting_Proceedings_description" style="font-size:15px; margin:15px auto 0px auto;" text-overflow:ellipsis; overflow: hidden;>
-                                                                <?php echo rtrim($rs[4]); ?>
                                                             </textarea>
                                                         </td>
                                                     </tr>
-                                                <?php }?>
-                                            </table>
-											</form>
-											
-                                            <h4>Textbooks/Chapters</h4> <!--小分類-->
-											<form action="dataModify.php" name="form8" method="post">
-											<input type="submit"  name="submit_Btn8"  id="submit_Btn8" onClick="document.form8.submit()">
-                                            <table width="790" bgcolor="black" style="font-size:15px">
-                                                <tr>
-													<td colspan="1" bgcolor="#e3e3e3"><b>ID</b></td>
-                                                    <td colspan="1" bgcolor="#e3e3e3"><b>Year</b></td>
-                                                    <td colspan="1" bgcolor="#e3e3e3"><b>Type</b></td>
-                                                    <td colspan="1" bgcolor="#e3e3e3"><b>Topic</b></td>
-                                                    <td colspan="1" bgcolor="#e3e3e3"><b>Description(Title, Meeting, etc.)</b></td>
-                                                </tr>
-                                                <?php
-                                                    $data = mysql_query("select * from Meeting_Proceedings_And_Other where Professor_Id='$teacherID' && Meeting_Class = 'Textbooks/Chapters'", $conn);
-                                                    for($i=1; $i<=mysql_num_rows($data); $i++){ //把每一列的資料取出來
-                                                        $rs=mysql_fetch_row($data);
-                                                    ?><tr>
-														<td colspan="1" bgcolor="#FFFFFF">
-                                                        <input type="text" name="Textbooks_Chapters_Id" value="<?php echo $rs[0] ?>"
+                                                </table>
+                                                
+                                                <h4>Textbooks/Chapters</h4> <!--小分類-->
+                                                <table width="790" bgcolor="black" style="font-size:15px">
+                                                    <tr>
+                                                        <td colspan="1" bgcolor="#e3e3e3"><b>ID</b></td>
+                                                        <td colspan="1" bgcolor="#e3e3e3"><b>Year</b></td>
+                                                        <td colspan="1" bgcolor="#e3e3e3"><b>Type</b></td>
+                                                        <td colspan="1" bgcolor="#e3e3e3"><b>Topic</b></td>
+                                                        <td colspan="1" bgcolor="#e3e3e3"><b>Description(Title, Meeting, etc.)</b></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan="1" bgcolor="#FFFFFF">
+                                                        <input type="text" name="Textbooks_Chapters_Id"
                                                             style="width:100px; font-size:15px; text-align:center; 
                                                                 text-overflow:ellipsis; overflow: hidden;"/>
                                                         </td>
                                                         <td colspan="1" bgcolor="#FFFFFF">
-                                                        <input type="text" name="Textbooks_Chapters_year" value="<?php echo $rs[1] ?>"
+                                                        <input type="text" name="Textbooks_Chapters_year"
                                                             style="width:100px; font-size:15px; text-align:center; 
                                                                 text-overflow:ellipsis; overflow: hidden;"/>
                                                         </td>
                                                         <td colspan="1" bgcolor="#FFFFFF">
-                                                            <input type="text" name="Textbooks_Chapters_type" value="<?php echo $rs[2] ?>"
+                                                            <input type="text" name="Textbooks_Chapters_type"
                                                                 style="width:100px; font-size:15px; text-align:center; 
                                                                     text-overflow:ellipsis; overflow: hidden;"/>
                                                         </td>
                                                         <td colspan="1" bgcolor="#FFFFFF">
-                                                            <input type="text" name="Textbooks_Chapters_topic" value="<?php echo $rs[3] ?>"
+                                                            <input type="text" name="Textbooks_Chapters_topic"
                                                                 style="width:100px; font-size:15px; text-align:center; 
                                                                     text-overflow:ellipsis; overflow: hidden;"/>
                                                         </td>
                                                         <td colspan="1" bgcolor="#FFFFFF">
                                                             <textarea cols="20" rows="5" name="Textbooks_Chapters_description" style="font-size:15px; margin:15px auto 0px auto;" text-overflow:ellipsis; overflow: hidden;>
-                                                                <?php echo rtrim($rs[4]); ?>
                                                             </textarea>
                                                         </td>
                                                     </tr>
-                                                <?php }?>
-                                            </table>
-											</form>
+                                                </table>
 
-                                            <h4>Cases</h4> <!--小分類-->
-											<form action="dataModify.php" name="form9" method="post">
-											<input type="submit"  name="submit_Btn9"  id="submit_Btn9" onClick="document.form9.submit()">
-                                            <table width="790" bgcolor="black" style="font-size:15px">
-                                                <tr>
-													<td colspan="1" bgcolor="#e3e3e3"><b>ID</b></td>
-                                                    <td colspan="1" bgcolor="#e3e3e3"><b>Year</b></td>
-                                                    <td colspan="1" bgcolor="#e3e3e3"><b>Type</b></td>
-                                                    <td colspan="1" bgcolor="#e3e3e3"><b>Topic</b></td>
-                                                    <td colspan="1" bgcolor="#e3e3e3"><b>Description(Title, Meeting, etc.)</b></td>
-                                                </tr>
-                                                <?php
-                                                    $data = mysql_query("select * from Meeting_Proceedings_And_Other where Professor_Id='$teacherID' && Meeting_Class = 'Cases'", $conn);
-                                                    for($i=1; $i<=mysql_num_rows($data); $i++){ //把每一列的資料取出來
-                                                        $rs=mysql_fetch_row($data);
-                                                    ?><tr>
-														<td colspan="1" bgcolor="#FFFFFF">
-                                                        <input type="text" name="Cases_Id" value="<?php echo $rs[0] ?>"
+                                                <h4>Cases</h4> <!--小分類-->
+                                                <table width="790" bgcolor="black" style="font-size:15px">
+                                                    <tr>
+                                                        <td colspan="1" bgcolor="#e3e3e3"><b>ID</b></td>
+                                                        <td colspan="1" bgcolor="#e3e3e3"><b>Year</b></td>
+                                                        <td colspan="1" bgcolor="#e3e3e3"><b>Type</b></td>
+                                                        <td colspan="1" bgcolor="#e3e3e3"><b>Topic</b></td>
+                                                        <td colspan="1" bgcolor="#e3e3e3"><b>Description(Title, Meeting, etc.)</b></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan="1" bgcolor="#FFFFFF">
+                                                        <input type="text" name="Cases_Id"
                                                             style="width:100px; font-size:15px; text-align:center; 
                                                                 text-overflow:ellipsis; overflow: hidden;"/>
                                                         </td>
                                                         <td colspan="1" bgcolor="#FFFFFF">
-                                                        <input type="text" name="Cases_year" value="<?php echo $rs[1] ?>"
+                                                        <input type="text" name="Cases_year"
                                                             style="width:100px; font-size:15px; text-align:center; 
                                                                 text-overflow:ellipsis; overflow: hidden;"/>
                                                         </td>
                                                         <td colspan="1" bgcolor="#FFFFFF">
-                                                            <input type="text" name="Cases_type" value="<?php echo $rs[2] ?>"
+                                                            <input type="text" name="Cases_type"
                                                                 style="width:100px; font-size:15px; text-align:center; 
                                                                     text-overflow:ellipsis; overflow: hidden;"/>
                                                         </td>
                                                         <td colspan="1" bgcolor="#FFFFFF">
-                                                            <input type="text" name="Cases_topic" value="<?php echo $rs[3] ?>"
+                                                            <input type="text" name="Cases_topic"
                                                                 style="width:100px; font-size:15px; text-align:center; 
                                                                     text-overflow:ellipsis; overflow: hidden;"/>
                                                         </td>
                                                         <td colspan="1" bgcolor="#FFFFFF">
                                                             <textarea cols="20" rows="5" name="Cases_description" style="font-size:15px; margin:15px auto 0px auto;" text-overflow:ellipsis; overflow: hidden;>
-                                                                <?php echo rtrim($rs[4]); ?>
                                                             </textarea>
                                                         </td>
                                                     </tr>
-                                                <?php }?>
-                                            </table>
-											</form>
+                                                </table>
 
-                                            <h4>Other Teaching Materials</h4> <!--小分類-->
-											<form action="dataModify.php" name="form10" method="post">
-											<input type="submit"  name="submit_Btn10"  id="submit_Btn10" onClick="document.form10.submit()">
-                                            <table width="790" bgcolor="black" style="font-size:15px">
-                                                <tr>
-													<td colspan="1" bgcolor="#e3e3e3"><b>ID</b></td>
-                                                    <td colspan="1" bgcolor="#e3e3e3"><b>Year</b></td>
-                                                    <td colspan="1" bgcolor="#e3e3e3"><b>Type</b></td>
-                                                    <td colspan="1" bgcolor="#e3e3e3"><b>Title</b></td>
-                                                </tr>
-                                                <?php
-                                                    $data = mysql_query("select * from Teaching_Materials_And_Awards where Professor_Id='$teacherID' && Contributions_name = 'Other Teaching Materials'", $conn);
-                                                    for($i=1; $i<=mysql_num_rows($data); $i++){ //把每一列的資料取出來
-                                                        $rs=mysql_fetch_row($data);
-                                                    ?><tr>
-														<td colspan="1" bgcolor="#FFFFFF">
-                                                        <input type="text" name="Other_Teaching_Materials_Id" value="<?php echo $rs[0] ?>"
+                                                <h4>Other Teaching Materials</h4> <!--小分類-->
+                                                <table width="790" bgcolor="black" style="font-size:15px">
+                                                    <tr>
+                                                        <td colspan="1" bgcolor="#e3e3e3"><b>ID</b></td>
+                                                        <td colspan="1" bgcolor="#e3e3e3"><b>Year</b></td>
+                                                        <td colspan="1" bgcolor="#e3e3e3"><b>Type</b></td>
+                                                        <td colspan="1" bgcolor="#e3e3e3"><b>Title</b></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan="1" bgcolor="#FFFFFF">
+                                                        <input type="text" name="Other_Teaching_Materials_Id"
                                                             style="width:100px; font-size:15px; text-align:center; 
                                                                 text-overflow:ellipsis; overflow: hidden;"/>
                                                         </td>
                                                         <td colspan="1" bgcolor="#FFFFFF">
-                                                        <input type="text" name="Other_Teaching_Materials_year" value="<?php echo $rs[1] ?>"
+                                                        <input type="text" name="Other_Teaching_Materials_year"
                                                             style="width:100px; font-size:15px; text-align:center; 
                                                                 text-overflow:ellipsis; overflow: hidden;"/>
                                                         </td>
                                                         <td colspan="1" bgcolor="#FFFFFF">
-                                                            <input type="text" name="Other_Teaching_Materials_type" value="<?php echo $rs[2] ?>"
+                                                            <input type="text" name="Other_Teaching_Materials_type"
                                                                 style="width:100px; font-size:15px; text-align:center; 
                                                                     text-overflow:ellipsis; overflow: hidden;"/>
                                                         </td>
                                                         <td colspan="1" bgcolor="#FFFFFF">
                                                             <textarea cols="20" rows="5" name="Other_Teaching_Materials_title" style="font-size:15px; margin:15px auto 0px auto;" text-overflow:ellipsis; overflow: hidden;>
-                                                                <?php echo rtrim($rs[3]); ?>
                                                             </textarea>
                                                         </td>
                                                     </tr>
-                                                <?php }?>
-                                            </table>
-											</form>
+                                                </table>
 
-                                            <h4>Honors and Competitive Awards Received</h4> <!--小分類-->
-											<form action="dataModify.php" name="form11" method="post">
-											<input type="submit"  name="submit_Btn11"  id="submit_Btn11" onClick="document.form11.submit()">
-                                            <table width="790" bgcolor="black" style="font-size:15px">
-                                                <tr>
-													<td colspan="1" bgcolor="#e3e3e3"><b>ID</b></td>
-                                                    <td colspan="1" bgcolor="#e3e3e3"><b>Year</b></td>
-                                                    <td colspan="1" bgcolor="#e3e3e3"><b>Type</b></td>
-                                                    <td colspan="1" bgcolor="#e3e3e3"><b>Title</b></td>
-                                                </tr>
-                                                <?php
-                                                    $data = mysql_query("select * from Teaching_Materials_And_Awards where  Professor_Id='$teacherID' && Contributions_name = 'Honors and Competitive Awards Received'", $conn);
-                                                    for($i=1; $i<=mysql_num_rows($data); $i++){ //把每一列的資料取出來
-                                                        $rs=mysql_fetch_row($data);
-                                                    ?><tr>
-														<td colspan="1" bgcolor="#FFFFFF">
-                                                        <input type="text" name="Honors_Competitive_Awards_Received_Id" value="<?php echo $rs[0] ?>"
+                                                <h4>Honors and Competitive Awards Received</h4> <!--小分類-->
+                                                <table width="790" bgcolor="black" style="font-size:15px">
+                                                    <tr>
+                                                        <td colspan="1" bgcolor="#e3e3e3"><b>ID</b></td>
+                                                        <td colspan="1" bgcolor="#e3e3e3"><b>Year</b></td>
+                                                        <td colspan="1" bgcolor="#e3e3e3"><b>Type</b></td>
+                                                        <td colspan="1" bgcolor="#e3e3e3"><b>Title</b></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan="1" bgcolor="#FFFFFF">
+                                                        <input type="text" name="Honors_Competitive_Awards_Received_Id"
                                                             style="width:100px; font-size:15px; text-align:center; 
                                                                 text-overflow:ellipsis; overflow: hidden;"/>
                                                         </td>
                                                         <td colspan="1" bgcolor="#FFFFFF">
-                                                        <input type="text" name="Honors_Competitive_Awards_Received_year" value="<?php echo $rs[1] ?>"
+                                                        <input type="text" name="Honors_Competitive_Awards_Received_year"
                                                             style="width:100px; font-size:15px; text-align:center; 
                                                                 text-overflow:ellipsis; overflow: hidden;"/>
                                                         </td>
                                                         <td colspan="1" bgcolor="#FFFFFF">
-                                                            <input type="text" name="Honors_Competitive_Awards_Received_type" value="<?php echo $rs[2] ?>"
+                                                            <input type="text" name="Honors_Competitive_Awards_Received_type"
                                                                 style="width:100px; font-size:15px; text-align:center; 
                                                                     text-overflow:ellipsis; overflow: hidden;"/>
                                                         </td>
                                                         <td colspan="1" bgcolor="#FFFFFF">
                                                             <textarea cols="20" rows="5" name="Honors_Competitive_Awards_Received_title" style="font-size:15px; margin:15px auto 0px auto;" text-overflow:ellipsis; overflow: hidden;>
-                                                                <?php echo rtrim($rs[3]); ?>
                                                             </textarea>
                                                         </td>
                                                     </tr>
-                                                <?php }?>
-                                            </table>
-											</form>
-                                        </div>
-                                </li>
-                            </ul>
+                                                </table>
+                                            </div>
+                                    </li>
+                                </ul>
 
-                            <!--業界-->
-                            <ul class="accordionPart">
-                                <li>
-                                    <div class="qa_title" style="text-decoration:none;">業界 ▾</div>
-									    <div class="qa_content">
-                                            <h4>Professional History 業界經歷</h4> <!--小分類-->
-											<form action="dataModify.php" name="form12" method="post">
-											<input type="submit"  name="submit_Btn12"  id="submit_Btn12" onClick="document.form12.submit()">
-                                            <table width="790" bgcolor="black" style="font-size:15px">
-                                                <tr>
-													<td colspan="1" bgcolor="#e3e3e3"><b>ID</b></td>
-                                                    <td colspan="1" bgcolor="#e3e3e3"><b>Month, Year</b></td>
-                                                    <td colspan="1" bgcolor="#e3e3e3"><b>Title</b></td>
-                                                    <td colspan="1" bgcolor="#e3e3e3"><b>Unit / Department</b></td>
-                                                    <td colspan="1" bgcolor="#e3e3e3"><b>Section / College</b></td>
-                                                </tr>
-                                                <?php
-                                                    $data = mysql_query("select * from Professional_History  where Professor_Id='$teacherID'", $conn);
-                                                    for($i=1; $i<=mysql_num_rows($data); $i++){ //把每一列的資料取出來
-                                                        $rs=mysql_fetch_row($data);
-                                                    ?><tr>
-														<td colspan="1" bgcolor="#FFFFFF">
-                                                        <input type="text" name="Professional_History_Id" value="<?php echo $rs[0] ?>"
+                                <!--業界-->
+                                <ul class="accordionPart">
+                                    <li>
+                                        <div class="qa_title" style="text-decoration:none;">業界 ▾</div>
+                                            <div class="qa_content">
+                                                <h4>Professional History 業界經歷</h4> <!--小分類-->
+                                                <table width="790" bgcolor="black" style="font-size:15px">
+                                                    <tr>
+                                                        <td colspan="1" bgcolor="#e3e3e3"><b>ID</b></td>
+                                                        <td colspan="1" bgcolor="#e3e3e3"><b>Month, Year</b></td>
+                                                        <td colspan="1" bgcolor="#e3e3e3"><b>Title</b></td>
+                                                        <td colspan="1" bgcolor="#e3e3e3"><b>Unit / Department</b></td>
+                                                        <td colspan="1" bgcolor="#e3e3e3"><b>Section / College</b></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan="1" bgcolor="#FFFFFF">
+                                                        <input type="text" name="Professional_History_Id"
                                                             style="width:100px; font-size:15px; text-align:center; 
                                                                 text-overflow:ellipsis; overflow: hidden;"/>
                                                         </td>
                                                         <td colspan="1" bgcolor="#FFFFFF">
-                                                        <input type="text" name="Professional_History_month_year" value="<?php echo $rs[1] ?>"
+                                                        <input type="text" name="Professional_History_month_year"
                                                             style="width:100px; font-size:15px; text-align:center; 
                                                                 text-overflow:ellipsis; overflow: hidden;"/>
                                                         </td>
                                                         <td colspan="1" bgcolor="#FFFFFF">
-                                                            <input type="text" name="Professional_History_title" value="<?php echo $rs[2] ?>"
+                                                            <input type="text" name="Professional_History_title"
                                                                 style="width:100px; font-size:15px; text-align:center; 
                                                                     text-overflow:ellipsis; overflow: hidden;"/>
                                                         </td>
                                                         <td colspan="1" bgcolor="#FFFFFF">
-                                                            <input type="text" name="Professional_History_department" value="<?php echo $rs[3] ?>"
+                                                            <input type="text" name="Professional_History_department"
                                                                     style="width:100px; font-size:15px; text-align:center; 
                                                                         text-overflow:ellipsis; overflow: hidden;"/>
                                                         </td>
                                                         <td colspan="1" bgcolor="#FFFFFF">
-                                                            <input type="text" name="Professional_History_section" value="<?php echo $rs[4] ?>"
+                                                            <input type="text" name="Professional_History_section"
                                                                 style="width:100px; font-size:15px; text-align:center; 
                                                                     text-overflow:ellipsis; overflow: hidden;"/>
                                                         </td>
                                                     </tr>
-                                                <?php }?>
-                                                <tr>
-                                                    <td colspan="5" bgcolor="#e3e3e3"><b>Company / Agency / School / Association / Foundation</b></td>
-                                                </tr>
-                                                <?php
-                                                    $data = mysql_query("select * from Professional_History  where Professor_Id='$teacherID'", $conn);
-                                                    for($i=1; $i<=mysql_num_rows($data); $i++){ //把每一列的資料取出來
-                                                        $rs=mysql_fetch_row($data);
-                                                    ?><tr>
+                                                    <tr>
+                                                        <td colspan="5" bgcolor="#e3e3e3"><b>Company / Agency / School / Association / Foundation</b></td>
+                                                    </tr>
+                                                    <tr>
                                                         <td colspan="5" bgcolor="#FFFFFF">
-                                                        <input type="text" name="Professional_History_company" value="<?php echo $rs[5] ?>"
+                                                        <input type="text" name="Professional_History_company"
                                                             style="width:100px; font-size:15px; text-align:center; 
                                                                 text-overflow:ellipsis; overflow: hidden;"/>
                                                         </td>
                                                     </tr>
-                                                <?php }?>
-                                            </table>
-											</form>
+                                                </table>
 
-                                            <h4>Professional Development 業界發展</h4> <!--小分類-->
-											<form action="dataModify.php" name="form13" method="post">
-											<input type="submit"  name="submit_Btn13"  id="submit_Btn13" onClick="document.form13.submit()">
-                                            <table width="790" bgcolor="black" style="font-size:15px">
-                                                <tr>
-                                                    <td colspan="1" bgcolor="#e3e3e3"><b>ID</b></td>                                                   
-													<td colspan="1" bgcolor="#e3e3e3"><b>Year</b></td>
-                                                    <td colspan="1" bgcolor="#e3e3e3"><b>Type</b></td>
-                                                    <td colspan="1" bgcolor="#e3e3e3"><b>Topic</b></td>
-                                                    <td colspan="1" bgcolor="#e3e3e3"><b>Description (institute/unit, etc.)</b></td>
-                                                </tr>
-                                                <?php
-                                                    $data = mysql_query("select * from Meeting_Proceedings_And_Other where Professor_Id='$teacherID' && Meeting_Class = 'Professional Development'", $conn);
-                                                    for($i=1; $i<=mysql_num_rows($data); $i++){ //把每一列的資料取出來
-                                                        $rs=mysql_fetch_row($data);
-                                                    ?><tr>
-														<td colspan="1" bgcolor="#FFFFFF">
-                                                        <input type="text" name="Professional_Development_Id" value="<?php echo $rs[0] ?>"
+                                                <h4>Professional Development 業界發展</h4> <!--小分類-->
+                                                <table width="790" bgcolor="black" style="font-size:15px">
+                                                    <tr>
+                                                        <td colspan="1" bgcolor="#e3e3e3"><b>ID</b></td>                                                   
+                                                        <td colspan="1" bgcolor="#e3e3e3"><b>Year</b></td>
+                                                        <td colspan="1" bgcolor="#e3e3e3"><b>Type</b></td>
+                                                        <td colspan="1" bgcolor="#e3e3e3"><b>Topic</b></td>
+                                                        <td colspan="1" bgcolor="#e3e3e3"><b>Description (institute/unit, etc.)</b></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan="1" bgcolor="#FFFFFF">
+                                                        <input type="text" name="Professional_Development_Id"
                                                             style="width:100px; font-size:15px; text-align:center; 
                                                                 text-overflow:ellipsis; overflow: hidden;"/>
                                                         </td>
                                                         <td colspan="1" bgcolor="#FFFFFF">
-                                                        <input type="text" name="Professional_Development_month_year" value="<?php echo $rs[1] ?>"
+                                                        <input type="text" name="Professional_Development_month_year"
                                                             style="width:100px; font-size:15px; text-align:center; 
                                                                 text-overflow:ellipsis; overflow: hidden;"/>
                                                         </td>
                                                         <td colspan="1" bgcolor="#FFFFFF">
-                                                            <input type="text" name="Professional_Development_type" value="<?php echo $rs[2] ?>"
+                                                            <input type="text" name="Professional_Development_type"
                                                                 style="width:200px; font-size:15px; text-align:center; 
                                                                     text-overflow:ellipsis; overflow: hidden;"/>
                                                         </td>
                                                         <td colspan="1" bgcolor="#FFFFFF">
-                                                            <input type="text" name="Professional_Development_topic" value="<?php echo $rs[3] ?>"
+                                                            <input type="text" name="Professional_Development_topic"
                                                                     style="width:100px; font-size:15px; text-align:center; 
                                                                         text-overflow:ellipsis; overflow: hidden;"/>
                                                         </td>
                                                         <td colspan="1" bgcolor="#FFFFFF">
                                                             <textarea cols="20" rows="5" name="Professional_Development_description" style="font-size:15px; margin:15px auto 0px auto;" text-overflow:ellipsis; overflow: hidden;>
-                                                                <?php echo rtrim($rs[4]); ?>
                                                             </textarea>
                                                         </td>
                                                     </tr>
-                                                <?php }?>
-                                            </table>
-											</form>
+                                                </table>
 
-                                            <h4>Professional History 業界團體</h4> <!--小分類-->
-											<form action="dataModify.php" name="form14" method="post">
-											<input type="submit"  name="submit_Btn14"  id="submit_Btn14" onClick="document.form14.submit()">
-                                            <table width="790" bgcolor="black" style="font-size:15px">
-                                                <tr>
-                                                    <td colspan="1" bgcolor="#e3e3e3"><b>ID</b></td>
-													<td colspan="1" bgcolor="#e3e3e3"><b>Year</b></td>
-                                                    <td colspan="1" bgcolor="#e3e3e3"><b>Topic</b></td>
-                                                    <td colspan="1" bgcolor="#e3e3e3"><b>Description(society/association/unit/agency)</b></td>
-                                                </tr>
-                                                <?php
-                                                    $data = mysql_query("select * from Professional_Societies where Professor_Id='$teacherID'", $conn);
-                                                    for($i=1; $i<=mysql_num_rows($data); $i++){ //把每一列的資料取出來
-                                                        $rs=mysql_fetch_row($data);
-                                                    ?><tr>
-														<td colspan="1" bgcolor="#FFFFFF">
-                                                        <input type="text" name="Professional_Societies_Id" value="<?php echo $rs[0] ?>"
+                                                <h4>Professional History 業界團體</h4> <!--小分類-->
+                                                <table width="790" bgcolor="black" style="font-size:15px">
+                                                    <tr>
+                                                        <td colspan="1" bgcolor="#e3e3e3"><b>ID</b></td>
+                                                        <td colspan="1" bgcolor="#e3e3e3"><b>Year</b></td>
+                                                        <td colspan="1" bgcolor="#e3e3e3"><b>Topic</b></td>
+                                                        <td colspan="1" bgcolor="#e3e3e3"><b>Description(society/association/unit/agency)</b></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan="1" bgcolor="#FFFFFF">
+                                                        <input type="text" name="Professional_Societies_Id"
                                                             style="width:100px; font-size:15px; text-align:center; 
                                                                 text-overflow:ellipsis; overflow: hidden;"/>
                                                         </td>
                                                         <td colspan="1" bgcolor="#FFFFFF">
-                                                        <input type="text" name="Professional_Societies_year" value="<?php echo $rs[1] ?>"
+                                                        <input type="text" name="Professional_Societies_year"
                                                             style="width:100px; font-size:15px; text-align:center; 
                                                                 text-overflow:ellipsis; overflow: hidden;"/>
                                                         </td>
                                                         <td colspan="1" bgcolor="#FFFFFF">
-                                                            <input type="text" name="Professional_Societies_topic" value="<?php echo $rs[2] ?>"
+                                                            <input type="text" name="Professional_Societies_topic"
                                                                 style="width:100px; font-size:15px; text-align:center; 
                                                                     text-overflow:ellipsis; overflow: hidden;"/>
                                                         </td>
                                                         <td colspan="1" bgcolor="#FFFFFF">
-                                                            <input type="text" name="Professional_Societies_description" value="<?php echo $rs[3] ?>"
+                                                            <input type="text" name="Professional_Societies_description"
                                                                     style="width:100px; font-size:15px; text-align:center; 
                                                                         text-overflow:ellipsis; overflow: hidden;"/>
                                                         </td>
                                                     </tr>
-                                                <?php }?>
-                                            </table>
-											</form>
-                                        </div>
-                                </li>
-                            </ul>
+                                                </table>
+                                            </div>
+                                    </li>
+                                </ul>
 
-                            <!--影響力描述-->
-							<form action="dataModify.php" name="form15" method="post">
-							<input type="submit"  name="submit_Btn15"  id="submit_Btn15" onClick="document.form15.submit()">
-                            <ul class="accordionPart">
-                                <li>
-									
-                                    <div class="qa_title" style="text-decoration:none;">影響力描述 ▾</div>
-                                    <?php $data = mysql_fetch_row(mysql_query("select * from Professor_Information where id='$teacherID'", $conn)); ?>
-									    <div class="qa_content">
-										
-                                        <table width="790" bgcolor="black" style="font-size:15px">
-                                            <tr>
-                                                <td colspan="1" bgcolor="#e3e3e3"><b>Research Impacts</b></td>
-                                            </tr>
-                                            <tr>
-                                                <td colspan="1" bgcolor="#FFFFFF">
-                                                    <textarea cols="80" rows="5" name="Research_Impacts_description" style="font-size:15px; margin:15px auto 0px auto;" text-overflow:ellipsis; overflow: hidden;>
-                                                        <?php echo rtrim($data[34]); ?>
-                                                    </textarea>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td colspan="1" bgcolor="#e3e3e3"><b>Practice Impacts</b></td>
-                                            </tr>
-                                            <tr>
-                                                <td colspan="1" bgcolor="#FFFFFF">
-                                                    <textarea cols="80" rows="5" name="Practice_Impacts_description" style="font-size:15px; margin:15px auto 0px auto;" text-overflow:ellipsis; overflow: hidden;>
-                                                        <?php echo rtrim($data[35]); ?>
-                                                    </textarea>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td colspan="1" bgcolor="#e3e3e3"><b>Teaching Impacts</b></td>
-                                            </tr>
-                                            <tr>
-                                                <td colspan="1" bgcolor="#FFFFFF">
-                                                    <textarea cols="80" rows="5" name="Teaching_Impacts_description" style="font-size:15px; margin:15px auto 0px auto;" text-overflow:ellipsis; overflow: hidden;>
-                                                        <?php echo rtrim($data[36]); ?>
-                                                    </textarea>
-                                                </td>
-                                            </tr>
-                                        </table>
+                                <!--影響力描述-->
+                                <ul class="accordionPart">
+                                    <li>
+                                        
+                                        <div class="qa_title" style="text-decoration:none;">影響力描述 ▾</div>
+                                            <div class="qa_content">
+                                            
+                                            <table width="790" bgcolor="black" style="font-size:15px">
+                                                <tr>
+                                                    <td colspan="1" bgcolor="#e3e3e3"><b>Research Impacts</b></td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="1" bgcolor="#FFFFFF">
+                                                        <textarea cols="80" rows="5" name="Research_Impacts_description" style="font-size:15px; margin:15px auto 0px auto;" text-overflow:ellipsis; overflow: hidden;>
+                                                        </textarea>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="1" bgcolor="#e3e3e3"><b>Practice Impacts</b></td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="1" bgcolor="#FFFFFF">
+                                                        <textarea cols="80" rows="5" name="Practice_Impacts_description" style="font-size:15px; margin:15px auto 0px auto;" text-overflow:ellipsis; overflow: hidden;>
+                                                        </textarea>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="1" bgcolor="#e3e3e3"><b>Teaching Impacts</b></td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="1" bgcolor="#FFFFFF">
+                                                        <textarea cols="80" rows="5" name="Teaching_Impacts_description" style="font-size:15px; margin:15px auto 0px auto;" text-overflow:ellipsis; overflow: hidden;>
+                                                        </textarea>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            </div>
                                         </div>
-                                    </div>
-									
-                                </li>
-                            </ul>
-							</form>
+                                    </li>
+                                </ul>
+                        </div>
                     </div>
-	            </div>
+                </form>
         </div>
+
         <div id="FOOTER"></div>
 		<img id="goTop" src="images/goTop.png" title="Back to Top"/>
 		<script> //回到頂部

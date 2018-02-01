@@ -30,24 +30,22 @@
 	//$sql_Professor_Information = "UPDATE Professor_Information SET Name = '$name',Academic_Title= '$academic_Title',Center = '$center',Department= '$department',College= '$college',Phone= '$phone',Cell= '$cell',E_mail = '$email',Website= '$website',Edu_Degree= '$edu_Degree',Edu_Year= '$edu_Year',Edu_Department= '$edu_department',Responsibilitie= '$faculty_responsibilities',Faculty_Sufficiency = '$faculty_sufficiency',Time_Devoted_Mission = $time_devoted_mission',Faculty_Qualification = '$faculty_qualification',Description = '$faculty_description' WHERE Id = 'A112'";
 	$sql_Professor_Information = "UPDATE Professor_Information SET Name = '$name',Academic_Title= '$academic_Title',Center = '$center',Department= '$department',College= '$college',Phone= '$phone',Cell= '$cell',E_mail = '$email',Website= '$website',Edu_Degree= '$edu_Degree',Edu_Year= '$edu_Year',Edu_Department= '$edu_department',Responsibilitie= '$faculty_responsibilities' ,Faculty_Sufficiency = '$faculty_sufficiency',Time_Devoted_Mission = '$time_devoted_mission',Faculty_Qualification = '$faculty_qualification',Description = '$faculty_description',Teaching_Interests = '$teaching_interests' WHERE Id = '$teacherID'";
 	
-	$con=mysqli_connect("212.1.212.1","bigcattl_test","s6951435","bigcattl_formal");
-	
+	$conn = include_once("connection.php");
 	
 	// 檢測連接
 	if (mysqli_connect_errno())
 	{
 		echo "連接失敗: " . mysqli_connect_error();
 	}
-	mysqli_query($con, "set names utf8"); //utf8 設為對應的編碼  超級重要
+	mysqli_query($conn, "set names utf8"); //utf8 設為對應的編碼  超級重要
 
-	mysqli_query($con,$sql_Professor_Information);
+	mysqli_query($conn,$sql_Professor_Information);
 
 	/*
 	mysqli_query($con,"UPDATE Academic_Services SET Service_Type = '大志工'
 	WHERE Id='01235'");
 	*/
 
-	mysqli_close($con);
+	mysqli_close($conn);
 	header("location: result.php");
-	
 ?>

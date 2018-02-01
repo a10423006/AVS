@@ -22,7 +22,8 @@
 
         <!--Importing Database Script-->
         <?php 
-			include_once("connection.php");
+            $conn = include_once("connection.php");
+            echo $conn;
 			session_start();
                 if($_POST['teacher_ID']!=null) {
                 $teacherID = $_POST['teacher_ID'];
@@ -138,7 +139,6 @@
 
 		                        <li>
                                     <div class="qa_title" style="text-decoration:none;">個人資料 ▾</div>
-									
                                     <?php $data = mysql_fetch_row(mysql_query("select * from Professor_Information where id='$teacherID'", $conn)); ?>
 			                        <div class="qa_content">
                                         <table width="790" bgcolor="black" style="font-size:15px">
