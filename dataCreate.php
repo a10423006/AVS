@@ -11,7 +11,9 @@
 	$website = $_POST['website'];
 	$edu_Degree = $_POST['edu_Degree'];
 	$edu_Year = $_POST['edu_Year'];
+	$edu_Major = $_POST['edu_Major'];
 	$edu_department = $_POST['edu_department'];
+	$edu_Scholl = $_POST['edu_Scholl'];
 	$faculty_responsibilities = $_POST['faculty_responsibilities'];
 	$faculty_sufficiency = $_POST['faculty_sufficiency'];
 	$time_devoted_mission = $_POST['time_devoted_mission'];
@@ -19,7 +21,7 @@
 	$faculty_description = $_POST['faculty_description'];
 	$teaching_interests = $_POST['teaching_interests'];	
 
-	$sql_Professor_Information = "INSERT INTO Professor_Information(Name ,Academic_Title ,Center ,Department ,College ,Phone ,Cell ,E_mail ,Website,Edu_Degree ,Edu_Year ,Edu_Department ,Responsibilitie ,Faculty_Sufficiency ,Time_Devoted_Mission ,Faculty_Qualification ,Description,Teaching_Interests) VALUES('$name' ,'$academic_Title' ,'$center' ,'$department' ,'$college' ,'$phone' ,'$cell','$email' ,'$website' ,'$edu_Degree' ,'$edu_Year' ,'$edu_department' ,'$faculty_responsibilities' ,'$faculty_sufficiency' ,'$time_devoted_mission', '$faculty_qualification' ,'$faculty_description' ,'$teaching_interests')";
+	$sql_Professor_Information = "INSERT INTO Professor_Information(Name ,Academic_Title ,Center ,Department ,College ,Phone ,Cell ,E_mail ,Website,Edu_Degree ,Edu_Year ,Edu_Major ,Edu_Department ,Edu_Scholl ,Responsibilitie ,Faculty_Sufficiency ,Time_Devoted_Mission ,Faculty_Qualification ,Description,Teaching_Interests) VALUES('$name' ,'$academic_Title' ,'$center' ,'$department' ,'$college' ,'$phone' ,'$cell','$email' ,'$website' ,'$edu_Degree' ,'$edu_Year' ,'$edu_Major' ,'$edu_department' , '$edu_Scholl' ,'$faculty_responsibilities' ,'$faculty_sufficiency' ,'$time_devoted_mission', '$faculty_qualification' ,'$faculty_description' ,'$teaching_interests')";
 
 	$id = "SELECT Id FROM Professor_Information WHERE MAX(Id)";
 
