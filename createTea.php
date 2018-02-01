@@ -94,7 +94,7 @@
                                         <table width="790" bgcolor="black" style="font-size:15px">
                                             <tr>
                                                 <td colspan="4" bgcolor="#FFFFFF">
-                                                    <input type="text" name="name" value="<?php echo $data[1]; ?>"
+                                                    <input type="text" name="name"
                                                         style="width:250px; font-size:15px; text-align:center; 
                                                             text-overflow:ellipsis; overflow: hidden;"/>
                                                 </td>
@@ -105,12 +105,12 @@
                                             </tr>
                                             <tr>
                                                 <td colspan="2" bgcolor="#FFFFFF">
-                                                    <input type="text" name="academic_Title" value="<?php echo $data[2]; ?>"
+                                                    <input type="text" name="academic_Title"
                                                         style="width:250px; font-size:15px; text-align:center; 
                                                             text-overflow:ellipsis; overflow: hidden;"/>
                                                     </td>
                                                 <td colspan="2" bgcolor="#FFFFFF">
-                                                    <input type="text" name="center" value="<?php echo $data[3]; ?>" 
+                                                    <input type="text" name="center" 
                                                         style="width:250px; font-size:15px; text-align:center; 
                                                             text-overflow:ellipsis; overflow: hidden;"/>
                                                 </td>
@@ -118,7 +118,7 @@
                                             <tr>
                                                 <td colspan="2" bgcolor="#e3e3e3"><b>Department 科系</b></td>
                                                 <td colspan="2" bgcolor="#FFFFFF">
-                                                    <input type="text" name="department" value="<?php echo $data[4]; ?>" 
+                                                    <input type="text" name="department" 
                                                         style="width:250px; font-size:15px; text-align:center; 
                                                             text-overflow:ellipsis; overflow: hidden;"/>
                                                 </td>
@@ -126,7 +126,7 @@
                                             <tr>
                                                 <td colspan="2" bgcolor="#e3e3e3"><b>College 學院</b></td>
                                                 <td colspan="2" bgcolor="#FFFFFF">
-                                                    <input type="text" name="college" value="<?php echo $data[5]; ?>" 
+                                                    <input type="text" name="college" 
                                                         style="width:250px; font-size:15px; text-align:center; 
                                                             text-overflow:ellipsis; overflow: hidden;"/>
                                                 </td>
@@ -137,13 +137,13 @@
                                             <tr>
                                                 <td colspan="1" bgcolor="#e3e3e3"><b>Phone 電話</b></td>
                                                 <td colspan="1" bgcolor="#FFFFFF">
-                                                    <input type="text" name="phone" value="<?php echo $data[7]; ?>" 
+                                                    <input type="text" name="phone" 
                                                         style="width:200px; font-size:15px; text-align:center; 
                                                             text-overflow:ellipsis; overflow: hidden;"/>
                                                 </td>
                                                 <td colspan="1" bgcolor="#e3e3e3"><b>Cell</b></td>
                                                 <td colspan="1" bgcolor="#FFFFFF">
-                                                    <input type="text" name="cell" value="<?php echo $data[8]; ?>" 
+                                                    <input type="text" name="cell" 
                                                         style="width:200px; font-size:15px; text-align:center; 
                                                             text-overflow:ellipsis; overflow: hidden;"/>
                                                 </td>
@@ -151,13 +151,13 @@
                                             <tr>
                                                 <td colspan="1" bgcolor="#e3e3e3"><b>E-mail</b></td>
                                                 <td colspan="1" bgcolor="#FFFFFF">
-                                                    <input type="text" name="email" value="<?php echo $data[9]; ?>" 
+                                                    <input type="text" name="email" 
                                                         style="width:200px; font-size:15px; text-align:center; 
                                                             text-overflow:ellipsis; overflow: hidden;"/>
                                                 </td>
                                                 <td colspan="1" bgcolor="#e3e3e3"><b>Website</b></td>
                                                 <td colspan="1" bgcolor="#FFFFFF">
-                                                    <input type="text" name="website" value="<?php echo $data[10]; ?>" 
+                                                    <input type="text" name="website" 
                                                         style="width:200px; font-size:15px; text-align:center; 
                                                             text-overflow:ellipsis; overflow: hidden;"/>
                                                 </td>
@@ -167,20 +167,25 @@
                                             </tr>
                                             <tr>
                                                 <td colspan="1" bgcolor="#FFFFFF">
-                                                    <input type="text" name="edu_Degree" value="<?php echo $data[11]; ?>" 
+                                                    <input type="text" name="edu_Degree" 
                                                         style="width:100px; font-size:15px; text-align:center; 
                                                             text-overflow:ellipsis; overflow: hidden;"/>
                                                 </td>
                                                 <td colspan="1" bgcolor="#FFFFFF">
-                                                    <input type="text" name="edu_Year" value="<?php echo $data[12]; ?>" 
+                                                    <input type="text" name="edu_Year" 
                                                         style="width:100px; font-size:15px; text-align:center; 
                                                             text-overflow:ellipsis; overflow: hidden;"/>
                                                 </td>
                                                 <td colspan="2" bgcolor="#FFFFFF">
-                                                    <textarea cols="40" rows="3" name="edu_department" style="font-size:15px; margin:15px auto 0px auto;"       text-overflow:ellipsis; overflow: hidden;>Major: <?php echo $data[13]; ?>
-                                                        Department: <?php echo $data[14]; ?>
-                                                        School: <?php echo $data[15]; ?>
-                                                    </textarea>
+                                                    Major: <input type="text" name="edu_Degree" 
+                                                        style="width:100px; font-size:15px; text-align:center; 
+                                                            text-overflow:ellipsis; overflow: hidden;"/><p>
+                                                    Department: <input type="text" name="edu_Degree" 
+                                                        style="width:100px; font-size:15px; text-align:center; 
+                                                            text-overflow:ellipsis; overflow: hidden;"/>&nbsp;
+                                                    School: <input type="text" name="edu_Degree" 
+                                                        style="width:100px; font-size:15px; text-align:center; 
+                                                            text-overflow:ellipsis; overflow: hidden;"/>
                                                 </td>
                                             </tr>
                                             <tr>
