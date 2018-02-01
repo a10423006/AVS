@@ -177,7 +177,7 @@ INSERT INTO `Professional_Societies` (`Id`, `Professional_Societies_Year`, `Topi
 --
 
 CREATE TABLE `Professor_Information` (
-  `Id` varchar(20) CHARACTER SET utf8 NOT NULL,
+  `Id` INT(20) AUTO_INCREMENT NOT NULL,
   `Name` varchar(20) CHARACTER SET utf8 NOT NULL,
   `Academic_Title` varchar(1000) CHARACTER SET utf8 NOT NULL,
   `Center` varchar(1000) CHARACTER SET utf8 NOT NULL,
@@ -189,7 +189,7 @@ CREATE TABLE `Professor_Information` (
   `E_mail` varchar(200) CHARACTER SET utf8 NOT NULL,
   `Website` varchar(200) CHARACTER SET utf8 NOT NULL,
   `Edu_Degree` varchar(1000) CHARACTER SET utf8 NOT NULL,
-  `Edu_Year` date,
+  `Edu_Year` date NULL,
   `Edu_Major` varchar(1000) CHARACTER SET utf8 NOT NULL,
   `Edu_Department` varchar(1000) CHARACTER SET utf8 NOT NULL,
   `Edu_School` varchar(1000) CHARACTER SET utf8 NOT NULL,
@@ -213,7 +213,8 @@ CREATE TABLE `Professor_Information` (
   `Teaching_Interests` varchar(100) CHARACTER SET utf8 NOT NULL,
   `Research_Impacts` varchar(100) CHARACTER SET utf8 NOT NULL,
   `Practice_Impacts` varchar(100) CHARACTER SET utf8 NOT NULL,
-  `Teaching__Impacts` varchar(100) CHARACTER SET utf8 NOT NULL
+  `Teaching__Impacts` varchar(100) CHARACTER SET utf8 NOT NULL,
+  PRIMARY KEY (Id)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -397,3 +398,7 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+--- Professor_Information資料表允許null
+ALTER TABLE `Professor_Information` CHANGE `Name` `Name` VARCHAR(20) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL, CHANGE `Academic_Title` `Academic_Title` VARCHAR(1000) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL, CHANGE `Center` `Center` VARCHAR(1000) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL, CHANGE `Department` `Department` VARCHAR(1000) CHARACTER SET utf8 COLLATE utf8_general_ci NULL, CHANGE `College` `College` VARCHAR(1000) CHARACTER SET utf8 COLLATE utf8_general_ci NULL, CHANGE `University` `University` VARCHAR(1000) CHARACTER SET utf8 COLLATE utf8_general_ci NULL, CHANGE `Phone` `Phone` VARCHAR(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL, CHANGE `Cell` `Cell` VARCHAR(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL, CHANGE `E_mail` `E_mail` VARCHAR(200) CHARACTER SET utf8 COLLATE utf8_general_ci NULL, CHANGE `Website` `Website` VARCHAR(200) CHARACTER SET utf8 COLLATE utf8_general_ci NULL, CHANGE `Edu_Degree` `Edu_Degree` VARCHAR(1000) CHARACTER SET utf8 COLLATE utf8_general_ci NULL, CHANGE `Edu_Year` `Edu_Year` DATE NULL DEFAULT NULL, CHANGE `Edu_Major` `Edu_Major` VARCHAR(1000) CHARACTER SET utf8 COLLATE utf8_general_ci NULL, CHANGE `Edu_Department` `Edu_Department` VARCHAR(1000) CHARACTER SET utf8 COLLATE utf8_general_ci NULL, CHANGE `Edu_School` `Edu_School` VARCHAR(1000) CHARACTER SET utf8 COLLATE utf8_general_ci NULL, CHANGE `Responsibilitie` `Responsibilitie` VARCHAR(1000) CHARACTER SET utf8 COLLATE utf8_general_ci NULL, CHANGE `Faculty_Sufficiency` `Faculty_Sufficiency` VARCHAR(1000) CHARACTER SET utf8 COLLATE utf8_general_ci NULL, CHANGE `Time_Devoted_Mission` `Time_Devoted_Mission` VARCHAR(1000) CHARACTER SET utf8 COLLATE utf8_general_ci NULL, CHANGE `Faculty_Qualification` `Faculty_Qualification` VARCHAR(1000) CHARACTER SET utf8 COLLATE utf8_general_ci NULL, CHANGE `Description` `Description` VARCHAR(1000) CHARACTER SET utf8 COLLATE utf8_general_ci NULL, CHANGE `Normal Professional Responsibilities` `Normal Professional Responsibilities` VARCHAR(1000) CHARACTER SET utf8 COLLATE utf8_general_ci NULL, CHANGE `BDS` `BDS` VARCHAR(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL, CHANGE `AIS` `AIS` VARCHAR(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL, CHANGE `TLS` `TLS` VARCHAR(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL, CHANGE `PRJs` `PRJs` VARCHAR(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL, CHANGE `RMs` `RMs` VARCHAR(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL, CHANGE `A/P_MPs` `A/P_MPs` VARCHAR(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL, CHANGE `CRARs` `CRARs` VARCHAR(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL, CHANGE `TBs` `TBs` VARCHAR(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL, CHANGE `Cases` `Cases` VARCHAR(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL, CHANGE `Other_TMs` `Other_TMs` VARCHAR(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL, CHANGE `Other_IC_Type` `Other_IC_Type` VARCHAR(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL, CHANGE `Teaching_Interests` `Teaching_Interests` VARCHAR(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL, CHANGE `Research_Impacts` `Research_Impacts` VARCHAR(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL, CHANGE `Practice_Impacts` `Practice_Impacts` VARCHAR(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL, CHANGE `Teaching__Impacts` `Teaching__Impacts` VARCHAR(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL;
+---

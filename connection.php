@@ -5,12 +5,12 @@
     $dbname = "AVS";
     // Create connection
     $conn = mysql_connect($servername, $username, $password);
-    mysql_select_db("AVS", $conn);
+    mysql_select_db("AVS");
 
     mysql_query("set names utf8");
 
     // Check connection
     if (!$conn) {
-        die("Connection failed: " . mysqli_connect_error());
+        alert("Connection failed: " . mysqli_connect_error());
     }
 ?>
