@@ -11,8 +11,6 @@
 
     // Check connection
     if (!$conn) {
-        die("Connection failed: " . mysqli_connect_error());
+        alert("Connection failed: " . mysqli_connect_error());
     }
-
-    echo mysql_query("SELECT * FROM `Professor_Information`" ,$conn);
 ?>

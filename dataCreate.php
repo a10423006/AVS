@@ -1,4 +1,6 @@
 <?php
+	include_once("connection.php");
+
 	//個人資料
 	$name = $_POST['name'];
 	$academic_Title = $_POST['academic_Title'];
@@ -13,7 +15,7 @@
 	$edu_Year = $_POST['edu_Year'];
 	$edu_Major = $_POST['edu_Major'];
 	$edu_department = $_POST['edu_department'];
-	$edu_Scholl = $_POST['edu_Scholl'];
+	$edu_School = $_POST['edu_School'];
 	$faculty_responsibilities = $_POST['faculty_responsibilities'];
 	$faculty_sufficiency = $_POST['faculty_sufficiency'];
 	$time_devoted_mission = $_POST['time_devoted_mission'];
@@ -21,19 +23,19 @@
 	$faculty_description = $_POST['faculty_description'];
 	$teaching_interests = $_POST['teaching_interests'];	
 
-	$sql_Professor_Information = "INSERT INTO Professor_Information(Name ,Academic_Title ,Center ,Department ,College ,Phone ,Cell ,E_mail ,Website,Edu_Degree ,Edu_Year ,Edu_Major ,Edu_Department ,Edu_Scholl ,Responsibilitie ,Faculty_Sufficiency ,Time_Devoted_Mission ,Faculty_Qualification ,Description,Teaching_Interests) VALUES('$name' ,'$academic_Title' ,'$center' ,'$department' ,'$college' ,'$phone' ,'$cell','$email' ,'$website' ,'$edu_Degree' ,'$edu_Year' ,'$edu_Major' ,'$edu_department' , '$edu_Scholl' ,'$faculty_responsibilities' ,'$faculty_sufficiency' ,'$time_devoted_mission', '$faculty_qualification' ,'$faculty_description' ,'$teaching_interests')";
+	$sql_Professor_Information = "INSERT INTO Professor_Information(Name ,Academic_Title ,Center ,Department ,College ,Phone ,Cell ,E_mail ,Website,Edu_Degree ,Edu_Year ,Edu_Major ,Edu_Department ,Edu_School ,Responsibilitie ,Faculty_Sufficiency ,Time_Devoted_Mission ,Faculty_Qualification ,Description,Teaching_Interests) VALUES('$name' ,'$academic_Title' ,'$center' ,'$department' ,'$college' ,'$phone' ,'$cell','$email' ,'$website' ,'$edu_Degree' ,'$edu_Year' ,'$edu_Major' ,'$edu_department' , '$edu_School' ,'$faculty_responsibilities' ,'$faculty_sufficiency' ,'$time_devoted_mission', '$faculty_qualification' ,'$faculty_description' ,'$teaching_interests')";
 
-	$id = "SELECT Id FROM Professor_Information WHERE MAX(Id)";
+	mysql_query($sql_Professor_Information);
+	$id = mysql_fetch_array(mysql_query("SELECT MAX(Id) FROM Professor_Information"));
 
 	//學年度授課
-	$course_id = $_POST['course_id'];
 	$program = $_POST['program'];
-	$academic_year = $_POST['$academic_year'];
+	$academic_year = $_POST['academic_year'];
 	$semester = $_POST['semester'];
 	$course_title = $_POST['course_title'];
 	$credit_hour = $_POST['credit_hour'];
 	
-	$sql_Course_Taught = "INSERT INTO Course_Taught(Program,Academic_Year,Semester,Course_Title,Credit_Hour VALUES('$program','$academic_year','$semester','$course_title','$credit_hour') WHERE Id = '$id'";
+	$sql_Course_Taught = "INSERT INTO Course_Taught(Program,Academic_Year,Semester,Course_Title,Credit_Hour,Professor_Id) VALUES('$program','$academic_year','$semester','$course_title','$credit_hour','$id[0]')";
 	
 	// //學術服務
 	// $service_ID = $_POST['service_ID'];
@@ -170,8 +172,9 @@
 	
 	// $sql_Professor_Information_Impacts = "UPDATE Professor_Information SET Research_Impacts = '$Research_Impacts_description',Practice_Impacts = '$Practice_Impacts_description',Teaching__Impacts = '$Teaching_Impacts_description' WHERE Id = '$teacherID'";
 	
-    include_once("connection.php");
-	mysql_query($sql_Professor_Information);
 	mysql_query($sql_Course_Taught);
-    header("location: createTea.php");
+
+	echo $sql_Course_Taught;
+
+    //header("location: createTea.php");
 ?>

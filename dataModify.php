@@ -156,25 +156,25 @@
 	{
 		echo "連接失敗: " . mysqli_connect_error();
 	}
-	mysqli_query($conn, "set names utf8"); //utf8 設為對應的編碼  超級重要
+	mysql_query($conn, "set names utf8"); //utf8 設為對應的編碼  超級重要
 	
-	mysqli_query($conn,$sql_Course_Taught);
-	mysqli_query($conn,$sql_Peer_reviewed_Journals);
-	mysqli_query($conn,$sql_Academic_Services);
-	mysqli_query($conn,$sql_Research_Monographs);
+	mysql_query($sql_Course_Taught);
+	mysql_query($sql_Peer_reviewed_Journals);
+	mysql_query($sql_Academic_Services);
+	mysql_query($sql_Research_Monographs);
 	
-	mysqli_query($conn,$sql_Meeting_Proceedings_And_Other);
-	mysqli_query($conn,$sql_Professional_Meeting_Proceedings);
+	mysql_query($sql_Meeting_Proceedings_And_Other);
+	mysql_query($sql_Professional_Meeting_Proceedings);
 	
-	mysqli_query($conn,$sql_Textbooks_Chapters);
-	mysqli_query($conn,$sql_Cases);
-	mysqli_query($conn,$sql_Other_Teaching_Materials);
-	mysqli_query($conn,$sql_Honors_Competitive_Awards_Received);
-	mysqli_query($conn,$sql_Professional_History);
-	mysqli_query($conn,$sql_Professional_Development);
-	mysqli_query($conn,$sql_Professional_Societies);
-	mysqli_query($conn,$sql_Professor_Information_Impacts);
+	mysql_query($sql_Textbooks_Chapters);
+	mysql_query($sql_Cases);
+	mysql_query($sql_Other_Teaching_Materials);
+	mysql_query($sql_Honors_Competitive_Awards_Received);
+	mysql_query($sql_Professional_History);
+	mysql_query($sql_Professional_Development);
+	mysql_query($sql_Professional_Societies);
+	mysql_query($sql_Professor_Information_Impacts);
 	
-	mysqli_close($conn);
+	mysql_close($conn);
 	header("location: result.php");
 ?>
