@@ -378,7 +378,6 @@
                                                         <td colspan="1" bgcolor="#e3e3e3"><b>Citation Index</b></td>
                                                         <td colspan="1" bgcolor="#e3e3e3"><b>Browses</b></td>
                                                         <td colspan="1" bgcolor="#e3e3e3"><b>Supported by</b></td>
-                                                        <td colspan="1" bgcolor="#e3e3e3"><b>Professor_Id</b></td>
                                                     </tr>
                                                     <tr>
                                                         <td colspan="1" bgcolor="#FFFFFF">
@@ -404,11 +403,6 @@
                                                         <td colspan="1" bgcolor="#FFFFFF">
                                                             <input type="text" name="supported_by"
                                                             style="width:150px; font-size:15px; text-align:center; 
-                                                                text-overflow:ellipsis; overflow: hidden;"/>
-                                                        </td>
-                                                        <td colspan="1" bgcolor="#FFFFFF">
-                                                            <input type="text" name="Professor_Id"
-                                                            style="width:50px; font-size:15px; text-align:center; 
                                                                 text-overflow:ellipsis; overflow: hidden;"/>
                                                         </td>
                                                     </tr>
@@ -458,7 +452,6 @@
                                                     <tr>
                                                         <td colspan="3" bgcolor="#e3e3e3"><b>Browses</b></td>
                                                         <td colspan="3" bgcolor="#e3e3e3"><b>Supported by</b></td>
-                                                        <td colspan="1" bgcolor="#e3e3e3"><b>Professor_Id</b></td>
                                                     </tr>
                                                     <tr>
                                                         <td colspan="3" bgcolor="#FFFFFF">
@@ -469,11 +462,6 @@
                                                         <td colspan="3" bgcolor="#FFFFFF">
                                                             <input type="text" name="Research_Monographs_supported_by"
                                                                 style="width:100px; font-size:15px; text-align:center; 
-                                                                    text-overflow:ellipsis; overflow: hidden;"/>
-                                                        </td>
-                                                        <td colspan="3" bgcolor="#FFFFFF">
-                                                            <input type="text" name="Professor_Id"
-                                                                style="width:50px; font-size:15px; text-align:center; 
                                                                     text-overflow:ellipsis; overflow: hidden;"/>
                                                         </td>
                                                     </tr>

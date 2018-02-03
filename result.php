@@ -136,7 +136,6 @@
                             </div>
 
 	                        <ul class="accordionPart">
-
 		                        <li>
                                     <div class="qa_title" style="text-decoration:none;">個人資料 ▾</div>
                                     <?php $data = mysql_fetch_row(mysql_query("select * from Professor_Information where id='$teacherID'", $conn)); ?>

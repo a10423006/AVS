@@ -182,21 +182,19 @@
 	$conn14 = mysql_query($sql_Professor_Information_Impacts);
 
 	//警告視窗
-	Function my_msg($msg,$redirect){
+	Function my_msg($msg, $redirect){
 		echo "<script language=\"javascript\">";
 		echo "window.alert('".$msg."')"; 
 		echo "</script>"; 
 		echo "<script language=\"javascript\">"; 
 		echo "location.href='".$redirect."'"; 
-		echo "</script>"; 
+		echo "</script>";
 		return; 
 	}
 
 	if($conn && $conn2){
 		my_msg('上傳成功', 'createTea.php');
 	}else{
-		echo "<script language=\"javascript\">";
-		echo "window.alert('上傳失敗')"; 
-		echo "</script>";
+		my_msg('上傳失敗', 'createTea.php');
 	}
 ?>

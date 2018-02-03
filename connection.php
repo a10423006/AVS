@@ -9,8 +9,10 @@
 
     mysql_query("set names utf8");
 
+    
+
     // Check connection
     if (!$conn) {
-        alert("Connection failed: " . mysqli_connect_error());
+        die("Connection failed: " . mysqli_connect_error());
     }
 ?>
