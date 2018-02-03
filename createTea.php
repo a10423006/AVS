@@ -261,7 +261,6 @@
                                             <div class="qa_content">
                                                 <table width="790" bgcolor="black" style="font-size:15px">
                                                     <tr>
-                                                        <td colspan="1" bgcolor="#e3e3e3"><b>ID</b></td>
                                                         <td colspan="1" bgcolor="#e3e3e3"><b>Program</b></td>
                                                         <td colspan="1" bgcolor="#e3e3e3"><b>Academic Year</b></td>
                                                         <td colspan="1" bgcolor="#e3e3e3"><b>Semester</b></td>
@@ -269,11 +268,6 @@
                                                         <td colspan="1" bgcolor="#e3e3e3"><b>Credit hour</b></td>
                                                     </tr>
                                                     <tr>
-                                                        <td colspan="1" bgcolor="#FFFFFF">
-                                                        <input type="text" name="course_id"
-                                                            style="width:100px; font-size:15px; text-align:center; 
-                                                                text-overflow:ellipsis; overflow: hidden;"/>
-                                                        </td>
                                                         <td colspan="1" bgcolor="#FFFFFF">
                                                         <input type="text" name="program"
                                                             style="width:100px; font-size:15px; text-align:center; 
@@ -312,17 +306,11 @@
                                             <div class="qa_content">
                                                 <table width="790" bgcolor="black" style="font-size:15px">
                                                     <tr>
-                                                        <td colspan="1" bgcolor="#e3e3e3"><b>ID</b></td>
                                                         <td colspan="1" bgcolor="#e3e3e3"><b>Year</b></td>
                                                         <td colspan="1" bgcolor="#e3e3e3"><b>Service Type</b></td>
                                                         <td colspan="1" bgcolor="#e3e3e3"><b>Description (Title, Institute/Unit, etc.)</b></td>
                                                     </tr>
                                                     <tr>
-                                                        <td colspan="1" bgcolor="#FFFFFF">
-                                                        <input type="text" name="service_ID"
-                                                            style="width:100px; font-size:15px; text-align:center; 
-                                                                text-overflow:ellipsis; overflow: hidden;"/>
-                                                        </td>
                                                         <td colspan="1" bgcolor="#FFFFFF">
                                                         <input type="text" name="service_Year"
                                                             style="width:100px; font-size:15px; text-align:center; 
@@ -352,7 +340,6 @@
                                                 <h4>Peer-reviewed Journals</h4> <!--小分類-->
                                                 <table width="790" bgcolor="black" style="font-size:15px">
                                                     <tr>
-                                                        <td colspan="1" bgcolor="#e3e3e3"><b>ID</b></td>
                                                         <td colspan="1" bgcolor="#e3e3e3"><b>Year</b></td>
                                                         <td colspan="1" bgcolor="#e3e3e3"><b>Topic</b></td>
                                                         <td colspan="1" bgcolor="#e3e3e3"><b>Description(Title,Journal,etc.-APA format)</b></td>
@@ -360,11 +347,6 @@
                                                         <td colspan="1" bgcolor="#e3e3e3"><b>Status</b></td>
                                                     </tr>
                                                     <tr>
-                                                        <td colspan="1" bgcolor="#FFFFFF">
-                                                        <input type="text" name="Peer_reviewed_id"
-                                                            style="width:100px; font-size:15px; text-align:center; 
-                                                                text-overflow:ellipsis; overflow: hidden;"/>
-                                                        </td>
                                                         <td colspan="1" bgcolor="#FFFFFF">
                                                         <input type="text" name="Peer_reviewed_year"
                                                             style="width:100px; font-size:15px; text-align:center; 
@@ -435,7 +417,6 @@
                                                 <h4>Research Monographs</h4> <!--小分類-->
                                                 <table width="790" bgcolor="black" style="font-size:15px">
                                                     <tr>
-                                                        <td colspan="1" bgcolor="#e3e3e3"><b>ID</b></td>
                                                         <td colspan="1" bgcolor="#e3e3e3"><b>Year</b></td>
                                                         <td colspan="1" bgcolor="#e3e3e3"><b>Type</b></td>
                                                         <td colspan="1" bgcolor="#e3e3e3"><b>Topic</b></td>
@@ -444,11 +425,6 @@
                                                         <td colspan="1" bgcolor="#e3e3e3"><b>Status</b></td>
                                                     </tr>
                                                     <tr>
-                                                        <td colspan="1" bgcolor="#FFFFFF">
-                                                        <input type="text" name="Research_Monographs_Id"
-                                                            style="width:100px; font-size:15px; text-align:center; 
-                                                                text-overflow:ellipsis; overflow: hidden;"/>
-                                                        </td>
                                                         <td colspan="1" bgcolor="#FFFFFF">
                                                         <input type="text" name="Research_Monographs_year"
                                                             style="width:100px; font-size:15px; text-align:center; 
@@ -506,18 +482,12 @@
                                                 <h4>Academic Meeting Proceedings</h4> <!--小分類-->
                                                 <table width="790" bgcolor="black" style="font-size:15px">
                                                     <tr>
-                                                        <td colspan="1" bgcolor="#e3e3e3"><b>ID</b></td>
                                                         <td colspan="1" bgcolor="#e3e3e3"><b>Year</b></td>
                                                         <td colspan="1" bgcolor="#e3e3e3"><b>Type</b></td>
                                                         <td colspan="1" bgcolor="#e3e3e3"><b>Topic</b></td>
                                                         <td colspan="1" bgcolor="#e3e3e3"><b>Description(Title, Meeting, etc.)</b></td>
                                                     </tr>
                                                     <tr>
-                                                        <td colspan="1" bgcolor="#FFFFFF">
-                                                        <input type="text" name="Meeting_Proceedings_And_Other_Id"
-                                                            style="width:100px; font-size:15px; text-align:center; 
-                                                                text-overflow:ellipsis; overflow: hidden;"/>
-                                                        </td>
                                                         <td colspan="1" bgcolor="#FFFFFF">
                                                         <input type="text" name="Meeting_Proceedings_And_Other_year"
                                                             style="width:100px; font-size:15px; text-align:center; 
@@ -543,18 +513,12 @@
                                                 <h4>Professional Meeting Proceedings</h4> <!--小分類-->
                                                 <table width="790" bgcolor="black" style="font-size:15px">
                                                     <tr>
-                                                        <td colspan="1" bgcolor="#e3e3e3"><b>ID</b></td>
                                                         <td colspan="1" bgcolor="#e3e3e3"><b>Year</b></td>
                                                         <td colspan="1" bgcolor="#e3e3e3"><b>Type</b></td>
                                                         <td colspan="1" bgcolor="#e3e3e3"><b>Topic</b></td>
                                                         <td colspan="1" bgcolor="#e3e3e3"><b>Description(Title, Meeting, etc.)</b></td>
                                                     </tr>
                                                     <tr>
-                                                        <td colspan="1" bgcolor="#FFFFFF">
-                                                        <input type="text" name="Professional_Meeting_Proceedings_Id"
-                                                            style="width:100px; font-size:15px; text-align:center; 
-                                                                text-overflow:ellipsis; overflow: hidden;"/>
-                                                        </td>
                                                         <td colspan="1" bgcolor="#FFFFFF">
                                                         <input type="text" name="Professional_Meeting_Proceedings_year"
                                                             style="width:100px; font-size:15px; text-align:center; 
@@ -580,18 +544,12 @@
                                                 <h4>Textbooks/Chapters</h4> <!--小分類-->
                                                 <table width="790" bgcolor="black" style="font-size:15px">
                                                     <tr>
-                                                        <td colspan="1" bgcolor="#e3e3e3"><b>ID</b></td>
                                                         <td colspan="1" bgcolor="#e3e3e3"><b>Year</b></td>
                                                         <td colspan="1" bgcolor="#e3e3e3"><b>Type</b></td>
                                                         <td colspan="1" bgcolor="#e3e3e3"><b>Topic</b></td>
                                                         <td colspan="1" bgcolor="#e3e3e3"><b>Description(Title, Meeting, etc.)</b></td>
                                                     </tr>
                                                     <tr>
-                                                        <td colspan="1" bgcolor="#FFFFFF">
-                                                        <input type="text" name="Textbooks_Chapters_Id"
-                                                            style="width:100px; font-size:15px; text-align:center; 
-                                                                text-overflow:ellipsis; overflow: hidden;"/>
-                                                        </td>
                                                         <td colspan="1" bgcolor="#FFFFFF">
                                                         <input type="text" name="Textbooks_Chapters_year"
                                                             style="width:100px; font-size:15px; text-align:center; 
@@ -617,18 +575,12 @@
                                                 <h4>Cases</h4> <!--小分類-->
                                                 <table width="790" bgcolor="black" style="font-size:15px">
                                                     <tr>
-                                                        <td colspan="1" bgcolor="#e3e3e3"><b>ID</b></td>
                                                         <td colspan="1" bgcolor="#e3e3e3"><b>Year</b></td>
                                                         <td colspan="1" bgcolor="#e3e3e3"><b>Type</b></td>
                                                         <td colspan="1" bgcolor="#e3e3e3"><b>Topic</b></td>
                                                         <td colspan="1" bgcolor="#e3e3e3"><b>Description(Title, Meeting, etc.)</b></td>
                                                     </tr>
                                                     <tr>
-                                                        <td colspan="1" bgcolor="#FFFFFF">
-                                                        <input type="text" name="Cases_Id"
-                                                            style="width:100px; font-size:15px; text-align:center; 
-                                                                text-overflow:ellipsis; overflow: hidden;"/>
-                                                        </td>
                                                         <td colspan="1" bgcolor="#FFFFFF">
                                                         <input type="text" name="Cases_year"
                                                             style="width:100px; font-size:15px; text-align:center; 
@@ -654,17 +606,11 @@
                                                 <h4>Other Teaching Materials</h4> <!--小分類-->
                                                 <table width="790" bgcolor="black" style="font-size:15px">
                                                     <tr>
-                                                        <td colspan="1" bgcolor="#e3e3e3"><b>ID</b></td>
                                                         <td colspan="1" bgcolor="#e3e3e3"><b>Year</b></td>
                                                         <td colspan="1" bgcolor="#e3e3e3"><b>Type</b></td>
                                                         <td colspan="1" bgcolor="#e3e3e3"><b>Title</b></td>
                                                     </tr>
                                                     <tr>
-                                                        <td colspan="1" bgcolor="#FFFFFF">
-                                                        <input type="text" name="Other_Teaching_Materials_Id"
-                                                            style="width:100px; font-size:15px; text-align:center; 
-                                                                text-overflow:ellipsis; overflow: hidden;"/>
-                                                        </td>
                                                         <td colspan="1" bgcolor="#FFFFFF">
                                                         <input type="text" name="Other_Teaching_Materials_year"
                                                             style="width:100px; font-size:15px; text-align:center; 
@@ -685,17 +631,11 @@
                                                 <h4>Honors and Competitive Awards Received</h4> <!--小分類-->
                                                 <table width="790" bgcolor="black" style="font-size:15px">
                                                     <tr>
-                                                        <td colspan="1" bgcolor="#e3e3e3"><b>ID</b></td>
                                                         <td colspan="1" bgcolor="#e3e3e3"><b>Year</b></td>
                                                         <td colspan="1" bgcolor="#e3e3e3"><b>Type</b></td>
                                                         <td colspan="1" bgcolor="#e3e3e3"><b>Title</b></td>
                                                     </tr>
                                                     <tr>
-                                                        <td colspan="1" bgcolor="#FFFFFF">
-                                                        <input type="text" name="Honors_Competitive_Awards_Received_Id"
-                                                            style="width:100px; font-size:15px; text-align:center; 
-                                                                text-overflow:ellipsis; overflow: hidden;"/>
-                                                        </td>
                                                         <td colspan="1" bgcolor="#FFFFFF">
                                                         <input type="text" name="Honors_Competitive_Awards_Received_year"
                                                             style="width:100px; font-size:15px; text-align:center; 
@@ -724,18 +664,12 @@
                                                 <h4>Professional History 業界經歷</h4> <!--小分類-->
                                                 <table width="790" bgcolor="black" style="font-size:15px">
                                                     <tr>
-                                                        <td colspan="1" bgcolor="#e3e3e3"><b>ID</b></td>
                                                         <td colspan="1" bgcolor="#e3e3e3"><b>Month, Year</b></td>
                                                         <td colspan="1" bgcolor="#e3e3e3"><b>Title</b></td>
                                                         <td colspan="1" bgcolor="#e3e3e3"><b>Unit / Department</b></td>
                                                         <td colspan="1" bgcolor="#e3e3e3"><b>Section / College</b></td>
                                                     </tr>
                                                     <tr>
-                                                        <td colspan="1" bgcolor="#FFFFFF">
-                                                        <input type="text" name="Professional_History_Id"
-                                                            style="width:100px; font-size:15px; text-align:center; 
-                                                                text-overflow:ellipsis; overflow: hidden;"/>
-                                                        </td>
                                                         <td colspan="1" bgcolor="#FFFFFF">
                                                         <input type="text" name="Professional_History_month_year"
                                                             style="width:100px; font-size:15px; text-align:center; 
@@ -772,18 +706,12 @@
                                                 <h4>Professional Development 業界發展</h4> <!--小分類-->
                                                 <table width="790" bgcolor="black" style="font-size:15px">
                                                     <tr>
-                                                        <td colspan="1" bgcolor="#e3e3e3"><b>ID</b></td>                                                   
                                                         <td colspan="1" bgcolor="#e3e3e3"><b>Year</b></td>
                                                         <td colspan="1" bgcolor="#e3e3e3"><b>Type</b></td>
                                                         <td colspan="1" bgcolor="#e3e3e3"><b>Topic</b></td>
                                                         <td colspan="1" bgcolor="#e3e3e3"><b>Description (institute/unit, etc.)</b></td>
                                                     </tr>
                                                     <tr>
-                                                        <td colspan="1" bgcolor="#FFFFFF">
-                                                        <input type="text" name="Professional_Development_Id"
-                                                            style="width:100px; font-size:15px; text-align:center; 
-                                                                text-overflow:ellipsis; overflow: hidden;"/>
-                                                        </td>
                                                         <td colspan="1" bgcolor="#FFFFFF">
                                                         <input type="text" name="Professional_Development_month_year"
                                                             style="width:100px; font-size:15px; text-align:center; 
@@ -809,17 +737,11 @@
                                                 <h4>Professional History 業界團體</h4> <!--小分類-->
                                                 <table width="790" bgcolor="black" style="font-size:15px">
                                                     <tr>
-                                                        <td colspan="1" bgcolor="#e3e3e3"><b>ID</b></td>
                                                         <td colspan="1" bgcolor="#e3e3e3"><b>Year</b></td>
                                                         <td colspan="1" bgcolor="#e3e3e3"><b>Topic</b></td>
                                                         <td colspan="1" bgcolor="#e3e3e3"><b>Description(society/association/unit/agency)</b></td>
                                                     </tr>
                                                     <tr>
-                                                        <td colspan="1" bgcolor="#FFFFFF">
-                                                        <input type="text" name="Professional_Societies_Id"
-                                                            style="width:100px; font-size:15px; text-align:center; 
-                                                                text-overflow:ellipsis; overflow: hidden;"/>
-                                                        </td>
                                                         <td colspan="1" bgcolor="#FFFFFF">
                                                         <input type="text" name="Professional_Societies_year"
                                                             style="width:100px; font-size:15px; text-align:center; 
@@ -890,12 +812,12 @@
 		<img id="goTop" src="images/goTop.png" title="Back to Top"/>
 		<script> //回到頂部
 			$.extend($.easing, {
-			easeOutExpo: function (x, t, b, c, d) {
-			return (t==d) ? b+c : c * (-Math.pow(2, -10 * t/d) + 1) + b;
-			}
+                easeOutExpo: function (x, t, b, c, d) {
+                return (t==d) ? b+c : c * (-Math.pow(2, -10 * t/d) + 1) + b;
+                }
 			});
 			$("#goTop").click(function(){
-			$("html, body").animate({scrollTop: 0}, 1000, "easeOutExpo");
+			    $("html, body").animate({scrollTop: 0}, 1000, "easeOutExpo");
 			});
 		</script>
     </body>
