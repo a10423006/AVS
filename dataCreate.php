@@ -131,7 +131,7 @@
 	
 	$sql_Other_Teaching_Materials = "INSERT INTO Teaching_Materials_And_Awards (Teaching_Materials_And_Awards_Year, Teaching_Materials_And_Awards_Type, Title, Professor_Id) VALUES('$Other_Teaching_Materials_year', '$Other_Teaching_Materials_type', '$Other_Teaching_Materials_title', '$id[0]')";
 
-	$conn9 = mysql_query($sql_Other_Teaching_Materials);
+	$conn10 = mysql_query($sql_Other_Teaching_Materials);
 	
 	//Honors and Competitive Awards Received
 	$Honors_Competitive_Awards_Received_year = $_POST['Honors_Competitive_Awards_Received_year'];
@@ -140,7 +140,7 @@
 	
 	$sql_Honors_Competitive_Awards_Received = "INSERT INTO Teaching_Materials_And_Awards (Teaching_Materials_And_Awards_Year, Teaching_Materials_And_Awards_Type, Title, Professor_Id) VALUES('$Honors_Competitive_Awards_Received_year', '$Honors_Competitive_Awards_Received_type',  '$Honors_Competitive_Awards_Received_title', '$id[0]')";
 
-	$conn10 = mysql_query($sql_Honors_Competitive_Awards_Received);
+	$conn11 = mysql_query($sql_Honors_Competitive_Awards_Received);
 	
 	//業界經歷
 	$Professional_History_month_year = $_POST['Professional_History_month_year'];
@@ -151,7 +151,7 @@
 	
 	$sql_Professional_History = "INSERT INTO Professional_History (Month_Year ,Title, Department, Professional_History_Section, Company_name, Professor_Id) VALUES('$Professional_History_month_year', '$Professional_History_title', '$Professional_History_department', '$Professional_History_section', '$Professional_History_company', '$id[0]')";
 
-	$conn11 = mysql_query($sql_Professional_History);
+	$conn12 = mysql_query($sql_Professional_History);
 	
 	//業界發展
 	$Professional_Development_month_year = $_POST['Professional_Development_month_year'];
@@ -161,7 +161,7 @@
 	
 	$sql_Professional_Development = "INSERT INTO Meeting_Proceedings_And_Other (Meeting_Year, Meeting_Type, Topic, Description, Professor_Id) VALUES('$Professional_Development_month_year', '$Professional_Development_type', '$Professional_Development_topic',  '$Professional_Development_description', '$id[0]')";
 
-	$conn12 = mysql_query($sql_Professional_Development);
+	$conn13 = mysql_query($sql_Professional_Development);
 	
 	//業界團體
 	$Professional_Societies_year = $_POST['Professional_Societies_year'];
@@ -170,7 +170,7 @@
 	
 	$sql_Professional_Societies = "INSERT INTO Professional_Societies (Professional_Societies_Year, Topic, Description, Professor_Id) VALUES('$Professional_Societies_year', '$Professional_Societies_topic', '$Professional_Societies_description', '$id[0]')";
 
-	$conn13 = mysql_query($sql_Professional_Societies);
+	$conn14 = mysql_query($sql_Professional_Societies);
 	
 	//影響力描述
 	$Research_Impacts_description = $_POST['Research_Impacts_description'];
@@ -179,7 +179,7 @@
 	
 	$sql_Professor_Information_Impacts = "INSERT INTO Professor_Information (Research_Impacts, Practice_Impacts, Teaching_Impacts, Professor_Id) VALUES('$Research_Impacts_description', = '$Practice_Impacts_description', = '$Teaching_Impacts_description', '$id[0]')";
 
-	$conn14 = mysql_query($sql_Professor_Information_Impacts);
+	$conn15 = mysql_query($sql_Professor_Information_Impacts);
 
 	//警告視窗
 	Function my_msg($msg, $redirect){
@@ -192,9 +192,28 @@
 		return; 
 	}
 
-	if($conn && $conn2 && $conn3 && $conn4 && $conn5 && $conn6 && $conn7 && $conn8 && $conn9 && $conn10 && $conn11 && $conn12 && $conn13 && $conn14){
+	if($conn && $conn2 && $conn3 && $conn4 && $conn5 && $conn6 && $conn7 && $conn8 && $conn9 && $conn10 && $conn11 && $conn12 && $conn13 && $conn14 && $conn15){
 		my_msg('上傳成功', 'createTea.php');
 	}else{
 		my_msg('上傳失敗', 'createTea.php');
+		$delete = "DELETE FROM `Academic_Services` WHERE `Academic_Services`.`Professor_Id` = '$id[0]'";
+		$delete2 = "DELETE FROM `Course_Taught` WHERE `Course_Taught`.`Professor_Id` = '$id[0]'";
+		$delete3 = "DELETE FROM `Meeting_Proceedings_And_Other	` WHERE `Meeting_Proceedings_And_Other	`.`Professor_Id` = '$id[0]'";
+		$delete4 = "DELETE FROM `Peer_reviewed_Journals` WHERE `Peer_reviewed_Journals`.`Professor_Id` = '$id[0]'";
+		$delete5 = "DELETE FROM `Professional_History` WHERE `Professional_History`.`Professor_Id` = '$id[0]'";
+		$delete6 = "DELETE FROM `Professional_Societies` WHERE `Professional_Societies`.`Professor_Id` = '$id[0]'";
+		$delete7 = "DELETE FROM `Research_Monographs` WHERE `Research_Monographs`.`Professor_Id` = '$id[0]'";
+		$delete8 = "DELETE FROM `Teaching_Materials_And_Awards` WHERE `Teaching_Materials_And_Awards`.`Professor_Id` = '$id[0]'";
+		$delete9 = "DELETE FROM `Professor_Information` WHERE `Professor_Information`.`Id` = '$id[0]'";
+
+		// mysql_query($delete);
+		// mysql_query($delete2);
+		// mysql_query($delete3);
+		// mysql_query($delete4);
+		// mysql_query($delete5);
+		// mysql_query($delete6);
+		// mysql_query($delete7);
+		// mysql_query($delete8);
+		// mysql_query($delete9);
 	}
 ?>

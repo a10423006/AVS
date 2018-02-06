@@ -363,7 +363,7 @@
                                                         </td>
                                                         <td colspan="1" bgcolor="#FFFFFF">
                                                             <input type="text" name="Peer_reviewed_download_number"
-                                                                style="width:100px; font-size:15px; text-align:center; 
+                                                                style="width:50px; font-size:15px; text-align:center; 
                                                                     text-overflow:ellipsis; overflow: hidden;"/>
                                                         </td>
                                                         <td colspan="1" bgcolor="#FFFFFF">
