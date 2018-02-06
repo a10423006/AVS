@@ -193,9 +193,7 @@
 	}
 
 	if($conn && $conn2 && $conn3 && $conn4 && $conn5 && $conn6 && $conn7 && $conn8 && $conn9 && $conn10 && $conn11 && $conn12 && $conn13 && $conn14 && $conn15){
-		my_msg('上傳成功', 'createTea.php');
-	}else{
-		my_msg('上傳失敗', 'createTea.php');
+		//my_msg('上傳失敗', 'createTea.php');
 		$delete = "DELETE FROM `Academic_Services` WHERE `Academic_Services`.`Professor_Id` = '$id[0]'";
 		$delete2 = "DELETE FROM `Course_Taught` WHERE `Course_Taught`.`Professor_Id` = '$id[0]'";
 		$delete3 = "DELETE FROM `Meeting_Proceedings_And_Other	` WHERE `Meeting_Proceedings_And_Other	`.`Professor_Id` = '$id[0]'";
@@ -206,14 +204,16 @@
 		$delete8 = "DELETE FROM `Teaching_Materials_And_Awards` WHERE `Teaching_Materials_And_Awards`.`Professor_Id` = '$id[0]'";
 		$delete9 = "DELETE FROM `Professor_Information` WHERE `Professor_Information`.`Id` = '$id[0]'";
 
-		// mysql_query($delete);
-		// mysql_query($delete2);
-		// mysql_query($delete3);
-		// mysql_query($delete4);
-		// mysql_query($delete5);
-		// mysql_query($delete6);
-		// mysql_query($delete7);
-		// mysql_query($delete8);
-		// mysql_query($delete9);
+		mysql_query($delete);
+		mysql_query($delete2);
+		mysql_query($delete3);
+		mysql_query($delete4);
+		mysql_query($delete5);
+		mysql_query($delete6);
+		mysql_query($delete7);
+		mysql_query($delete8);
+		mysql_query($delete9);
+	}else{
+		my_msg('上傳成功', 'createTea.php');
 	}
 ?>
