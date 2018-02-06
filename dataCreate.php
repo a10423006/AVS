@@ -44,7 +44,7 @@
 	$service_type = $_POST['service_type'];
 	$service_description = $_POST['service_description'];
 	
-	$sql_Academic_Services = "INSERT INTO Academic_Services (Services_Year, Service_Type, Description) VALUES('$service_Year', '$service_type',  '$service_description', '$id[0]')";
+	$sql_Academic_Services = "INSERT INTO Academic_Services(Services_Year, Service_Type, Description, Professor_Id) VALUES('$service_Year', '$service_type',  '$service_description', '$id[0]')";
 
 	$conn3 = mysql_query($sql_Academic_Services);
 	
@@ -61,7 +61,7 @@
 	$browses = $_POST['browses'];
 	$supported_by = $_POST['supported_by'];
 	
-	$sql_Peer_reviewed_Journals = "INSERT INTO Peer_reviewed_Journals(Reviewed_Year, Topic, Description, Download_Number, Status, MOST_Rank, Portfolio, Citation_Index, Browses, Supported_by) VALUES('$Peer_reviewed_year', '$Peer_reviewed_topic', '$Peer_reviewed_description',  '$Peer_reviewed_download_number', '$Peer_reviewed_status', '$most_rank', '$portfolio', '$citation_index', '$browses', '$supported_by', '$id[0]')";
+	$sql_Peer_reviewed_Journals = "INSERT INTO Peer_reviewed_Journals(Reviewed_Year, Topic, Description, Download_Number, Status, MOST_Rank, Portfolio, Citation_Index, Browses, Supported_by, Professor_Id) VALUES('$Peer_reviewed_year', '$Peer_reviewed_topic', '$Peer_reviewed_description',  '$Peer_reviewed_download_number', '$Peer_reviewed_status', '$most_rank', '$portfolio', '$citation_index', '$browses', '$supported_by', '$id[0]')";
 
 	$conn4 = mysql_query($sql_Peer_reviewed_Journals);
 	
@@ -75,7 +75,7 @@
 	$Research_Monographs_browses = $_POST['Research_Monographs_browses'];
 	$Research_Monographs_supported_by = $_POST['Research_Monographs_supported_by'];
 	
-	$sql_Research_Monographs = "INSERT INTO Research_Monographs (Research_Year, Research_Type, Topic, Description, Download_Number, Status, Browses, Supported_by) VALUES('$Research_Monographs_year', '$Research_Monographs_type', '$Research_Monographs_topic', '$Research_Monographs_description',  '$Research_Monographs_download_number', '$Research_Monographs_status', '$Research_Monographs_browses', '$Research_Monographs_supported_by', '$id[0]')";
+	$sql_Research_Monographs = "INSERT INTO Research_Monographs (Research_Year, Research_Type, Topic, Description, Download_Number, Status, Browses, Supported_by, Professor_Id) VALUES('$Research_Monographs_year', '$Research_Monographs_type', '$Research_Monographs_topic', '$Research_Monographs_description',  '$Research_Monographs_download_number', '$Research_Monographs_status', '$Research_Monographs_browses', '$Research_Monographs_supported_by', '$id[0]')";
 
 	$conn5 = mysql_query($sql_Research_Monographs);
 	
@@ -87,7 +87,7 @@
 	$Meeting_Proceedings_And_Other_description = $_POST['Meeting_Proceedings_And_Other_description'];
 	
 	
-	$sql_Meeting_Proceedings_And_Other = "INSERT INTO Meeting_Proceedings_And_Other (Meeting_Year, Meeting_Type, Topic, Description) VALUES('$Meeting_Proceedings_And_Other_year', '$Meeting_Proceedings_And_Other_type', '$Meeting_Proceedings_And_Other_topic',  '$Meeting_Proceedings_And_Other_description', '$id[0]')";
+	$sql_Meeting_Proceedings_And_Other = "INSERT INTO Meeting_Proceedings_And_Other (Meeting_Year, Meeting_Type, Topic, Description, Professor_Id) VALUES('$Meeting_Proceedings_And_Other_year', '$Meeting_Proceedings_And_Other_type', '$Meeting_Proceedings_And_Other_topic',  '$Meeting_Proceedings_And_Other_description', '$id[0]')";
 
 	$conn6 = mysql_query($sql_Meeting_Proceedings_And_Other);
 	
@@ -98,7 +98,7 @@
 	$Professional_Meeting_Proceedings_topic = $_POST['Professional_Meeting_Proceedings_topic'];
 	$Professional_Meeting_Proceedings_description = $_POST['Professional_Meeting_Proceedings_description'];
 	
-	$sql_Professional_Meeting_Proceedings = "INSERT INTO Meeting_Proceedings_And_Other (Meeting_Year, Meeting_Type, Topic, Description) VALUES('$Professional_Meeting_Proceedings_year', '$Professional_Meeting_Proceedings_type', '$Professional_Meeting_Proceedings_topic',  '$Professional_Meeting_Proceedings_description' ,'$id[0]')";
+	$sql_Professional_Meeting_Proceedings = "INSERT INTO Meeting_Proceedings_And_Other (Meeting_Year, Meeting_Type, Topic, Description, Professor_Id) VALUES('$Professional_Meeting_Proceedings_year', '$Professional_Meeting_Proceedings_type', '$Professional_Meeting_Proceedings_topic',  '$Professional_Meeting_Proceedings_description' ,'$id[0]')";
 
 	$conn7 = mysql_query($sql_Professional_Meeting_Proceedings);
 	
@@ -109,7 +109,7 @@
 	$Textbooks_Chapters_topic = $_POST['Textbooks_Chapters_topic'];
 	$Textbooks_Chapters_description = $_POST['Textbooks_Chapters_description'];
 	
-	$sql_Textbooks_Chapters = "INSERT INTO Meeting_Proceedings_And_Other (Meeting_Year, Meeting_Type, Topic, Description) VALUES('$Textbooks_Chapters_year', '$Textbooks_Chapters_type', '$Textbooks_Chapters_topic', '$Textbooks_Chapters_description', '$id[0]')";
+	$sql_Textbooks_Chapters = "INSERT INTO Meeting_Proceedings_And_Other (Meeting_Year, Meeting_Type, Topic, Description, Professor_Id) VALUES('$Textbooks_Chapters_year', '$Textbooks_Chapters_type', '$Textbooks_Chapters_topic', '$Textbooks_Chapters_description', '$id[0]')";
 
 	$conn8 = mysql_query($sql_Textbooks_Chapters);
 	
@@ -120,7 +120,7 @@
 	$Cases_topic = $_POST['Cases_topic'];
 	$Cases_description = $_POST['Cases_description'];
 	
-	$sql_Cases = "INSERT INTO Meeting_Proceedings_And_Other (Meeting_Year, Meeting_Type, Topic, Description) VALUES('$Cases_year', '$Cases_type',  '$Cases_topic', '$Cases_description', '$id[0]')";
+	$sql_Cases = "INSERT INTO Meeting_Proceedings_And_Other (Meeting_Year, Meeting_Type, Topic, Description, Professor_Id) VALUES('$Cases_year', '$Cases_type',  '$Cases_topic', '$Cases_description', '$id[0]')";
 
 	$conn9 = mysql_query($sql_Cases);
 	
@@ -129,7 +129,7 @@
 	$Other_Teaching_Materials_type = $_POST['Other_Teaching_Materials_type'];
 	$Other_Teaching_Materials_title = $_POST['Other_Teaching_Materials_title'];
 	
-	$sql_Other_Teaching_Materials = "INSERT INTO Teaching_Materials_And_Awards (Teaching_Materials_And_Awards_Year, Teaching_Materials_And_Awards_Type, Title) VALUES('$Other_Teaching_Materials_year', '$Other_Teaching_Materials_type', '$Other_Teaching_Materials_title', '$id[0]')";
+	$sql_Other_Teaching_Materials = "INSERT INTO Teaching_Materials_And_Awards (Teaching_Materials_And_Awards_Year, Teaching_Materials_And_Awards_Type, Title, Professor_Id) VALUES('$Other_Teaching_Materials_year', '$Other_Teaching_Materials_type', '$Other_Teaching_Materials_title', '$id[0]')";
 
 	$conn9 = mysql_query($sql_Other_Teaching_Materials);
 	
@@ -138,7 +138,7 @@
 	$Honors_Competitive_Awards_Received_type = $_POST['Honors_Competitive_Awards_Received_type'];
 	$Honors_Competitive_Awards_Received_title = $_POST['Honors_Competitive_Awards_Received_title'];
 	
-	$sql_Honors_Competitive_Awards_Received = "INSERT INTO Teaching_Materials_And_Awards (Teaching_Materials_And_Awards_Year, Teaching_Materials_And_Awards_Type, Title) VALUES('$Honors_Competitive_Awards_Received_year', '$Honors_Competitive_Awards_Received_type',  '$Honors_Competitive_Awards_Received_title', '$id[0]')";
+	$sql_Honors_Competitive_Awards_Received = "INSERT INTO Teaching_Materials_And_Awards (Teaching_Materials_And_Awards_Year, Teaching_Materials_And_Awards_Type, Title, Professor_Id) VALUES('$Honors_Competitive_Awards_Received_year', '$Honors_Competitive_Awards_Received_type',  '$Honors_Competitive_Awards_Received_title', '$id[0]')";
 
 	$conn10 = mysql_query($sql_Honors_Competitive_Awards_Received);
 	
@@ -149,7 +149,7 @@
 	$Professional_History_section = $_POST['Professional_History_section'];
 	$Professional_History_company = $_POST['Professional_History_company'];
 	
-	$sql_Professional_History = "INSERT INTO Professional_History (Month_Year ,Title, Department, Professional_History_Section, Company_name) VALUES('$Professional_History_month_year', '$Professional_History_title', '$Professional_History_department', '$Professional_History_section', '$Professional_History_company', '$id[0]')";
+	$sql_Professional_History = "INSERT INTO Professional_History (Month_Year ,Title, Department, Professional_History_Section, Company_name, Professor_Id) VALUES('$Professional_History_month_year', '$Professional_History_title', '$Professional_History_department', '$Professional_History_section', '$Professional_History_company', '$id[0]')";
 
 	$conn11 = mysql_query($sql_Professional_History);
 	
@@ -159,7 +159,7 @@
 	$Professional_Development_topic = $_POST['Professional_Development_topic'];
 	$Professional_Development_description = $_POST['Professional_Development_description'];
 	
-	$sql_Professional_Development = "INSERT INTO Meeting_Proceedings_And_Other (Meeting_Year, Meeting_Type, Topic, Description) VALUES('$Professional_Development_month_year', '$Professional_Development_type', '$Professional_Development_topic',  '$Professional_Development_description', '$id[0]')";
+	$sql_Professional_Development = "INSERT INTO Meeting_Proceedings_And_Other (Meeting_Year, Meeting_Type, Topic, Description, Professor_Id) VALUES('$Professional_Development_month_year', '$Professional_Development_type', '$Professional_Development_topic',  '$Professional_Development_description', '$id[0]')";
 
 	$conn12 = mysql_query($sql_Professional_Development);
 	
@@ -168,7 +168,7 @@
 	$Professional_Societies_topic = $_POST['Professional_Societies_topic'];
 	$Professional_Societies_description = $_POST['Professional_Societies_description'];
 	
-	$sql_Professional_Societies = "INSERT INTO Professional_Societies (Professional_Societies_Year, Topic, Description) VALUES('$Professional_Societies_year', '$Professional_Societies_topic', '$Professional_Societies_description', '$id[0]')";
+	$sql_Professional_Societies = "INSERT INTO Professional_Societies (Professional_Societies_Year, Topic, Description, Professor_Id) VALUES('$Professional_Societies_year', '$Professional_Societies_topic', '$Professional_Societies_description', '$id[0]')";
 
 	$conn13 = mysql_query($sql_Professional_Societies);
 	
@@ -177,7 +177,7 @@
 	$Practice_Impacts_description = $_POST['Practice_Impacts_description'];
 	$Teaching_Impacts_description = $_POST['Teaching_Impacts_description'];
 	
-	$sql_Professor_Information_Impacts = "INSERT INTO Professor_Information (Research_Impacts, Practice_Impacts, Teaching_Impacts) VALUES('$Research_Impacts_description', = '$Practice_Impacts_description', = '$Teaching_Impacts_description', '$id[0]')";
+	$sql_Professor_Information_Impacts = "INSERT INTO Professor_Information (Research_Impacts, Practice_Impacts, Teaching_Impacts, Professor_Id) VALUES('$Research_Impacts_description', = '$Practice_Impacts_description', = '$Teaching_Impacts_description', '$id[0]')";
 
 	$conn14 = mysql_query($sql_Professor_Information_Impacts);
 
@@ -192,7 +192,7 @@
 		return; 
 	}
 
-	if($conn && $conn2){
+	if($conn && $conn2 && $conn3 && $conn4 && $conn5 && $conn6 && $conn7 && $conn8 && $conn9 && $conn10 && $conn11 && $conn12 && $conn13 && $conn14){
 		my_msg('上傳成功', 'createTea.php');
 	}else{
 		my_msg('上傳失敗', 'createTea.php');
