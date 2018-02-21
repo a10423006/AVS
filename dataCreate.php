@@ -1,5 +1,6 @@
 <?php
 	include_once("connection.php");
+	$Old_id = mysql_fetch_array(mysql_query("SELECT MAX(Id) FROM Professor_Information")); //舊ID
 
 	//個人資料
 	$name = $_POST['name'];
@@ -21,9 +22,14 @@
 	$time_devoted_mission = $_POST['time_devoted_mission'];
 	$faculty_qualification = $_POST['faculty_qualification'];
 	$faculty_description = $_POST['faculty_description'];
-	$teaching_interests = $_POST['teaching_interests'];	
+	$teaching_interests = $_POST['teaching_interests'];
 
-	$sql_Professor_Information = "INSERT INTO Professor_Information(Name, Academic_Title, Center, Department, College, Phone, Cell, E_mail, Website,Edu_Degree, Edu_Year, Edu_Major, Edu_Department, Edu_School, Responsibilitie, Faculty_Sufficiency, Time_Devoted_Mission, Faculty_Qualification, Description,Teaching_Interests) VALUES('$name', '$academic_Title', '$center', '$department', '$college', '$phone', '$cell','$email', '$website', '$edu_Degree', '$edu_Year', '$edu_Major', '$edu_department',  '$edu_School', '$faculty_responsibilities', '$faculty_sufficiency', '$time_devoted_mission', '$faculty_qualification', '$faculty_description', '$teaching_interests')";
+	//影響力描述
+	$Research_Impacts_description = $_POST['Research_Impacts_description'];
+	$Practice_Impacts_description = $_POST['Practice_Impacts_description'];
+	$Teaching_Impacts_description = $_POST['Teaching_Impacts_description'];
+
+	$sql_Professor_Information = "INSERT INTO Professor_Information(Name, Academic_Title, Center, Department, College, Phone, Cell, E_mail, Website,Edu_Degree, Edu_Year, Edu_Major, Edu_Department, Edu_School, Responsibilitie, Faculty_Sufficiency, Time_Devoted_Mission, Faculty_Qualification, Description, Teaching_Interests, Research_Impacts, Practice_Impacts, Teaching_Impacts) VALUES('$name', '$academic_Title', '$center', '$department', '$college', '$phone', '$cell','$email', '$website', '$edu_Degree', '$edu_Year', '$edu_Major', '$edu_department',  '$edu_School', '$faculty_responsibilities', '$faculty_sufficiency', '$time_devoted_mission', '$faculty_qualification', '$faculty_description', '$teaching_interests','$Research_Impacts_description', '$Practice_Impacts_description', '$Teaching_Impacts_description')";
 
 	$conn = mysql_query($sql_Professor_Information);
 	$id = mysql_fetch_array(mysql_query("SELECT MAX(Id) FROM Professor_Information")); //抓新增後的ID
@@ -75,7 +81,7 @@
 	$Research_Monographs_browses = $_POST['Research_Monographs_browses'];
 	$Research_Monographs_supported_by = $_POST['Research_Monographs_supported_by'];
 	
-	$sql_Research_Monographs = "INSERT INTO Research_Monographs (Research_Year, Research_Type, Topic, Description, Download_Number, Status, Browses, Supported_by, Professor_Id) VALUES('$Research_Monographs_year', '$Research_Monographs_type', '$Research_Monographs_topic', '$Research_Monographs_description',  '$Research_Monographs_download_number', '$Research_Monographs_status', '$Research_Monographs_browses', '$Research_Monographs_supported_by', '$id[0]')";
+	$sql_Research_Monographs = "INSERT INTO Research_Monographs(Research_Year, Research_Type, Topic, Description, Download_Number, Status, Browses, Supported_by, Professor_Id) VALUES('$Research_Monographs_year', '$Research_Monographs_type', '$Research_Monographs_topic', '$Research_Monographs_description',  '$Research_Monographs_download_number', '$Research_Monographs_status', '$Research_Monographs_browses', '$Research_Monographs_supported_by', '$id[0]')";
 
 	$conn5 = mysql_query($sql_Research_Monographs);
 	
@@ -87,7 +93,7 @@
 	$Meeting_Proceedings_And_Other_description = $_POST['Meeting_Proceedings_And_Other_description'];
 	
 	
-	$sql_Meeting_Proceedings_And_Other = "INSERT INTO Meeting_Proceedings_And_Other (Meeting_Year, Meeting_Type, Topic, Description, Professor_Id) VALUES('$Meeting_Proceedings_And_Other_year', '$Meeting_Proceedings_And_Other_type', '$Meeting_Proceedings_And_Other_topic',  '$Meeting_Proceedings_And_Other_description', '$id[0]')";
+	$sql_Meeting_Proceedings_And_Other = "INSERT INTO Meeting_Proceedings_And_Other(Meeting_Year, Meeting_Type, Topic, Description, Professor_Id) VALUES('$Meeting_Proceedings_And_Other_year', '$Meeting_Proceedings_And_Other_type', '$Meeting_Proceedings_And_Other_topic',  '$Meeting_Proceedings_And_Other_description', '$id[0]')";
 
 	$conn6 = mysql_query($sql_Meeting_Proceedings_And_Other);
 	
@@ -171,15 +177,6 @@
 	$sql_Professional_Societies = "INSERT INTO Professional_Societies (Professional_Societies_Year, Topic, Description, Professor_Id) VALUES('$Professional_Societies_year', '$Professional_Societies_topic', '$Professional_Societies_description', '$id[0]')";
 
 	$conn14 = mysql_query($sql_Professional_Societies);
-	
-	//影響力描述
-	$Research_Impacts_description = $_POST['Research_Impacts_description'];
-	$Practice_Impacts_description = $_POST['Practice_Impacts_description'];
-	$Teaching_Impacts_description = $_POST['Teaching_Impacts_description'];
-	
-	$sql_Professor_Information_Impacts = "INSERT INTO Professor_Information (Research_Impacts, Practice_Impacts, Teaching_Impacts, Professor_Id) VALUES('$Research_Impacts_description', = '$Practice_Impacts_description', = '$Teaching_Impacts_description', '$id[0]')";
-
-	$conn15 = mysql_query($sql_Professor_Information_Impacts);
 
 	//警告視窗
 	Function my_msg($msg, $redirect){
@@ -192,28 +189,32 @@
 		return; 
 	}
 
-	if($conn && $conn2 && $conn3 && $conn4 && $conn5 && $conn6 && $conn7 && $conn8 && $conn9 && $conn10 && $conn11 && $conn12 && $conn13 && $conn14 && $conn15){
-		//my_msg('上傳失敗', 'createTea.php');
-		$delete = "DELETE FROM `Academic_Services` WHERE `Academic_Services`.`Professor_Id` = '$id[0]'";
-		$delete2 = "DELETE FROM `Course_Taught` WHERE `Course_Taught`.`Professor_Id` = '$id[0]'";
-		$delete3 = "DELETE FROM `Meeting_Proceedings_And_Other	` WHERE `Meeting_Proceedings_And_Other	`.`Professor_Id` = '$id[0]'";
-		$delete4 = "DELETE FROM `Peer_reviewed_Journals` WHERE `Peer_reviewed_Journals`.`Professor_Id` = '$id[0]'";
-		$delete5 = "DELETE FROM `Professional_History` WHERE `Professional_History`.`Professor_Id` = '$id[0]'";
-		$delete6 = "DELETE FROM `Professional_Societies` WHERE `Professional_Societies`.`Professor_Id` = '$id[0]'";
-		$delete7 = "DELETE FROM `Research_Monographs` WHERE `Research_Monographs`.`Professor_Id` = '$id[0]'";
-		$delete8 = "DELETE FROM `Teaching_Materials_And_Awards` WHERE `Teaching_Materials_And_Awards`.`Professor_Id` = '$id[0]'";
-		$delete9 = "DELETE FROM `Professor_Information` WHERE `Professor_Information`.`Id` = '$id[0]'";
-
-		mysql_query($delete);
-		mysql_query($delete2);
-		mysql_query($delete3);
-		mysql_query($delete4);
-		mysql_query($delete5);
-		mysql_query($delete6);
-		mysql_query($delete7);
-		mysql_query($delete8);
-		mysql_query($delete9);
+	if($Old_id[0] <> $id[0]){
+		if($conn && $conn2 && $conn3 && $conn4 && $conn5 && $conn6 && $conn7 && $conn8 && $conn9 && $conn10 && $conn11 && $conn12 && $conn13 && $conn14){
+			my_msg('上傳成功', 'createTea.php');
+		}else{
+			my_msg('上傳失敗', 'createTea.php');
+			$delete = "DELETE FROM `Academic_Services` WHERE `Academic_Services`.`Professor_Id` = '$id[0]'";
+			$delete2 = "DELETE FROM `Course_Taught` WHERE `Course_Taught`.`Professor_Id` = '$id[0]'";
+			$delete3 = "DELETE FROM `Meeting_Proceedings_And_Other	` WHERE `Meeting_Proceedings_And_Other`.`Professor_Id` = '$id[0]'";
+			$delete4 = "DELETE FROM `Peer_reviewed_Journals` WHERE `Peer_reviewed_Journals`.`Professor_Id` = '$id[0]'";
+			$delete5 = "DELETE FROM `Professional_History` WHERE `Professional_History`.`Professor_Id` = '$id[0]'";
+			$delete6 = "DELETE FROM `Professional_Societies` WHERE `Professional_Societies`.`Professor_Id` = '$id[0]'";
+			$delete7 = "DELETE FROM `Research_Monographs` WHERE `Research_Monographs`.`Professor_Id` = '$id[0]'";
+			$delete8 = "DELETE FROM `Teaching_Materials_And_Awards` WHERE `Teaching_Materials_And_Awards`.`Professor_Id` = '$id[0]'";
+			$delete9 = "DELETE FROM `Professor_Information` WHERE `Professor_Information`.`Id` = '$id[0]'";
+	
+			mysql_query($delete);
+			mysql_query($delete2);
+			mysql_query($delete3);
+			mysql_query($delete4);
+			mysql_query($delete5);
+			mysql_query($delete6);
+			mysql_query($delete7);
+			mysql_query($delete8);
+			mysql_query($delete9);
+		}
 	}else{
-		my_msg('上傳成功', 'createTea.php');
+		my_msg('上傳失敗', 'createTea.php');
 	}
 ?>
