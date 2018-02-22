@@ -1,5 +1,6 @@
 <?php
 	session_start();
+	$teacherID = $_SESSION['teacherID'];
 	
 	//學年度授課
 	$course_id = $_POST['course_id'];
@@ -9,7 +10,7 @@
 	$course_title = $_POST['course_title'];
 	$credit_hour = $_POST['credit_hour'];
 	
-	$sql_Course_Taught = "UPDATE Course_Taught SET Program = '$program',Academic_Year = '$academic_year',Semester = '$semester',Course_Title = '$course_title',Credit_Hour = '$credit_hour'  WHERE Id = '$course_id'";
+	//$sql_Course_Taught = "UPDATE Course_Taught SET Program = '$program',Academic_Year = '$academic_year',Semester = '$semester',Course_Title = '$course_title',Credit_Hour = '$credit_hour'  WHERE Id = '$course_id'";
 	
 	//學術服務
 	$service_ID = $_POST['service_ID'];
@@ -17,8 +18,7 @@
 	$service_type = $_POST['service_type'];
 	$service_description = $_POST['service_description'];
 	
-	$sql_Academic_Services = "UPDATE Academic_Services SET Services_Year = '$service_Year',Service_Type = '$service_type',Description = '$service_description'  WHERE Id = '$service_ID'";
-	
+	//$sql_Academic_Services = "UPDATE Academic_Services SET Services_Year = '$service_Year',Service_Type = '$service_type',Description = '$service_description'  WHERE Id = '$service_ID'";
 	
 	//研究產出 
 	//Peer-reviewed Journals
@@ -34,8 +34,7 @@
 	$browses = $_POST['browses'];
 	$supported_by = $_POST['supported_by'];
 	
-	
-	$sql_Peer_reviewed_Journals = "UPDATE Peer_reviewed_Journals SET Reviewed_Year = '$Peer_reviewed_year',Topic = '$Peer_reviewed_topic',Description = '$Peer_reviewed_description',Download_Number = '$Peer_reviewed_download_number',Status = '$Peer_reviewed_status',MOST_Rank='$most_rank',Portfolio='$portfolio',Citation_Index='$citation_index',Browses='$browses',Supported_by='$supported_by'  WHERE Id = '$Peer_reviewed_id'";
+	//$sql_Peer_reviewed_Journals = "UPDATE Peer_reviewed_Journals SET Reviewed_Year = '$Peer_reviewed_year',Topic = '$Peer_reviewed_topic',Description = '$Peer_reviewed_description',Download_Number = '$Peer_reviewed_download_number',Status = '$Peer_reviewed_status',MOST_Rank='$most_rank',Portfolio='$portfolio',Citation_Index='$citation_index',Browses='$browses',Supported_by='$supported_by'  WHERE Id = '$Peer_reviewed_id'";
 	
 	//Research Monographs
 	$Research_Monographs_Id = $_POST['Research_Monographs_Id'];
@@ -49,7 +48,7 @@
 	$Research_Monographs_supported_by = $_POST['Research_Monographs_supported_by'];
 	
 	
-	$sql_Research_Monographs = "UPDATE Research_Monographs SET Research_Year = '$Research_Monographs_year',Research_Type = '$Research_Monographs_type',Topic = '$Research_Monographs_topic',Description = '$Research_Monographs_description',Download_Number = '$Research_Monographs_download_number',Status='$Research_Monographs_status',Browses='$Research_Monographs_browses',Supported_by='$Research_Monographs_supported_by'  WHERE Id = '$Research_Monographs_Id'";
+	//$sql_Research_Monographs = "UPDATE Research_Monographs SET Research_Year = '$Research_Monographs_year',Research_Type = '$Research_Monographs_type',Topic = '$Research_Monographs_topic',Description = '$Research_Monographs_description',Download_Number = '$Research_Monographs_download_number',Status='$Research_Monographs_status',Browses='$Research_Monographs_browses',Supported_by='$Research_Monographs_supported_by'  WHERE Id = '$Research_Monographs_Id'";
 	
 	//Meeting_Proceedings_And_Other
 	//Academic Meeting Proceedings
@@ -60,7 +59,7 @@
 	$Meeting_Proceedings_And_Other_description = $_POST['Meeting_Proceedings_And_Other_description'];
 	
 	
-	$sql_Meeting_Proceedings_And_Other = "UPDATE Meeting_Proceedings_And_Other SET Meeting_Year = '$Meeting_Proceedings_And_Other_year',Meeting_Type = '$Meeting_Proceedings_And_Other_type',Topic = '$Meeting_Proceedings_And_Other_topic',Description = '$Meeting_Proceedings_And_Other_description'  WHERE Id = '$Meeting_Proceedings_And_Other_Id'";
+	//$sql_Meeting_Proceedings_And_Other = "UPDATE Meeting_Proceedings_And_Other SET Meeting_Year = '$Meeting_Proceedings_And_Other_year',Meeting_Type = '$Meeting_Proceedings_And_Other_type',Topic = '$Meeting_Proceedings_And_Other_topic',Description = '$Meeting_Proceedings_And_Other_description'  WHERE Id = '$Meeting_Proceedings_And_Other_Id'";
 	
 	//Meeting_Proceedings_And_Other
 	//Professional Meeting Proceedings
@@ -71,7 +70,7 @@
 	$Professional_Meeting_Proceedings_description = $_POST['Professional_Meeting_Proceedings_description'];
 	
 	
-	$sql_Professional_Meeting_Proceedings = "UPDATE Meeting_Proceedings_And_Other SET Meeting_Year = '$Professional_Meeting_Proceedings_year',Meeting_Type = '$Professional_Meeting_Proceedings_type',Topic = '$Professional_Meeting_Proceedings_topic',Description = '$Professional_Meeting_Proceedings_description'  WHERE Id = '$Professional_Meeting_Proceedings_Id'";
+	//$sql_Professional_Meeting_Proceedings = "UPDATE Meeting_Proceedings_And_Other SET Meeting_Year = '$Professional_Meeting_Proceedings_year',Meeting_Type = '$Professional_Meeting_Proceedings_type',Topic = '$Professional_Meeting_Proceedings_topic',Description = '$Professional_Meeting_Proceedings_description'  WHERE Id = '$Professional_Meeting_Proceedings_Id'";
 	
 	//Meeting_Proceedings_And_Other
 	//Textbooks/Chapters
@@ -82,7 +81,7 @@
 	$Textbooks_Chapters_description = $_POST['Textbooks_Chapters_description'];
 	
 	
-	$sql_Textbooks_Chapters = "UPDATE Meeting_Proceedings_And_Other SET Meeting_Year = '$Textbooks_Chapters_year',Meeting_Type = '$Textbooks_Chapters_type',Topic = '$Textbooks_Chapters_topic',Description = '$Textbooks_Chapters_description'  WHERE Id = '$Textbooks_Chapters_Id'";
+	//$sql_Textbooks_Chapters = "UPDATE Meeting_Proceedings_And_Other SET Meeting_Year = '$Textbooks_Chapters_year',Meeting_Type = '$Textbooks_Chapters_type',Topic = '$Textbooks_Chapters_topic',Description = '$Textbooks_Chapters_description'  WHERE Id = '$Textbooks_Chapters_Id'";
 	
 	
 	
@@ -95,7 +94,7 @@
 	$Cases_description = $_POST['Cases_description'];
 	
 	
-	$sql_Cases = "UPDATE Meeting_Proceedings_And_Other SET Meeting_Year = '$Cases_year',Meeting_Type = '$Cases_type',Topic = '$Cases_topic',Description = '$Cases_description'  WHERE Id = '$Cases_Id'";
+	//$sql_Cases = "UPDATE Meeting_Proceedings_And_Other SET Meeting_Year = '$Cases_year',Meeting_Type = '$Cases_type',Topic = '$Cases_topic',Description = '$Cases_description'  WHERE Id = '$Cases_Id'";
 	
 	//Other Teaching Materials
 	$Other_Teaching_Materials_Id = $_POST['Other_Teaching_Materials_Id'];
@@ -103,7 +102,7 @@
 	$Other_Teaching_Materials_type = $_POST['Other_Teaching_Materials_type'];
 	$Other_Teaching_Materials_title = $_POST['Other_Teaching_Materials_title'];
 	
-	$sql_Other_Teaching_Materials = "UPDATE Teaching_Materials_And_Awards SET Teaching_Materials_And_Awards_Year = '$Other_Teaching_Materials_year',Teaching_Materials_And_Awards_Type = '$Other_Teaching_Materials_type',Title = '$Other_Teaching_Materials_title'  WHERE Id = '$Other_Teaching_Materials_Id'";
+	//$sql_Other_Teaching_Materials = "UPDATE Teaching_Materials_And_Awards SET Teaching_Materials_And_Awards_Year = '$Other_Teaching_Materials_year',Teaching_Materials_And_Awards_Type = '$Other_Teaching_Materials_type',Title = '$Other_Teaching_Materials_title'  WHERE Id = '$Other_Teaching_Materials_Id'";
 	
 	//Honors and Competitive Awards Received
 	$Honors_Competitive_Awards_Received_Id = $_POST['Honors_Competitive_Awards_Received_Id'];
@@ -111,7 +110,7 @@
 	$Honors_Competitive_Awards_Received_type = $_POST['Honors_Competitive_Awards_Received_type'];
 	$Honors_Competitive_Awards_Received_title = $_POST['Honors_Competitive_Awards_Received_title'];
 	
-	$sql_Honors_Competitive_Awards_Received = "UPDATE Teaching_Materials_And_Awards SET Teaching_Materials_And_Awards_Year = '$Honors_Competitive_Awards_Received_year',Teaching_Materials_And_Awards_Type = '$Honors_Competitive_Awards_Received_type',Title = '$Honors_Competitive_Awards_Received_title'  WHERE Id = '$Honors_Competitive_Awards_Received_Id'";
+	//$sql_Honors_Competitive_Awards_Received = "UPDATE Teaching_Materials_And_Awards SET Teaching_Materials_And_Awards_Year = '$Honors_Competitive_Awards_Received_year',Teaching_Materials_And_Awards_Type = '$Honors_Competitive_Awards_Received_type',Title = '$Honors_Competitive_Awards_Received_title'  WHERE Id = '$Honors_Competitive_Awards_Received_Id'";
 	
 	//業界經歷
 	$Professional_History_Id = $_POST['Professional_History_Id'];
@@ -121,7 +120,7 @@
 	$Professional_History_section = $_POST['Professional_History_section'];
 	$Professional_History_company = $_POST['Professional_History_company'];
 	
-	$sql_Professional_History = "UPDATE Professional_History SET Month_Year = '$Professional_History_month_year',Title = '$Professional_History_title',Department = '$Professional_History_department',Professional_History_Section = '$Professional_History_section',Company_name = '$Professional_History_company'  WHERE Id = '$Professional_History_Id'";
+	//$sql_Professional_History = "UPDATE Professional_History SET Month_Year = '$Professional_History_month_year',Title = '$Professional_History_title',Department = '$Professional_History_department',Professional_History_Section = '$Professional_History_section',Company_name = '$Professional_History_company'  WHERE Id = '$Professional_History_Id'";
 	
 	//業界發展
 	$Professional_Development_Id = $_POST['Professional_Development_Id'];
@@ -130,7 +129,7 @@
 	$Professional_Development_topic = $_POST['Professional_Development_topic'];
 	$Professional_Development_description = $_POST['Professional_Development_description'];
 	
-	$sql_Professional_Development = "UPDATE Meeting_Proceedings_And_Other SET Meeting_Year = '$Professional_Development_month_year',Meeting_Type = '$Professional_Development_type',Topic = '$Professional_Development_topic',Description = '$Professional_Development_description' WHERE Id = '$Professional_Development_Id'";
+	//$sql_Professional_Development = "UPDATE Meeting_Proceedings_And_Other SET Meeting_Year = '$Professional_Development_month_year',Meeting_Type = '$Professional_Development_type',Topic = '$Professional_Development_topic',Description = '$Professional_Development_description' WHERE Id = '$Professional_Development_Id'";
 	
 	//業界團體
 	$Professional_Societies_Id = $_POST['Professional_Societies_Id'];
@@ -138,7 +137,7 @@
 	$Professional_Societies_topic = $_POST['Professional_Societies_topic'];
 	$Professional_Societies_description = $_POST['Professional_Societies_description'];
 	
-	$sql_Professional_Societies = "UPDATE Professional_Societies SET Professional_Societies_Year = '$Professional_Societies_year',Topic = '$Professional_Societies_topic',Description = '$Professional_Societies_description' WHERE Id = '$Professional_Societies_Id'";
+	//$sql_Professional_Societies = "UPDATE Professional_Societies SET Professional_Societies_Year = '$Professional_Societies_year',Topic = '$Professional_Societies_topic',Description = '$Professional_Societies_description' WHERE Id = '$Professional_Societies_Id'";
 	
 	//影響力描述
 	$teacherID = $_SESSION['teacherID'];
@@ -150,31 +149,135 @@
 	
 	//Sql_Update
 	$conn = include_once("connection.php");
-		
-	// 檢測連接
-	if (mysqli_connect_errno())
-	{
-		echo "連接失敗: " . mysqli_connect_error();
+	
+	//學年度授課修改
+	$sql_Course_Taught_Num="select * from Course_Taught where Professor_Id='$teacherID'";
+	$result_Course_Taught=mysql_query($sql_Course_Taught_Num);
+	for($i=0; $i<mysql_num_rows($result_Course_Taught); $i++){ //把每一列的資料取出來
+	
+		$sql_Course_Taught = "UPDATE Course_Taught SET Program = '$program[$i]',Academic_Year = '$academic_year[$i]',Semester = '$semester[$i]',Course_Title = '$course_title[$i]',Credit_Hour = '$credit_hour[$i]'  WHERE Id = '$course_id[$i]'";
+		//$sql_Course_Taught = "UPDATE Course_Taught SET Program = '$program[$i]'  WHERE Id = '$course_id[$i]'";
+		mysql_query($sql_Course_Taught);
+	}	
+	//學術服務修改
+	$sql_Academic_Services_Num="select * from Academic_Services where Professor_Id='$teacherID'";
+	$result_Academic_Services=mysql_query($sql_Academic_Services_Num);
+	for($i=0; $i<mysql_num_rows($result_Academic_Services); $i++){ //把每一列的資料取出來
+	
+		$sql_Academic_Services = "UPDATE Academic_Services SET Services_Year = '$service_Year[$i]',Service_Type = '$service_type[$i]',Description = '$service_description[$i]'  WHERE Id = '$service_ID[$i]'";
+			
+		//$sql_Course_Taught = "UPDATE Course_Taught SET Program = '$program[$i]'  WHERE Id = '$course_id[$i]'";
+		mysql_query($sql_Academic_Services);
 	}
-	mysql_query($conn, "set names utf8"); //utf8 設為對應的編碼  超級重要
 	
-	mysql_query($sql_Course_Taught);
-	mysql_query($sql_Peer_reviewed_Journals);
-	mysql_query($sql_Academic_Services);
-	mysql_query($sql_Research_Monographs);
+	//Peer-reviewed Journals*
+	$sql_Peer_reviewed_Journals_Num="select * from Peer_reviewed_Journals where Professor_Id='$teacherID'";
+	$result_Peer_reviewed_Journals=mysql_query($sql_Peer_reviewed_Journals_Num);
+	for($i=0; $i<mysql_num_rows($result_Peer_reviewed_Journals); $i++){ //把每一列的資料取出來
 	
-	mysql_query($sql_Meeting_Proceedings_And_Other);
-	mysql_query($sql_Professional_Meeting_Proceedings);
+		$sql_Peer_reviewed_Journals = "UPDATE Peer_reviewed_Journals SET Reviewed_Year = '$Peer_reviewed_year[$i]',Topic = '$Peer_reviewed_topic[$i]',Description = '$Peer_reviewed_description[$i]',Download_Number = '$Peer_reviewed_download_number[$i]',Status = '$Peer_reviewed_status[$i]',MOST_Rank='$most_rank[$i]',Portfolio='$portfolio[$i]',Citation_Index='$citation_index[$i]',Browses='$browses[$i]',Supported_by='$supported_by[$i]'  WHERE Id = '$Peer_reviewed_id[$i]'";
+		
+		//$sql_Course_Taught = "UPDATE Course_Taught SET Program = '$program[$i]'  WHERE Id = '$course_id[$i]'";
+		mysql_query($sql_Peer_reviewed_Journals);
+	}
+	//Research Monographs
+	$sql_Research_Monographs_Num="select * from Research_Monographs where Professor_Id='$teacherID'";
+	$result_sql_Research_Monographs=mysql_query($sql_Research_Monographs_Num);
+	for($i=0; $i<mysql_num_rows($result_sql_Research_Monographs); $i++){ //把每一列的資料取出來
 	
-	mysql_query($sql_Textbooks_Chapters);
-	mysql_query($sql_Cases);
-	mysql_query($sql_Other_Teaching_Materials);
-	mysql_query($sql_Honors_Competitive_Awards_Received);
-	mysql_query($sql_Professional_History);
-	mysql_query($sql_Professional_Development);
-	mysql_query($sql_Professional_Societies);
+		$sql_Research_Monographs = "UPDATE Research_Monographs SET Research_Year = '$Research_Monographs_year[$i]',Research_Type = '$Research_Monographs_type[$i]',Topic = '$Research_Monographs_topic[$i]',Description = '$Research_Monographs_description[$i]',Download_Number = '$Research_Monographs_download_number[$i]',Status='$Research_Monographs_status[$i]',Browses='$Research_Monographs_browses[$i]',Supported_by='$Research_Monographs_supported_by[$i]'  WHERE Id = '$Research_Monographs_Id[$i]'";
+	
+		//$sql_Course_Taught = "UPDATE Course_Taught SET Program = '$program[$i]'  WHERE Id = '$course_id[$i]'";
+		mysql_query($sql_Research_Monographs);
+	}
+	//Academic Meeting Proceedings
+	$sql_Meeting_Proceedings_And_Other_Num="select * from Meeting_Proceedings_And_Other where Professor_Id='$teacherID' && Meeting_Class = 'Academic Meeting Proceedings'";
+	$result_sql_Meeting_Proceedings_And_Other=mysql_query($sql_Meeting_Proceedings_And_Other_Num);
+	for($i=0; $i<mysql_num_rows($result_sql_Meeting_Proceedings_And_Other); $i++){ //把每一列的資料取出來
+	
+		$sql_Meeting_Proceedings_And_Other = "UPDATE Meeting_Proceedings_And_Other SET Meeting_Year = '$Meeting_Proceedings_And_Other_year[$i]',Meeting_Type = '$Meeting_Proceedings_And_Other_type[$i]',Topic = '$Meeting_Proceedings_And_Other_topic[$i]',Description = '$Meeting_Proceedings_And_Other_description[$i]'  WHERE Id = '$Meeting_Proceedings_And_Other_Id[$i]'";
+
+		//$sql_Course_Taught = "UPDATE Course_Taught SET Program = '$program[$i]'  WHERE Id = '$course_id[$i]'";
+		mysql_query($sql_Meeting_Proceedings_And_Other);
+	}
+	
+	//Professional Meeting Proceedings
+	$sql_Professional_Meeting_Proceedings_Num="select * from Meeting_Proceedings_And_Other where Professor_Id='$teacherID' && Meeting_Class = 'Professional Meeting Proceedings'";
+	$result_Professional_Meeting_Proceedings=mysql_query($sql_Professional_Meeting_Proceedings_Num);
+	for($i=0; $i<mysql_num_rows($result_Professional_Meeting_Proceedings); $i++){ //把每一列的資料取出來
+	
+		$sql_Professional_Meeting_Proceedings = "UPDATE Meeting_Proceedings_And_Other SET Meeting_Year = '$Professional_Meeting_Proceedings_year[$i]',Meeting_Type = '$Professional_Meeting_Proceedings_type[$i]',Topic = '$Professional_Meeting_Proceedings_topic[$i]',Description = '$Professional_Meeting_Proceedings_description[$i]'  WHERE Id = '$Professional_Meeting_Proceedings_Id[$i]'";
+	
+		//$sql_Course_Taught = "UPDATE Course_Taught SET Program = '$program[$i]'  WHERE Id = '$course_id[$i]'";
+		mysql_query($sql_Professional_Meeting_Proceedings);
+	}
+	//Textbooks/Chapters
+	$sql_Textbooks_Chapters_Num="select * from Meeting_Proceedings_And_Other where Professor_Id='$teacherID' && Meeting_Class = 'Textbooks/Chapters'";
+	$result_Textbooks_Chapters=mysql_query($sql_Textbooks_Chapters_Num);
+	for($i=0; $i<mysql_num_rows($result_Textbooks_Chapters); $i++){ //把每一列的資料取出來
+	
+		$sql_Textbooks_Chapters = "UPDATE Meeting_Proceedings_And_Other SET Meeting_Year = '$Textbooks_Chapters_year[$i]',Meeting_Type = '$Textbooks_Chapters_type[$i]',Topic = '$Textbooks_Chapters_topic[$i]',Description = '$Textbooks_Chapters_description[$i]'  WHERE Id = '$Textbooks_Chapters_Id[$i]'";
+	
+		//$sql_Course_Taught = "UPDATE Course_Taught SET Program = '$program[$i]'  WHERE Id = '$course_id[$i]'";
+		mysql_query($sql_Textbooks_Chapters);
+	}
+	//Cases
+	$sql_Cases_Num="select * from Meeting_Proceedings_And_Other where Professor_Id='$teacherID' && Meeting_Class = 'Cases'";
+	$result_Cases=mysql_query($sql_Cases_Num);
+	for($i=0; $i<mysql_num_rows($result_Cases); $i++){ //把每一列的資料取出來
+	
+		$sql_Cases = "UPDATE Meeting_Proceedings_And_Other SET Meeting_Year = '$Cases_year[$i]',Meeting_Type = '$Cases_type[$i]',Topic = '$Cases_topic[$i]',Description = '$Cases_description[$i]'  WHERE Id = '$Cases_Id[$i]'";
+	
+		//$sql_Course_Taught = "UPDATE Course_Taught SET Program = '$program[$i]'  WHERE Id = '$course_id[$i]'";
+		mysql_query($sql_Cases);
+	}
+	//Other Teaching Materials
+	$sql_Other_Teaching_Materials_Num="select * from Teaching_Materials_And_Awards where Professor_Id='$teacherID' && Contributions_name = 'Other Teaching Materials'";
+	$result_Other_Teaching_Materials=mysql_query($sql_Other_Teaching_Materials_Num);
+	for($i=0; $i<mysql_num_rows($result_Other_Teaching_Materials); $i++){ //把每一列的資料取出來
+	
+		$sql_Other_Teaching_Materials = "UPDATE Teaching_Materials_And_Awards SET Teaching_Materials_And_Awards_Year = '$Other_Teaching_Materials_year[$i]',Teaching_Materials_And_Awards_Type = '$Other_Teaching_Materials_type[$i]',Title = '$Other_Teaching_Materials_title[$i]'  WHERE Id = '$Other_Teaching_Materials_Id[$i]'";
+	
+		//$sql_Course_Taught = "UPDATE Course_Taught SET Program = '$program[$i]'  WHERE Id = '$course_id[$i]'";
+		mysql_query($sql_Other_Teaching_Materials);
+	}
+	//Honors and Competitive Awards Received
+	$sql_Honors_Competitive_Awards_Received_Num="select * from Teaching_Materials_And_Awards where  Professor_Id='$teacherID' && Contributions_name = 'Honors and Competitive Awards Received'";
+	$result_Honors_Competitive_Awards_Received=mysql_query($sql_Honors_Competitive_Awards_Received_Num);
+	for($i=0; $i<mysql_num_rows($result_Honors_Competitive_Awards_Received); $i++){ //把每一列的資料取出來
+	
+		$sql_Honors_Competitive_Awards_Received = "UPDATE Teaching_Materials_And_Awards SET Teaching_Materials_And_Awards_Year = '$Honors_Competitive_Awards_Received_year[$i]',Teaching_Materials_And_Awards_Type = '$Honors_Competitive_Awards_Received_type[$i]',Title = '$Honors_Competitive_Awards_Received_title[$i]'  WHERE Id = '$Honors_Competitive_Awards_Received_Id[$i]'";
+	
+		//$sql_Course_Taught = "UPDATE Course_Taught SET Program = '$program[$i]'  WHERE Id = '$course_id[$i]'";
+		mysql_query($sql_Honors_Competitive_Awards_Received);
+	}
+	//業界經歷
+	$sql_Professional_History_Num="select * from Professional_History  where Professor_Id='$teacherID'";
+	$result_Professional_History=mysql_query($sql_Professional_History_Num);
+	for($i=0; $i<mysql_num_rows($result_Professional_History); $i++){ //把每一列的資料取出來
+		$sql_Professional_History = "UPDATE Professional_History SET Month_Year = '$Professional_History_month_year[$i]',Title = '$Professional_History_title[$i]',Department = '$Professional_History_department[$i]',Professional_History_Section = '$Professional_History_section[$i]',Company_name = '$Professional_History_company[$i]'  WHERE Id = '$Professional_History_Id[$i]'";
+			//$sql_Course_Taught = "UPDATE Course_Taught SET Program = '$program[$i]'  WHERE Id = '$course_id[$i]'";
+		mysql_query($sql_Professional_History);
+	}
+	
+	//業界發展
+	$sql_Professional_Development_Num="select * from Meeting_Proceedings_And_Other where Professor_Id='$teacherID' && Meeting_Class = 'Professional Development'";
+	$result_Professional_Development=mysql_query($sql_Professional_Development_Num);
+	for($i=0; $i<mysql_num_rows($result_Professional_Development); $i++){ //把每一列的資料取出來
+	
+			$sql_Professional_Development = "UPDATE Meeting_Proceedings_And_Other SET Meeting_Year = '$Professional_Development_month_year[$i]',Meeting_Type = '$Professional_Development_type[$i]',Topic = '$Professional_Development_topic[$i]',Description = '$Professional_Development_description[$i]' WHERE Id = '$Professional_Development_Id[$i]'";
+			mysql_query($sql_Professional_Development);
+	}
+	//業界團體
+	$sql_Professional_Societies_Num="select * from Professional_Societies where Professor_Id='$teacherID'";
+	$result_Professional_Societies=mysql_query($sql_Professional_Societies_Num);
+	for($i=0; $i<mysql_num_rows($result_Professional_Societies); $i++){ //把每一列的資料取出來
+	
+				$sql_Professional_Societies = "UPDATE Professional_Societies SET Professional_Societies_Year = '$Professional_Societies_year[$i]',Topic = '$Professional_Societies_topic[$i]',Description = '$Professional_Societies_description[$i]' WHERE Id = '$Professional_Societies_Id[$i]'";
+				mysql_query($sql_Professional_Societies);
+	}
+
 	mysql_query($sql_Professor_Information_Impacts);
 	
-	mysql_close($conn);
 	header("location: result.php");
 ?>
