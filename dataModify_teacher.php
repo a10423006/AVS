@@ -32,20 +32,12 @@
 	
 	$conn = include_once("connection.php");
 	
-	// 檢測連接
-	if (mysqli_connect_errno())
-	{
-		echo "連接失敗: " . mysqli_connect_error();
-	}
-	mysqli_query($conn, "set names utf8"); //utf8 設為對應的編碼  超級重要
-
-	mysqli_query($conn,$sql_Professor_Information);
+	mysql_query($sql_Professor_Information);
 
 	/*
 	mysqli_query($con,"UPDATE Academic_Services SET Service_Type = '大志工'
 	WHERE Id='01235'");
 	*/
 
-	mysqli_close($conn);
 	header("location: result.php");
 ?>

@@ -82,7 +82,7 @@
                         <div id="qaContent">
                             <!--個人資料-->
                                 <div style='text-align:right;'>
-                                    <input type="submit" value='提交' name="submit_Btn1" id="submit_Btn1" style="width:70px;height:70px;font-size:50px;" onClick="document.form1.submit()">&nbsp;&nbsp;&nbsp;
+                                    <input type="submit" value='提交' name="submit_Btn1" id="submit_Btn1"  style="font-weight:bold;width:80px;height:40px;font-size:30px;" onClick="document.form1.submit()">&nbsp;&nbsp;&nbsp;
                                 </div>
 
                                 <ul class="accordionPart">
