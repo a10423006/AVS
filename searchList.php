@@ -21,8 +21,8 @@
         <link href="qa_layout.css" rel="stylesheet" type="text/css" />
         <!--Importing Database Script-->
         <?php include_once("connection.php");?>
+
 		<?php
-			
 			$teacherName = $_POST['searchName'];
 			$check = 0;
 								
@@ -44,7 +44,6 @@
 			else{
 				header("location: error.php");	
 			}
-			
 		?>
 		<style>/*回到頂部*/
 			/* Go Top 按鈕 */
@@ -72,7 +71,7 @@
 				 <!--側邊選單-->
                 <div id='SIDE'>
                     <fieldset>
-                        <div><a href="">問卷填寫</a></div><br/>
+                        <div><a href="createTea.php">問卷填寫</a></div><br/>
                         <div><a href="search_teacherData.php">搜尋教師資料</a></div><br/>
                         <div><a href="depmanage.php?op=logout">登出</a></div><br/>
                     </fieldset>
@@ -116,10 +115,9 @@
 									<input type="text" name="teacher_ID" value="<?php echo $rs[0];?>" readonly="readonly"
                                     style="width:70px; font-size:15px; text-align:center; 
                                     text-overflow:ellipsis; overflow: hidden; border-color:transparent;"/>
-									
                                 </td>	
 								<td colspan="1" bgcolor="#FFFFFF">
-									<input type="submit" value="查閱" style="width:70px;height:70px;font-size:50px;" onClick="document.form1.submit()">		
+									<input type="submit" value="查閱" style="width:70px;height:70px;font-size:50px;" onClick="document.form1.submit()">	
                                 </td>		
 							</tr>
 							</form>

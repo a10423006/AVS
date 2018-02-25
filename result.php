@@ -20,7 +20,6 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
         <link href="qa_layout.css" rel="stylesheet" type="text/css" />
 
-        <!--Importing Database Script-->
         <?php 
 			include_once("connection.php");
 			session_start();
@@ -28,16 +27,14 @@
 			  $teacherID = $_POST['teacher_ID'];
 			  $_SESSION['teacherID']=$teacherID;	
 			  echo "not null";
-			}
-			else{
+			}else{
 			  echo "null!";
 			  echo $teacherID;
 			  echo "null!";
 			  echo $_SESSION['teacherID'];
 			  $teacherID = $_SESSION['teacherID'];
 			  echo "null!";
-			}
-
+            }
 			$today = date('Y-m-d') ;
 		?>
 		<style>/*回到頂部*/
@@ -96,7 +93,8 @@
                     <fieldset>
                         <div><a href="createTea.php">問卷填寫</a></div><br/>
                         <div><a href="search_teacherData.php">搜尋教師資料</a></div><br/>
-                        <div><a href="admanage.php?op=courseset_form&set=stupload_form">修改教師資料</a></div><br/>
+                        <div><a href="new_teacherData.php">新增教師資料</a></div><br/>
+                        <div><a href="new_teacherData.php">刪除教師資料</a></div><br/>
                         <div><a href="depmanage.php?op=logout">登出</a></div><br/>
                     </fieldset>
                 </div>
@@ -112,18 +110,18 @@
                         <input type="submit" name="submit_Btn"  id="submit_Btn"  img  src="images/search.png"  onClick="document.form1.submit()">
                     </form>
 					<?php
-							session_start();
-							$searchYear1 = $_SESSION['searchYear1'];
-							$searchYear2 = $_SESSION['searchYear2'];
+						session_start();
+						$searchYear1 = $_SESSION['searchYear1'];
+						$searchYear2 = $_SESSION['searchYear2'];
 							
-							echo'<br>';
-							echo $_SESSION['yearWrong'];
-							echo $_SESSION['teacherID'];
-							echo'<br>';
+						echo'<br>';
+						echo $_SESSION['yearWrong'];
+						echo $_SESSION['teacherID'];
+						echo'<br>';
 						
-							unset($_SESSION['yearWrong']);
-							unset($_SESSION['$searchYear1']);
-							unset($_SESSION['$searchYear2']);
+						unset($_SESSION['yearWrong']);
+						unset($_SESSION['$searchYear1']);
+						unset($_SESSION['$searchYear2']);
 					?>
 				</div>
 				

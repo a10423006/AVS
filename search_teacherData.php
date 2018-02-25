@@ -19,6 +19,7 @@
         <script type="text/javascript" src="https://code.jquery.com/jquery.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
         <link href="qa_layout.css" rel="stylesheet" type="text/css" />
+
         <!--Importing Database Script-->
         <?php include_once("connection.php");?>
 		
@@ -78,11 +79,7 @@
                     </fieldset>
                 </div>
 
-           
-
-
 	            <div style="width:800px; height:400px; margin:0 auto 0 185px; text-align:center; line-height:50px;">
-
                     <div>
 						<br></br>
                         <form action="searchList.php" method="post">
