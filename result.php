@@ -23,11 +23,14 @@
         <?php 
 			include_once("connection.php");
 			session_start();
-			if($_POST['teacher_ID']!=null) {
+			if($_POST['teacher_ID'] != null) {
 			  $teacherID = $_POST['teacher_ID'];
-			  $_SESSION['teacherID']=$teacherID;	
-			  echo "not null";
-			}else{
+			  $_SESSION['teacherID'] = $teacherID;	
+              echo "not null";
+            }elseif($_SESSION['teacherID'] != null){
+                $teacherID = $_SESSION['teacherID'];
+                echo "not null";
+            }else{
 			  echo "null!";
 			  echo $teacherID;
 			  echo "null!";

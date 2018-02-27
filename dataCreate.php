@@ -193,8 +193,8 @@
 		if($conn && $conn2 && $conn3 && $conn4 && $conn5 && $conn6 && $conn7 && $conn8 && $conn9 && $conn10 && $conn11 && $conn12 && $conn13 && $conn14){
 			my_msg('上傳成功', 'createTea.php');
 		}else{
-			//my_msg('上傳失敗', 'createTea.php');
-			echo($sql_Peer_reviewed_Journals);
+			my_msg('上傳失敗', 'createTea.php');
+			
 			$delete = "DELETE FROM `Academic_Services` WHERE `Academic_Services`.`Professor_Id` = '$id[0]'";
 			$delete2 = "DELETE FROM `Course_Taught` WHERE `Course_Taught`.`Professor_Id` = '$id[0]'";
 			$delete3 = "DELETE FROM `Meeting_Proceedings_And_Other	` WHERE `Meeting_Proceedings_And_Other`.`Professor_Id` = '$id[0]'";

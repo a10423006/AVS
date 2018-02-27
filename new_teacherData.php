@@ -23,7 +23,7 @@
         <?php 
 			include_once("connection.php");
 			session_start();
-			if($_SESSION['teacherID']!=null) {
+			if($_SESSION['teacherID'] != null) {
 			  $teacherID = $_SESSION['teacherID'];	
 			  echo $teacherID;
 			}else{
@@ -89,12 +89,12 @@
                     </fieldset>
                 </div>
 				
-                <form action="dataCreate.php" name="form" method="post">
+                <form action="dataAdded.php" name="form" method="post">
                     <div style="width:800px; height:100%; margin:0 auto 0 185px; text-align:center; line-height:50px;">
                         <br>
                         <div id="qaContent">
                             <div style='text-align:right;'>
-                                <input type="submit" value='提交' name="submit_Btn1" id="submit_Btn1"  style="font-weight:bold;width:80px;height:40px;font-size:30px;" onClick="document.form1.submit()">&nbsp;&nbsp;&nbsp;
+                                <input type="submit" value='提交' name="submit_Btn1" id="submit_Btn1"  style="font-weight:bold;width:80px;height:40px;   font-size:30px;" onClick="document.form1.submit()">&nbsp;&nbsp;&nbsp;
                             </div>
                             <!--學年度授課-->
                             <ul class="accordionPart">
@@ -601,12 +601,12 @@
 		<img id="goTop" src="images/goTop.png" title="Back to Top"/>
 		<script> //回到頂部
 			$.extend($.easing, {
-			easeOutExpo: function (x, t, b, c, d) {
-			return (t==d) ? b+c : c * (-Math.pow(2, -10 * t/d) + 1) + b;
-			}
+			    easeOutExpo: function (x, t, b, c, d) {
+			        return (t==d) ? b+c : c * (-Math.pow(2, -10 * t/d) + 1) + b;
+			    }
 			});
 			$("#goTop").click(function(){
-			$("html, body").animate({scrollTop: 0}, 1000, "easeOutExpo");
+			    $("html, body").animate({scrollTop: 0}, 1000, "easeOutExpo");
 			});
 		</script>
     </body>
