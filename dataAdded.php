@@ -4,7 +4,7 @@
 
 	if($_SESSION['teacherID']!=null) {
 		$teacherID = $_SESSION['teacherID'];	
-		echo $teacherID;
+		//echo $teacherID;
 	  }else{
 		echo "null!";
 	  }

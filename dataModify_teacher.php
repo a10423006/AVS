@@ -2,6 +2,7 @@
 	//個人資料
 	session_start();
 	$teacherID = $_SESSION['teacherID'];
+	include_once("connection.php");
 
 	$name = $_POST['name'];
 	$academic_Title = $_POST['academic_Title'];
@@ -32,20 +33,8 @@
 	$types_of_intellectual_contributions = $_POST['types_of_intellectual_contributions'];//4個
 
 	$sql_Professor_Information = "UPDATE Professor_Information SET Name = '$name',Academic_Title= '$academic_Title',Center = '$center',Department= '$department',College= '$college',Phone= '$phone',Cell= '$cell',E_mail = '$email',Website= '$website',Edu_Degree= '$edu_Degree',Edu_Year= '$edu_Year',Edu_Major= '$edu_Major',Edu_Department= '$edu_Department',Edu_School= '$edu_School',Responsibilitie= '$faculty_responsibilities' ,Faculty_Sufficiency = '$faculty_sufficiency',Time_Devoted_Mission = '$time_devoted_mission',Faculty_Qualification = '$faculty_qualification',Description = '$faculty_description',Teaching_Interests = '$teaching_interests' WHERE Id = '$teacherID'";
-	
-	$con=mysqli_connect("212.1.212.1","bigcattl_test","s6951435","bigcattl_formal");
-	
-	
-	// 檢測連接
-	if (mysqli_connect_errno())
-	{
-		echo "連接失敗: " . mysqli_connect_error();
-	}
-	mysqli_query($con, "set names utf8"); //utf8 設為對應的編碼  超級重要
 
-	mysqli_query($con,$sql_Professor_Information);
-
-	mysqli_close($con);
+	mysql_query($sql_Professor_Information);
 
 	//警告視窗
 	Function my_msg($msg, $redirect){
@@ -58,7 +47,7 @@
 		return; 
 	}
 
-	my_msg('刪除成功', 'result.php');
+	my_msg('修改成功', 'result.php');
 	//header("location: result.php");
 	
 ?>
