@@ -22,7 +22,8 @@
         <!--Importing Database Script-->
         <?php include_once("connection.php");?>
 		<?php
-			
+			session_start();
+			unset($_SESSION['teacherID']);//防止再登入
 			$teacherName = $_POST['searchName'];
 			$check = 0;
 								
@@ -30,16 +31,16 @@
 			$result = mysql_query($sql);
 			$check = 0;
 			while($row = mysql_fetch_array($result)){
-					echo $row['Name'];
+					//echo $row['Name'];
 					if($teacherName==$row['Name']){
 						$check = 1;
 					}	
 					else{			
-						echo "wrose 查無此人";	
+						//echo "wrose 查無此人";	
 					}
 				}	
 			if($check==1){
-				echo "success";
+				//echo "success";
 			}	
 			else{
 				header("location: error.php");	
@@ -74,22 +75,20 @@
                     <fieldset>
                         <div><a href="">問卷填寫</a></div><br/>
                         <div><a href="search_teacherData.php">搜尋教師資料</a></div><br/>
-                        <div><a href="depmanage.php?op=logout">登出</a></div><br/>
+                        <div><a href="logoutUnset.php">登出</a></div><br/>
                     </fieldset>
                 </div>
-        
-	            <div style="width:auto; height:700px; margin:0 auto 0 185px; text-align:center; line-height:50px;">
 
+	            <div style="width:auto; height:700px; margin:0 auto 0 210px; text-align:center; line-height:50px;">
                     <div>
-						<table width="490" bgcolor="black" style="font-size:15px">
+						<table width="450" bgcolor="black" style="font-size:15px">
 							<br></br>
 							<tr>
-                                <td colspan="6" bgcolor="#e3e3e3"><b>搜尋列表</b></td>
+                                <td colspan="5" bgcolor="#e3e3e3"><b>搜尋列表</b></td>
                                 </tr>
                             <tr>
-                                <td colspan="2" bgcolor="#e3e3e3"><b>老師名稱</b></td>
+                                <td colspan="2" bgcolor="#e3e3e3"><b>教師名稱</b></td>
                                 <td colspan="2" bgcolor="#e3e3e3"><b>系別</b></td>
-								<td colspan="1" bgcolor="#e3e3e3"><b>id</b></td>
 								<td colspan="1" bgcolor="#e3e3e3"><b>按鈕</b></td>
                             </tr>
 							
@@ -112,14 +111,11 @@
                                     style="width:350px; font-size:15px; text-align:center; 
                                     text-overflow:ellipsis; overflow: hidden; border-color:transparent;"/>
                                 </td>
-								<td colspan="1" bgcolor="#FFFFFF">
-									<input type="text" name="teacher_ID" value="<?php echo $rs[0];?>" readonly="readonly"
+									<input type="hidden" name="teacher_ID" value="<?php echo $rs[0];?>" readonly="readonly"
                                     style="width:70px; font-size:15px; text-align:center; 
-                                    text-overflow:ellipsis; overflow: hidden; border-color:transparent;"/>
-									
-                                </td>	
+                                    text-overflow:ellipsis; overflow: hidden; border-color:transparent;"/>	
 								<td colspan="1" bgcolor="#FFFFFF">
-									<input type="submit" value="查閱" style="width:70px;height:70px;font-size:50px;" onClick="document.form1.submit()">		
+									<input type="submit" value="查閱" style="width:100px;height:80px;font-size:30px;font-weight:bold;" onClick="document.form1.submit()">		
                                 </td>		
 							</tr>
 							</form>
