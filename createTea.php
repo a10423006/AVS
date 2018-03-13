@@ -71,7 +71,7 @@
                     <fieldset>
                         <div><a href="createTea.php">問卷填寫</a></div><br/>
                         <div><a href="search_teacherData.php">搜尋教師資料</a></div><br/>
-                        <div><a href="">登出</a></div><br/>
+                        <div><a href="http://www.colmgt.ccu.edu.tw/aacsb/qa/index.php">登出</a></div><br/>
                     </fieldset>
                 </div>
 				
@@ -252,6 +252,7 @@
                                     </li>
                                 </ul>
                                 
+
                                 <!--學年度授課-->
                                 <ul class="accordionPart">
                                     <li>

@@ -25,7 +25,7 @@
 			session_start();
 			if($_SESSION['teacherID'] != null) {
 			  $teacherID = $_SESSION['teacherID'];	
-			  echo $teacherID;
+			  //echo $teacherID;
 			}else{
 			  echo "null!";
 			}
@@ -84,8 +84,8 @@
                         <div><a href="createTea.php">問卷填寫</a></div><br/>
                         <div><a href="search_teacherData.php">搜尋教師資料</a></div><br/>
                         <div><a href="new_teacherData.php">新增教師資料</a></div><br/>
-                        <div><a href="new_teacherData.php">刪除教師資料</a></div><br/>
-                        <div><a href="">登出</a></div><br/>
+                        <div><a href="deleteImformation.php">刪除教師資料</a></div><br/>
+                        <div><a href="logoutUnset.php">登出</a></div><br/>
                     </fieldset>
                 </div>
 				

@@ -19,7 +19,6 @@
         <script type="text/javascript" src="https://code.jquery.com/jquery.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
         <link href="qa_layout.css" rel="stylesheet" type="text/css" />
-
         <!--Importing Database Script-->
         <?php include_once("connection.php");?>
 		
@@ -75,11 +74,15 @@
                     <fieldset>
                         <div><a href="createTea.php">問卷填寫</a></div><br/>
                         <div><a href="search_teacherData.php">搜尋教師資料</a></div><br/>
-                        <div><a href="">登出</a></div><br/>
+                        <div><a href="logoutUnset.php">登出</a></div><br/>
                     </fieldset>
                 </div>
 
+           
+
+
 	            <div style="width:800px; height:400px; margin:0 auto 0 185px; text-align:center; line-height:50px;">
+
                     <div>
 						<br></br>
                         <form action="searchList.php" method="post">
@@ -89,7 +92,7 @@
                         </form>
 						<?php
 							session_start();
-							echo $_SESSION['wrong'];
+							//echo $_SESSION['wrong'];
 							unset($_SESSION['wrong']);
 							unset($_SESSION['teacherID']);
 						?>
