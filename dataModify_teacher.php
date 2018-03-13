@@ -1,8 +1,9 @@
 <?php
 	//個人資料
 	session_start();
-	$teacherID = $_SESSION['teacherID'];
 	include_once("connection.php");
+	$teacherID = $_SESSION['teacherID'];
+	
 
 	$name = $_POST['name'];
 	$academic_Title = $_POST['academic_Title'];
@@ -34,7 +35,7 @@
 
 	$sql_Professor_Information = "UPDATE Professor_Information SET Name = '$name',Academic_Title= '$academic_Title',Center = '$center',Department= '$department',College= '$college',Phone= '$phone',Cell= '$cell',E_mail = '$email',Website= '$website',Edu_Degree= '$edu_Degree',Edu_Year= '$edu_Year',Edu_Major= '$edu_Major',Edu_Department= '$edu_Department',Edu_School= '$edu_School',Responsibilitie= '$faculty_responsibilities' ,Faculty_Sufficiency = '$faculty_sufficiency',Time_Devoted_Mission = '$time_devoted_mission',Faculty_Qualification = '$faculty_qualification',Description = '$faculty_description',Teaching_Interests = '$teaching_interests' WHERE Id = '$teacherID'";
 
-	mysql_query($sql_Professor_Information);
+	mysql_query($sql_Professor_Information, $conn);
 
 	//警告視窗
 	Function my_msg($msg, $redirect){
