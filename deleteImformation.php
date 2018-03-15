@@ -94,10 +94,10 @@
 				 <!--側邊選單-->
                 <div id='SIDE'>
                     <fieldset>
-                        <div><a href="createTea.php">問卷填寫</a></div><br/>
+                        <div><a href="createTea.php">履歷初寫</a></div><br/>
                         <div><a href="search_teacherData.php">搜尋教師資料</a></div><br/>
-                        <div><a href="new_teacherData.php">新增教師資料</a></div><br/>
-                        <div><a href="deleteImformation.php">刪除教師資料</a></div><br/>
+                        <div><a href="new_teacherData.php">新增歷程資料</a></div><br/>
+                        <div><a href="deleteImformation.php">刪除歷程資料</a></div><br/>
                         <div><a href="logoutUnset.php">登出</a></div><br/>
                     </fieldset>
                 </div>
@@ -126,7 +126,7 @@
                             <!--學年度授課-->
 							<form action="deleteAction.php" name="deleteAction" method="post">
                             <div style='text-align:right;'>    
-							<input type="submit"  name="deleteAction_Btn"  id="deleteAction_Btn" style="font-weight:bold;width:80px;height:40px;font-size:30px;"  value="刪除" onClick="document.deleteAction.submit()">
+							<input type="submit"  name="deleteAction_Btn"  id="deleteAction_Btn" style="font-weight:bold;width:80px;height:40px;font-size:30px;" value="刪除" onClick="document.deleteAction.submit()">
                             </div>  
                             <ul class="accordionPart">
                                 <li>

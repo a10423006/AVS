@@ -117,10 +117,10 @@
 				 <!--側邊選單-->
                 <div id='SIDE'>
                     <fieldset>
-                        <div><a href="createTea.php">問卷填寫</a></div><br/>
+                        <div><a href="createTea.php">履歷初寫</a></div><br/>
                         <div><a href="search_teacherData.php">搜尋教師資料</a></div><br/>
-                        <div><a href="new_teacherData.php">新增教師資料</a></div><br/>
-                        <div><a href="deleteImformation.php">刪除教師資料</a></div><br/>
+                        <div><a href="new_teacherData.php">新增歷程資料</a></div><br/>
+                        <div><a href="deleteImformation.php">刪除歷程資料</a></div><br/>
                         <div><a href="logoutUnset.php">登出</a></div><br/>
                    </fieldset>
                 </div>          
