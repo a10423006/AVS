@@ -7,9 +7,7 @@
     $conn = mysql_connect($servername, $username, $password);
     mysql_select_db("AVS", $conn);
 
-    // $servername = "212.1.212.1"; //replace it with your database server name
-    // $username = "bigcattl_test";  //replace it with your database username
-    // $password = "s6951435";  //replace it with your database password
+
     // $dbname = "bigcattl_formal";
     // // Create connection
     // $conn = mysql_connect($servername, $username, $password);
