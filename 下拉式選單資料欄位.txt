@@ -1,0 +1,225 @@
+個人資料表
+1.加入Administration Title
+2.新增Normal Professional Responsibilities1~6
+
+Academic Title:
+Professor
+Associate Professor
+Assistant Professor
+Lecturer
+Adjunct Professor
+Adjunct Associtate Professor
+Adjunct Assistant Professor
+Adjunct Lecturer
+Academic Title
+
+Administration Title:
+Dean
+Department Chair
+Director
+
+Department:
+Dept. of Economics
+Dept. of Finance
+Dept. of Accounting and Information Technology
+Dept. of Information Management
+Dept. of Business Administration
+
+College:
+College of Management
+
+National Chung Cheng University
+University
+Other
+
+Education: 
+Ph.D.
+Master
+Bacholar
+
+Faculty Responsibilities:教師職責(勾選):
+Teaching Responsibilities 教學職責
+Administrative and Academic Services  行政職責
+Administrative Committee (Committee Activities) 行政委員會
+Teaching committee (Student-related Activities) 教學委員會(與學生相關)
+
+Faculty Sufficiency 教師資格: 
+Participating Faculty (P)
+Supporting Faculty (S)
+
+Time Devoted to Mission 管院使命貢獻程度(改成%數): %
+
+Faculty Qualification 教師分類: 
+Scholarly Academic (SA)
+Practice Academic (PA)
+Scholarly Practitioner (SP)
+Instructional Practitioner (IP)
+Other (O)
+
+Normal Professional Responsibilities授課/行政負責範圍:
+Normal Professional Responsibilities1-6
+UT
+MT
+DT
+ADM
+RES
+ED
+SER
+
+2.Course Taught (academic year 2011-2015) 2011-2015學年度教授課堂:
+Program:
+BA/BBA
+MA/MS
+MBA/EMBA
+Ph.D.
+
+Semester 學期:
+1
+2
+
+Credit hour:
+1 hour
+2 hours
+3 hours
+4 hours
+5 hours
+6 hours
+
+3.Academic Services 學術服務 
+Service Type:
+editor
+associate editor
+managing editor
+editorial board
+leadership in academic societies
+research fellow
+invited speaker
+others
+
+
+4.Peer-reviewed Journals
+Status 刊登狀態:
+Published
+Submitted
+Prepared to submit
+Sumitted and revising
+
+Browses 公開預覽:
+是
+否
+
+Supported by (是否接受補助):
+Ministry of Science and Technology
+Industrial Field
+Academic Association
+Cultural Organization
+NGO
+
+
+MOST Rank 科技部等級:
+A+
+A
+A-
+B+
+B
+B-
+C+
+C
+C-
+
+Portfolio 研究屬性:
+BDS
+AIS
+TLS
+
+Citation Index引文索引:
+SCI
+SSCI
+TSSCI
+Econlit
+FLI
+EI
+Others (please specify)
+
+4.Research Monographs
+Type:
+BDS
+AIS
+TLS
+
+Status 刊登狀態:
+Published
+Submitted
+Prepared to submit
+Sumitted and revising
+
+Browses 公開預覽:
+是
+否
+
+Supported by (是否接受補助):
+Ministry of Science and Technology
+Industrial Field
+Academic Association
+Cultural Organization
+NGO
+
+5.Academic Meeting Proceedings
+Type:
+BDS
+AIS
+TLS
+
+6.Professional Meeting Proceedings
+Type:
+BDS
+AIS
+TLS
+
+7.Textbooks/Chapters 
+Type:
+BDS
+AIS
+TLS
+
+8.Cases
+Type:
+BDS
+AIS
+TLS
+
+9.Other Teaching Materials
+Type:
+BDS
+AIS
+TLS
+
+10.Honors and Competitive Awards Received 
+Type:
+Research Award
+Research grant from MOST
+Professional Awards (Practice)
+Teaching Awards
+
+11.Professional Development 業界發展
+Type:
+consulting practice
+collaborative projects
+executive
+the board of directors
+faculty internships
+practice-oriented intellectual contribution
+professional certification
+development of executive education program
+professional continuing education
+professional business association
+professional events
+professional acativities
+invited speaker
+others
+
+
+
+
+
+

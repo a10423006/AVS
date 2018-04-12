@@ -28,9 +28,9 @@
 			$check = 0;
 								
 			$sql = "select Name from Professor_Information";//查詢整個表單				
-			$result = mysql_query($sql);
+			$result = mysqli_query($con,$sql);
 			$check = 0;
-			while($row = mysql_fetch_array($result)){
+			while($row = mysqli_fetch_array($result)){
 					//echo $row['Name'];
 					if($teacherName==$row['Name']){
 						$check = 1;
@@ -73,13 +73,14 @@
 				 <!--側邊選單-->
                 <div id='SIDE'>
                     <fieldset>
-						<div><a href="createTea.php">履歷初寫</a></div><br/>
+                        <div><a href="">履歷填寫</a></div><br/>
                         <div><a href="search_teacherData.php">搜尋教師資料</a></div><br/>
                         <div><a href="logoutUnset.php">登出</a></div><br/>
                     </fieldset>
                 </div>
+        
+	            <div style="width:auto; height:700px; margin:0 auto 0 185px; text-align:center; line-height:50px;">
 
-	            <div style="width:auto; height:700px; margin:0 auto 0 210px; text-align:center; line-height:50px;">
                     <div>
 						<table width="450" bgcolor="black" style="font-size:15px">
 							<br></br>
@@ -93,9 +94,9 @@
                             </tr>
 							
 							<?php 
-                            $data = mysql_query("select * from Professor_Information where Name='$teacherName'", $conn);
-                                for($i=1; $i<=mysql_num_rows($data); $i++){ //把每一列的資料取出來
-                                $rs=mysql_fetch_row($data);
+                            $data = mysqli_query($con ,"select * from Professor_Information where Name='$teacherName'");
+                                for($i=1; $i<=mysqli_num_rows($data); $i++){ //把每一列的資料取出來
+                                $rs=mysqli_fetch_row($data);
 								$buttomValue[i] = $rs[0];				
 							?>
 							

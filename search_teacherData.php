@@ -72,7 +72,7 @@
 				 <!--側邊選單-->
                 <div id='SIDE'>
                     <fieldset>
-                        <div><a href="createTea.php">履歷初寫</a></div><br/>
+                        <div><a href="createTea.php">履歷填寫</a></div><br/>
                         <div><a href="search_teacherData.php">搜尋教師資料</a></div><br/>
                         <div><a href="logoutUnset.php">登出</a></div><br/>
                     </fieldset>
