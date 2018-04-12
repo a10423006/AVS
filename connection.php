@@ -7,7 +7,6 @@
     $con = mysqli_connect($servername, $username, $password, $dbname);
 
     mysqli_query("set names utf8");
-
     // Check connection
     if (!$con) {
         die("Connection failed: " . mysqli_connect_error());
