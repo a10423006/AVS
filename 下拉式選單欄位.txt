@@ -1,0 +1,24 @@
+BDS AIS TLS:
+Meeting_Proceedings_And_Other Meeting_Type
+Peer_reviewed_Journals Portfolio
+Research_Monographs Research_Type
+Teaching_Materials_And_Awards Teaching_Materials_And_Awards_Type
+
+SCI SSCI TSSCI Econlit FLI EI Others (please specify):
+Peer_reviewed_Journals  Citation_Index
+
+
+
+
+Select Peer_reviewed_Journals.`Citation_Index`,Count("SCI") From Peer_reviewed_Journals WHERE `Citation_Index` ="SCI" Group By `Citation_Index`
+
+Select Meeting_Proceedings_And_Other.`Meeting_Type`,Peer_reviewed_Journals.`Portfolio`,Count("BDS") From Meeting_Proceedings_And_Other,Peer_reviewed_Journals WHERE `Meeting_Type` ="BDS" AND `Portfolio` ="BDS" Group By `Meeting_Type`,`Portfolio`
+
+
+Select Meeting_Proceedings_And_Other.`Meeting_Type`,Count("BDS") From Meeting_Proceedings_And_Other WHERE `Meeting_Type` ="BDS"  Group By `Meeting_Type`;
+
+Select Peer_reviewed_Journals.`Portfolio`,Count("BDS") From Peer_reviewed_Journals WHERE `Portfolio` ="BDS" Group By `Portfolio`
+
+Select Research_Monographs.`Research_Type`,Count("BDS") From Research_Monographs WHERE `Research_Type` ="BDS" Group By `Research_Type`
+
+Select Teaching_Materials_And_Awards.`Teaching_Materials_And_Awards_Type`,Count("BDS") From Teaching_Materials_And_Awards WHERE `Teaching_Materials_And_Awards_Type` ="BDS" Group By `Teaching_Materials_And_Awards_Type`
