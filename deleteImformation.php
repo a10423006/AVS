@@ -615,7 +615,7 @@
                                                     <td colspan="1" bgcolor="#e3e3e3"><b>Title</b></td>
                                                 </tr>
                                                 <?php
-                                                    $data = mysql_query("select * from Teaching_Materials_And_Awards where  Professor_Id='$teacherID' && Contributions_name = 'Honors and Competitive Awards Received'", $conn);
+                                                    $data = mysql_query("select * from Teaching_Materials_And_Awards where  Professor_Id='$teacherID' && Contributions_name = 'Honors_Competitive_Awards_Received'", $conn);
                                                     for($i=0; $i<mysql_num_rows($data); $i++){ //把每一列的資料取出來
                                                         $rs=mysql_fetch_row($data);
                                                     ?><tr>
@@ -785,7 +785,7 @@
                                                                     text-overflow:ellipsis; overflow: hidden;"/>
                                                         </td>
                                                         <td colspan="1" bgcolor="#FFFFFF">
-                                                            <input type="text" name="Professional_Societies_description[]" readonly="readonly" value="<?php echo $rs[3] ?>"
+                                                            <textarea cols="20" rows="5" name="Professional_Societies_description[]" readonly="readonly" value="<?php echo $rs[3] ?>"
                                                                     style="width:100px; font-size:15px; text-align:center; 
                                                                         text-overflow:ellipsis; overflow: hidden;"/>
                                                         </td>

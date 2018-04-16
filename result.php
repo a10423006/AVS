@@ -338,14 +338,14 @@
                                                 <p></p>
                                                 <select multiple="multiple" name="faculty_responsibilities[]" Style="font-size:15px;"> <!--問題需要處理-->
                                                 　  <?php 
-                                                        $data_avsAnswer = mysqli_query($con , "select * from avsAnswer where avsAnswer_Title='Faculty_Responsibilities'");                                                         
+                                                        $data_avsAnswer = mysqli_query($con ,"select * from avsAnswer where avsAnswer_Title='Faculty_Responsibilities'");                                                         
                                                         $faculty_responsibilities_array= explode(",", $data[17]); //字串轉陣列
                                                         $faculty_responsibilities_array_num = count($faculty_responsibilities_array);  //陣列數   
                                                         for($i=0; $i<mysqli_num_rows($data_avsAnswer); $i++){  //count($academic_Title) 計算陣列數
                                                             $avs=mysqli_fetch_row($data_avsAnswer);
                                                             $same=0;
                                                             for($j=0; $j<$faculty_responsibilities_array_num; $j++){
-                                                                if(( $faculty_responsibilities_array[$j])==$avs[1]){                          
+                                                                if(($faculty_responsibilities_array[$j])==$avs[1]){                          
                                                                     $same=1;                 
                                                                 }
                                                                 else{ 
@@ -1381,9 +1381,9 @@
                                                                     text-overflow:ellipsis; overflow: hidden;"/>
                                                         </td>
                                                         <td colspan="1" bgcolor="#FFFFFF">
-                                                            <input type="text" name="Professional_Societies_description[]" value="<?php echo $rs[3] ?>"
-                                                                    style="width:100px; font-size:15px; text-align:center; 
-                                                                        text-overflow:ellipsis; overflow: hidden;"/>
+                                                            <textarea name="Professional_Societies_description[]" cols="40" rows="5" style="font-size:15px; margin:15px auto 0px auto;" text-overflow:ellipsis; overflow: hidden;>
+                                                                    <?php echo rtrim($rs[3]); ?>
+                                                            </textarea>
                                                         </td>
                                                     </tr>
                                                 <?php }?>
@@ -1400,7 +1400,6 @@
                             </div>  
                             <ul class="accordionPart">
                                 <li>
-									
                                     <div class="qa_title" style="text-decoration:none;">影響力描述 ▾</div>
                                     <?php $data = mysqli_fetch_row(mysqli_query($con,"select * from Professor_Information where id='$teacherID'")); ?>
 									    <div class="qa_content">
@@ -1442,7 +1441,7 @@
 									
                                 </li>
                             </ul>
-							</form>
+						</form>
                     </div>
 	            </div>
         </div>

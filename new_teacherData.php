@@ -276,7 +276,7 @@
             Td = Professional_Development_Tr.insertCell(Professional_Development_Tr.cells.length);
             Td.innerHTML ='<input type="text" name="Professional_Development_topic[]" value="" style="width:100px; font-size:15px; text-align:center; text-overflow:ellipsis; overflow: hidden;"/>';
             Td = Professional_Development_Tr.insertCell(Professional_Development_Tr.cells.length);
-            Td.innerHTML ='<textarea name="Professional_Development_description[]" cols="20" rows="5" style="font-size:15px; margin:15px auto 0px auto;" text-overflow:ellipsis; overflow: hidden;></textarea>';
+            Td.innerHTML ='<textarea name="Professional_Development_description[]" cols="40" rows="5" style="font-size:15px; margin:15px auto 0px auto;" text-overflow:ellipsis; overflow: hidden;></textarea>';
             }
         function Professional_Development_remove_data() {
             var Professional_Development_num = document.getElementById("Professional_Development").rows.length;
@@ -292,7 +292,7 @@
             Td = Professional_Societies_Tr.insertCell(Professional_Societies_Tr.cells.length);
             Td.innerHTML ='<input type="text" name="Professional_Societies_topic[]" value="" style="width:100px; font-size:15px; text-align:center; text-overflow:ellipsis; overflow: hidden;"/>';
             Td = Professional_Societies_Tr.insertCell(Professional_Societies_Tr.cells.length);
-            Td.innerHTML ='<input type="text" name="Professional_Societies_description[]" value="" style="width:100px; font-size:15px; text-align:center; text-overflow:ellipsis; overflow: hidden;"/>';
+            Td.innerHTML ='<textarea name="Professional_Societies_description[]" cols="40" rows="5" style="font-size:15px; margin:15px auto 0px auto;" text-overflow:ellipsis; overflow: hidden;></textarea>';
 
             }
         function Professional_Societies_remove_data() {
@@ -882,7 +882,7 @@
                                                         <td colspan="1" bgcolor="#FFFFFF">
                                                         <select name="Honors_Competitive_Awards_Received_type[]">
                                                         　  <?php 
-                                                                $data_avsAnswer = mysqli_query($con,"select * from avsAnswer where avsAnswer_Title='Honors_and_Competitive_Awards_Received_Type'");                                                         
+                                                                $data_avsAnswer = mysqli_query($con,"select * from avsAnswer where avsAnswer_Title='Honors_Competitive_Awards_Received_Type'");                                                         
                                                                 for($j=0; $j<mysqli_num_rows($data_avsAnswer); $j++){  //count($academic_Title) 計算陣列數
                                                                     $avs=mysqli_fetch_row($data_avsAnswer);
                                                                     if(($rs[2])==$avs[1]){ ?> 
@@ -1023,9 +1023,8 @@
                                                                     text-overflow:ellipsis; overflow: hidden;"/>
                                                         </td>
                                                         <td colspan="1" bgcolor="#FFFFFF">
-                                                            <input type="text" name="Professional_Societies_description[]" value=""
-                                                                    style="width:100px; font-size:15px; text-align:center; 
-                                                                        text-overflow:ellipsis; overflow: hidden;"/>
+                                                            <textarea name="Professional_Societies_description[]" cols="40" rows="5" style="font-size:15px; margin:15px auto 0px auto;" text-overflow:ellipsis; overflow: hidden;>
+                                                            </textarea>
                                                         </td>
                                                     </tr>
                                                     <input type="button" value="增加 +" onclick="Professional_Societies_add_new_data()">&nbsp;

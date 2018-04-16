@@ -292,7 +292,7 @@
             Td = Professional_Societies_Tr.insertCell(Professional_Societies_Tr.cells.length);
             Td.innerHTML ='<input type="text" name="Professional_Societies_topic[]" value="" style="width:100px; font-size:15px; text-align:center; text-overflow:ellipsis; overflow: hidden;"/>';
             Td = Professional_Societies_Tr.insertCell(Professional_Societies_Tr.cells.length);
-            Td.innerHTML ='<input type="text" name="Professional_Societies_description[]" value="" style="width:100px; font-size:15px; text-align:center; text-overflow:ellipsis; overflow: hidden;"/>';
+            Td.innerHTML ='<textarea name="Teaching_Impacts_description[]" cols="40" rows="5" style="font-size:15px; margin:15px auto 0px auto;" text-overflow:ellipsis; overflow: hidden;></textarea>';
 
             }
         function Professional_Societies_remove_data() {
@@ -1448,13 +1448,12 @@
                                                                     text-overflow:ellipsis; overflow: hidden;"/>
                                                         </td>
                                                         <td colspan="1" bgcolor="#FFFFFF">
-                                                            <input type="text" name="Professional_Societies_description[]" value=""
-                                                                    style="width:100px; font-size:15px; text-align:center; 
-                                                                        text-overflow:ellipsis; overflow: hidden;"/>
+                                                            <textarea cols="40" rows="5" name="Teaching_Impacts_description[]" style="font-size:15px; margin:15px auto 0px auto;" text-overflow:ellipsis; overflow: hidden;>
+                                                            </textarea>
                                                         </td>
                                                     </tr>
                                                     <input type="button" value="增加 +" onclick="Professional_Societies_add_new_data()">&nbsp;
-                                                    <input type="button" value="減少 −" onclick="Professional_Societies_remove_data()"><br/>               
+                                                    <input type="button" value="減少 −" onclick="Professional_Societies_remove_data()"><br/> 
                                             </table>		
                                         </div>
                                 </li>

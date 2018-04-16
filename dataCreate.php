@@ -44,18 +44,17 @@
 
 
 	$output=implode(",",$faculty_responsibilities);  //陣列轉字串
-	$faculty_responsibilities = print_r($faculty_responsibilities); 
-
+	//$faculty_responsibilities = print_r($faculty_responsibilities); 
 
 	//大部分的個人資料除了$sql_Professor_Information_Impacts
 	$sql_Professor_Information = "INSERT INTO Professor_Information(Name,Academic_Title,Administration_Title,Center,Department,College,University,Phone,Cell,E_mail,Website,Edu_Degree,Edu_Year,Edu_Major,Edu_Department,Edu_School,Faculty_Sufficiency,Time_Devoted_Mission,Faculty_Qualification,Description,Teaching_Interests,Normal_Professional_Responsibilities1,Normal_Professional_Responsibilities2,Normal_Professional_Responsibilities3,Normal_Professional_Responsibilities4,Normal_Professional_Responsibilities5,Normal_Professional_Responsibilities6,Responsibilitie) VALUES('$name','$academic_Title','$administration_Title','$center','$department','$college','$university','$phone','$cell','$email','$website','$edu_Degree','$edu_Year','$edu_Major','$edu_Department','$edu_School','$faculty_sufficiency','$time_devoted_mission','$faculty_qualification','$faculty_description','$teaching_interests','$normal_professional_responsibilities1','$normal_professional_responsibilities2','$normal_professional_responsibilities3','$normal_professional_responsibilities4','$normal_professional_responsibilities5','$normal_professional_responsibilities6','$output')";
-	$conn = mysqli_query($con,$sql_Professor_Information);
-	
+	$conn = mysqli_query($con, $sql_Professor_Information);
+
 	$id = mysqli_fetch_array(mysqli_query($con,("SELECT MAX(Id) FROM Professor_Information"))); //抓新增後的ID
 	
 	//$sql_Professor_Information_Impacts update的形式
 	$sql_Professor_Information_Impacts = "UPDATE Professor_Information SET Research_Impacts = '$Research_Impacts_description',Practice_Impacts = '$Practice_Impacts_description',Teaching_Impacts = '$Teaching_Impacts_description' WHERE Id = '$id[0]'";
-	mysqli_query($con,$sql_Professor_Information_Impacts);
+	mysqli_query($con, $sql_Professor_Information_Impacts);
 	
 	//學年度授課
 	$program = $_POST['program'];
@@ -213,7 +212,6 @@
 		$sql_Professional_Societies = "INSERT INTO Professional_Societies (Professional_Societies_Year, Topic, Description, Professor_Id) VALUES('$Professional_Societies_year[$i]', '$Professional_Societies_topic[$i]', '$Professional_Societies_description[$i]', '$id[0]')";
 		$conn14 = mysqli_query($con,$sql_Professional_Societies);
 	}	
-
 
 	//警告視窗
 	Function my_msg($msg, $redirect){

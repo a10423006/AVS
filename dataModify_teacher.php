@@ -57,7 +57,7 @@
 		return; 
 	}
 
-	if($name = " " || $academic_Title = " " || $administration_Title = " " || $center = " " || $department = " " || $college = " " || $university = " " || $phone = " " || $cell = " " || $email = " " || $website = " " || $edu_Degree = " " || $edu_Year = " " || $edu_Major = " " || $edu_Department = " " || $edu_School = " " || $faculty_responsibilities = " " || $faculty_sufficiency = " " || $time_devoted_mission = " " || $faculty_qualification = " " || $faculty_description = " " || $teaching_interests = " " || $normal_professional_responsibilities1 = " " || $normal_professional_responsibilities2 = " " || $normal_professional_responsibilities3 = " " || $normal_professional_responsibilities4 = " " || $normal_professional_responsibilities5 = " " || $normal_professional_responsibilities6 = " " || $portfolio_of_intellectual_contributions = " " || $types_of_intellectual_contributions = " " || $output= " "){
+	if($name ="" || $academic_Title ="" || $administration_Title ="" || $center ="" || $department ="" || $college ="" || $university ="" || $phone ="" || $cell ="" || $email ="" || $website ="" || $edu_Degree ="" || $edu_Year ="" || $edu_Major ="" || $edu_Department ="" || $edu_School ="" || $faculty_responsibilities ="" || $faculty_sufficiency ="" || $time_devoted_mission ="" || $faculty_qualification ="" || $faculty_description ="" || $teaching_interests =""){
 		my_msg('未輸入資料!', 'result.php');
 	}else{
 		mysqli_query($con, $sql_Professor_Information);
