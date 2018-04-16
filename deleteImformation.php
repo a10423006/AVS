@@ -126,7 +126,7 @@
                             <!--學年度授課-->
 							<form action="deleteAction.php" name="deleteAction" method="post">
                             <div style='text-align:right;'>    
-							<input type="submit"  name="deleteAction_Btn"  id="deleteAction_Btn" style="font-weight:bold;width:80px;height:40px;font-size:30px;"  value="刪除" onClick="document.deleteAction.submit()">
+							<input type="submit"  name="deleteAction_Btn"  id="deleteAction_Btn" style="width:80px;height:40px;font-size:15px;" value="刪除" onClick="document.deleteAction.submit()">
                             </div>  
                             <ul class="accordionPart">
                                 <li>
@@ -146,9 +146,9 @@
                                                     for($i=0; $i<mysqli_num_rows($data); $i++){ //把每一列的資料取出來
                                                         $rs=mysqli_fetch_row($data);
                                                     ?><tr>
-                                                        <td colspan="1" bgcolor="#FFFFFF">
+                                                        <td colspan="1" bgcolor="#FFFFFF" align="center" valign="center">
                                                             <input type="checkbox" name="course_id[]"  readonly="readonly"   value="<?php echo $rs[0] ?>"
-                                                                style="width:100px; font-size:15px; text-align:center; 
+                                                                style="width:auto; text-align:center; 
                                                                     text-overflow:ellipsis; overflow: hidden;"/>
                                                         </td>
                                                         <td colspan="1" bgcolor="#FFFFFF">
@@ -200,9 +200,9 @@
                                                     for($i=0; $i<mysqli_num_rows($data); $i++){ //把每一列的資料取出來
                                                         $rs=mysqli_fetch_row($data);
                                                     ?><tr>
-                                                        <td colspan="1" bgcolor="#FFFFFF">    
+                                                        <td colspan="1" bgcolor="#FFFFFF" align="center" valign="center">    
                                                             <input type="checkbox" name="service_ID[]"  readonly="readonly" value="<?php echo $rs[0] ?>"
-                                                                style="width:100px; font-size:15px; text-align:center; 
+                                                                style="width:auto; text-align:center; 
                                                                     text-overflow:ellipsis; overflow: hidden;"/>
                                                         <td colspan="1" bgcolor="#FFFFFF">
                                                             <input type="text" name="service_Year[]" readonly="readonly" value="<?php echo $rs[1] ?>"
@@ -247,9 +247,9 @@
                                                     for($i=0; $i<mysqli_num_rows($data); $i++){ //把每一列的資料取出來
                                                         $rs=mysqli_fetch_row($data);
                                                     ?><tr>
-													    <td colspan="1" bgcolor="#FFFFFF">
+													    <td colspan="1" bgcolor="#FFFFFF" align="center" valign="center">
                                                             <input type="checkbox" name="Peer_reviewed_id[]"  readonly="readonly" value="<?php echo $rs[0] ?>"
-                                                                style="width:100px; font-size:15px; text-align:center; 
+                                                                style="width:auto; text-align:center; 
                                                                     text-overflow:ellipsis; overflow: hidden;"/>
                                                         </td>            
                                                         <td colspan="1" bgcolor="#FFFFFF">
@@ -320,11 +320,8 @@
                                                     </tr>
                                                 <?php }?>	
                                             </table>
-											
-											
 												
                                             <h4>Research Monographs</h4> <!--小分類-->
-									
                                             <table width="790" bgcolor="black" style="font-size:15px">
                                                 <tr>
                                                     <td colspan="1" bgcolor="#e3e3e3"><b>勾選</b></td>
@@ -339,9 +336,9 @@
                                                     for($i=0; $i<mysql_num_rows($data); $i++){ //把每一列的資料取出來
                                                         $rs=mysql_fetch_row($data);
                                                     ?><tr>
-                                                        <td colspan="1" bgcolor="#FFFFFF">										
+                                                        <td colspan="1" bgcolor="#FFFFFF" align="center" valign="center">
                                                             <input type="checkbox" name="Research_Monographs_Id[]"  readonly="readonly" value="<?php echo $rs[0] ?>"
-                                                                style="width:100px; font-size:15px; text-align:center; 
+                                                                style="width:auto; text-align:center; 
                                                                     text-overflow:ellipsis; overflow: hidden;"/>
                                                         </td>            
                                                         <td colspan="1" bgcolor="#FFFFFF">
@@ -396,11 +393,8 @@
                                                     </tr>
                                                 <?php }?>
                                             </table>
-									
-											
-												
+										
                                             <h4>Academic Meeting Proceedings</h4> <!--小分類-->
-								
                                             <table width="790" bgcolor="black" style="font-size:15px">
                                                 <tr>
                                                     <td colspan="1" bgcolor="#e3e3e3"><b>勾選</b></td>    
@@ -414,9 +408,9 @@
                                                     for($i=0; $i<mysql_num_rows($data); $i++){ //把每一列的資料取出來
                                                         $rs=mysql_fetch_row($data);
                                                     ?><tr>
-                                                        <td colspan="1" bgcolor="#FFFFFF">
+                                                        <td colspan="1" bgcolor="#FFFFFF" align="center" valign="center">
                                                             <input type="checkbox" name="Meeting_Proceedings_And_Other_Id[]"  readonly="readonly" value="<?php echo $rs[0] ?>"
-                                                                style="width:100px; font-size:15px; text-align:center; 
+                                                                style="width:auto; text-align:center; 
                                                                     text-overflow:ellipsis; overflow: hidden;"/>
                                                         </td>            
                                                         <td colspan="1" bgcolor="#FFFFFF">
@@ -445,7 +439,6 @@
 									
 
                                             <h4>Professional Meeting Proceedings</h4> <!--小分類-->
-							
                                             <table width="790" bgcolor="black" style="font-size:15px">
                                                 <tr>
                                                     <td colspan="1" bgcolor="#e3e3e3"><b>勾選</b></td>    
@@ -459,9 +452,9 @@
                                                     for($i=0; $i<mysql_num_rows($data); $i++){ //把每一列的資料取出來
                                                         $rs=mysql_fetch_row($data);
                                                     ?><tr>
-                                                        <td colspan="1" bgcolor="#FFFFFF">
+                                                        <td colspan="1" bgcolor="#FFFFFF" align="center" valign="center">
                                                             <input type="checkbox" name="Professional_Meeting_Proceedings_Id[]"  readonly="readonly" value="<?php echo $rs[0] ?>"
-                                                                style="width:100px; font-size:15px; text-align:center; 
+                                                                style="width:auto; text-align:center; 
                                                                     text-overflow:ellipsis; overflow: hidden;"/>
                                                         </td>
                                                         <td colspan="1" bgcolor="#FFFFFF">
@@ -487,10 +480,8 @@
                                                     </tr>
                                                 <?php }?>
                                             </table>
-								
 											
                                             <h4>Textbooks/Chapters</h4> <!--小分類-->
-									
                                             <table width="790" bgcolor="black" style="font-size:15px">
                                                 <tr>
                                                     <td colspan="1" bgcolor="#e3e3e3"><b>勾選</b></td>    
@@ -504,9 +495,9 @@
                                                     for($i=0; $i<mysql_num_rows($data); $i++){ //把每一列的資料取出來
                                                         $rs=mysql_fetch_row($data);
                                                     ?><tr>
-                                                        <td colspan="1" bgcolor="#FFFFFF">
+                                                        <td colspan="1" bgcolor="#FFFFFF" align="center" valign="center">
                                                             <input type="checkbox" name="Textbooks_Chapters_Id[]"  readonly="readonly" value="<?php echo $rs[0] ?>"
-                                                                style="width:100px; font-size:15px; text-align:center; 
+                                                                style="width:auto; text-align:center; 
                                                                     text-overflow:ellipsis; overflow: hidden;"/>
                                                         </td>            
                                                         <td colspan="1" bgcolor="#FFFFFF">
@@ -533,9 +524,7 @@
                                                 <?php }?>
                                             </table>
 						
-
-                                            <h4>Cases</h4> <!--小分類-->
-								
+                                            <h4>Cases</h4> <!--小分類-->								
                                             <table width="790" bgcolor="black" style="font-size:15px">
                                                 <tr>
                                                     <td colspan="1" bgcolor="#e3e3e3"><b>勾選</b></td>    
@@ -549,9 +538,9 @@
                                                     for($i=0; $i<mysql_num_rows($data); $i++){ //把每一列的資料取出來
                                                         $rs=mysql_fetch_row($data);
                                                     ?><tr>
-                                                        <td colspan="1" bgcolor="#FFFFFF">
+                                                        <td colspan="1" bgcolor="#FFFFFF" align="center" valign="center">
                                                             <input type="checkbox" name="Cases_Id[]"  readonly="readonly" value="<?php echo $rs[0] ?>"
-                                                                style="width:100px; font-size:15px; text-align:center; 
+                                                                style="width:auto; text-align:center; 
                                                                     text-overflow:ellipsis; overflow: hidden;"/>
                                                         </td>
                                                         <td colspan="1" bgcolor="#FFFFFF">
@@ -578,9 +567,7 @@
                                                 <?php }?>
                                             </table>
 								
-
-                                            <h4>Other Teaching Materials</h4> <!--小分類-->
-						
+                                            <h4>Other Teaching Materials</h4> <!--小分類-->						
                                             <table width="790" bgcolor="black" style="font-size:15px">
                                                 <tr>
                                                     <td colspan="1" bgcolor="#e3e3e3"><b>勾選</b></td>    
@@ -593,9 +580,9 @@
                                                     for($i=0; $i<mysql_num_rows($data); $i++){ //把每一列的資料取出來
                                                         $rs=mysql_fetch_row($data);
                                                     ?><tr>
-                                                        <td colspan="1" bgcolor="#FFFFFF">
+                                                        <td colspan="1" bgcolor="#FFFFFF" align="center" valign="center">
                                                             <input type="checkbox" name="Other_Teaching_Materials_Id[]"  readonly="readonly" value="<?php echo $rs[0] ?>"
-                                                                style="width:100px; font-size:15px; text-align:center; 
+                                                                style="width:auto; text-align:center; 
                                                                     text-overflow:ellipsis; overflow: hidden;"/>
                                                         </td> 
                                                         <td colspan="1" bgcolor="#FFFFFF">
@@ -632,9 +619,9 @@
                                                     for($i=0; $i<mysql_num_rows($data); $i++){ //把每一列的資料取出來
                                                         $rs=mysql_fetch_row($data);
                                                     ?><tr>
-                                                        <td colspan="1" bgcolor="#FFFFFF">
+                                                        <td colspan="1" bgcolor="#FFFFFF" align="center" valign="center">
                                                             <input type="checkbox" name="Honors_Competitive_Awards_Received_Id[]"  readonly="readonly" value="<?php echo $rs[0] ?>"
-                                                                style="width:100px; font-size:15px; text-align:center; 
+                                                                style="width:auto; text-align:center; 
                                                                     text-overflow:ellipsis; overflow: hidden;"/>
                                                         </td>            
                                                         <td colspan="1" bgcolor="#FFFFFF">
@@ -680,9 +667,9 @@
                                                     for($i=0; $i<mysql_num_rows($data); $i++){ //把每一列的資料取出來
                                                         $rs=mysql_fetch_row($data);
                                                     ?><tr>
-                                                        <td colspan="1" bgcolor="#FFFFFF">
+                                                        <td colspan="1" bgcolor="#FFFFFF" align="center" valign="center">
                                                             <input type="checkbox" name="Professional_History_Id[]"  readonly="readonly" value="<?php echo $rs[0] ?>"
-                                                                style="width:100px; font-size:15px; text-align:center; 
+                                                                style="width:auto; text-align:center; 
                                                                     text-overflow:ellipsis; overflow: hidden;"/>
                                                         </td>            
                                                         <td colspan="1" bgcolor="#FFFFFF">
@@ -739,9 +726,9 @@
                                                     for($i=0; $i<mysql_num_rows($data); $i++){ //把每一列的資料取出來
                                                         $rs=mysql_fetch_row($data);
                                                     ?><tr>
-                                                        <td colspan="1" bgcolor="#FFFFFF">
+                                                        <td colspan="1" bgcolor="#FFFFFF" align="center" valign="center">
                                                             <input type="checkbox" name="Professional_Development_Id[]"  readonly="readonly" value="<?php echo $rs[0] ?>"
-                                                                style="width:100px; font-size:15px; text-align:center; 
+                                                                style="width:atuo; text-align:center; 
                                                                     text-overflow:ellipsis; overflow: hidden;"/>
                                                         </td>            
                                                         <td colspan="1" bgcolor="#FFFFFF">
@@ -782,9 +769,9 @@
                                                     for($i=0; $i<mysql_num_rows($data); $i++){ //把每一列的資料取出來
                                                         $rs=mysql_fetch_row($data);
                                                     ?><tr>
-                                                        <td colspan="1" bgcolor="#FFFFFF">
+                                                        <td colspan="1" bgcolor="#FFFFFF" align="center" valign="center">
                                                             <input type="checkbox"  onfocus="blur()" name="Professional_Societies_Id[]" readonly="readonly" value="<?php echo $rs[0] ?>"
-                                                                style="width:100px; font-size:15px; text-align:center; 
+                                                                style="width:auto; text-align:center; 
                                                                     text-overflow:ellipsis; overflow: hidden;"/>
                                                         </td>
                                                         <td colspan="1" bgcolor="#FFFFFF">

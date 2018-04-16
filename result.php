@@ -21,7 +21,7 @@
         <link href="qa_layout.css" rel="stylesheet" type="text/css" />
 
         <!--Importing Database Script-->
-        <?php 
+        <?php
 			include("connection.php");
 			session_start();
 			if($_POST['teacher_ID']!=null) {
@@ -37,7 +37,7 @@
 			  $teacherID = $_SESSION['teacherID'];
 			//   echo "null!";
 			}
-			$today = date('Y-m-d') ;
+            $today = date('Y-m-d') ;
         ?>
         
 		<style>/*回到頂部*/
@@ -104,11 +104,11 @@
                     <!-- <form action="searchYear.php" method="post">
                         <p style="font-size:20px;">
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;輸入要搜尋的日期:
-                        <input name="searchYear1" type="date" style="width:20%; height:15%; font-size:20px; font-weight:bold;" value="<?php echo $today; ?>" />
+                        <input name="searchYear1" type="date" style="width:20%; height:15%; font-size:20px; " value="<?php echo $today; ?>" />
                         <label>~</label>
-                        <input name="searchYear2" type="date" style="width:20%; height:15%; font-size:20px; font-weight:bold;" value="<?php echo $today; ?>"/>
+                        <input name="searchYear2" type="date" style="width:20%; height:15%; font-size:20px; " value="<?php echo $today; ?>"/>
                         
-                        <input type="submit" name="submit_Btn"  id="submit_Btn"  style="width:15%; height:15%; font-size:20px; font-weight:bold;"  value="搜尋" onClick="document.form1.submit()">
+                        <input type="submit" name="submit_Btn"  id="submit_Btn"  style="width:15%; height:15%; font-size:20px; "  value="搜尋" onClick="document.form1.submit()">
                         </p>
                     </form> -->
 
@@ -133,7 +133,7 @@
 	                    <!--個人資料-->
 							<form action="dataModify_teacher.php" name="form1" method="post">
                             <div style='text-align:right;'>
-							<input type="submit"  name="submit_Btn1"  id="submit_Btn1" value="修改" style="font-weight:bold;width:80px;height:40px;font-size:30px;" value="修改" onClick="document.form1.submit()">
+							<input type="submit"  name="submit_Btn1"  id="submit_Btn1" value="修改" style="width:80px;height:40px;font-size:15px;" value="修改" onClick="document.form1.submit()">
                             </div>	
 	                        <ul class="accordionPart">
 
@@ -173,7 +173,7 @@
                                         
                                             </tr>
                                             <tr>
-                                                <td colspan="2" bgcolor="#e3e3e3"><b>Administration_Title</b></td>
+                                                <td colspan="2" bgcolor="#e3e3e3"><b>Administration Title</b></td>
                                                 <td colspan="2" bgcolor="#FFFFFF"> 
                                                 <select name="administration_Title">
                                                 　  <?php 
@@ -194,7 +194,7 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td colspan="2" bgcolor="#e3e3e3"><b>center</b></td>
+                                                <td colspan="2" bgcolor="#e3e3e3"><b>Center</b></td>
                                                 <td colspan="2" bgcolor="#FFFFFF">
                                                     <input type="text" name="center" value="<?php echo $data[4]; ?>" 
                                                         style="width:250px; font-size:15px; text-align:center; 
@@ -282,13 +282,13 @@
                                                 <td colspan="1" bgcolor="#FFFFFF">
                                                     <input type="text" name="email" value="<?php echo $data[10]; ?>" 
                                                         style="width:200px; font-size:15px; text-align:center; 
-                                                            text-overflow:ellipsis; overflow: hidden;"/>
+                                                            text-overflow:ellipsis; overflow:hidden;"/>
                                                 </td>
                                                 <td colspan="1" bgcolor="#e3e3e3"><b>Website</b></td>
                                                 <td colspan="1" bgcolor="#FFFFFF">
                                                     <input type="text" name="website" value="<?php echo $data[11]; ?>" 
                                                         style="width:200px; font-size:15px; text-align:center; 
-                                                            text-overflow:ellipsis; overflow: hidden;"/>
+                                                            text-overflow:ellipsis; overflow:hidden;"/>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -319,15 +319,15 @@
                                                             text-overflow:ellipsis; overflow: hidden;"/>
                                                 </td>
                                                 <td colspan="2" bgcolor="#FFFFFF">
-                                                <H3>主修: </div><input type="text" name="edu_Major" value="<?php echo $data[14]; ?>"
+                                                主修: </div><input type="text" name="edu_Major" value="<?php echo $data[14]; ?>"
                                                         style="width:300px; font-size:15px; text-align:center; 
-                                                            text-overflow:ellipsis; overflow: hidden;"/><p></H3>
-                                                <H3>部門: <input type="text" name="edu_Department" value="<?php echo $data[15]; ?>"
+                                                            text-overflow:ellipsis; overflow: hidden;"/><p>
+                                                部門: <input type="text" name="edu_Department" value="<?php echo $data[15]; ?>"
                                                         style="width:300px; font-size:15px; text-align:center; 
-                                                            text-overflow:ellipsis; overflow: hidden;"/><p></H3>
-                                                <H3>學校: <input type="text" name="edu_School" value="<?php echo $data[16]; ?>"
+                                                            text-overflow:ellipsis; overflow: hidden;"/><p>
+                                                學校: <input type="text" name="edu_School" value="<?php echo $data[16]; ?>"
                                                         style="width:300px; font-size:15px; text-align:center; 
-                                                            text-overflow:ellipsis; overflow: hidden;"/></H3>
+                                                            text-overflow:ellipsis; overflow: hidden;"/>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -335,7 +335,7 @@
                                             </tr>
                                             <tr>
                                                 <td colspan="4" bgcolor="#FFFFFF"><!--faculty_responsibilities-->
-                                                <p>
+                                                <p></p>
                                                 <select multiple="multiple" name="faculty_responsibilities[]" Style="font-size:15px;"> <!--問題需要處理-->
                                                 　  <?php 
                                                         $data_avsAnswer = mysqli_query($con , "select * from avsAnswer where avsAnswer_Title='Faculty_Responsibilities'");                                                         
@@ -601,7 +601,7 @@
                             <!--學年度授課-->
 							<form action="dataModify.php" name="form2" method="post">
                             <div style='text-align:right;'>    
-							<input type="submit"  name="submit_Btn2"  id="submit_Btn2" value="修改" style="font-weight:bold;width:80px;height:40px;font-size:30px;"  onClick="document.form2.submit()">
+							<input type="submit"  name="submit_Btn2"  id="submit_Btn2" value="修改" style="width:80px;height:40px;font-size:15px;"  onClick="document.form2.submit()">
                             </div>  
                             <ul class="accordionPart">
                                 <li>
@@ -697,7 +697,7 @@
                             <!--學術服務-->
 							<form action="dataModify.php" name="form3" method="post">
                             <div style='text-align:right;'>
-							<input type="submit"  name="submit_Btn3"  id="submit_Btn3" value="修改" style="font-weight:bold;width:80px;height:40px;font-size:30px;"  onClick="document.form3.submit()">
+							<input type="submit"  name="submit_Btn3"  id="submit_Btn3" value="修改" style="width:80px;height:40px;font-size:15px;"  onClick="document.form3.submit()">
                             </div>  
                             <ul class="accordionPart">
                                 <li>
@@ -756,7 +756,7 @@
 
                             <!--研究產出-->
                             <div style='text-align:right;'>
-						    <input type="submit"  name="submit_Btn4"  id="submit_Btn4" style="font-weight:bold;width:80px;height:40px;font-size:30px;" value="修改" onClick="document.form4.submit()">
+						    <input type="submit"  name="submit_Btn4"  id="submit_Btn4" style="width:80px;height:40px;font-size:15px;" value="修改" onClick="document.form4.submit()">
                             </div>  
                             <form action="dataModify.php" name="form4" method="post">
                             <ul class="accordionPart">
@@ -765,15 +765,12 @@
 									    <div class="qa_content">
 												
                                             <h4>Peer-reviewed Journals</h4> <!--小分類-->
-											
-											
-                                            <table width="790" border="1" style="font-size:15px">
+                                            <table width="700px" border="1" style="font-size:14px">
                                                 <tr>
-													
                                                     <td colspan="1" bgcolor="#e3e3e3"><b>Year</b></td>
                                                     <td colspan="1" bgcolor="#e3e3e3"><b>Topic</b></td>
-                                                    <td colspan="1" bgcolor="#e3e3e3"><b>Description(Title,etc)</b></td>
-                                                    <td colspan="1" bgcolor="#e3e3e3"><b>MOST Rank</b></td>
+                                                    <td colspan="2" bgcolor="#e3e3e3"><b>Description(Title,etc)</b></td>
+                                                    <td colspan="2" bgcolor="#e3e3e3"><b>MOST Rank</b></td>
                                                     <td colspan="1" bgcolor="#e3e3e3"><b>Portfolio</b></td>
                                                     <td colspan="1" bgcolor="#e3e3e3"><b>Citation Index</b></td>
                                                 </tr>
@@ -781,8 +778,8 @@
                                                     $data = mysqli_query($con,"select * from Peer_reviewed_Journals where Professor_Id='$teacherID'");
                                                     for($i=0; $i<mysqli_num_rows($data); $i++){ //把每一列的資料取出來
                                                         $rs=mysqli_fetch_row($data);
-                                                    ?><tr>
-													
+                                                    ?>
+                                                    <tr>
                                                         <input type="hidden" name="Peer_reviewed_id[]"  onfocus="blur()" value="<?php echo $rs[0] ?>"
                                                             style="width:100px; font-size:15px; text-align:center; 
                                                                 text-overflow:ellipsis; overflow: hidden;"/>
@@ -797,12 +794,12 @@
                                                                 style="width:100px; font-size:15px; text-align:center; 
                                                                     text-overflow:ellipsis; overflow: hidden;"/>
                                                         </td>
-                                                        <td colspan="1" bgcolor="#FFFFFF">
+                                                        <td colspan="2" bgcolor="#FFFFFF">
                                                             <textarea cols="20" rows="5" name="Peer_reviewed_description[]" style="font-size:15px; margin:15px auto 0px auto;" text-overflow:ellipsis; overflow: hidden;>
                                                                 <?php echo rtrim($rs[3]); ?>
                                                             </textarea>
                                                         </td>
-                                                        <td colspan="1" bgcolor="#FFFFFF">
+                                                        <td colspan="2" bgcolor="#FFFFFF">
                                                         <select name="most_rank[]">
                                                         　  <?php 
                                                                 $data_avsAnswer = mysqli_query($con,"select * from avsAnswer where avsAnswer_Title='MOST_Rank'");                                                         
@@ -1248,7 +1245,7 @@
                             </form>
                             <!--業界-->
                             <div style='text-align:right;'>
-                            <input type="submit"  name="submit_Btn12"  id="submit_Btn12" value="修改" style="font-weight:bold;width:80px;height:40px;font-size:30px;" onClick="document.form12.submit()">
+                            <input type="submit"  name="submit_Btn12"  id="submit_Btn12" value="修改" style="width:80px;height:40px;font-size:15px;" onClick="document.form12.submit()">
                             </div>  
                             <form action="dataModify.php" name="form12" method="post">
                             <ul class="accordionPart">
@@ -1399,7 +1396,7 @@
                             <!--影響力描述-->
                             <div style='text-align:right;'>
 							<form action="dataModify.php" name="form15" method="post">
-							<input type="submit"  name="submit_Btn15"  id="submit_Btn15" value="修改" style="font-weight:bold;width:80px;height:40px;font-size:30px;" onClick="document.form15.submit()">
+							<input type="submit"  name="submit_Btn15"  id="submit_Btn15" value="修改" style="width:80px;height:40px;font-size:15px;" onClick="document.form15.submit()">
                             </div>  
                             <ul class="accordionPart">
                                 <li>
