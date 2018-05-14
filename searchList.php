@@ -79,10 +79,10 @@
                     </fieldset>
                 </div>
         
-	            <div style="width:auto; height:700px; margin:0 auto 0 185px; text-align:center; line-height:50px;">
+	            <div style="width:auto; height:700px; margin:0 auto 0 175px; text-align:center; line-height:50px;">
 
                     <div>
-						<table width="450" bgcolor="black" style="font-size:15px">
+						<table width="450px" bgcolor="black" style="font-size:15px">
 							<br></br>
 							<tr>
                                 <td colspan="5" bgcolor="#e3e3e3"><b>搜尋列表</b></td>
@@ -116,7 +116,7 @@
                                     style="width:70px; font-size:15px; text-align:center; 
                                     text-overflow:ellipsis; overflow: hidden; border-color:transparent;"/>	
 								<td colspan="1" bgcolor="#FFFFFF">
-									<input type="submit" value="查閱" style="width:100px;height:80px;font-size:30px;font-weight:bold;" onClick="document.form1.submit()">		
+									<input type="submit" value="查閱" style="width:120px;height:40px;font-size:15px;" onClick="document.form1.submit()">		
                                 </td>		
 							</tr>
 							</form>

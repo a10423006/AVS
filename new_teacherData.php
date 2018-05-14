@@ -276,7 +276,7 @@
             Td = Professional_Development_Tr.insertCell(Professional_Development_Tr.cells.length);
             Td.innerHTML ='<input type="text" name="Professional_Development_topic[]" value="" style="width:100px; font-size:15px; text-align:center; text-overflow:ellipsis; overflow: hidden;"/>';
             Td = Professional_Development_Tr.insertCell(Professional_Development_Tr.cells.length);
-            Td.innerHTML ='<textarea name="Professional_Development_description[]" cols="20" rows="5" style="font-size:15px; margin:15px auto 0px auto;" text-overflow:ellipsis; overflow: hidden;></textarea>';
+            Td.innerHTML ='<textarea name="Professional_Development_description[]" cols="40" rows="5" style="font-size:15px; margin:15px auto 0px auto;" text-overflow:ellipsis; overflow: hidden;></textarea>';
             }
         function Professional_Development_remove_data() {
             var Professional_Development_num = document.getElementById("Professional_Development").rows.length;
@@ -292,7 +292,7 @@
             Td = Professional_Societies_Tr.insertCell(Professional_Societies_Tr.cells.length);
             Td.innerHTML ='<input type="text" name="Professional_Societies_topic[]" value="" style="width:100px; font-size:15px; text-align:center; text-overflow:ellipsis; overflow: hidden;"/>';
             Td = Professional_Societies_Tr.insertCell(Professional_Societies_Tr.cells.length);
-            Td.innerHTML ='<input type="text" name="Professional_Societies_description[]" value="" style="width:100px; font-size:15px; text-align:center; text-overflow:ellipsis; overflow: hidden;"/>';
+            Td.innerHTML ='<textarea name="Professional_Societies_description[]" cols="40" rows="5" style="font-size:15px; margin:15px auto 0px auto;" text-overflow:ellipsis; overflow: hidden;></textarea>';
 
             }
         function Professional_Societies_remove_data() {
@@ -357,10 +357,9 @@
 	                    <!--個人資料-->
                     <form action="dataAdded.php" name="createTea" method="post">
                             <div style='text-align:right;'>
-							<input type="submit"  name="submit_Btn1"  id="submit_Btn1" value="提交" style="font-weight:bold;width:80px;height:40px;font-size:30px;" value="修改" onClick="document.form1.submit()">
-                            </div>	
-
-
+							<input type="submit"  name="submit_Btn1"  id="submit_Btn1" value="提交" style="width:80px;height:40px;font-size:15px;" value="修改" onClick="document.form1.submit()">
+                            </div>
+                            
                             <!--學年度授課 style="border:3px #cccccc solid;"-->  
                             <ul class="accordionPart">
                                 <li>
@@ -440,8 +439,8 @@
                                                         </select>
                                                         </td>
                                                     </tr>
-                                                    <input type="button" value="增加" onclick="Course_Taught_Program_add_new_data()">&nbsp;
-                                                    <input type="button" value="減少" onclick="Course_Taught_Program_remove_data()"><br/>
+                                                    <input type="button" value="增加 +" onclick="Course_Taught_Program_add_new_data()">&nbsp;
+                                                    <input type="button" value="減少 −" onclick="Course_Taught_Program_remove_data()"><br/>
                                             </table>
                                         </div>
                                 </li>
@@ -487,8 +486,8 @@
                                                             </textarea>
                                                         </td>
                                                     </tr>
-                                                    <input type="button" value="增加" onclick="Service_Type_add_new_data()">&nbsp;
-                                                    <input type="button" value="減少" onclick="Service_Type_remove_data()"><br/>
+                                                    <input type="button" value="增加 +" onclick="Service_Type_add_new_data()">&nbsp;
+                                                    <input type="button" value="減少 −" onclick="Service_Type_remove_data()"><br/>
                                             </table>
                                         </div>
                                 </li>
@@ -580,8 +579,8 @@
                                                         </select>
                                                         </td>
                                                     </tr>
-                                                    <input type="button" value="增加" onclick="Peer_reviewed_add_new_data()">&nbsp;
-                                                    <input type="button" value="減少" onclick="Peer_reviewed_remove_data()"><br/>
+                                                    <input type="button" value="增加 +" onclick="Peer_reviewed_add_new_data()">&nbsp;
+                                                    <input type="button" value="減少 −" onclick="Peer_reviewed_remove_data()"><br/>
                                             </table>						
                                             <h4>Research Monographs</h4> <!--小分類-->
                                             <table id=Research_Monographs width="790" border="1" style="font-size:15px">
@@ -625,8 +624,8 @@
                                                             </textarea>
                                                         </td>         
                                                     </tr>
-                                                    <input type="button" value="增加" onclick="Research_Monographs_add_new_data()">&nbsp;
-                                                    <input type="button" value="減少" onclick="Research_Monographs_remove_data()"><br/>
+                                                    <input type="button" value="增加 +" onclick="Research_Monographs_add_new_data()">&nbsp;
+                                                    <input type="button" value="減少 −" onclick="Research_Monographs_remove_data()"><br/>
                                             </table>
 													
                                             <h4>Academic Meeting Proceedings</h4> <!--小分類-->
@@ -672,8 +671,8 @@
                                                             </textarea>
                                                         </td>
                                                     </tr>
-                                                    <input type="button" value="增加" onclick="Meeting_Proceedings_And_Other_add_new_data()">&nbsp;
-                                                    <input type="button" value="減少" onclick="Meeting_Proceedings_And_Other_remove_data()"><br/>
+                                                    <input type="button" value="增加 +" onclick="Meeting_Proceedings_And_Other_add_new_data()">&nbsp;
+                                                    <input type="button" value="減少 −" onclick="Meeting_Proceedings_And_Other_remove_data()"><br/>
                                             </table>
 									
 
@@ -720,8 +719,8 @@
                                                             </textarea>
                                                         </td>
                                                     </tr>
-                                                    <input type="button" value="增加" onclick="Professional_Meeting_Proceedings_add_new_data()">&nbsp;
-                                                    <input type="button" value="減少" onclick="Professional_Meeting_Proceedings_remove_data()"><br/>
+                                                    <input type="button" value="增加 +" onclick="Professional_Meeting_Proceedings_add_new_data()">&nbsp;
+                                                    <input type="button" value="減少 −" onclick="Professional_Meeting_Proceedings_remove_data()"><br/>
                                             </table>
 								
 											
@@ -771,8 +770,8 @@
                                                             </textarea>
                                                         </td>
                                                     </tr>
-                                                    <input type="button" value="增加" onclick="Textbooks_Chapters_add_new_data()">&nbsp;
-                                                    <input type="button" value="減少" onclick="Textbooks_Chapters_remove_data()"><br/>
+                                                    <input type="button" value="增加 +" onclick="Textbooks_Chapters_add_new_data()">&nbsp;
+                                                    <input type="button" value="減少 −" onclick="Textbooks_Chapters_remove_data()"><br/>
                                             </table>
 						
 
@@ -819,8 +818,8 @@
                                                             </textarea>
                                                         </td>
                                                     </tr>
-                                                    <input type="button" value="增加" onclick="Cases_add_new_data()">&nbsp;
-                                                    <input type="button" value="減少" onclick="Cases_remove_data()"><br/>
+                                                    <input type="button" value="增加 +" onclick="Cases_add_new_data()">&nbsp;
+                                                    <input type="button" value="減少 −" onclick="Cases_remove_data()"><br/>
                                             </table>
 								
 
@@ -861,8 +860,8 @@
                                                             </textarea>
                                                         </td>
                                                     </tr>
-                                                    <input type="button" value="增加" onclick="Other_Teaching_Materials_add_new_data()">&nbsp;
-                                                    <input type="button" value="減少" onclick="Other_Teaching_Materials_remove_data()"><br/>
+                                                    <input type="button" value="增加 +" onclick="Other_Teaching_Materials_add_new_data()">&nbsp;
+                                                    <input type="button" value="減少 −" onclick="Other_Teaching_Materials_remove_data()"><br/>
                                             </table>
 								
 
@@ -883,7 +882,7 @@
                                                         <td colspan="1" bgcolor="#FFFFFF">
                                                         <select name="Honors_Competitive_Awards_Received_type[]">
                                                         　  <?php 
-                                                                $data_avsAnswer = mysqli_query($con,"select * from avsAnswer where avsAnswer_Title='Honors_and_Competitive_Awards_Received_Type'");                                                         
+                                                                $data_avsAnswer = mysqli_query($con,"select * from avsAnswer where avsAnswer_Title='Honors_Competitive_Awards_Received_Type'");                                                         
                                                                 for($j=0; $j<mysqli_num_rows($data_avsAnswer); $j++){  //count($academic_Title) 計算陣列數
                                                                     $avs=mysqli_fetch_row($data_avsAnswer);
                                                                     if(($rs[2])==$avs[1]){ ?> 
@@ -903,8 +902,8 @@
                                                             </textarea>
                                                         </td>
                                                     </tr>
-                                                    <input type="button" value="增加" onclick="Honors_Competitive_Awards_Received_add_new_data()">&nbsp;
-                                                    <input type="button" value="減少" onclick="Honors_Competitive_Awards_Received_remove_data()"><br/>
+                                                    <input type="button" value="增加 +" onclick="Honors_Competitive_Awards_Received_add_new_data()">&nbsp;
+                                                    <input type="button" value="減少 −" onclick="Honors_Competitive_Awards_Received_remove_data()"><br/>
                                             </table>
 											
                                         </div>
@@ -953,8 +952,8 @@
                                                                 text-overflow:ellipsis; overflow: hidden;"/>
                                                         </td>
                                                     </tr>
-                                                    <input type="button" value="增加" onclick="Professional_History_add_new_data()">&nbsp;
-                                                    <input type="button" value="減少" onclick="Professional_History_remove_data()"><br/>
+                                                    <input type="button" value="增加 +" onclick="Professional_History_add_new_data()">&nbsp;
+                                                    <input type="button" value="減少 −" onclick="Professional_History_remove_data()"><br/>
                                             </table>
 										
 
@@ -1000,8 +999,8 @@
                                                             </textarea>
                                                         </td>
                                                     </tr>
-                                                    <input type="button" value="增加" onclick="Professional_Development_add_new_data()">&nbsp;
-                                                    <input type="button" value="減少" onclick="Professional_Development_remove_data()"><br/>
+                                                    <input type="button" value="增加 +" onclick="Professional_Development_add_new_data()">&nbsp;
+                                                    <input type="button" value="減少 −" onclick="Professional_Development_remove_data()"><br/>
                                             </table>
 								
 
@@ -1024,13 +1023,12 @@
                                                                     text-overflow:ellipsis; overflow: hidden;"/>
                                                         </td>
                                                         <td colspan="1" bgcolor="#FFFFFF">
-                                                            <input type="text" name="Professional_Societies_description[]" value=""
-                                                                    style="width:100px; font-size:15px; text-align:center; 
-                                                                        text-overflow:ellipsis; overflow: hidden;"/>
+                                                            <textarea name="Professional_Societies_description[]" cols="40" rows="5" style="font-size:15px; margin:15px auto 0px auto;" text-overflow:ellipsis; overflow: hidden;>
+                                                            </textarea>
                                                         </td>
                                                     </tr>
-                                                    <input type="button" value="增加" onclick="Professional_Societies_add_new_data()">&nbsp;
-                                                    <input type="button" value="減少" onclick="Professional_Societies_remove_data()"><br/>               
+                                                    <input type="button" value="增加 +" onclick="Professional_Societies_add_new_data()">&nbsp;
+                                                    <input type="button" value="減少 −" onclick="Professional_Societies_remove_data()"><br/>               
                                             </table>		
                                         </div>
                                 </li>

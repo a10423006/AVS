@@ -292,7 +292,7 @@
             Td = Professional_Societies_Tr.insertCell(Professional_Societies_Tr.cells.length);
             Td.innerHTML ='<input type="text" name="Professional_Societies_topic[]" value="" style="width:100px; font-size:15px; text-align:center; text-overflow:ellipsis; overflow: hidden;"/>';
             Td = Professional_Societies_Tr.insertCell(Professional_Societies_Tr.cells.length);
-            Td.innerHTML ='<input type="text" name="Professional_Societies_description[]" value="" style="width:100px; font-size:15px; text-align:center; text-overflow:ellipsis; overflow: hidden;"/>';
+            Td.innerHTML ='<textarea name="Teaching_Impacts_description[]" cols="40" rows="5" style="font-size:15px; margin:15px auto 0px auto;" text-overflow:ellipsis; overflow: hidden;></textarea>';
 
             }
         function Professional_Societies_remove_data() {
@@ -354,7 +354,7 @@
 	                    <!--個人資料-->
                     <form action="dataCreate.php" name="createTea" method="post">
                             <div style='text-align:right;'>
-							<input type="submit"  name="submit_Btn1"  id="submit_Btn1" value="提交" style="font-weight:bold;width:80px;height:40px;font-size:30px;" value="修改" onClick="document.form1.submit()">
+							<input type="submit"  name="submit_Btn1"  id="submit_Btn1" value="提交" style="width:80px;height:40px;font-size:15px;" value="修改" onClick="document.form1.submit()">
                             </div>	
 	                        <ul class="accordionPart">
 		                        <li>
@@ -363,7 +363,7 @@
                                         <table width="790" border="1" style="font-size:15px">
                                             <tr>
                                                 <td colspan="4" bgcolor="#FFFFFF">
-                                                    <input type="text" name="name" value=""
+                                                    <input type="text" name="name" placeholder="姓名"
                                                         style="width:250px; font-size:15px; text-align:center; 
                                                             text-overflow:ellipsis; overflow: hidden;"/>
                                                 </td>
@@ -391,7 +391,7 @@
                                         
                                             </tr>
                                             <tr>
-                                                <td colspan="2" bgcolor="#e3e3e3"><b>Administration_Title</b></td>
+                                                <td colspan="2" bgcolor="#e3e3e3"><b>Administration Title</b></td>
                                                 <td colspan="2" bgcolor="#FFFFFF"> 
                                                 <select name="administration_Title">
                                                 　  <?php 
@@ -412,7 +412,7 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td colspan="2" bgcolor="#e3e3e3"><b>center</b></td>
+                                                <td colspan="2" bgcolor="#e3e3e3"><b>Center</b></td>
                                                 <td colspan="2" bgcolor="#FFFFFF">
                                                     <input type="text" name="center" value="" 
                                                         style="width:250px; font-size:15px; text-align:center; 
@@ -534,18 +534,18 @@
                                                 <td colspan="1" bgcolor="#FFFFFF">
                                                     <input type="text" name="edu_Year" value=""
                                                         style="width:100px; font-size:15px; text-align:center; 
-                                                            text-overflow:ellipsis; overflow: hidden;"/>
+                                                            text-overflow:ellipsis; overflow: hidden;" placeholder="年份"/>
                                                 </td>
                                                 <td colspan="2" bgcolor="#FFFFFF">
-                                                <H3>主修: </div><input type="text" name="edu_Major" value=""
+                                                主修: </div><input type="text" name="edu_Major" value=""
                                                         style="width:300px; font-size:15px; text-align:center; 
-                                                            text-overflow:ellipsis; overflow: hidden;"/><p></H3>
-                                                <H3>部門: <input type="text" name="edu_Department" value=""
+                                                            text-overflow:ellipsis; overflow: hidden;"/><p>
+                                                部門: <input type="text" name="edu_Department" value=""
                                                         style="width:300px; font-size:15px; text-align:center; 
-                                                            text-overflow:ellipsis; overflow: hidden;"/><p></H3>
-                                                <H3>學校: <input type="text" name="edu_School" value=""
+                                                            text-overflow:ellipsis; overflow: hidden;"/><p>
+                                                學校: <input type="text" name="edu_School" value=""
                                                         style="width:300px; font-size:15px; text-align:center; 
-                                                            text-overflow:ellipsis; overflow: hidden;"/></H3>
+                                                            text-overflow:ellipsis; overflow: hidden;"/>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -553,7 +553,7 @@
                                             </tr>
                                             <tr>
                                                 <td colspan="4" bgcolor="#FFFFFF"><!--faculty_responsibilities-->
-                                                <p>
+                                                <p></p>
                                                 <select multiple="multiple" name="faculty_responsibilities[]"> <!--問題需要處理-->
                                                 　  <?php 
                                                         $data_avsAnswer = mysqli_query($con , "select * from avsAnswer where avsAnswer_Title='Faculty_Responsibilities'");                                                         
@@ -864,8 +864,8 @@
                                                         </select>
                                                         </td>
                                                     </tr>
-                                                    <input type="button" value="增加" onclick="Course_Taught_Program_add_new_data()">&nbsp;
-                                                    <input type="button" value="減少" onclick="Course_Taught_Program_remove_data()"><br/>
+                                                    <input type="button" value="增加 +" onclick="Course_Taught_Program_add_new_data()">&nbsp;
+                                                    <input type="button" value="減少 −" onclick="Course_Taught_Program_remove_data()"><br/>
                                             </table>
                                         </div>
                                 </li>
@@ -911,8 +911,8 @@
                                                             </textarea>
                                                         </td>
                                                     </tr>
-                                                    <input type="button" value="增加" onclick="Service_Type_add_new_data()">&nbsp;
-                                                    <input type="button" value="減少" onclick="Service_Type_remove_data()"><br/>
+                                                    <input type="button" value="增加 +" onclick="Service_Type_add_new_data()">&nbsp;
+                                                    <input type="button" value="減少 −" onclick="Service_Type_remove_data()"><br/>
                                             </table>
                                         </div>
                                 </li>
@@ -926,7 +926,6 @@
                                             <h4>Peer-reviewed Journals</h4> <!--小分類-->			
                                             <table id=Peer_reviewed  width="790" border="1" style="font-size:15px">
                                                 <tr>
-													
                                                     <td colspan="1" bgcolor="#e3e3e3"><b>Year</b></td>
                                                     <td colspan="1" bgcolor="#e3e3e3"><b>Topic</b></td>
                                                     <td colspan="1" bgcolor="#e3e3e3"><b>Description(Title,etc)</b></td>
@@ -1004,9 +1003,10 @@
                                                         </select>
                                                         </td>
                                                     </tr>
-                                                    <input type="button" value="增加" onclick="Peer_reviewed_add_new_data()">&nbsp;
-                                                    <input type="button" value="減少" onclick="Peer_reviewed_remove_data()"><br/>
-                                            </table>						
+                                                    <input type="button" value="增加 +" onclick="Peer_reviewed_add_new_data()">&nbsp;
+                                                    <input type="button" value="減少 −" onclick="Peer_reviewed_remove_data()"><br/>
+                                            </table>
+
                                             <h4>Research Monographs</h4> <!--小分類-->
                                             <table id=Research_Monographs width="790" border="1" style="font-size:15px">
                                                 <tr>                      
@@ -1049,8 +1049,8 @@
                                                             </textarea>
                                                         </td>         
                                                     </tr>
-                                                    <input type="button" value="增加" onclick="Research_Monographs_add_new_data()">&nbsp;
-                                                    <input type="button" value="減少" onclick="Research_Monographs_remove_data()"><br/>
+                                                    <input type="button" value="增加 +" onclick="Research_Monographs_add_new_data()">&nbsp;
+                                                    <input type="button" value="減少 −" onclick="Research_Monographs_remove_data()"><br/>
                                             </table>
 													
                                             <h4>Academic Meeting Proceedings</h4> <!--小分類-->
@@ -1096,8 +1096,8 @@
                                                             </textarea>
                                                         </td>
                                                     </tr>
-                                                    <input type="button" value="增加" onclick="Meeting_Proceedings_And_Other_add_new_data()">&nbsp;
-                                                    <input type="button" value="減少" onclick="Meeting_Proceedings_And_Other_remove_data()"><br/>
+                                                    <input type="button" value="增加 +" onclick="Meeting_Proceedings_And_Other_add_new_data()">&nbsp;
+                                                    <input type="button" value="減少 −" onclick="Meeting_Proceedings_And_Other_remove_data()"><br/>
                                             </table>
 									
 
@@ -1144,8 +1144,8 @@
                                                             </textarea>
                                                         </td>
                                                     </tr>
-                                                    <input type="button" value="增加" onclick="Professional_Meeting_Proceedings_add_new_data()">&nbsp;
-                                                    <input type="button" value="減少" onclick="Professional_Meeting_Proceedings_remove_data()"><br/>
+                                                    <input type="button" value="增加 +" onclick="Professional_Meeting_Proceedings_add_new_data()">&nbsp;
+                                                    <input type="button" value="減少 −" onclick="Professional_Meeting_Proceedings_remove_data()"><br/>
                                             </table>
 								
 											
@@ -1195,8 +1195,8 @@
                                                             </textarea>
                                                         </td>
                                                     </tr>
-                                                    <input type="button" value="增加" onclick="Textbooks_Chapters_add_new_data()">&nbsp;
-                                                    <input type="button" value="減少" onclick="Textbooks_Chapters_remove_data()"><br/>
+                                                    <input type="button" value="增加 +" onclick="Textbooks_Chapters_add_new_data()">&nbsp;
+                                                    <input type="button" value="減少 −" onclick="Textbooks_Chapters_remove_data()"><br/>
                                             </table>
 						
 
@@ -1243,8 +1243,8 @@
                                                             </textarea>
                                                         </td>
                                                     </tr>
-                                                    <input type="button" value="增加" onclick="Cases_add_new_data()">&nbsp;
-                                                    <input type="button" value="減少" onclick="Cases_remove_data()"><br/>
+                                                    <input type="button" value="增加 +" onclick="Cases_add_new_data()">&nbsp;
+                                                    <input type="button" value="減少 −" onclick="Cases_remove_data()"><br/>
                                             </table>
 								
 
@@ -1285,8 +1285,8 @@
                                                             </textarea>
                                                         </td>
                                                     </tr>
-                                                    <input type="button" value="增加" onclick="Other_Teaching_Materials_add_new_data()">&nbsp;
-                                                    <input type="button" value="減少" onclick="Other_Teaching_Materials_remove_data()"><br/>
+                                                    <input type="button" value="增加 +" onclick="Other_Teaching_Materials_add_new_data()">&nbsp;
+                                                    <input type="button" value="減少 −" onclick="Other_Teaching_Materials_remove_data()"><br/>
                                             </table>
 								
 
@@ -1327,8 +1327,8 @@
                                                             </textarea>
                                                         </td>
                                                     </tr>
-                                                    <input type="button" value="增加" onclick="Honors_Competitive_Awards_Received_add_new_data()">&nbsp;
-                                                    <input type="button" value="減少" onclick="Honors_Competitive_Awards_Received_remove_data()"><br/>
+                                                    <input type="button" value="增加 +" onclick="Honors_Competitive_Awards_Received_add_new_data()">&nbsp;
+                                                    <input type="button" value="減少 −" onclick="Honors_Competitive_Awards_Received_remove_data()"><br/>
                                             </table>
 											
                                         </div>
@@ -1377,8 +1377,8 @@
                                                                 text-overflow:ellipsis; overflow: hidden;"/>
                                                         </td>
                                                     </tr>
-                                                    <input type="button" value="增加" onclick="Professional_History_add_new_data()">&nbsp;
-                                                    <input type="button" value="減少" onclick="Professional_History_remove_data()"><br/>
+                                                    <input type="button" value="增加 +" onclick="Professional_History_add_new_data()">&nbsp;
+                                                    <input type="button" value="減少 −" onclick="Professional_History_remove_data()"><br/>
                                             </table>
 										
 
@@ -1424,8 +1424,8 @@
                                                             </textarea>
                                                         </td>
                                                     </tr>
-                                                    <input type="button" value="增加" onclick="Professional_Development_add_new_data()">&nbsp;
-                                                    <input type="button" value="減少" onclick="Professional_Development_remove_data()"><br/>
+                                                    <input type="button" value="增加 +" onclick="Professional_Development_add_new_data()">&nbsp;
+                                                    <input type="button" value="減少 −" onclick="Professional_Development_remove_data()"><br/>
                                             </table>
 								
 
@@ -1448,13 +1448,12 @@
                                                                     text-overflow:ellipsis; overflow: hidden;"/>
                                                         </td>
                                                         <td colspan="1" bgcolor="#FFFFFF">
-                                                            <input type="text" name="Professional_Societies_description[]" value=""
-                                                                    style="width:100px; font-size:15px; text-align:center; 
-                                                                        text-overflow:ellipsis; overflow: hidden;"/>
+                                                            <textarea cols="40" rows="5" name="Teaching_Impacts_description[]" style="font-size:15px; margin:15px auto 0px auto;" text-overflow:ellipsis; overflow: hidden;>
+                                                            </textarea>
                                                         </td>
                                                     </tr>
-                                                    <input type="button" value="增加" onclick="Professional_Societies_add_new_data()">&nbsp;
-                                                    <input type="button" value="減少" onclick="Professional_Societies_remove_data()"><br/>               
+                                                    <input type="button" value="增加 +" onclick="Professional_Societies_add_new_data()">&nbsp;
+                                                    <input type="button" value="減少 −" onclick="Professional_Societies_remove_data()"><br/> 
                                             </table>		
                                         </div>
                                 </li>

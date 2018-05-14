@@ -86,8 +86,9 @@
                     <div>
 						<br></br>
                         <form action="searchList.php" method="post">
-                            <p style="font-size:20px;">請輸入要搜尋的教師:  <input type="text" name="searchName" style="width:15%; height:15%; font-size:20px; font-weight:bold;">
-                        <input type="submit" name="submit_Btn" id="submit_Btn" value="提交" style="width:15%; height:15%; font-size:20px; font-weight:bold;" onClick="document.form1.submit()">
+                            <p style="font-size:20px;">請輸入要搜尋的教師:
+                            <input type="text2" name="searchName" style="width:20%; height:15%; font-size:20px;" placeholder="輸入教師名稱">
+                            <input type="submit" name="submit_Btn" id="submit_Btn" value="提交" style="width:80; height:30; font-size:15px;" onClick="document.form1.submit()">
                             </p>
                         </form>
 						<?php
