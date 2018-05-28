@@ -82,7 +82,7 @@
             }
         function Course_Taught_Program_remove_data() {
             var Course_Taught_Program_num = document.getElementById("Course_Taught_Program").rows.length;
-            if(Course_Taught_Program_num >2)
+            if(Course_Taught_Program_num >1)
                 document.getElementById("Course_Taught_Program").deleteRow(-1);
         }
         function Service_Type_add_new_data() {
@@ -98,7 +98,7 @@
             }
         function Service_Type_remove_data() {
             var Service_Type_num = document.getElementById("Service_Type").rows.length;
-            if(Service_Type_num >2)
+            if(Service_Type_num >1)
                 document.getElementById("Service_Type").deleteRow(-1);
         }
         function Peer_reviewed_add_new_data() {
@@ -120,7 +120,7 @@
             }
         function Peer_reviewed_remove_data() {
             var Peer_reviewed_num = document.getElementById("Peer_reviewed").rows.length;
-            if(Peer_reviewed_num >2)
+            if(Peer_reviewed_num >1)
                 document.getElementById("Peer_reviewed").deleteRow(-1);
         }
         function Research_Monographs_add_new_data() {
@@ -138,7 +138,7 @@
             }
         function Research_Monographs_remove_data() {
             var Research_Monographs_num = document.getElementById("Research_Monographs").rows.length;
-            if(Research_Monographs_num >2)
+            if(Research_Monographs_num >1)
                 document.getElementById("Research_Monographs").deleteRow(-1);
         }
         function Meeting_Proceedings_And_Other_add_new_data() {
@@ -156,7 +156,7 @@
             }
         function Meeting_Proceedings_And_Other_remove_data() {
             var Meeting_Proceedings_And_Other_num = document.getElementById("Meeting_Proceedings_And_Other").rows.length;
-            if(Meeting_Proceedings_And_Other_num >2)
+            if(Meeting_Proceedings_And_Other_num >1)
                 document.getElementById("Meeting_Proceedings_And_Other").deleteRow(-1);
         }
         function Professional_Meeting_Proceedings_add_new_data() {
@@ -174,7 +174,7 @@
             }
         function Professional_Meeting_Proceedings_remove_data() {
             var Professional_Meeting_Proceedings_num = document.getElementById("Professional_Meeting_Proceedings").rows.length;
-            if(Professional_Meeting_Proceedings_num >2)
+            if(Professional_Meeting_Proceedings_num >1)
                 document.getElementById("Professional_Meeting_Proceedings").deleteRow(-1);
         }
         function Textbooks_Chapters_add_new_data() {
@@ -192,7 +192,7 @@
             }
         function Textbooks_Chapters_remove_data() {
             var Textbooks_Chapters_num = document.getElementById("Textbooks_Chapters").rows.length;
-            if(Textbooks_Chapters_num >2)
+            if(Textbooks_Chapters_num >1)
                 document.getElementById("Textbooks_Chapters").deleteRow(-1);
         }
         function Cases_add_new_data() {
@@ -210,7 +210,7 @@
             }
         function Cases_remove_data() {
             var Cases_num = document.getElementById("Cases").rows.length;
-            if(Cases_num >2)
+            if(Cases_num >1)
                 document.getElementById("Cases").deleteRow(-1);
         }
         function Other_Teaching_Materials_add_new_data() {
@@ -226,7 +226,7 @@
             }
         function Other_Teaching_Materials_remove_data() {
             var Other_Teaching_Materials_num = document.getElementById("Other_Teaching_Materials").rows.length;
-            if(Other_Teaching_Materials_num >2)
+            if(Other_Teaching_Materials_num >1)
                 document.getElementById("Other_Teaching_Materials").deleteRow(-1);
         }
         function Honors_Competitive_Awards_Received_add_new_data() {
@@ -242,7 +242,7 @@
             }
         function Honors_Competitive_Awards_Received_remove_data() {
             var Honors_Competitive_Awards_Received_num = document.getElementById("Honors_Competitive_Awards_Received").rows.length;
-            if(Honors_Competitive_Awards_Received_num >2)
+            if(Honors_Competitive_Awards_Received_num >1)
                 document.getElementById("Honors_Competitive_Awards_Received").deleteRow(-1);
         }
         function Professional_History_add_new_data() {
@@ -262,7 +262,7 @@
             }
         function Professional_History_remove_data() {
             var Professional_History_num = document.getElementById("Professional_History").rows.length;
-            if(Professional_History_num >2)
+            if(Professional_History_num >1)
                 document.getElementById("Professional_History").deleteRow(-1);
         }
         function Professional_Development_add_new_data() {
@@ -276,11 +276,11 @@
             Td = Professional_Development_Tr.insertCell(Professional_Development_Tr.cells.length);
             Td.innerHTML ='<input type="text" name="Professional_Development_topic[]" value="" style="width:100px; font-size:15px; text-align:center; text-overflow:ellipsis; overflow: hidden;"/>';
             Td = Professional_Development_Tr.insertCell(Professional_Development_Tr.cells.length);
-            Td.innerHTML ='<textarea name="Professional_Development_description[]" cols="40" rows="5" style="font-size:15px; margin:15px auto 0px auto;" text-overflow:ellipsis; overflow: hidden;></textarea>';
+            Td.innerHTML ='<textarea name="Professional_Development_description[]" cols="30" rows="5" style="font-size:15px; margin:15px auto 0px auto;" text-overflow:ellipsis; overflow: hidden;></textarea>';
             }
         function Professional_Development_remove_data() {
             var Professional_Development_num = document.getElementById("Professional_Development").rows.length;
-            if(Professional_Development_num >2)
+            if(Professional_Development_num >1)
                 document.getElementById("Professional_Development").deleteRow(-1);
         }
         function Professional_Societies_add_new_data() {
@@ -297,7 +297,7 @@
             }
         function Professional_Societies_remove_data() {
             var Professional_Societies_num = document.getElementById("Professional_Societies").rows.length;
-            if(Professional_Societies_num >2)
+            if(Professional_Societies_num >1)
                 document.getElementById("Professional_Societies").deleteRow(-1);
         }
 		$(function(){
@@ -330,8 +330,8 @@
                         <div><a href="createTea.php">履歷填寫</a></div><br/>
                         <div><a href="search_teacherData.php">搜尋教師資料</a></div><br/>
                         <div><a href="new_teacherData.php">新增教師資料</a></div><br/>
-                        <div><a href="deleteImformation.php">刪除教師資料</a></div><br/>
-                        <div><a href="result.php">修改教師資料</a></div><br/>
+                        <div><a href="deleteInformation.php">刪除教師資料</a></div><br/>
+                        <div><a href="result.php">回上一頁</a></div><br/>
                         <div><a href="logoutUnset.php">登出</a></div><br/>
                     </fieldset>
                 </div>
@@ -372,73 +372,7 @@
                                                     <td colspan="1" bgcolor="#e3e3e3"><b>Semester</b></td>
                                                     <td colspan="1" bgcolor="#e3e3e3"><b>Course Title</b></td>
                                                     <td colspan="1" bgcolor="#e3e3e3"><b>Credit hour</b></td>
-                                                </tr>
-                                                <tr>
-                                                    <td colspan="1" bgcolor="#FFFFFF">
-                                                    <select name="program[]">
-                                                        　  <?php 
-                                                                $data_avsAnswer = mysqli_query($con,"select * from avsAnswer where avsAnswer_Title='Course_Taught_Program'");                                                         
-                                                                for($j=0; $j<mysqli_num_rows($data_avsAnswer); $j++){  //count($academic_Title) 計算陣列數
-                                                                    $avs=mysqli_fetch_row($data_avsAnswer);
-                                                                    if(($rs[1])==$avs[1]){ ?> 
-                                                                        <option selected="true" name="academic_Title" value="<?php echo $avs[1]; ?>"><?php echo $avs[1]."(已選擇)"; ?></option>                 
-                                                                    <?php
-                                                                    }
-                                                                    else{ ?>
-                                                                        <option name="academic_Title" value="<?php echo $avs[1]; ?>"><?php echo $avs[1]; ?></option>
-                                                                    <?php
-                                                                    } 
-                                                                }   
-                                                            ?>  
-                                                        </select>
-                                                        </td>
-                                                        <td colspan="1" bgcolor="#FFFFFF">
-                                                            <input type="text" name="academic_year[]" value=""
-                                                                style="width:100px; font-size:15px; text-align:center; 
-                                                                    text-overflow:ellipsis; overflow: hidden;"/>
-                                                        </td>
-                                                        <td colspan="1" bgcolor="#FFFFFF">
-                                                        <select name="semester[]">
-                                                        　  <?php 
-                                                                $data_avsAnswer = mysqli_query($con,"select * from avsAnswer where avsAnswer_Title='Semester'");                                                         
-                                                                for($j=0; $j<mysqli_num_rows($data_avsAnswer); $j++){  //count($academic_Title) 計算陣列數
-                                                                    $avs=mysqli_fetch_row($data_avsAnswer);
-                                                                    if(($rs[3])==$avs[1]){ ?> 
-                                                                        <option selected="true" name="academic_Title" value="<?php echo $avs[1]; ?>"><?php echo $avs[1]."(已選擇)"; ?></option>                 
-                                                                    <?php
-                                                                    }
-                                                                    else{ ?>
-                                                                        <option name="academic_Title" value="<?php echo $avs[1]; ?>"><?php echo $avs[1]; ?></option>
-                                                                    <?php
-                                                                    } 
-                                                                }   
-                                                            ?>  
-                                                        </select>
-                                                        </td>
-                                                        <td colspan="1" bgcolor="#FFFFFF">
-                                                            <input type="text" name="course_title[]" value=""
-                                                                style="width:100px; font-size:15px; text-align:center; 
-                                                                    text-overflow:ellipsis; overflow: hidden;"/>
-                                                        </td>
-                                                        <td colspan="1" bgcolor="#FFFFFF">
-                                                        <select name="credit_hour[]">
-                                                        　  <?php 
-                                                                $data_avsAnswer = mysqli_query($con,"select * from avsAnswer where avsAnswer_Title='Credit_hour'");                                                         
-                                                                for($j=0; $j<mysqli_num_rows($data_avsAnswer); $j++){  //count($academic_Title) 計算陣列數
-                                                                    $avs=mysqli_fetch_row($data_avsAnswer);
-                                                                    if(($rs[5])==$avs[1]){ ?> 
-                                                                        <option selected="true" name="academic_Title" value="<?php echo $avs[1]; ?>"><?php echo $avs[1]."(已選擇)"; ?></option>                 
-                                                                    <?php
-                                                                    }
-                                                                    else{ ?>
-                                                                        <option name="academic_Title" value="<?php echo $avs[1]; ?>"><?php echo $avs[1]; ?></option>
-                                                                    <?php
-                                                                    } 
-                                                                }   
-                                                            ?>  
-                                                        </select>
-                                                        </td>
-                                                    </tr>
+                                                </tr>     
                                                     <input type="button" value="增加 +" onclick="Course_Taught_Program_add_new_data()">&nbsp;
                                                     <input type="button" value="減少 −" onclick="Course_Taught_Program_remove_data()"><br/>
                                             </table>
@@ -456,36 +390,6 @@
                                                     <td colspan="1" bgcolor="#e3e3e3"><b>Service Type</b></td>
                                                     <td colspan="1" bgcolor="#e3e3e3"><b>Description (Title, Institute/Unit, etc.)</b></td>
                                                 </tr>
-                                                <?php
-                                                    ?><tr>
-                                                        <td colspan="1" bgcolor="#FFFFFF">
-                                                        <input type="text" name="service_Year[]" value=""
-                                                            style="width:100px; font-size:15px; text-align:center; 
-                                                                text-overflow:ellipsis; overflow: hidden;"/>                  
-                                                        </td>
-                                                        <td colspan="1" bgcolor="#FFFFFF">
-                                                        <select name="service_type[]">
-                                                        　  <?php 
-                                                                $data_avsAnswer = mysqli_query($con,"select * from avsAnswer where avsAnswer_Title='Service_Type'");                                                         
-                                                                for($j=0; $j<mysqli_num_rows($data_avsAnswer); $j++){  //count($academic_Title) 計算陣列數
-                                                                    $avs=mysqli_fetch_row($data_avsAnswer);
-                                                                    if(($rs[2])==$avs[1]){ ?> 
-                                                                        <option selected="true" name="academic_Title" value="<?php echo $avs[1]; ?>"><?php echo $avs[1]."(已選擇)"; ?></option>                 
-                                                                    <?php
-                                                                    }
-                                                                    else{ ?>
-                                                                        <option name="academic_Title" value="<?php echo $avs[1]; ?>"><?php echo $avs[1]; ?></option>
-                                                                    <?php
-                                                                    } 
-                                                                }   
-                                                            ?>  
-                                                        </select>
-                                                        </td>
-                                                        <td colspan="1" bgcolor="#FFFFFF">
-                                                            <textarea name="service_description[]" cols="30" rows="5" style="font-size:15px; margin:15px auto 0px auto;" text-overflow:ellipsis; overflow: hidden;>
-                                                            </textarea>
-                                                        </td>
-                                                    </tr>
                                                     <input type="button" value="增加 +" onclick="Service_Type_add_new_data()">&nbsp;
                                                     <input type="button" value="減少 −" onclick="Service_Type_remove_data()"><br/>
                                             </table>
@@ -506,79 +410,9 @@
                                                     <td colspan="1" bgcolor="#e3e3e3"><b>Topic</b></td>
                                                     <td colspan="1" bgcolor="#e3e3e3"><b>Description(Title,etc)</b></td>
                                                     <td colspan="1" bgcolor="#e3e3e3"><b>MOST Rank</b></td>
-                                                    <td colspan="1" bgcolor="#e3e3e3"><b>Portfolio</b></td>
+                                                    <td colspan="1" bgcolor="#e3e3e3"><b>PortfolioICs</b></td>
                                                     <td colspan="1" bgcolor="#e3e3e3"><b>Citation Index</b></td>
                                                 </tr>
-                                                <tr>											                                                 
-                                                        <td colspan="1" bgcolor="#FFFFFF">
-                                                        <input type="text" name="Peer_reviewed_year[]" value=""
-                                                            style="width:100px; font-size:15px; text-align:center; 
-                                                                text-overflow:ellipsis; overflow: hidden;"/>
-                                                        </td>
-                                                        <td colspan="1" bgcolor="#FFFFFF">
-                                                            <input type="text" name="Peer_reviewed_topic[]" value=""
-                                                                style="width:100px; font-size:15px; text-align:center; 
-                                                                    text-overflow:ellipsis; overflow: hidden;"/>
-                                                        </td>
-                                                        <td colspan="1" bgcolor="#FFFFFF">
-                                                            <textarea cols="20" rows="5" name="Peer_reviewed_description[]" style="font-size:15px; margin:15px auto 0px auto;" text-overflow:ellipsis; overflow: hidden;>
-                                                            </textarea>
-                                                        </td>
-                                                        <td colspan="1" bgcolor="#FFFFFF">
-                                                        <select name="most_rank[]">
-                                                        　  <?php 
-                                                                $data_avsAnswer = mysqli_query($con,"select * from avsAnswer where avsAnswer_Title='MOST_Rank'");                                                         
-                                                                for($j=0; $j<mysqli_num_rows($data_avsAnswer); $j++){  //count($academic_Title) 計算陣列數
-                                                                    $avs=mysqli_fetch_row($data_avsAnswer);
-                                                                    if(($rs[6])==$avs[1]){ ?> 
-                                                                        <option selected="true" name="academic_Title" value="<?php echo $avs[1]; ?>"><?php echo $avs[1]."(已選擇)"; ?></option>                 
-                                                                    <?php
-                                                                    }
-                                                                    else{ ?>
-                                                                        <option name="academic_Title" value="<?php echo $avs[1]; ?>"><?php echo $avs[1]; ?></option>
-                                                                    <?php
-                                                                    } 
-                                                                }   
-                                                            ?>  
-                                                        </select>
-                                                        </td>
-                                                        <td colspan="1" bgcolor="#FFFFFF">
-                                                        <select name="portfolio[]">
-                                                        　  <?php 
-                                                                $data_avsAnswer = mysqli_query($con,"select * from avsAnswer where avsAnswer_Title='Portfolio'");                                                         
-                                                                for($j=0; $j<mysqli_num_rows($data_avsAnswer); $j++){  //count($academic_Title) 計算陣列數
-                                                                    $avs=mysqli_fetch_row($data_avsAnswer);
-                                                                    if(($rs[7])==$avs[1]){ ?> 
-                                                                        <option selected="true" name="academic_Title" value="<?php echo $avs[1]; ?>"><?php echo $avs[1]."(已選擇)"; ?></option>                 
-                                                                    <?php
-                                                                    }
-                                                                    else{ ?>
-                                                                        <option name="academic_Title" value="<?php echo $avs[1]; ?>"><?php echo $avs[1]; ?></option>
-                                                                    <?php
-                                                                    } 
-                                                                }   
-                                                            ?>  
-                                                        </select>
-                                                        </td>
-                                                        <td colspan="1" bgcolor="#FFFFFF">
-                                                        <select name="citation_index[]">
-                                                        　  <?php 
-                                                                $data_avsAnswer = mysqli_query($con,"select * from avsAnswer where avsAnswer_Title='Citation_Index'");                                                         
-                                                                for($j=0; $j<mysqli_num_rows($data_avsAnswer); $j++){  //count($academic_Title) 計算陣列數
-                                                                    $avs=mysqli_fetch_row($data_avsAnswer);
-                                                                    if(($rs[8])==$avs[1]){ ?> 
-                                                                        <option selected="true" name="academic_Title" value="<?php echo $avs[1]; ?>"><?php echo $avs[1]."(已選擇)"; ?></option>                 
-                                                                    <?php
-                                                                    }
-                                                                    else{ ?>
-                                                                        <option name="academic_Title" value="<?php echo $avs[1]; ?>"><?php echo $avs[1]; ?></option>
-                                                                    <?php
-                                                                    } 
-                                                                }   
-                                                            ?>  
-                                                        </select>
-                                                        </td>
-                                                    </tr>
                                                     <input type="button" value="增加 +" onclick="Peer_reviewed_add_new_data()">&nbsp;
                                                     <input type="button" value="減少 −" onclick="Peer_reviewed_remove_data()"><br/>
                                             </table>						
@@ -590,45 +424,11 @@
                                                     <td colspan="1" bgcolor="#e3e3e3"><b>Topic</b></td>
                                                     <td colspan="1" bgcolor="#e3e3e3"><b>Description(Title,etc.)</b></td>
                                                 </tr>
-                                                <tr>										
-                                                        <td colspan="1" bgcolor="#FFFFFF">
-                                                        <input type="text" name="Research_Monographs_year[]" value=""
-                                                            style="width:100px; font-size:15px; text-align:center; 
-                                                                text-overflow:ellipsis; overflow: hidden;"/>
-                                                        </td>
-                                                        <td colspan="1" bgcolor="#FFFFFF">
-                                                        <select name="Research_Monographs_type[]">
-                                                        　  <?php 
-                                                                $data_avsAnswer = mysqli_query($con,"select * from avsAnswer where avsAnswer_Title='Research_Monographs_Type'");                                                         
-                                                                for($j=0; $j<mysqli_num_rows($data_avsAnswer); $j++){  //count($academic_Title) 計算陣列數
-                                                                    $avs=mysqli_fetch_row($data_avsAnswer);
-                                                                    if(($rs[2])==$avs[1]){ ?> 
-                                                                        <option selected="true" name="academic_Title" value="<?php echo $avs[1]; ?>"><?php echo $avs[1]."(已選擇)"; ?></option>                 
-                                                                    <?php
-                                                                    }
-                                                                    else{ ?>
-                                                                        <option name="academic_Title" value="<?php echo $avs[1]; ?>"><?php echo $avs[1]; ?></option>
-                                                                    <?php
-                                                                    } 
-                                                                }   
-                                                            ?>  
-                                                        </select>
-                                                        </td>
-                                                        <td colspan="1" bgcolor="#FFFFFF">
-                                                            <input type="text" name="Research_Monographs_topic[]" value=""
-                                                                style="width:100px; font-size:15px; text-align:center; 
-                                                                    text-overflow:ellipsis; overflow: hidden;"/>
-                                                        </td>
-                                                        <td colspan="1" bgcolor="#FFFFFF">
-                                                            <textarea cols="20" rows="5" name="Research_Monographs_description[]" style="font-size:15px; margin:15px auto 0px auto;" text-overflow:ellipsis; overflow: hidden;>
-                                                            </textarea>
-                                                        </td>         
-                                                    </tr>
                                                     <input type="button" value="增加 +" onclick="Research_Monographs_add_new_data()">&nbsp;
                                                     <input type="button" value="減少 −" onclick="Research_Monographs_remove_data()"><br/>
                                             </table>
 													
-                                            <h4>Academic Meeting Proceedings</h4> <!--小分類-->
+                                            <h4>Academic and Professional Meeting Proceedings</h4> <!--小分類-->
 								
                                             <table id=Meeting_Proceedings_And_Other width="790" border="1" style="font-size:15px">
                                                 <tr>
@@ -637,93 +437,10 @@
                                                     <td colspan="1" bgcolor="#e3e3e3"><b>Topic</b></td>
                                                     <td colspan="1" bgcolor="#e3e3e3"><b>Description(Title, Meeting, etc.)</b></td>
                                                 </tr>
-                                                <tr>
-                                                        <td colspan="1" bgcolor="#FFFFFF">
-                                                        <input type="text" name="Meeting_Proceedings_And_Other_year[]" value=""
-                                                            style="width:100px; font-size:15px; text-align:center; 
-                                                                text-overflow:ellipsis; overflow: hidden;"/>
-                                                        </td>
-                                                        <td colspan="1" bgcolor="#FFFFFF">
-                                                        <select name="Meeting_Proceedings_And_Other_type[]">
-                                                        　  <?php 
-                                                                $data_avsAnswer = mysqli_query($con,"select * from avsAnswer where avsAnswer_Title='Academic_Meeting_Proceedings_Type'");                                                         
-                                                                for($j=0; $j<mysqli_num_rows($data_avsAnswer); $j++){  //count($academic_Title) 計算陣列數
-                                                                    $avs=mysqli_fetch_row($data_avsAnswer);
-                                                                    if(($rs[2])==$avs[1]){ ?> 
-                                                                        <option selected="true" name="academic_Title" value="<?php echo $avs[1]; ?>"><?php echo $avs[1]."(已選擇)"; ?></option>                 
-                                                                    <?php
-                                                                    }
-                                                                    else{ ?>
-                                                                        <option name="academic_Title" value="<?php echo $avs[1]; ?>"><?php echo $avs[1]; ?></option>
-                                                                    <?php
-                                                                    } 
-                                                                }   
-                                                            ?>  
-                                                        </select>
-                                                        </td>
-                                                        <td colspan="1" bgcolor="#FFFFFF">
-                                                            <input type="text" name="Meeting_Proceedings_And_Other_topic[]" value=""
-                                                                style="width:100px; font-size:15px; text-align:center; 
-                                                                    text-overflow:ellipsis; overflow: hidden;"/>
-                                                        </td>
-                                                        <td colspan="1" bgcolor="#FFFFFF">
-                                                            <textarea cols="20" rows="5" name="Meeting_Proceedings_And_Other_description[]" style="font-size:15px; margin:15px auto 0px auto;" text-overflow:ellipsis; overflow: hidden;>
-                                                            </textarea>
-                                                        </td>
-                                                    </tr>
                                                     <input type="button" value="增加 +" onclick="Meeting_Proceedings_And_Other_add_new_data()">&nbsp;
                                                     <input type="button" value="減少 −" onclick="Meeting_Proceedings_And_Other_remove_data()"><br/>
                                             </table>
-									
-
-                                            <h4>Professional Meeting Proceedings</h4> <!--小分類-->
-							
-                                            <table id=Professional_Meeting_Proceedings width="790" border="1" style="font-size:15px">
-                                                <tr>
-                                                    <td colspan="1" bgcolor="#e3e3e3"><b>Year</b></td>
-                                                    <td colspan="1" bgcolor="#e3e3e3"><b>Type</b></td>
-                                                    <td colspan="1" bgcolor="#e3e3e3"><b>Topic</b></td>
-                                                    <td colspan="1" bgcolor="#e3e3e3"><b>Description(Title, Meeting, etc.)</b></td>
-                                                </tr>
-                                                <tr>
-                                                        <td colspan="1" bgcolor="#FFFFFF">
-                                                        <input type="text" name="Professional_Meeting_Proceedings_year[]" value=""
-                                                            style="width:100px; font-size:15px; text-align:center; 
-                                                                text-overflow:ellipsis; overflow: hidden;"/>
-                                                        </td>
-                                                        <td colspan="1" bgcolor="#FFFFFF">
-                                                        <select name="Professional_Meeting_Proceedings_type[]">
-                                                        　  <?php 
-                                                                $data_avsAnswer = mysqli_query($con,"select * from avsAnswer where avsAnswer_Title='Professional_Meeting_Proceedings_Type'");                                                         
-                                                                for($j=0; $j<mysqli_num_rows($data_avsAnswer); $j++){  //count($academic_Title) 計算陣列數
-                                                                    $avs=mysqli_fetch_row($data_avsAnswer);
-                                                                    if(($rs[2])==$avs[1]){ ?> 
-                                                                        <option selected="true" name="academic_Title" value="<?php echo $avs[1]; ?>"><?php echo $avs[1]."(已選擇)"; ?></option>                 
-                                                                    <?php
-                                                                    }
-                                                                    else{ ?>
-                                                                        <option name="academic_Title" value="<?php echo $avs[1]; ?>"><?php echo $avs[1]; ?></option>
-                                                                    <?php
-                                                                    } 
-                                                                }   
-                                                            ?>  
-                                                        </select>
-                                                        </td>
-                                                        <td colspan="1" bgcolor="#FFFFFF">
-                                                            <input type="text" name="Professional_Meeting_Proceedings_topic[]" value=""
-                                                                style="width:100px; font-size:15px; text-align:center; 
-                                                                    text-overflow:ellipsis; overflow: hidden;"/>
-                                                        </td>
-                                                        <td colspan="1" bgcolor="#FFFFFF">
-                                                            <textarea cols="20" rows="5" name="Professional_Meeting_Proceedings_description[]" style="font-size:15px; margin:15px auto 0px auto;" text-overflow:ellipsis; overflow: hidden;>
-                                                            </textarea>
-                                                        </td>
-                                                    </tr>
-                                                    <input type="button" value="增加 +" onclick="Professional_Meeting_Proceedings_add_new_data()">&nbsp;
-                                                    <input type="button" value="減少 −" onclick="Professional_Meeting_Proceedings_remove_data()"><br/>
-                                            </table>
-								
-											
+																		
                                             <h4>Textbooks/Chapters</h4> <!--小分類-->
 									
                                             <table id=Textbooks_Chapters width="790" border="1" style="font-size:15px">
@@ -733,43 +450,6 @@
                                                     <td colspan="1" bgcolor="#e3e3e3"><b>Topic</b></td>
                                                     <td colspan="1" bgcolor="#e3e3e3"><b>Description(Title, Meeting, etc.)</b></td>
                                                 </tr>
-                                                <tr>
-                                                        <input type="hidden" name="Textbooks_Chapters_Id[]"  onfocus="blur()" value=""
-                                                            style="width:100px; font-size:15px; text-align:center; 
-                                                                text-overflow:ellipsis; overflow: hidden;"/>
-                                                        <td colspan="1" bgcolor="#FFFFFF">
-                                                        <input type="text" name="Textbooks_Chapters_year[]" value=""
-                                                            style="width:100px; font-size:15px; text-align:center; 
-                                                                text-overflow:ellipsis; overflow: hidden;"/>
-                                                        </td>
-                                                        <td colspan="1" bgcolor="#FFFFFF">
-                                                        <select name="Textbooks_Chapters_type[]">
-                                                        　  <?php 
-                                                                $data_avsAnswer = mysqli_query($con,"select * from avsAnswer where avsAnswer_Title='Textbooks_Chapters_Type'");                                                         
-                                                                for($j=0; $j<mysqli_num_rows($data_avsAnswer); $j++){  //count($academic_Title) 計算陣列數
-                                                                    $avs=mysqli_fetch_row($data_avsAnswer);
-                                                                    if(($rs[2])==$avs[1]){ ?> 
-                                                                        <option selected="true" name="academic_Title" value="<?php echo $avs[1]; ?>"><?php echo $avs[1]."(已選擇)"; ?></option>                 
-                                                                    <?php
-                                                                    }
-                                                                    else{ ?>
-                                                                        <option name="academic_Title" value="<?php echo $avs[1]; ?>"><?php echo $avs[1]; ?></option>
-                                                                    <?php
-                                                                    } 
-                                                                }   
-                                                            ?>  
-                                                        </select>
-                                                        </td>
-                                                        <td colspan="1" bgcolor="#FFFFFF">
-                                                            <input type="text" name="Textbooks_Chapters_topic[]" value=""
-                                                                style="width:100px; font-size:15px; text-align:center; 
-                                                                    text-overflow:ellipsis; overflow: hidden;"/>
-                                                        </td>
-                                                        <td colspan="1" bgcolor="#FFFFFF">
-                                                            <textarea cols="20" rows="5" name="Textbooks_Chapters_description[]" style="font-size:15px; margin:15px auto 0px auto;" text-overflow:ellipsis; overflow: hidden;>
-                                                            </textarea>
-                                                        </td>
-                                                    </tr>
                                                     <input type="button" value="增加 +" onclick="Textbooks_Chapters_add_new_data()">&nbsp;
                                                     <input type="button" value="減少 −" onclick="Textbooks_Chapters_remove_data()"><br/>
                                             </table>
@@ -784,40 +464,6 @@
                                                     <td colspan="1" bgcolor="#e3e3e3"><b>Topic</b></td>
                                                     <td colspan="1" bgcolor="#e3e3e3"><b>Description(Title, Meeting, etc.)</b></td>
                                                 </tr>
-                                                <tr>
-                                                        <td colspan="1" bgcolor="#FFFFFF">
-                                                        <input type="text" name="Cases_year[]" value=""
-                                                            style="width:100px; font-size:15px; text-align:center; 
-                                                                text-overflow:ellipsis; overflow: hidden;"/>
-                                                        </td>
-                                                        <td colspan="1" bgcolor="#FFFFFF">
-                                                        <select name="Cases_type[]">
-                                                        　  <?php 
-                                                                $data_avsAnswer = mysqli_query($con,"select * from avsAnswer where avsAnswer_Title='Cases_Type'");                                                         
-                                                                for($j=0; $j<mysqli_num_rows($data_avsAnswer); $j++){  //count($academic_Title) 計算陣列數
-                                                                    $avs=mysqli_fetch_row($data_avsAnswer);
-                                                                    if(($rs[2])==$avs[1]){ ?> 
-                                                                        <option selected="true" name="academic_Title" value="<?php echo $avs[1]; ?>"><?php echo $avs[1]."(已選擇)"; ?></option>                 
-                                                                    <?php
-                                                                    }
-                                                                    else{ ?>
-                                                                        <option name="academic_Title" value="<?php echo $avs[1]; ?>"><?php echo $avs[1]; ?></option>
-                                                                    <?php
-                                                                    } 
-                                                                }   
-                                                            ?>  
-                                                        </select>
-                                                        </td>
-                                                        <td colspan="1" bgcolor="#FFFFFF">
-                                                            <input type="text" name="Cases_topic[]" value=""
-                                                                style="width:100px; font-size:15px; text-align:center; 
-                                                                    text-overflow:ellipsis; overflow: hidden;"/>
-                                                        </td>
-                                                        <td colspan="1" bgcolor="#FFFFFF">
-                                                            <textarea cols="20" rows="5" name="Cases_description[]" style="font-size:15px; margin:15px auto 0px auto;" text-overflow:ellipsis; overflow: hidden;>
-                                                            </textarea>
-                                                        </td>
-                                                    </tr>
                                                     <input type="button" value="增加 +" onclick="Cases_add_new_data()">&nbsp;
                                                     <input type="button" value="減少 −" onclick="Cases_remove_data()"><br/>
                                             </table>
@@ -830,36 +476,7 @@
                                                     <td colspan="1" bgcolor="#e3e3e3"><b>Year</b></td>
                                                     <td colspan="1" bgcolor="#e3e3e3"><b>Type</b></td>
                                                     <td colspan="1" bgcolor="#e3e3e3"><b>Title</b></td>
-                                                </tr>
-                                                <tr>
-                                                        <td colspan="1" bgcolor="#FFFFFF">
-                                                        <input type="text" name="Other_Teaching_Materials_year[]" value=""
-                                                            style="width:100px; font-size:15px; text-align:center; 
-                                                                text-overflow:ellipsis; overflow: hidden;"/>
-                                                        </td>
-                                                        <td colspan="1" bgcolor="#FFFFFF">
-                                                        <select name="Other_Teaching_Materials_type[]">
-                                                        　  <?php 
-                                                                $data_avsAnswer = mysqli_query($con,"select * from avsAnswer where avsAnswer_Title='Other_Teaching_Materials_Type'");                                                         
-                                                                for($j=0; $j<mysqli_num_rows($data_avsAnswer); $j++){  //count($academic_Title) 計算陣列數
-                                                                    $avs=mysqli_fetch_row($data_avsAnswer);
-                                                                    if(($rs[2])==$avs[1]){ ?> 
-                                                                        <option selected="true" name="academic_Title" value="<?php echo $avs[1]; ?>"><?php echo $avs[1]."(已選擇)"; ?></option>                 
-                                                                    <?php
-                                                                    }
-                                                                    else{ ?>
-                                                                        <option name="academic_Title" value="<?php echo $avs[1]; ?>"><?php echo $avs[1]; ?></option>
-                                                                    <?php
-                                                                    } 
-                                                                }   
-                                                            ?>  
-                                                        </select>
-                                                        </td>
-                                                        <td colspan="1" bgcolor="#FFFFFF">
-                                                            <textarea cols="20" rows="5" name="Other_Teaching_Materials_title[]" style="font-size:15px; margin:15px auto 0px auto;" text-overflow:ellipsis; overflow: hidden;>
-                                                            </textarea>
-                                                        </td>
-                                                    </tr>
+                                                </tr> 
                                                     <input type="button" value="增加 +" onclick="Other_Teaching_Materials_add_new_data()">&nbsp;
                                                     <input type="button" value="減少 −" onclick="Other_Teaching_Materials_remove_data()"><br/>
                                             </table>
@@ -873,35 +490,6 @@
                                                     <td colspan="1" bgcolor="#e3e3e3"><b>Type</b></td>
                                                     <td colspan="1" bgcolor="#e3e3e3"><b>Title</b></td>
                                                 </tr>
-                                                <tr>
-                                                        <td colspan="1" bgcolor="#FFFFFF">
-                                                        <input type="text" name="Honors_Competitive_Awards_Received_year[]" value="<?php echo $rs[1] ?>"
-                                                            style="width:100px; font-size:15px; text-align:center; 
-                                                                text-overflow:ellipsis; overflow: hidden;"/>
-                                                        </td>
-                                                        <td colspan="1" bgcolor="#FFFFFF">
-                                                        <select name="Honors_Competitive_Awards_Received_type[]">
-                                                        　  <?php 
-                                                                $data_avsAnswer = mysqli_query($con,"select * from avsAnswer where avsAnswer_Title='Honors_Competitive_Awards_Received_Type'");                                                         
-                                                                for($j=0; $j<mysqli_num_rows($data_avsAnswer); $j++){  //count($academic_Title) 計算陣列數
-                                                                    $avs=mysqli_fetch_row($data_avsAnswer);
-                                                                    if(($rs[2])==$avs[1]){ ?> 
-                                                                        <option selected="true" name="academic_Title" value="<?php echo $avs[1]; ?>"><?php echo $avs[1]."(已選擇)"; ?></option>                 
-                                                                    <?php
-                                                                    }
-                                                                    else{ ?>
-                                                                        <option name="academic_Title" value="<?php echo $avs[1]; ?>"><?php echo $avs[1]; ?></option>
-                                                                    <?php
-                                                                    } 
-                                                                }   
-                                                            ?>  
-                                                        </select>
-                                                        </td>
-                                                        <td colspan="1" bgcolor="#FFFFFF">
-                                                            <textarea cols="20" rows="5" name="Honors_Competitive_Awards_Received_title[]" style="font-size:15px; margin:15px auto 0px auto;" text-overflow:ellipsis; overflow: hidden;>
-                                                            </textarea>
-                                                        </td>
-                                                    </tr>
                                                     <input type="button" value="增加 +" onclick="Honors_Competitive_Awards_Received_add_new_data()">&nbsp;
                                                     <input type="button" value="減少 −" onclick="Honors_Competitive_Awards_Received_remove_data()"><br/>
                                             </table>
@@ -914,119 +502,40 @@
                                 <li>
                                     <div class="qa_title" style="text-decoration:none;">業界 ▾</div>
 									    <div class="qa_content">
-                                            <h4>Professional History 業界經歷</h4> <!--小分類-->
-											
-											
+                                            <h4>Professional History</h4> <!--小分類-->
                                             <table id=Professional_History width="790" border="1" style="font-size:15px">
                                                 <tr>
-                                                    <td colspan="1" bgcolor="#e3e3e3"><b>Month, Year</b></td>
+                                                    <td colspan="1" bgcolor="#e3e3e3"><b>Year</b></td>
                                                     <td colspan="1" bgcolor="#e3e3e3"><b>Title</b></td>
                                                     <td colspan="1" bgcolor="#e3e3e3"><b>Unit / Department</b></td>
                                                     <td colspan="1" bgcolor="#e3e3e3"><b>Section / College</b></td>
                                                     <td colspan="1" bgcolor="#e3e3e3"><b>Company / Foundation</b></td>
-                                                </tr>
-                                                <tr>
-                                                        <td colspan="1" bgcolor="#FFFFFF">
-                                                        <input type="text" name="Professional_History_month_year[]" value=""
-                                                            style="width:100px; font-size:15px; text-align:center; 
-                                                                text-overflow:ellipsis; overflow: hidden;"/>
-                                                        </td>
-                                                        <td colspan="1" bgcolor="#FFFFFF">
-                                                            <input type="text" name="Professional_History_title[]" value=""
-                                                                style="width:100px; font-size:15px; text-align:center; 
-                                                                    text-overflow:ellipsis; overflow: hidden;"/>
-                                                        </td>
-                                                        <td colspan="1" bgcolor="#FFFFFF">
-                                                            <input type="text" name="Professional_History_department[]" value=""
-                                                                    style="width:100px; font-size:15px; text-align:center; 
-                                                                        text-overflow:ellipsis; overflow: hidden;"/>
-                                                        </td>
-                                                        <td colspan="1" bgcolor="#FFFFFF">
-                                                            <input type="text" name="Professional_History_section[]" value=""
-                                                                style="width:100px; font-size:15px; text-align:center; 
-                                                                    text-overflow:ellipsis; overflow: hidden;"/>
-                                                        </td>
-                                                        <td colspan="1" bgcolor="#FFFFFF">
-                                                        <input type="text" name="Professional_History_company[]" value=""
-                                                            style="width:100px; font-size:15px; text-align:center; 
-                                                                text-overflow:ellipsis; overflow: hidden;"/>
-                                                        </td>
-                                                    </tr>
+                                                </tr> 
                                                     <input type="button" value="增加 +" onclick="Professional_History_add_new_data()">&nbsp;
                                                     <input type="button" value="減少 −" onclick="Professional_History_remove_data()"><br/>
                                             </table>
 										
 
-                                            <h4>Professional Development 業界發展</h4> <!--小分類-->
+                                            <h4>Professional Development</h4> <!--小分類-->
                                             <table id=Professional_Development width="790" border="1" style="font-size:15px">
                                                 <tr>                                       
 													<td colspan="1" bgcolor="#e3e3e3"><b>Year</b></td>
                                                     <td colspan="1" bgcolor="#e3e3e3"><b>Type</b></td>
                                                     <td colspan="1" bgcolor="#e3e3e3"><b>Topic</b></td>
                                                     <td colspan="1" bgcolor="#e3e3e3"><b>Description (institute/unit, etc.)</b></td>
-                                                </tr>
-                                                <tr>
-                                                        <td colspan="1" bgcolor="#FFFFFF">
-                                                        <input type="text" name="Professional_Development_month_year[]" value=""
-                                                            style="width:100px; font-size:15px; text-align:center; 
-                                                                text-overflow:ellipsis; overflow: hidden;"/>
-                                                        </td>
-                                                        <td colspan="1" bgcolor="#FFFFFF">
-                                                        <select name="Professional_Development_type[]">
-                                                        　  <?php 
-                                                                $data_avsAnswer = mysqli_query($con,"select * from avsAnswer where avsAnswer_Title='Professional_Development_Type'");                                                         
-                                                                for($j=0; $j<mysqli_num_rows($data_avsAnswer); $j++){  //count($academic_Title) 計算陣列數
-                                                                    $avs=mysqli_fetch_row($data_avsAnswer);
-                                                                    if(($rs[2])==$avs[1]){ ?> 
-                                                                        <option selected="true" name="academic_Title" value="<?php echo $avs[1]; ?>"><?php echo $avs[1]."(已選擇)"; ?></option>                 
-                                                                    <?php
-                                                                    }
-                                                                    else{ ?>
-                                                                        <option name="academic_Title" value="<?php echo $avs[1]; ?>"><?php echo $avs[1]; ?></option>
-                                                                    <?php
-                                                                    } 
-                                                                }   
-                                                            ?>  
-                                                        </select>
-                                                        </td>
-                                                        <td colspan="1" bgcolor="#FFFFFF">
-                                                            <input type="text" name="Professional_Development_topic[]" value=""
-                                                                    style="width:100px; font-size:15px; text-align:center; 
-                                                                        text-overflow:ellipsis; overflow: hidden;"/>
-                                                        </td>
-                                                        <td colspan="1" bgcolor="#FFFFFF">
-                                                            <textarea cols="20" rows="5" name="Professional_Development_description[]" style="font-size:15px; margin:15px auto 0px auto;" text-overflow:ellipsis; overflow: hidden;>
-                                                            </textarea>
-                                                        </td>
-                                                    </tr>
+                                                </tr>         
                                                     <input type="button" value="增加 +" onclick="Professional_Development_add_new_data()">&nbsp;
                                                     <input type="button" value="減少 −" onclick="Professional_Development_remove_data()"><br/>
                                             </table>
 								
 
-                                            <h4>Professional History 業界團體</h4> <!--小分類-->
+                                            <h4>Professional Societies</h4> <!--小分類-->
                                             <table id=Professional_Societies width="790" border="1" style="font-size:15px">
                                                 <tr>
 													<td colspan="1" bgcolor="#e3e3e3"><b>Year</b></td>
                                                     <td colspan="1" bgcolor="#e3e3e3"><b>Topic</b></td>
                                                     <td colspan="1" bgcolor="#e3e3e3"><b>Description(society/association/unit/agency)</b></td>
                                                 </tr>
-                                                <tr>
-                                                        <td colspan="1" bgcolor="#FFFFFF">
-                                                        <input type="text" name="Professional_Societies_year[]" value=""
-                                                            style="width:100px; font-size:15px; text-align:center; 
-                                                                text-overflow:ellipsis; overflow: hidden;"/>
-                                                        </td>
-                                                        <td colspan="1" bgcolor="#FFFFFF">
-                                                            <input type="text" name="Professional_Societies_topic[]" value=""
-                                                                style="width:100px; font-size:15px; text-align:center; 
-                                                                    text-overflow:ellipsis; overflow: hidden;"/>
-                                                        </td>
-                                                        <td colspan="1" bgcolor="#FFFFFF">
-                                                            <textarea name="Professional_Societies_description[]" cols="40" rows="5" style="font-size:15px; margin:15px auto 0px auto;" text-overflow:ellipsis; overflow: hidden;>
-                                                            </textarea>
-                                                        </td>
-                                                    </tr>
                                                     <input type="button" value="增加 +" onclick="Professional_Societies_add_new_data()">&nbsp;
                                                     <input type="button" value="減少 −" onclick="Professional_Societies_remove_data()"><br/>               
                                             </table>		

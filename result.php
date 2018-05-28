@@ -23,19 +23,19 @@
         <!--Importing Database Script-->
         <?php
 			include("connection.php");
-			session_start();
+            session_start();
 			if($_POST['teacher_ID']!=null) {
 			  $teacherID = $_POST['teacher_ID'];
 			  $_SESSION['teacherID']=$teacherID;	
-			  //echo "not null";
+			  //echo  $_SESSION['teacherID'];
 			}
 			else{
 			//   echo "null!";
 			//   echo $teacherID;
 			//   echo "null!";
 			//   echo $_SESSION['teacherID'];
-			  $teacherID = $_SESSION['teacherID'];
-			//   echo "null!";
+                 $teacherID = $_SESSION['teacherID'];
+                 //echo $teacherID;
 			}
             $today = date('Y-m-d') ;
         ?>
@@ -96,7 +96,7 @@
                         <div><a href="createTea.php">履歷填寫</a></div><br/>
                         <div><a href="search_teacherData.php">搜尋教師資料</a></div><br/>
                         <div><a href="new_teacherData.php">新增教師資料</a></div><br/>
-                        <div><a href="deleteImformation.php">刪除教師資料</a></div><br/>
+                        <div><a href="deleteInformation.php">刪除教師資料</a></div><br/>
                         <div><a href="logoutUnset.php">登出</a></div><br/>
                     </fieldset>
                 </div>
@@ -120,8 +120,13 @@
                     echo'<br>';
                     //echo $_SESSION['yearWrong'];
                     // echo $_SESSION['teacherID'];
-                    echo'<br>';
-                        
+                    // echo'<br>';
+                    // echo "年是 " . date("Y") . "<br>";    
+                    $nowYear = date("Y");  //nowYear
+                    $intervalYear = $nowYear-5;
+                    // echo $nowYear;
+                    // echo $intervalYear;
+                    
                     unset($_SESSION['yearWrong']);
                     unset($_SESSION['$searchYear1']);
                     unset($_SESSION['$searchYear2']);
@@ -202,7 +207,7 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td colspan="2" bgcolor="#e3e3e3"><b>Department 科系</b></td>
+                                                <td colspan="2" bgcolor="#e3e3e3"><b>Department</b></td>
                                                 <td colspan="2" bgcolor="#FFFFFF">
                                                 <select name="department">
                                                 　  <?php 
@@ -223,7 +228,7 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td colspan="2" bgcolor="#e3e3e3"><b>College 學院</b></td>
+                                                <td colspan="2" bgcolor="#e3e3e3"><b>College</b></td>
                                                 <td colspan="2" bgcolor="#FFFFFF">
                                                 <select name="college">
                                                 　  <?php 
@@ -264,7 +269,7 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td colspan="1" bgcolor="#e3e3e3"><b>Phone 電話</b></td>
+                                                <td colspan="1" bgcolor="#e3e3e3"><b>Phone</b></td>
                                                 <td colspan="1" bgcolor="#FFFFFF">
                                                     <input type="text" name="phone" value="<?php echo $data[8]; ?>" 
                                                         style="width:200px; font-size:15px; text-align:center; 
@@ -319,13 +324,13 @@
                                                             text-overflow:ellipsis; overflow: hidden;"/>
                                                 </td>
                                                 <td colspan="2" bgcolor="#FFFFFF">
-                                                主修: </div><input type="text" name="edu_Major" value="<?php echo $data[14]; ?>"
+                                                Major: </div><input type="text" name="edu_Major" value="<?php echo $data[14]; ?>"
                                                         style="width:300px; font-size:15px; text-align:center; 
                                                             text-overflow:ellipsis; overflow: hidden;"/><p>
-                                                部門: <input type="text" name="edu_Department" value="<?php echo $data[15]; ?>"
+                                                Department: <input type="text" name="edu_Department" value="<?php echo $data[15]; ?>"
                                                         style="width:300px; font-size:15px; text-align:center; 
                                                             text-overflow:ellipsis; overflow: hidden;"/><p>
-                                                學校: <input type="text" name="edu_School" value="<?php echo $data[16]; ?>"
+                                                School: <input type="text" name="edu_School" value="<?php echo $data[16]; ?>"
                                                         style="width:300px; font-size:15px; text-align:center; 
                                                             text-overflow:ellipsis; overflow: hidden;"/>
                                                 </td>
@@ -335,8 +340,8 @@
                                             </tr>
                                             <tr>
                                                 <td colspan="4" bgcolor="#FFFFFF"><!--faculty_responsibilities-->
-                                                <p></p>
-                                                <select multiple="multiple" name="faculty_responsibilities[]" Style="font-size:15px;"> <!--問題需要處理-->
+                                                (多選請使用 Ctrl + 滑鼠點擊)<br>
+                                                <select multiple="multiple" name="faculty_responsibilities[]" Style="font-size:15px;">
                                                 　  <?php 
                                                         $data_avsAnswer = mysqli_query($con ,"select * from avsAnswer where avsAnswer_Title='Faculty_Responsibilities'");                                                         
                                                         $faculty_responsibilities_array= explode(",", $data[17]); //字串轉陣列
@@ -354,8 +359,7 @@
                                                             if($same==1){ ?>                           
                                                                 <option name="faculty_responsibilities" style="background:#C7D2EE;" value="<?php echo $avs[1];?>"><?php echo $avs[1]."(已選擇)";?></option>                
                                                             <?php
-                                                            }
-                                                            else{ ?>
+                                                            }else{ ?>
                                                                 <option name="faculty_responsibilities" value="<?php echo $avs[1]; ?>"><?php echo $avs[1] ?></option>   
                                                             <?php
                                                             }                    
@@ -530,6 +534,23 @@
                                                         }   
                                                     ?>  
                                                 </select> 
+                                                <br>  
+                                                <select name="normal_professional_responsibilities7">
+                                                　  <?php 
+                                                        $data_avsAnswer = mysqli_query($con ,"select * from avsAnswer where avsAnswer_Title='Normal_Professional_Responsibilitiese'");                                                         
+                                                        for($i=0; $i<mysqli_num_rows($data_avsAnswer); $i++){  //count($academic_Title) 計算陣列數
+                                                            $avs=mysqli_fetch_row($data_avsAnswer);
+                                                            if(($data[28])==$avs[1]){ ?> 
+                                                                <option selected="true" name="academic_Title" value="<?php echo $avs[1]; ?>"><?php echo $avs[1]."(已選擇)"; ?></option>                 
+                                                            <?php
+                                                            }
+                                                            else{ ?>
+                                                                <option name="academic_Title" value="<?php echo $avs[1]; ?>"><?php echo $avs[1]; ?></option>
+                                                            <?php
+                                                            } 
+                                                        }   
+                                                    ?>  
+                                                </select> 
                                                 </td>
                                             </tr>
                                             <tr>
@@ -559,23 +580,23 @@
                                                     
                                                     
                                                         
-                                                    $data[28] = $data_BDS_Peer_reviewed_Journals[1]+$data_BDS_Meeting_Proceedings[1]+$data_BDS_Peer_Research_Monographs[1]+ $data_BDS_Teaching_Materials_And_Awards[1];
-                                                    $data[29] = $data_AIS_Peer_reviewed_Journals[1]+$data_AIS_Meeting_Proceedings[1]+$data_AIS_Peer_Research_Monographs[1]+ $data_AIS_Teaching_Materials_And_Awards[1];
-                                                    $data[30] = $data_TLS_Peer_reviewed_Journals[1]+$data_TLS_Meeting_Proceedings[1]+$data_TLS_Peer_Research_Monographs[1]+ $data_TLS_Teaching_Materials_And_Awards[1];
+                                                    $data[29] = $data_BDS_Peer_reviewed_Journals[1]+$data_BDS_Meeting_Proceedings[1]+$data_BDS_Peer_Research_Monographs[1]+ $data_BDS_Teaching_Materials_And_Awards[1];
+                                                    $data[30] = $data_AIS_Peer_reviewed_Journals[1]+$data_AIS_Meeting_Proceedings[1]+$data_AIS_Peer_Research_Monographs[1]+ $data_AIS_Teaching_Materials_And_Awards[1];
+                                                    $data[31] = $data_TLS_Peer_reviewed_Journals[1]+$data_TLS_Meeting_Proceedings[1]+$data_TLS_Peer_Research_Monographs[1]+ $data_TLS_Teaching_Materials_And_Awards[1];
                                                     
-                                                    $sql_Professor_Information = "UPDATE Professor_Information SET BDS = '$data[28]',AIS = '$data[29]',TLS = '$data[30]' WHERE Id = '$teacherID'";
+                                                    $sql_Professor_Information = "UPDATE Professor_Information SET BDS = '$data[29]',AIS = '$data[30]',TLS = '$data[31]' WHERE Id = '$teacherID'";
                                                     mysqli_query($con,$sql_Professor_Information);       
 
                                                 ?>        
                                                 <td colspan="2" bgcolor="FFFFFF">
                                                         <input type="text" name="portfolio_of_intellectual_contributions"
-                                                            value="<?php echo $data[28].", ".$data[29].", ".$data[30]; ?>" 
+                                                            value="<?php echo $data[29].", ".$data[30].", ".$data[31]; ?>" 
                                                                 style="width:200px; font-size:15px; text-align:center; 
                                                                     text-overflow:ellipsis; overflow: hidden;"/>
                                                 </td>
                                                 <td colspan="2" bgcolor="FFFFFF">
                                                         <input type="text" name="types_of_intellectual_contributions"
-                                                            value="<?php echo $data[31].", ".$data[32].", ".$data[33].", ".$data[34].", ".$data[35].", ".$data[36].", ".$data[37].", ".$data[38]; ?>" 
+                                                            value="<?php echo $data[32].", ".$data[33].", ".$data[34].", ".$data[35].", ".$data[36].", ".$data[37].", ".$data[38].", ".$data[39]; ?>" 
                                                                 style="width:200px; font-size:15px; text-align:center; 
                                                                     text-overflow:ellipsis; overflow: hidden;"/>
                                                 </td>
@@ -587,7 +608,7 @@
                                                 <td colspan="4" bgcolor="FFFFFF">
                                                     <textarea cols="30" rows="3" name="teaching_interests" 
                                                     style="font-size:15px; margin:15px auto 0px auto;" text-overflow:ellipsis; overflow: hidden;>
-                                                        <?php echo $data[39]; ?>
+                                                        <?php echo $data[40]; ?>
                                                     </textarea>
                                                 </td>
                                             </tr>
@@ -606,7 +627,7 @@
                             <ul class="accordionPart">
                                 <li>
                                     <div class="qa_title" style="text-decoration:none;">學年度授課 ▾</div>
-                                    <?php $data = mysqli_query($con, "select * from Course_Taught where Professor_Id='$teacherID'"); ?>
+                                    <?php $data = mysqli_query($con, "select * from Course_Taught where Professor_Id='$teacherID' AND Academic_Year > '$intervalYear' AND Academic_Year <= '$nowYear'"); ?>
 									    <div class="qa_content">
                                             <table width="790" border="1" style="font-size:15px">
                                                 <tr>
@@ -702,7 +723,7 @@
                             <ul class="accordionPart">
                                 <li>
                                     <div class="qa_title" style="text-decoration:none;">學術服務 ▾</div>
-                                    <?php $data = mysqli_query($con,"select * from Academic_Services where Professor_Id='$teacherID'"); ?>
+                                    <?php $data = mysqli_query($con,"select * from Academic_Services where Professor_Id='$teacherID' AND Services_Year > '$intervalYear' AND Services_Year <= '$nowYear'"); ?>
 									    <div class="qa_content">
                                             <table width="790" border="1" style="font-size:15px">
                                                 <tr>
@@ -769,13 +790,13 @@
                                                 <tr>
                                                     <td colspan="1" bgcolor="#e3e3e3"><b>Year</b></td>
                                                     <td colspan="1" bgcolor="#e3e3e3"><b>Topic</b></td>
-                                                    <td colspan="2" bgcolor="#e3e3e3"><b>Description(Title,etc)</b></td>
+                                                    <td colspan="2" bgcolor="#e3e3e3"><b>Description(Title,Journal,etc.-APA format)</b></td>
                                                     <td colspan="2" bgcolor="#e3e3e3"><b>MOST Rank</b></td>
-                                                    <td colspan="1" bgcolor="#e3e3e3"><b>Portfolio</b></td>
+                                                    <td colspan="1" bgcolor="#e3e3e3"><b>PortfolioICs</b></td>
                                                     <td colspan="1" bgcolor="#e3e3e3"><b>Citation Index</b></td>
                                                 </tr>
                                                 <?php
-                                                    $data = mysqli_query($con,"select * from Peer_reviewed_Journals where Professor_Id='$teacherID'");
+                                                    $data = mysqli_query($con,"select * from Peer_reviewed_Journals where Professor_Id='$teacherID' AND Reviewed_Year > '$intervalYear' AND Reviewed_Year <= '$nowYear'");
                                                     for($i=0; $i<mysqli_num_rows($data); $i++){ //把每一列的資料取出來
                                                         $rs=mysqli_fetch_row($data);
                                                     ?>
@@ -873,7 +894,7 @@
                                                     <td colspan="1" bgcolor="#e3e3e3"><b>Description(Title,etc.)</b></td>
                                                 </tr>
                                                 <?php
-                                                    $data = mysqli_query($con,"select * from Research_Monographs where Professor_Id='$teacherID'");
+                                                    $data = mysqli_query($con,"select * from Research_Monographs where Professor_Id='$teacherID' AND Research_Year > '$intervalYear' AND Research_Year <= '$nowYear'");
                                                     for($i=0; $i<mysqli_num_rows($data); $i++){ //把每一列的資料取出來
                                                         $rs=mysqli_fetch_row($data);
                                                     ?><tr>										
@@ -922,7 +943,7 @@
 									
 											
 												
-                                            <h4>Academic Meeting Proceedings</h4> <!--小分類-->
+                                            <h4>Academic and Professional Meeting Proceedings</h4> <!--小分類-->
 								
                                             <table width="790" border="1" style="font-size:15px">
                                                 <tr>
@@ -932,7 +953,7 @@
                                                     <td colspan="1" bgcolor="#e3e3e3"><b>Description(Title, Meeting, etc.)</b></td>
                                                 </tr>
                                                 <?php
-                                                    $data = mysqli_query($con,"select * from Meeting_Proceedings_And_Other where Professor_Id='$teacherID' && Meeting_Class = 'Academic Meeting Proceedings'");
+                                                    $data = mysqli_query($con,"select * from Meeting_Proceedings_And_Other where Professor_Id='$teacherID' && Meeting_Class = 'Meeting Proceedings' AND Meeting_Year > '$intervalYear' AND Meeting_Year <= '$nowYear'");
                                                     for($i=0; $i<mysqli_num_rows($data); $i++){ //把每一列的資料取出來
                                                         $rs=mysqli_fetch_row($data);
                                                     ?><tr>
@@ -975,64 +996,8 @@
                                                     </tr>
                                                 <?php }?>
                                             </table>
-									
 
-                                            <h4>Professional Meeting Proceedings</h4> <!--小分類-->
-							
-                                            <table width="790" border="1" style="font-size:15px">
-                                                <tr>
-                                                    <td colspan="1" bgcolor="#e3e3e3"><b>Year</b></td>
-                                                    <td colspan="1" bgcolor="#e3e3e3"><b>Type</b></td>
-                                                    <td colspan="1" bgcolor="#e3e3e3"><b>Topic</b></td>
-                                                    <td colspan="1" bgcolor="#e3e3e3"><b>Description(Title, Meeting, etc.)</b></td>
-                                                </tr>
-                                                <?php
-                                                    $data = mysqli_query($con,"select * from Meeting_Proceedings_And_Other where Professor_Id='$teacherID' && Meeting_Class = 'Professional Meeting Proceedings'");
-                                                    for($i=0; $i<mysqli_num_rows($data); $i++){ //把每一列的資料取出來
-                                                        $rs=mysqli_fetch_row($data);
-                                                    ?><tr>
-                                                        <input type="hidden" name="Professional_Meeting_Proceedings_Id[]"  onfocus="blur()" value="<?php echo $rs[0] ?>"
-                                                            style="width:100px; font-size:15px; text-align:center; 
-                                                                text-overflow:ellipsis; overflow: hidden;"/>
-                                                        <td colspan="1" bgcolor="#FFFFFF">
-                                                        <input type="text" name="Professional_Meeting_Proceedings_year[]" value="<?php echo $rs[1] ?>"
-                                                            style="width:100px; font-size:15px; text-align:center; 
-                                                                text-overflow:ellipsis; overflow: hidden;"/>
-                                                        </td>
-                                                        <td colspan="1" bgcolor="#FFFFFF">
-                                                        <select name="Professional_Meeting_Proceedings_type[]">
-                                                        　  <?php 
-                                                                $data_avsAnswer = mysqli_query($con,"select * from avsAnswer where avsAnswer_Title='Professional_Meeting_Proceedings_Type'");                                                         
-                                                                for($j=0; $j<mysqli_num_rows($data_avsAnswer); $j++){  //count($academic_Title) 計算陣列數
-                                                                    $avs=mysqli_fetch_row($data_avsAnswer);
-                                                                    if(($rs[2])==$avs[1]){ ?> 
-                                                                        <option selected="true" name="academic_Title" value="<?php echo $avs[1]; ?>"><?php echo $avs[1]."(已選擇)"; ?></option>                 
-                                                                    <?php
-                                                                    }
-                                                                    else{ ?>
-                                                                        <option name="academic_Title" value="<?php echo $avs[1]; ?>"><?php echo $avs[1]; ?></option>
-                                                                    <?php
-                                                                    } 
-                                                                }   
-                                                            ?>  
-                                                        </select>
-                                                        </td>
-                                                        <td colspan="1" bgcolor="#FFFFFF">
-                                                            <input type="text" name="Professional_Meeting_Proceedings_topic[]" value="<?php echo $rs[3] ?>"
-                                                                style="width:100px; font-size:15px; text-align:center; 
-                                                                    text-overflow:ellipsis; overflow: hidden;"/>
-                                                        </td>
-                                                        <td colspan="1" bgcolor="#FFFFFF">
-                                                            <textarea cols="20" rows="5" name="Professional_Meeting_Proceedings_description[]" style="font-size:15px; margin:15px auto 0px auto;" text-overflow:ellipsis; overflow: hidden;>
-                                                                <?php echo rtrim($rs[4]); ?>
-                                                            </textarea>
-                                                        </td>
-                                                    </tr>
-                                                <?php }?>
-                                            </table>
-								
-											
-                                            <h4>Textbooks/Chapters</h4> <!--小分類-->
+                                        <h4>Textbooks/Chapters</h4> <!--小分類-->
 									
                                             <table width="790" border="1" style="font-size:15px">
                                                 <tr>
@@ -1042,7 +1007,7 @@
                                                     <td colspan="1" bgcolor="#e3e3e3"><b>Description(Title, Meeting, etc.)</b></td>
                                                 </tr>
                                                 <?php
-                                                    $data = mysqli_query($con,"select * from Meeting_Proceedings_And_Other where Professor_Id='$teacherID' && Meeting_Class = 'Textbooks/Chapters'");
+                                                    $data = mysqli_query($con,"select * from Meeting_Proceedings_And_Other where Professor_Id='$teacherID' && Meeting_Class = 'Textbooks/Chapters' AND Meeting_Year > '$intervalYear' AND Meeting_Year <= '$nowYear'");
                                                     for($i=0; $i<mysqli_num_rows($data); $i++){ //把每一列的資料取出來
                                                         $rs=mysqli_fetch_row($data);
                                                     ?><tr>
@@ -1097,7 +1062,7 @@
                                                     <td colspan="1" bgcolor="#e3e3e3"><b>Description(Title, Meeting, etc.)</b></td>
                                                 </tr>
                                                 <?php
-                                                    $data = mysqli_query($con,"select * from Meeting_Proceedings_And_Other where Professor_Id='$teacherID' && Meeting_Class = 'Cases'");
+                                                    $data = mysqli_query($con,"select * from Meeting_Proceedings_And_Other where Professor_Id='$teacherID' && Meeting_Class = 'Cases' AND Meeting_Year > '$intervalYear' AND Meeting_Year <= '$nowYear'");
                                                     for($i=0; $i<mysqli_num_rows($data); $i++){ //把每一列的資料取出來
                                                         $rs=mysqli_fetch_row($data);
                                                     ?><tr>
@@ -1151,7 +1116,7 @@
                                                     <td colspan="1" bgcolor="#e3e3e3"><b>Title</b></td>
                                                 </tr>
                                                 <?php
-                                                    $data = mysqli_query($con,"select * from Teaching_Materials_And_Awards where Professor_Id='$teacherID' && Contributions_name = 'Other_Teaching_Materials'");
+                                                    $data = mysqli_query($con,"select * from Teaching_Materials_And_Awards where Professor_Id='$teacherID' && Contributions_name = 'Other_Teaching_Materials' AND Teaching_Materials_And_Awards_Year > '$intervalYear' AND Teaching_Materials_And_Awards_Year <= '$nowYear'");
                                                     for($i=0; $i<mysqli_num_rows($data); $i++){ //把每一列的資料取出來
                                                         $rs=mysqli_fetch_row($data);
                                                     ?><tr>
@@ -1200,7 +1165,7 @@
                                                     <td colspan="1" bgcolor="#e3e3e3"><b>Title</b></td>
                                                 </tr>
                                                 <?php
-                                                    $data = mysqli_query($con,"select * from Teaching_Materials_And_Awards where  Professor_Id='$teacherID' && Contributions_name = 'Honors_Competitive_Awards_Received'");
+                                                    $data = mysqli_query($con,"select * from Teaching_Materials_And_Awards where  Professor_Id='$teacherID' && Contributions_name = 'Honors_Competitive_Awards_Received' AND Teaching_Materials_And_Awards_Year > '$intervalYear' AND Teaching_Materials_And_Awards_Year <= '$nowYear'");
                                                     for($i=0; $i<mysqli_num_rows($data); $i++){ //把每一列的資料取出來
                                                         $rs=mysqli_fetch_row($data);
                                                     ?><tr>
@@ -1252,19 +1217,19 @@
                                 <li>
                                     <div class="qa_title" style="text-decoration:none;">業界 ▾</div>
 									    <div class="qa_content">
-                                            <h4>Professional History 業界經歷</h4> <!--小分類-->
+                                            <h4>Professional History</h4> <!--小分類-->
 											
 											
                                             <table width="790" border="1" style="font-size:15px">
                                                 <tr>
-                                                    <td colspan="1" bgcolor="#e3e3e3"><b>Month, Year</b></td>
+                                                    <td colspan="1" bgcolor="#e3e3e3"><b>Year</b></td>
                                                     <td colspan="1" bgcolor="#e3e3e3"><b>Title</b></td>
                                                     <td colspan="1" bgcolor="#e3e3e3"><b>Unit / Department</b></td>
                                                     <td colspan="1" bgcolor="#e3e3e3"><b>Section / College</b></td>
                                                     <td colspan="1" bgcolor="#e3e3e3"><b>Company / Foundation</b></td>
                                                 </tr>
                                                 <?php
-                                                    $data = mysqli_query($con,"select * from Professional_History  where Professor_Id='$teacherID'");
+                                                    $data = mysqli_query($con,"select * from Professional_History  where Professor_Id='$teacherID' AND Month_Year > '$intervalYear' AND Month_Year <= '$nowYear'");
                                                     for($i=0; $i<mysqli_num_rows($data); $i++){ //把每一列的資料取出來
                                                         $rs=mysqli_fetch_row($data);
                                                     ?><tr>
@@ -1301,7 +1266,7 @@
                                             </table>
 										
 
-                                            <h4>Professional Development 業界發展</h4> <!--小分類-->
+                                            <h4>Professional Development</h4> <!--小分類-->
                                             <table width="790" border="1" style="font-size:15px">
                                                 <tr>                                       
 													<td colspan="1" bgcolor="#e3e3e3"><b>Year</b></td>
@@ -1310,7 +1275,7 @@
                                                     <td colspan="1" bgcolor="#e3e3e3"><b>Description (institute/unit, etc.)</b></td>
                                                 </tr>
                                                 <?php
-                                                    $data = mysqli_query($con,"select * from Meeting_Proceedings_And_Other where Professor_Id='$teacherID' && Meeting_Class = 'Professional Development'");
+                                                    $data = mysqli_query($con,"select * from Meeting_Proceedings_And_Other where Professor_Id='$teacherID' && Meeting_Class = 'Professional Development' AND Meeting_Year > '$intervalYear' AND Meeting_Year <= '$nowYear'");
                                                     for($i=0; $i<mysqli_num_rows($data); $i++){ //把每一列的資料取出來
                                                         $rs=mysqli_fetch_row($data);
                                                     ?><tr>
@@ -1355,7 +1320,7 @@
                                             </table>
 								
 
-                                            <h4>Professional History 業界團體</h4> <!--小分類-->
+                                            <h4>Professional Societies</h4> <!--小分類-->
                                             <table width="790" border="1" style="font-size:15px">
                                                 <tr>
 													<td colspan="1" bgcolor="#e3e3e3"><b>Year</b></td>
@@ -1363,7 +1328,7 @@
                                                     <td colspan="1" bgcolor="#e3e3e3"><b>Description(society/association/unit/agency)</b></td>
                                                 </tr>
                                                 <?php
-                                                    $data = mysqli_query($con,"select * from Professional_Societies where Professor_Id='$teacherID'");
+                                                    $data = mysqli_query($con,"select * from Professional_Societies where Professor_Id='$teacherID' AND Professional_Societies_Year > '$intervalYear' AND Professional_Societies_Year <= '$nowYear'");
                                                     for($i=0; $i<mysqli_num_rows($data); $i++){ //把每一列的資料取出來
                                                         $rs=mysqli_fetch_row($data);
                                                     ?><tr>
@@ -1411,7 +1376,7 @@
                                             <tr>
                                                 <td colspan="1" bgcolor="#FFFFFF">
                                                     <textarea cols="80" rows="5" name="Research_Impacts_description" style="font-size:15px; margin:15px auto 0px auto;" text-overflow:ellipsis; overflow: hidden;>
-                                                        <?php echo rtrim($data[40]); ?>
+                                                        <?php echo rtrim($data[41]); ?>
                                                     </textarea>
                                                 </td>
                                             </tr>
@@ -1421,7 +1386,7 @@
                                             <tr>
                                                 <td colspan="1" bgcolor="#FFFFFF">
                                                     <textarea cols="80" rows="5" name="Practice_Impacts_description" style="font-size:15px; margin:15px auto 0px auto;" text-overflow:ellipsis; overflow: hidden;>
-                                                        <?php echo rtrim($data[41]); ?>
+                                                        <?php echo rtrim($data[42]); ?>
                                                     </textarea>
                                                 </td>
                                             </tr>
@@ -1431,7 +1396,7 @@
                                             <tr>
                                                 <td colspan="1" bgcolor="#FFFFFF">
                                                     <textarea cols="80" rows="5" name="Teaching_Impacts_description" style="font-size:15px; margin:15px auto 0px auto;" text-overflow:ellipsis; overflow: hidden;>
-                                                        <?php echo rtrim($data[42]); ?>
+                                                        <?php echo rtrim($data[43]); ?>
                                                     </textarea>
                                                 </td>
                                             </tr>

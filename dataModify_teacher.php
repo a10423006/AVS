@@ -36,15 +36,19 @@
 	$normal_professional_responsibilities4 = $_POST['normal_professional_responsibilities4'];
 	$normal_professional_responsibilities5 = $_POST['normal_professional_responsibilities5'];
 	$normal_professional_responsibilities6 = $_POST['normal_professional_responsibilities6'];
-
+	$normal_professional_responsibilities7 = $_POST['normal_professional_responsibilities7'];
 	$portfolio_of_intellectual_contributions = $_POST['portfolio_of_intellectual_contributions'];//3個
 	$types_of_intellectual_contributions = $_POST['types_of_intellectual_contributions'];//4個
 
 	$output=implode(",",$faculty_responsibilities);  //陣列轉字串
 	//$faculty_responsibilities = print_r($faculty_responsibilities);
 
-	$sql_Professor_Information = "UPDATE Professor_Information SET Name = '$name',Academic_Title= '$academic_Title',Administration_Title='$administration_Title',Center = '$center',Department= '$department',College= '$college',University= '$university',Phone= '$phone',Cell= '$cell',E_mail = '$email',Website= '$website',Edu_Degree= '$edu_Degree',Edu_Year= '$edu_Year',Edu_Major= '$edu_Major',Edu_Department= '$edu_Department',Edu_School= '$edu_School',Responsibilitie= '$faculty_responsibilities' ,Faculty_Sufficiency = '$faculty_sufficiency',Time_Devoted_Mission = '$time_devoted_mission',Faculty_Qualification = '$faculty_qualification',Description = '$faculty_description',Teaching_Interests = '$teaching_interests',Normal_Professional_Responsibilities1 = '$normal_professional_responsibilities1',Normal_Professional_Responsibilities2 = '$normal_professional_responsibilities2',Normal_Professional_Responsibilities3 = '$normal_professional_responsibilities3',Normal_Professional_Responsibilities4 = '$normal_professional_responsibilities4',Normal_Professional_Responsibilities5 = '$normal_professional_responsibilities5',Normal_Professional_Responsibilities6 = '$normal_professional_responsibilities6' WHERE Id = '$teacherID'";
-	$sql_Professor_Information2 = "UPDATE Professor_Information SET  Responsibilitie= '$output' WHERE Id = '$teacherID'";
+	$sql_Professor_Information = "UPDATE Professor_Information SET Name = '$name',Academic_Title= '$academic_Title',Administration_Title='$administration_Title',Center = '$center',Department= '$department',College= '$college',University= '$university',Phone= '$phone',Cell= '$cell',E_mail = '$email',Website= '$website',Edu_Degree= '$edu_Degree',Edu_Year= '$edu_Year',Edu_Major= '$edu_Major',Edu_Department= '$edu_Department',Edu_School= '$edu_School' ,Faculty_Sufficiency = '$faculty_sufficiency',Time_Devoted_Mission = '$time_devoted_mission',Faculty_Qualification = '$faculty_qualification',Description = '$faculty_description',Teaching_Interests = '$teaching_interests',Normal_Professional_Responsibilities1 = '$normal_professional_responsibilities1',Normal_Professional_Responsibilities2 = '$normal_professional_responsibilities2',Normal_Professional_Responsibilities3 = '$normal_professional_responsibilities3',Normal_Professional_Responsibilities4 = '$normal_professional_responsibilities4',Normal_Professional_Responsibilities5 = '$normal_professional_responsibilities5',Normal_Professional_Responsibilities6 = '$normal_professional_responsibilities6',Normal_Professional_Responsibilities7 = '$normal_professional_responsibilities7' WHERE Id = '$teacherID'";
+	if($faculty_responsibilities==""){
+	}
+	else{
+		$sql_Professor_Information2 = "UPDATE Professor_Information SET  Responsibilitie= '$output' WHERE Id = '$teacherID'";
+	}
 
 	//警告視窗
 	Function my_msg($msg, $redirect){
@@ -57,7 +61,7 @@
 		return; 
 	}
 
-	if($name ="" || $academic_Title ="" || $administration_Title ="" || $center ="" || $department ="" || $college ="" || $university ="" || $phone ="" || $cell ="" || $email ="" || $website ="" || $edu_Degree ="" || $edu_Year ="" || $edu_Major ="" || $edu_Department ="" || $edu_School ="" || $faculty_responsibilities ="" || $faculty_sufficiency ="" || $time_devoted_mission ="" || $faculty_qualification ="" || $faculty_description ="" || $teaching_interests =""){
+	if($name =="" || $academic_Title =="" || $administration_Title =="" || $department =="" || $college =="" || $university =="" || $phone =="" || $cell =="" || $email =="" || $edu_Degree =="" || $edu_Year =="" || $edu_Major =="" || $edu_Department =="" || $edu_School ==""|| $faculty_sufficiency =="" || $time_devoted_mission =="" || $faculty_qualification =="" || $faculty_description =="" || $teaching_interests ==""){
 		my_msg('未輸入資料!', 'result.php');
 	}else{
 		mysqli_query($con, $sql_Professor_Information);

@@ -2,11 +2,21 @@
 	session_start();
 	$teacherID = $_SESSION['teacherID'];
 	include("connection.php");
+	//警告視窗
+	Function my_msg($msg, $redirect){
+		echo "<script language=\"javascript\">";
+		echo "window.alert('".$msg."')"; 
+		echo "</script>"; 
+		echo "<script language=\"javascript\">"; 
+		echo "location.href='".$redirect."'"; 
+		echo "</script>";
+		return; 
+	}
 	
 	//學年度授課
 	$course_id = $_POST['course_id'];
 	$program = $_POST['program'];
-	$academic_year = $_POST['$academic_year'];
+	$academic_year = $_POST['academic_year'];
 	$semester = $_POST['semester'];
 	$course_title = $_POST['course_title'];
 	$credit_hour = $_POST['credit_hour'];
@@ -108,26 +118,110 @@
 	$Professional_Societies_description = $_POST['Professional_Societies_description'];	
 	
 	//影響力描述
-	$teacherID = $_SESSION['teacherID'];
 	$Research_Impacts_description = $_POST['Research_Impacts_description'];
 	$Practice_Impacts_description = $_POST['Practice_Impacts_description'];
 	$Teaching_Impacts_description = $_POST['Teaching_Impacts_description'];
 
-	//警告視窗
-	Function my_msg($msg, $redirect){
-		echo "<script language=\"javascript\">";
-		echo "window.alert('".$msg."')"; 
-		echo "</script>"; 
-		echo "<script language=\"javascript\">"; 
-		echo "location.href='".$redirect."'"; 
-		echo "</script>";
-		return; 
-	}
-	
+	//檢查
+	//echo "success".$academic_year[0]."   ";
+	for($i=0; $i<count($program); $i++){ //學年度授課
+		if( $program[$i]=="" || $academic_year[$i]=="" || $semester[$i]=="" || $course_title[$i]=="" || $credit_hour[$i]==""){
+			my_msg('學年度授課未輸入資料!','result.php');
+			echo $program[$i]."  ".$academic_year[$i]."   ".$semester[$i]."    ". $course_title[$i]."    ".$credit_hour[$i];
+		}else{
+			//echo "success".$i;
+		}
+	}	
+	for($i=0; $i<count($service_type); $i++){ //學術服務
+		if($service_Year[$i]==""|| $service_type[$i]==""|| $service_description[$i]==""){
+			my_msg('學術服務未輸入資料!','result.php');
+		}else{
 
-	if($course_id = "" || $program = "" || $academic_year = "" || $semester = "" || $course_title = "" || $credit_hour = "" || $service_ID = "" || $service_Year = "" || $service_type = "" || $service_description = "" || $Peer_reviewed_id = "" || $Peer_reviewed_year = "" || $Peer_reviewed_topic = "" || $Peer_reviewed_description = "" || $Peer_reviewed_download_number = "" || $Peer_reviewed_status = "" || $most_rank = "" || $portfolio = "" || $citation_index = "" || $browses = "" || $supported_by = "" || $Research_Monographs_Id = "" || $Research_Monographs_year = "" || $Research_Monographs_type = "" || $Research_Monographs_topic = "" || $Research_Monographs_description = "" || $Research_Monographs_download_number = "" || $Research_Monographs_status = "" || $Research_Monographs_browses = "" || $Research_Monographs_supported_by = "" || $Meeting_Proceedings_And_Other_Id = "" || $Meeting_Proceedings_And_Other_year = "" || $Meeting_Proceedings_And_Other_type = "" || $Meeting_Proceedings_And_Other_topic = "" || $Meeting_Proceedings_And_Other_description = "" || $Professional_Meeting_Proceedings_Id = "" || $Professional_Meeting_Proceedings_year = "" || $Professional_Meeting_Proceedings_type = "" || $Professional_Meeting_Proceedings_topic = "" || $Professional_Meeting_Proceedings_description = "" || $Textbooks_Chapters_Id = "" || $Textbooks_Chapters_year = "" || $Textbooks_Chapters_type = "" || $Textbooks_Chapters_topic = "" || $Textbooks_Chapters_description = "" || $Cases_Id = "" || $Cases_year = "" || $Cases_type = "" || $Cases_topic = "" || $Cases_description = "" || $Other_Teaching_Materials_Id = "" || $Other_Teaching_Materials_year = "" || $Other_Teaching_Materials_type = "" || $Other_Teaching_Materials_title = "" || $Honors_Competitive_Awards_Received_Id = "" || $Honors_Competitive_Awards_Received_year = "" || $Honors_Competitive_Awards_Received_type = "" || $Honors_Competitive_Awards_Received_title = "" || $Professional_History_Id = "" || $Professional_History_month_year = "" || $Professional_History_title = "" || $Professional_History_department = "" || $Professional_History_section = "" || $Professional_History_company = "" || $Professional_Development_Id = "" || $Professional_Development_month_year = "" || $Professional_Development_type = "" || $Professional_Development_topic = "" || $Professional_Development_description = "" || $Professional_Societies_Id = "" || $Professional_Societies_year = "" || $Professional_Societies_topic = "" || $Professional_Societies_description = ""){
-		my_msg('未輸入資料!', 'result.php');
-	}else{
+		}
+	}	
+	for($i=0; $i<count($most_rank); $i++){ //Peer-reviewed Journals
+		if($Peer_reviewed_year[$i]==""|| $Peer_reviewed_topic[$i]==""|| $Peer_reviewed_description[$i]==""|| $most_rank[$i]==""|| $portfolio[$i]==""){
+			my_msg('Peer-reviewed Journals未輸入資料!','result.php');
+		}else{
+
+		}
+	}
+	for($i=0; $i<count($Research_Monographs_type); $i++){ //Research Monographs
+		if($Research_Monographs_year[$i]==""|| $Research_Monographs_type[$i]==""|| $Research_Monographs_topic[$i]==""|| $Research_Monographs_description[$i]==""){
+			my_msg('Research Monographs未輸入資料!','result.php');
+		}else{
+
+		}
+	}
+	for($i=0; $i<count($Meeting_Proceedings_And_Other_type); $i++){ //Academic Meeting Proceedings	
+		if($Meeting_Proceedings_And_Other_year[$i]==""|| $Meeting_Proceedings_And_Other_type[$i]==""|| $Meeting_Proceedings_And_Other_topic[$i]==""){
+			my_msg('Academic Meeting Proceedings未輸入資料!','result.php');
+		}else{
+
+		}
+	}
+	/*
+	for($i=0; $i<count($Professional_Meeting_Proceedings_type); $i++){ //Professional Meeting Proceedings
+		if($Professional_Meeting_Proceedings_year[$i]==""|| $Professional_Meeting_Proceedings_type[$i]==""|| $Professional_Meeting_Proceedings_topic[$i]==""){
+			my_msg('Professional Meeting Proceedings未輸入資料!','result.php');
+		}else{
+
+		}
+	}	
+	*/
+	for($i=0; $i<count($Textbooks_Chapters_type); $i++){ //Textbooks/Chapters
+		if($Textbooks_Chapters_year[$i]==""|| $Textbooks_Chapters_type[$i]==""|| $Textbooks_Chapters_topic[$i]==""){
+			my_msg('Textbooks/Chapters未輸入資料!','result.php');
+		}else{
+
+		}	
+	}	
+	for($i=0; $i<count($Cases_type); $i++){ //Cases
+		if($Cases_year[$i]==""|| $Cases_type[$i]==""|| $Cases_topic[$i]==""|| $Cases_description[$i]==""){
+			my_msg('Cases未輸入資料!','result.php');
+		}else{
+
+		}
+	}
+	for($i=0; $i<count($Other_Teaching_Materials_type); $i++){ //Other Teaching Materials
+		if($Other_Teaching_Materials_year[$i]==""|| $Other_Teaching_Materials_type[$i]==""|| $Other_Teaching_Materials_title[$i]==""){
+			my_msg('Other Teaching Materials未輸入資料!','result.php');
+		}else{
+
+		}
+	}		
+	for($i=0; $i<count($Honors_Competitive_Awards_Received_type); $i++){ //Honors and Competitive Awards Received
+		if($Honors_Competitive_Awards_Received_year[$i]==""|| $Honors_Competitive_Awards_Received_type[$i]==""|| $Honors_Competitive_Awards_Received_title[$i]==""){
+			my_msg('Honors and Competitive Awards Received未輸入資料!','result.php');
+		}else{
+
+		}	
+	}
+	for($i=0; $i<count($Professional_History_title); $i++){ //業界經歷
+		if($Professional_History_month_year[$i]==""|| $Professional_History_title[$i]==""|| $Professional_History_department[$i]==""|| $Professional_History_section[$i]==""){
+			my_msg('業界經歷未輸入資料!','result.php');
+		}else{
+
+		}
+	}
+	for($i=0; $i<count($Professional_Development_type); $i++){ //業界發展
+		if($Professional_Development_month_year[$i]==""|| $Professional_Development_type[$i]==""|| $Professional_Development_topic[$i]==""){
+			my_msg('業界發展未輸入資料!','result.php');
+		}else{
+
+		}
+	}
+	for($i=0; $i<count($Professional_Societies_topic); $i++){ //業界團體
+		if($Professional_Societies_year[$i]==""|| $Professional_Societies_topic[$i]==""|| $Professional_Societies_description[$i]==""){
+			my_msg('業界團體未輸入資料!','result.php');
+		}else{
+
+		}
+	}	
+
+
+		//my_msg('未輸入資料!', 'result.php');
+		
 		//影響力描述修改
 		$sql_Professor_Information_Impacts = "UPDATE Professor_Information SET Research_Impacts = '$Research_Impacts_description',Practice_Impacts = '$Practice_Impacts_description',Teaching_Impacts = '$Teaching_Impacts_description' WHERE Id = '$teacherID'";
 		mysqli_query($con, $sql_Professor_Information_Impacts);
@@ -172,7 +266,7 @@
 		}
 
 		//Academic Meeting Proceedings
-		$sql_Meeting_Proceedings_And_Other_Num="select * from Meeting_Proceedings_And_Other where Professor_Id='$teacherID' && Meeting_Class = 'Academic Meeting Proceedings'";
+		$sql_Meeting_Proceedings_And_Other_Num="select * from Meeting_Proceedings_And_Other where Professor_Id='$teacherID' && Meeting_Class = 'Meeting Proceedings'";
 		$result_sql_Meeting_Proceedings_And_Other=mysqli_query($con,$sql_Meeting_Proceedings_And_Other_Num);
 		for($i=0; $i<mysqli_num_rows($result_sql_Meeting_Proceedings_And_Other); $i++){ //把每一列的資料取出來
 		
@@ -180,7 +274,7 @@
 
 			mysqli_query($con,$sql_Meeting_Proceedings_And_Other);
 		}
-		
+		/*
 		//Professional Meeting Proceedings
 		$sql_Professional_Meeting_Proceedings_Num="select * from Meeting_Proceedings_And_Other where Professor_Id='$teacherID' && Meeting_Class = 'Professional Meeting Proceedings'";
 		$result_Professional_Meeting_Proceedings=mysqli_query($con,$sql_Professional_Meeting_Proceedings_Num);
@@ -190,7 +284,7 @@
 
 			mysqli_query($con,$sql_Professional_Meeting_Proceedings);
 		}
-
+		*/
 		//Textbooks/Chapters
 		$sql_Textbooks_Chapters_Num="select * from Meeting_Proceedings_And_Other where Professor_Id='$teacherID' && Meeting_Class = 'Textbooks/Chapters'";
 		$result_Textbooks_Chapters=mysqli_query($con,$sql_Textbooks_Chapters_Num);
@@ -262,6 +356,6 @@
 		mysqli_close($con);
 		my_msg('修改成功', 'result.php');
 		//header("location: result.php");
-	}
+
 		
 ?>

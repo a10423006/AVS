@@ -42,7 +42,12 @@
 			}
 		</style>
     </head>
+    <?php
+        //echo "今天是 " . date("Y") . "<br>";
+        //echo "今天是 " . date("m") . "<br>";
+        
 
+    ?>
     <script type="text/javascript">
         $(function(){
             // 伸縮效果

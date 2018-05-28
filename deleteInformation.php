@@ -98,6 +98,7 @@
                         <div><a href="search_teacherData.php">搜尋教師資料</a></div><br/>
                         <div><a href="new_teacherData.php">新增教師資料</a></div><br/>
                         <div><a href="deleteImformation.php">刪除教師資料</a></div><br/>
+                        <div><a href="result.php">回上一頁</a></div><br/>
                         <div><a href="logoutUnset.php">登出</a></div><br/>
                     </fieldset>
                 </div>
@@ -126,7 +127,7 @@
                             <!--學年度授課-->
 							<form action="deleteAction.php" name="deleteAction" method="post">
                             <div style='text-align:right;'>    
-							<input type="submit"  name="deleteAction_Btn"  id="deleteAction_Btn" style="width:80px;height:40px;font-size:15px;" value="刪除" onClick="document.deleteAction.submit()">
+							<input type="submit"  name="deleteAction_Btn"  id="deleteAction_Btn" style="width:80px;height:40px;font-size:15px;"  value="刪除" onClick="document.deleteAction.submit()">
                             </div>  
                             <ul class="accordionPart">
                                 <li>
@@ -146,9 +147,9 @@
                                                     for($i=0; $i<mysqli_num_rows($data); $i++){ //把每一列的資料取出來
                                                         $rs=mysqli_fetch_row($data);
                                                     ?><tr>
-                                                        <td colspan="1" bgcolor="#FFFFFF" align="center" valign="center">
+                                                        <td colspan="1" bgcolor="#FFFFFF">
                                                             <input type="checkbox" name="course_id[]"  readonly="readonly"   value="<?php echo $rs[0] ?>"
-                                                                style="width:auto; text-align:center; 
+                                                                style="width:20px; font-size:15px; text-align:center; 
                                                                     text-overflow:ellipsis; overflow: hidden;"/>
                                                         </td>
                                                         <td colspan="1" bgcolor="#FFFFFF">
@@ -200,9 +201,9 @@
                                                     for($i=0; $i<mysqli_num_rows($data); $i++){ //把每一列的資料取出來
                                                         $rs=mysqli_fetch_row($data);
                                                     ?><tr>
-                                                        <td colspan="1" bgcolor="#FFFFFF" align="center" valign="center">    
+                                                        <td colspan="1" bgcolor="#FFFFFF">    
                                                             <input type="checkbox" name="service_ID[]"  readonly="readonly" value="<?php echo $rs[0] ?>"
-                                                                style="width:auto; text-align:center; 
+                                                                style="width:20px; font-size:15px; text-align:center; 
                                                                     text-overflow:ellipsis; overflow: hidden;"/>
                                                         <td colspan="1" bgcolor="#FFFFFF">
                                                             <input type="text" name="service_Year[]" readonly="readonly" value="<?php echo $rs[1] ?>"
@@ -240,16 +241,18 @@
                                                     <td colspan="1" bgcolor="#e3e3e3"><b>Year</b></td>
                                                     <td colspan="1" bgcolor="#e3e3e3"><b>Topic</b></td>
                                                     <td colspan="1" bgcolor="#e3e3e3"><b>Description(Title,Journal,etc.-APA format)</b></td>
-                                                    <td colspan="1" bgcolor="#e3e3e3"><b>Status</b></td>
+                                                    <td colspan="1" bgcolor="#e3e3e3"><b>MOST Rank</b></td>
+                                                    <td colspan="1" bgcolor="#e3e3e3"><b>PortfolioICs</b></td>
+                                                    <td colspan="1" bgcolor="#e3e3e3"><b>Citation Index</b></td>
                                                 </tr>
                                                 <?php
                                                     $data = mysqli_query($con,"select * from Peer_reviewed_Journals where Professor_Id='$teacherID'");
                                                     for($i=0; $i<mysqli_num_rows($data); $i++){ //把每一列的資料取出來
                                                         $rs=mysqli_fetch_row($data);
                                                     ?><tr>
-													    <td colspan="1" bgcolor="#FFFFFF" align="center" valign="center">
+													    <td colspan="1" bgcolor="#FFFFFF">
                                                             <input type="checkbox" name="Peer_reviewed_id[]"  readonly="readonly" value="<?php echo $rs[0] ?>"
-                                                                style="width:auto; text-align:center; 
+                                                                style="width:20px; font-size:15px; text-align:center; 
                                                                     text-overflow:ellipsis; overflow: hidden;"/>
                                                         </td>            
                                                         <td colspan="1" bgcolor="#FFFFFF">
@@ -268,26 +271,6 @@
                                                             </textarea>
                                                         </td>
                                                         <td colspan="1" bgcolor="#FFFFFF">
-                                                            <input type="text" name="Peer_reviewed_status[]" readonly="readonly" value="<?php echo $rs[5] ?>"
-                                                                style="width:50px; font-size:15px; text-align:center; 
-                                                                    text-overflow:ellipsis; overflow: hidden;"/>
-                                                        </td>
-                                                    </tr>
-                                                <?php }?>
-                                                <tr>
-                                                    <td colspan="1" bgcolor="#e3e3e3"><b>MOST Rank</b></td>
-                                                    <td colspan="1" bgcolor="#e3e3e3"><b>Portfolio</b></td>
-                                                    <td colspan="1" bgcolor="#e3e3e3"><b>Citation Index</b></td>
-                                                    <td colspan="1" bgcolor="#e3e3e3"><b>Browses</b></td>
-                                                    <td colspan="1" bgcolor="#e3e3e3"><b>Supported by</b></td>
-													
-                                                </tr>
-                                                <?php
-                                                    $data = mysql_query("select * from Peer_reviewed_Journals where Professor_Id='$teacherID'", $conn);
-                                                    for($i=0; $i<mysql_num_rows($data); $i++){ //把每一列的資料取出來
-                                                        $rs=mysql_fetch_row($data);
-                                                    ?><tr>
-                                                        <td colspan="1" bgcolor="#FFFFFF">
                                                             <input type="text" name="most_rank[]" readonly="readonly" value="<?php echo $rs[6] ?>"
                                                                 style="width:100px; font-size:15px; text-align:center; 
                                                                     text-overflow:ellipsis; overflow: hidden;"/>
@@ -302,26 +285,15 @@
                                                             style="width:60px; font-size:15px; text-align:center; 
                                                                 text-overflow:ellipsis; overflow: hidden;"/>
                                                         </td>
-                                                        <td colspan="1" bgcolor="#FFFFFF">
-                                                            <input type="text" name="browses[]" readonly="readonly" value="<?php echo $rs[9] ?>"
-                                                            style="width:100px; font-size:15px; text-align:center; 
-                                                                text-overflow:ellipsis; overflow: hidden;"/>
-                                                        </td>
-                                                        <td colspan="1" bgcolor="#FFFFFF">
-                                                            <input type="text" name="supported_by[]" readonly="readonly" value="<?php echo $rs[10] ?>"
-                                                            style="width:150px; font-size:15px; text-align:center; 
-                                                                text-overflow:ellipsis; overflow: hidden;"/>
-                                                        </td>
 													
                                                             <input type="hidden" name="Professor_Id"  readonly="readonly" value="<?php echo $rs[11] ?>"
                                                             style="width:50px; font-size:15px; text-align:center; 
                                                                 text-overflow:ellipsis; overflow: hidden;"/>
-                                            
                                                     </tr>
-                                                <?php }?>	
-                                            </table>
-												
+                                                <?php }?>
+                                            </table>								
                                             <h4>Research Monographs</h4> <!--小分類-->
+									
                                             <table width="790" bgcolor="black" style="font-size:15px">
                                                 <tr>
                                                     <td colspan="1" bgcolor="#e3e3e3"><b>勾選</b></td>
@@ -329,16 +301,15 @@
                                                     <td colspan="1" bgcolor="#e3e3e3"><b>Type</b></td>
                                                     <td colspan="1" bgcolor="#e3e3e3"><b>Topic</b></td>
                                                     <td colspan="1" bgcolor="#e3e3e3"><b>Description(Title,sponsor,etc.)</b></td>    
-                                                    <td colspan="1" bgcolor="#e3e3e3"><b>Status</b></td>
                                                 </tr>
                                                 <?php
-                                                    $data = mysql_query("select * from Research_Monographs where Professor_Id='$teacherID'", $conn);
-                                                    for($i=0; $i<mysql_num_rows($data); $i++){ //把每一列的資料取出來
-                                                        $rs=mysql_fetch_row($data);
+                                                    $data = mysqli_query($con,"select * from Research_Monographs where Professor_Id='$teacherID'");
+                                                    for($i=0; $i<mysqli_num_rows($data); $i++){ //把每一列的資料取出來
+                                                        $rs=mysqli_fetch_row($data);
                                                     ?><tr>
-                                                        <td colspan="1" bgcolor="#FFFFFF" align="center" valign="center">
+                                                        <td colspan="1" bgcolor="#FFFFFF">										
                                                             <input type="checkbox" name="Research_Monographs_Id[]"  readonly="readonly" value="<?php echo $rs[0] ?>"
-                                                                style="width:auto; text-align:center; 
+                                                                style="width:20px; font-size:15px; text-align:center; 
                                                                     text-overflow:ellipsis; overflow: hidden;"/>
                                                         </td>            
                                                         <td colspan="1" bgcolor="#FFFFFF">
@@ -361,40 +332,15 @@
                                                                 <?php echo rtrim($rs[4]); ?>
                                                             </textarea>
                                                         </td>
-                                                        <td colspan="1" bgcolor="#FFFFFF">
-                                                            <input type="text" name="Research_Monographs_status[]" readonly="readonly" value="<?php echo $rs[6] ?>"
-                                                                style="width:100px; font-size:15px; text-align:center; 
-                                                                    text-overflow:ellipsis; overflow: hidden;"/>
-                                                        </td>
-                                                    </tr>
-                                                <?php }?>
-                                                <tr>
-                                                    <td colspan="3" bgcolor="#e3e3e3"><b>Browses</b></td>
-                                                    <td colspan="3" bgcolor="#e3e3e3"><b>Supported by</b></td>
-                                                </tr>
-                                                <?php
-                                                    $data = mysql_query("select * from Research_Monographs where Professor_Id='$teacherID'", $conn);
-                                                    for($i=0; $i<mysql_num_rows($data); $i++){ //把每一列的資料取出來
-                                                        $rs=mysql_fetch_row($data);
-                                                    ?><tr>
-                                                        <td colspan="3" bgcolor="#FFFFFF">
-                                                            <input type="text" name="Research_Monographs_browses[]" readonly="readonly" value="<?php echo $rs[7] ?>"
-                                                                style="width:100px; font-size:15px; text-align:center; 
-                                                                    text-overflow:ellipsis; overflow: hidden;"/>
-                                                        </td>
-                                                        <td colspan="3" bgcolor="#FFFFFF">
-                                                            <input type="text" name="Research_Monographs_supported_by[]" readonly="readonly" value="<?php echo $rs[8] ?>"
-                                                                style="width:100px; font-size:15px; text-align:center; 
-                                                                    text-overflow:ellipsis; overflow: hidden;"/>
-                                                        </td>
-                                                            <input type="hidden" name="Professor_Id"  onfocus="blur()" readonly="readonly" value="<?php echo $rs[9] ?>"
+                                                        <input type="hidden" name="Professor_Id"  onfocus="blur()" readonly="readonly" value="<?php echo $rs[9] ?>"
                                                                 style="width:50px; font-size:15px; text-align:center; 
                                                                     text-overflow:ellipsis; overflow: hidden;"/>
                                                     </tr>
                                                 <?php }?>
                                             </table>
-										
-                                            <h4>Academic Meeting Proceedings</h4> <!--小分類-->
+																					
+                                            <h4>Academic and Professional Meeting Proceedings</h4> <!--小分類-->
+								
                                             <table width="790" bgcolor="black" style="font-size:15px">
                                                 <tr>
                                                     <td colspan="1" bgcolor="#e3e3e3"><b>勾選</b></td>    
@@ -404,13 +350,13 @@
                                                     <td colspan="1" bgcolor="#e3e3e3"><b>Description(Title, Meeting, etc.)</b></td>
                                                 </tr>
                                                 <?php
-                                                    $data = mysql_query("select * from Meeting_Proceedings_And_Other where Professor_Id='$teacherID' && Meeting_Class = 'Academic Meeting Proceedings'", $conn);
-                                                    for($i=0; $i<mysql_num_rows($data); $i++){ //把每一列的資料取出來
-                                                        $rs=mysql_fetch_row($data);
+                                                    $data = mysqli_query($con,"select * from Meeting_Proceedings_And_Other where Professor_Id='$teacherID' && Meeting_Class = 'Meeting Proceedings'");
+                                                    for($i=0; $i<mysqli_num_rows($data); $i++){ //把每一列的資料取出來
+                                                        $rs=mysqli_fetch_row($data);
                                                     ?><tr>
-                                                        <td colspan="1" bgcolor="#FFFFFF" align="center" valign="center">
+                                                        <td colspan="1" bgcolor="#FFFFFF">
                                                             <input type="checkbox" name="Meeting_Proceedings_And_Other_Id[]"  readonly="readonly" value="<?php echo $rs[0] ?>"
-                                                                style="width:auto; text-align:center; 
+                                                                style="width:20px; font-size:15px; text-align:center; 
                                                                     text-overflow:ellipsis; overflow: hidden;"/>
                                                         </td>            
                                                         <td colspan="1" bgcolor="#FFFFFF">
@@ -435,53 +381,9 @@
                                                         </td>
                                                     </tr>
                                                 <?php }?>
-                                            </table>
-									
-
-                                            <h4>Professional Meeting Proceedings</h4> <!--小分類-->
-                                            <table width="790" bgcolor="black" style="font-size:15px">
-                                                <tr>
-                                                    <td colspan="1" bgcolor="#e3e3e3"><b>勾選</b></td>    
-                                                    <td colspan="1" bgcolor="#e3e3e3"><b>Year</b></td>
-                                                    <td colspan="1" bgcolor="#e3e3e3"><b>Type</b></td>
-                                                    <td colspan="1" bgcolor="#e3e3e3"><b>Topic</b></td>
-                                                    <td colspan="1" bgcolor="#e3e3e3"><b>Description(Title, Meeting, etc.)</b></td>
-                                                </tr>
-                                                <?php
-                                                    $data = mysql_query("select * from Meeting_Proceedings_And_Other where Professor_Id='$teacherID' && Meeting_Class = 'Professional Meeting Proceedings'", $conn);
-                                                    for($i=0; $i<mysql_num_rows($data); $i++){ //把每一列的資料取出來
-                                                        $rs=mysql_fetch_row($data);
-                                                    ?><tr>
-                                                        <td colspan="1" bgcolor="#FFFFFF" align="center" valign="center">
-                                                            <input type="checkbox" name="Professional_Meeting_Proceedings_Id[]"  readonly="readonly" value="<?php echo $rs[0] ?>"
-                                                                style="width:auto; text-align:center; 
-                                                                    text-overflow:ellipsis; overflow: hidden;"/>
-                                                        </td>
-                                                        <td colspan="1" bgcolor="#FFFFFF">
-                                                            <input type="text" name="Professional_Meeting_Proceedings_year[]" readonly="readonly" value="<?php echo $rs[1] ?>"
-                                                                style="width:100px; font-size:15px; text-align:center; 
-                                                                    text-overflow:ellipsis; overflow: hidden;"/>
-                                                        </td>
-                                                        <td colspan="1" bgcolor="#FFFFFF">
-                                                            <input type="text" name="Professional_Meeting_Proceedings_type[]" readonly="readonly" value="<?php echo $rs[2] ?>"
-                                                                style="width:100px; font-size:15px; text-align:center; 
-                                                                    text-overflow:ellipsis; overflow: hidden;"/>
-                                                        </td>
-                                                        <td colspan="1" bgcolor="#FFFFFF">
-                                                            <input type="text" name="Professional_Meeting_Proceedings_topic[]" readonly="readonly" value="<?php echo $rs[3] ?>"
-                                                                style="width:100px; font-size:15px; text-align:center; 
-                                                                    text-overflow:ellipsis; overflow: hidden;"/>
-                                                        </td>
-                                                        <td colspan="1" bgcolor="#FFFFFF">
-                                                            <textarea cols="20" rows="5" name="Professional_Meeting_Proceedings_description[]" readonly="readonly" style="font-size:15px; margin:15px auto 0px auto;" text-overflow:ellipsis; overflow: hidden;>
-                                                                <?php echo rtrim($rs[4]); ?>
-                                                            </textarea>
-                                                        </td>
-                                                    </tr>
-                                                <?php }?>
-                                            </table>
-											
+                                            </table>				
                                             <h4>Textbooks/Chapters</h4> <!--小分類-->
+									
                                             <table width="790" bgcolor="black" style="font-size:15px">
                                                 <tr>
                                                     <td colspan="1" bgcolor="#e3e3e3"><b>勾選</b></td>    
@@ -491,13 +393,13 @@
                                                     <td colspan="1" bgcolor="#e3e3e3"><b>Description(Title, Meeting, etc.)</b></td>
                                                 </tr>
                                                 <?php
-                                                    $data = mysql_query("select * from Meeting_Proceedings_And_Other where Professor_Id='$teacherID' && Meeting_Class = 'Textbooks/Chapters'", $conn);
-                                                    for($i=0; $i<mysql_num_rows($data); $i++){ //把每一列的資料取出來
-                                                        $rs=mysql_fetch_row($data);
+                                                    $data = mysqli_query($con,"select * from Meeting_Proceedings_And_Other where Professor_Id='$teacherID' && Meeting_Class = 'Textbooks/Chapters'");
+                                                    for($i=0; $i<mysqli_num_rows($data); $i++){ //把每一列的資料取出來
+                                                        $rs=mysqli_fetch_row($data);
                                                     ?><tr>
-                                                        <td colspan="1" bgcolor="#FFFFFF" align="center" valign="center">
+                                                        <td colspan="1" bgcolor="#FFFFFF">
                                                             <input type="checkbox" name="Textbooks_Chapters_Id[]"  readonly="readonly" value="<?php echo $rs[0] ?>"
-                                                                style="width:auto; text-align:center; 
+                                                                style="width:20px; font-size:15px; text-align:center; 
                                                                     text-overflow:ellipsis; overflow: hidden;"/>
                                                         </td>            
                                                         <td colspan="1" bgcolor="#FFFFFF">
@@ -524,7 +426,9 @@
                                                 <?php }?>
                                             </table>
 						
-                                            <h4>Cases</h4> <!--小分類-->								
+
+                                            <h4>Cases</h4> <!--小分類-->
+								
                                             <table width="790" bgcolor="black" style="font-size:15px">
                                                 <tr>
                                                     <td colspan="1" bgcolor="#e3e3e3"><b>勾選</b></td>    
@@ -534,13 +438,13 @@
                                                     <td colspan="1" bgcolor="#e3e3e3"><b>Description(Title, Meeting, etc.)</b></td>
                                                 </tr>
                                                 <?php
-                                                    $data = mysql_query("select * from Meeting_Proceedings_And_Other where Professor_Id='$teacherID' && Meeting_Class = 'Cases'", $conn);
-                                                    for($i=0; $i<mysql_num_rows($data); $i++){ //把每一列的資料取出來
-                                                        $rs=mysql_fetch_row($data);
+                                                    $data = mysqli_query($con,"select * from Meeting_Proceedings_And_Other where Professor_Id='$teacherID' && Meeting_Class = 'Cases'");
+                                                    for($i=0; $i<mysqli_num_rows($data); $i++){ //把每一列的資料取出來
+                                                        $rs=mysqli_fetch_row($data);
                                                     ?><tr>
-                                                        <td colspan="1" bgcolor="#FFFFFF" align="center" valign="center">
+                                                        <td colspan="1" bgcolor="#FFFFFF">
                                                             <input type="checkbox" name="Cases_Id[]"  readonly="readonly" value="<?php echo $rs[0] ?>"
-                                                                style="width:auto; text-align:center; 
+                                                                style="width:20px; font-size:15px; text-align:center; 
                                                                     text-overflow:ellipsis; overflow: hidden;"/>
                                                         </td>
                                                         <td colspan="1" bgcolor="#FFFFFF">
@@ -567,7 +471,9 @@
                                                 <?php }?>
                                             </table>
 								
-                                            <h4>Other Teaching Materials</h4> <!--小分類-->						
+
+                                            <h4>Other Teaching Materials</h4> <!--小分類-->
+						
                                             <table width="790" bgcolor="black" style="font-size:15px">
                                                 <tr>
                                                     <td colspan="1" bgcolor="#e3e3e3"><b>勾選</b></td>    
@@ -576,13 +482,13 @@
                                                     <td colspan="1" bgcolor="#e3e3e3"><b>Title</b></td>
                                                 </tr>
                                                 <?php
-                                                    $data = mysql_query("select * from Teaching_Materials_And_Awards where Professor_Id='$teacherID' && Contributions_name = 'Other Teaching Materials'", $conn);
-                                                    for($i=0; $i<mysql_num_rows($data); $i++){ //把每一列的資料取出來
-                                                        $rs=mysql_fetch_row($data);
+                                                    $data = mysqli_query($con,"select * from Teaching_Materials_And_Awards where Professor_Id='$teacherID' && Contributions_name = 'Other_Teaching_Materials'");
+                                                    for($i=0; $i<mysqli_num_rows($data); $i++){ //把每一列的資料取出來
+                                                        $rs=mysqli_fetch_row($data);
                                                     ?><tr>
-                                                        <td colspan="1" bgcolor="#FFFFFF" align="center" valign="center">
+                                                        <td colspan="1" bgcolor="#FFFFFF">
                                                             <input type="checkbox" name="Other_Teaching_Materials_Id[]"  readonly="readonly" value="<?php echo $rs[0] ?>"
-                                                                style="width:auto; text-align:center; 
+                                                                style="width:20px; font-size:15px; text-align:center; 
                                                                     text-overflow:ellipsis; overflow: hidden;"/>
                                                         </td> 
                                                         <td colspan="1" bgcolor="#FFFFFF">
@@ -615,13 +521,13 @@
                                                     <td colspan="1" bgcolor="#e3e3e3"><b>Title</b></td>
                                                 </tr>
                                                 <?php
-                                                    $data = mysql_query("select * from Teaching_Materials_And_Awards where  Professor_Id='$teacherID' && Contributions_name = 'Honors_Competitive_Awards_Received'", $conn);
-                                                    for($i=0; $i<mysql_num_rows($data); $i++){ //把每一列的資料取出來
-                                                        $rs=mysql_fetch_row($data);
+                                                    $data = mysqli_query($con,"select * from Teaching_Materials_And_Awards where  Professor_Id='$teacherID' && Contributions_name = 'Honors_Competitive_Awards_Received'");
+                                                    for($i=0; $i<mysqli_num_rows($data); $i++){ //把每一列的資料取出來
+                                                        $rs=mysqli_fetch_row($data);
                                                     ?><tr>
-                                                        <td colspan="1" bgcolor="#FFFFFF" align="center" valign="center">
+                                                        <td colspan="1" bgcolor="#FFFFFF">
                                                             <input type="checkbox" name="Honors_Competitive_Awards_Received_Id[]"  readonly="readonly" value="<?php echo $rs[0] ?>"
-                                                                style="width:auto; text-align:center; 
+                                                                style="width:20px; font-size:15px; text-align:center; 
                                                                     text-overflow:ellipsis; overflow: hidden;"/>
                                                         </td>            
                                                         <td colspan="1" bgcolor="#FFFFFF">
@@ -651,25 +557,25 @@
                                 <li>
                                     <div class="qa_title" style="text-decoration:none;">業界 ▾</div>
 									    <div class="qa_content">
-                                            <h4>Professional History 業界經歷</h4> <!--小分類-->
+                                            <h4>Professional History</h4> <!--小分類-->
 											
 											
                                             <table width="790" bgcolor="black" style="font-size:15px">
                                                 <tr>
                                                     <td colspan="1" bgcolor="#e3e3e3"><b>勾選</b></td>    
-                                                    <td colspan="1" bgcolor="#e3e3e3"><b>Month, Year</b></td>
+                                                    <td colspan="1" bgcolor="#e3e3e3"><b>Year</b></td>
                                                     <td colspan="1" bgcolor="#e3e3e3"><b>Title</b></td>
                                                     <td colspan="1" bgcolor="#e3e3e3"><b>Unit / Department</b></td>
                                                     <td colspan="1" bgcolor="#e3e3e3"><b>Section / College</b></td>
                                                 </tr>
                                                 <?php
-                                                    $data = mysql_query("select * from Professional_History  where Professor_Id='$teacherID'", $conn);
-                                                    for($i=0; $i<mysql_num_rows($data); $i++){ //把每一列的資料取出來
-                                                        $rs=mysql_fetch_row($data);
+                                                    $data = mysqli_query($con,"select * from Professional_History  where Professor_Id='$teacherID'");
+                                                    for($i=0; $i<mysqli_num_rows($data); $i++){ //把每一列的資料取出來
+                                                        $rs=mysqli_fetch_row($data);
                                                     ?><tr>
-                                                        <td colspan="1" bgcolor="#FFFFFF" align="center" valign="center">
+                                                        <td colspan="1" bgcolor="#FFFFFF">
                                                             <input type="checkbox" name="Professional_History_Id[]"  readonly="readonly" value="<?php echo $rs[0] ?>"
-                                                                style="width:auto; text-align:center; 
+                                                                style="width:20px; font-size:15px; text-align:center; 
                                                                     text-overflow:ellipsis; overflow: hidden;"/>
                                                         </td>            
                                                         <td colspan="1" bgcolor="#FFFFFF">
@@ -694,25 +600,10 @@
                                                         </td>
                                                     </tr>
                                                 <?php }?>
-                                                <tr>
-                                                    <td colspan="5" bgcolor="#e3e3e3"><b>Company / Agency / School / Association / Foundation</b></td>
-                                                </tr>
-                                                <?php
-                                                    $data = mysql_query("select * from Professional_History  where Professor_Id='$teacherID'", $conn);
-                                                    for($i=0; $i<mysql_num_rows($data); $i++){ //把每一列的資料取出來
-                                                        $rs=mysql_fetch_row($data);
-                                                    ?><tr>
-                                                        <td colspan="5" bgcolor="#FFFFFF">
-                                                        <input type="text" name="Professional_History_company[]" readonly="readonly" value="<?php echo $rs[5] ?>"
-                                                            style="width:100px; font-size:15px; text-align:center; 
-                                                                text-overflow:ellipsis; overflow: hidden;"/>
-                                                        </td>
-                                                    </tr>
-                                                <?php }?>
                                             </table>
 										
 
-                                            <h4>Professional Development 業界發展</h4> <!--小分類-->
+                                            <h4>Professional Development</h4> <!--小分類-->
                                             <table width="790" bgcolor="black" style="font-size:15px">
                                                 <tr>
                                                     <td colspan="1" bgcolor="#e3e3e3"><b>勾選</b></td>                                       
@@ -722,13 +613,13 @@
                                                     <td colspan="1" bgcolor="#e3e3e3"><b>Description (institute/unit, etc.)</b></td>
                                                 </tr>
                                                 <?php
-                                                    $data = mysql_query("select * from Meeting_Proceedings_And_Other where Professor_Id='$teacherID' && Meeting_Class = 'Professional Development'", $conn);
-                                                    for($i=0; $i<mysql_num_rows($data); $i++){ //把每一列的資料取出來
-                                                        $rs=mysql_fetch_row($data);
+                                                    $data = mysqli_query($con,"select * from Meeting_Proceedings_And_Other where Professor_Id='$teacherID' && Meeting_Class = 'Professional Development'");
+                                                    for($i=0; $i<mysqli_num_rows($data); $i++){ //把每一列的資料取出來
+                                                        $rs=mysqli_fetch_row($data);
                                                     ?><tr>
-                                                        <td colspan="1" bgcolor="#FFFFFF" align="center" valign="center">
+                                                        <td colspan="1" bgcolor="#FFFFFF">
                                                             <input type="checkbox" name="Professional_Development_Id[]"  readonly="readonly" value="<?php echo $rs[0] ?>"
-                                                                style="width:atuo; text-align:center; 
+                                                                style="width:20px; font-size:15px; text-align:center; 
                                                                     text-overflow:ellipsis; overflow: hidden;"/>
                                                         </td>            
                                                         <td colspan="1" bgcolor="#FFFFFF">
@@ -756,7 +647,7 @@
                                             </table>
 								
 
-                                            <h4>Professional History 業界團體</h4> <!--小分類-->
+                                            <h4>Professional Societies</h4> <!--小分類-->
                                             <table width="790" bgcolor="black" style="font-size:15px">
                                                 <tr>
                                                     <td colspan="1" bgcolor="#e3e3e3"><b>勾選</b></td>        
@@ -765,13 +656,13 @@
                                                     <td colspan="1" bgcolor="#e3e3e3"><b>Description(society/association/unit/agency)</b></td>
                                                 </tr>
                                                 <?php
-                                                    $data = mysql_query("select * from Professional_Societies where Professor_Id='$teacherID'", $conn);
-                                                    for($i=0; $i<mysql_num_rows($data); $i++){ //把每一列的資料取出來
-                                                        $rs=mysql_fetch_row($data);
+                                                    $data = mysqli_query($con,"select * from Professional_Societies where Professor_Id='$teacherID'");
+                                                    for($i=0; $i<mysqli_num_rows($data); $i++){ //把每一列的資料取出來
+                                                        $rs=mysqli_fetch_row($data);
                                                     ?><tr>
-                                                        <td colspan="1" bgcolor="#FFFFFF" align="center" valign="center">
+                                                        <td colspan="1" bgcolor="#FFFFFF">
                                                             <input type="checkbox"  onfocus="blur()" name="Professional_Societies_Id[]" readonly="readonly" value="<?php echo $rs[0] ?>"
-                                                                style="width:auto; text-align:center; 
+                                                                style="width:20px; font-size:15px; text-align:center; 
                                                                     text-overflow:ellipsis; overflow: hidden;"/>
                                                         </td>
                                                         <td colspan="1" bgcolor="#FFFFFF">
@@ -785,7 +676,7 @@
                                                                     text-overflow:ellipsis; overflow: hidden;"/>
                                                         </td>
                                                         <td colspan="1" bgcolor="#FFFFFF">
-                                                            <textarea cols="20" rows="5" name="Professional_Societies_description[]" readonly="readonly" value="<?php echo $rs[3] ?>"
+                                                            <input type="text" name="Professional_Societies_description[]" readonly="readonly" value="<?php echo $rs[3] ?>"
                                                                     style="width:100px; font-size:15px; text-align:center; 
                                                                         text-overflow:ellipsis; overflow: hidden;"/>
                                                         </td>
